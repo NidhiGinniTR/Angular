@@ -1,4 +1,4 @@
-package com_pkg_OWM.Workflow_Browser.DynamicParallel_Workflow;
+package com_pkg_OWM.Workflow_Browser.DynamicParallel;
 
 public class FWF_SplitterMenu_Test {
 
