@@ -76,5 +76,57 @@ public class Navigations {
 	public void Actions() throws InterruptedException {
 		fm.fnWebButton(driver, Actions, "Actions");
 	}
+	
+	// ------------------------WorkFlow Browser SearchFields------------------------------------------------------------------
+		By Clear = By.xpath("//*[@id='btnCancel' and @title='Clear'] | //*[@class='btn btn-mini' and @title='Clear Search Criteria']");
+		By searchYear = By.id("fldr_4");
+		By searchPeriod = By.id("fldr_5");
+		By searchTaxType = By.id("fldr_6");
+		By searchWF_Template = By.id("wt_name");
+		By searchEntity_Name = By.id("wf_14");
+		By searchEntity_Id = By.id("wf_15");
+		By searchJurisdiction = By.id("wf_17");
+		By searchWorkflow_Association = By.id("wf_18");
+		By searchWorkflow_Type = By.id("fw_workflow_type");
+		By searchGroup_Codes = By.id("gc_group_code_id");
+		By Search = By.id("btnSearch");
+
+		public void searchFieldYear(String temp) throws InterruptedException {
+			fm.fnWebList(driver, searchYear, temp, "Year");
+		}
+		public void searchFieldPeriod(String temp) throws InterruptedException {
+			fm.fnWebList(driver, searchPeriod, temp, "Period");
+		}
+		public void searchFieldTaxType(String temp) throws InterruptedException {
+			fm.fnWebList(driver, searchTaxType, temp, "TaxType");
+		}
+		public void searchFieldWF_Template(String temp) throws InterruptedException {
+			fm.fnWebList(driver, searchWF_Template, temp, "WorkFlow Template");
+		}
+		public void searchFieldEntity_Name(String temp) throws InterruptedException {
+			fm.fnWebEdit(driver, searchEntity_Name, temp, "Entity Name");
+		}
+		public void searchFieldEntity_Id(String temp) throws InterruptedException {
+			fm.fnWebEdit(driver, searchEntity_Id, temp, "Entity ID");
+		}
+		public void searchFieldJurisdiction(String temp) throws InterruptedException {
+			fm.fnWebEdit(driver, searchJurisdiction, temp, "Jurisdiction");
+		}
+		public void searchFieldWorkflow_Association(String temp) throws InterruptedException {
+			fm.fnWebList(driver, searchWorkflow_Association, temp, "WorkFlow Association");
+		}
+		public void searchFieldWorkflow_Type(String temp) throws InterruptedException {
+			fm.fnWebList(driver, searchWorkflow_Type, temp, "WorkFlow Type");
+		}
+		public void searchFieldGroup_Codes(String temp) throws InterruptedException {
+			fm.fnWebList(driver, searchGroup_Codes, temp, "Group Codes");
+		}
+		public void Clear() throws InterruptedException {
+			fm.fnWebButton(driver, Clear, "Clear");
+		}
+		public void Search() throws InterruptedException {
+			fm.fnWebButton(driver, Search, "Search");
+		}
+
 
 }
