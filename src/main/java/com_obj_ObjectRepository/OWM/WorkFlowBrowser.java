@@ -12,9 +12,7 @@ public class WorkFlowBrowser {
 	public WorkFlowBrowser(WebDriver driver) {
 		this.driver = driver;
 	}
-	//Parallel comment
-	// ---------------New Folder
-	// Page-----------------------------------------------------------------------------
+	// ---------------New Folder Page-----------------------------------------------------------------------------
 	By nf_Year = By.xpath("//*[@id='ctlval_fldr_4']");
 	By nf_TaxType = By.xpath("//*[@id='ctlval_fldr_6']");
 	By nf_Period = By.xpath("//*[@id='ctlval_fldr_5']");
@@ -74,8 +72,7 @@ public class WorkFlowBrowser {
 		fm.fnWebCheckBox(driver, SavePreforAll_notify, "Notify by Email");
 	}
 
-	// ---------------Customize
-	// View--------------------------------------------------------------------------------
+	// ---------------Customize View--------------------------------------------------------------------------------
 	By CustView_Save = By.xpath("//input[@id='btnSave']");
 	By CustView_Cancel = By.xpath("//input[@id='btnCancel']");
 
@@ -87,8 +84,7 @@ public class WorkFlowBrowser {
 		fm.fnWebButton(driver, CustView_Cancel, "Save");
 	}
 
-	// --------------New Rule Based
-	// Workflow-------------------------------------------------------------------------
+	// --------------New Rule Based Workflow-------------------------------------------------------------------------
 	By NewRuleBased_S1_EntityName = By.xpath("//input[@name='wf_14']");
 	By NewRuleBased_S1_EntityID = By.xpath("//input[@name='wf_15']");
 	By NewRuleBased_S1_Search = By.xpath("//input[@id='btnSearch']");
