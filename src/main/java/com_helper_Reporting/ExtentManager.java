@@ -1,5 +1,8 @@
 package com_helper_Reporting;
 
+import java.io.File;
+import java.util.Date;
+
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
@@ -16,8 +19,13 @@ public class ExtentManager {
 	public static ExtentTest childTest;
 
 	@BeforeClass
-	public static void setExtent() {
-		htmlReporter = new ExtentHtmlReporter("./Reports/NewFolderCreation.html");
+	public static ExtentReports createInstance() {
+		String fileName = getReportName();
+		String directory = System.getProperty("user.dir") + "/reports.html/";
+		new File(directory).mkdirs();
+		String path = directory + fileName;
+		ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(path);
+		
 		htmlReporter.config().setDocumentTitle("Automation Test Report");
 		htmlReporter.config().setReportName("New Folder Creation");
 		htmlReporter.config().setTheme(Theme.STANDARD);
@@ -26,8 +34,16 @@ public class ExtentManager {
 		extent.setSystemInfo("Organization", "TechMahindra-TR");
 		extent.setSystemInfo("HostName", System.getenv("COMPUTERNAME"));
 		extent.attachReporter(htmlReporter);
+		
+		return extent;
 	}
 
+	public static String getReportName() {
+		Date d = new Date();
+		String fileName = "Automation Report" + "-" + d.toString().replace(":", "_").replace(" ", "_") + ".html";
+		return fileName;
+	}
+	
 	@AfterClass
 	public static void endReport() {
 		extent.flush();
