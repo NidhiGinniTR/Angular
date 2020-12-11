@@ -1,4 +1,5 @@
 package com_obj_ObjectRepository.OWM;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,7 +13,9 @@ public class WorkFlowBrowser {
 	public WorkFlowBrowser(WebDriver driver) {
 		this.driver = driver;
 	}
+
 	// ---------------New Folder Page-----------------------------------------------------------------------------
+
 	By nf_Year = By.xpath("//*[@id='ctlval_fldr_4']");
 	By nf_TaxType = By.xpath("//*[@id='ctlval_fldr_6']");
 	By nf_Period = By.xpath("//*[@id='ctlval_fldr_5']");
@@ -54,8 +57,7 @@ public class WorkFlowBrowser {
 		fm.fnWebButton(driver, nf_SaveOK, "Save");
 	}
 
-	// ----------------Save
-	// Preferences-----------------------------------------------------------------------------
+	// ----------------Save Preferences-----------------------------------------------------------------------------
 	By SavePreforAll_notify = By.xpath("//*[@id='chkNotify']");
 	By SavePreforAll_save = By.xpath("//*[@name='btnSave']");
 	By SavePreforAll_cancel = By.xpath("//*[@name='btnCancel']");
