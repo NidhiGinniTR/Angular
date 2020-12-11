@@ -14,8 +14,8 @@ public class WorkFlowBrowser {
 		this.driver = driver;
 	}
 
-	// ---------------New Folder
-	// Page-----------------------------------------------------------------------------
+	// ---------------New Folder Page-----------------------------------------------------------------------------
+
 	By nf_Year = By.xpath("//*[@id='ctlval_fldr_4']");
 	By nf_TaxType = By.xpath("//*[@id='ctlval_fldr_6']");
 	By nf_Period = By.xpath("//*[@id='ctlval_fldr_5']");
@@ -57,8 +57,7 @@ public class WorkFlowBrowser {
 		fm.fnWebButton(driver, nf_SaveOK, "Save");
 	}
 
-	// ----------------Save
-	// Preferences-----------------------------------------------------------------------------
+	// ----------------Save Preferences-----------------------------------------------------------------------------
 	By SavePreforAll_notify = By.xpath("//*[@id='chkNotify']");
 	By SavePreforAll_save = By.xpath("//*[@name='btnSave']");
 	By SavePreforAll_cancel = By.xpath("//*[@name='btnCancel']");
@@ -75,8 +74,7 @@ public class WorkFlowBrowser {
 		fm.fnWebCheckBox(driver, SavePreforAll_notify, "Notify by Email");
 	}
 
-	// ---------------Customize
-	// View--------------------------------------------------------------------------------
+	// ---------------Customize View--------------------------------------------------------------------------------
 	By CustView_Save = By.xpath("//input[@id='btnSave']");
 	By CustView_Cancel = By.xpath("//input[@id='btnCancel']");
 
@@ -88,8 +86,7 @@ public class WorkFlowBrowser {
 		fm.fnWebButton(driver, CustView_Cancel, "Save");
 	}
 
-	// --------------New Rule Based
-	// Workflow-------------------------------------------------------------------------
+	// --------------New Rule Based Workflow-------------------------------------------------------------------------
 	By NewRuleBased_S1_EntityName = By.xpath("//input[@name='wf_14']");
 	By NewRuleBased_S1_EntityID = By.xpath("//input[@name='wf_15']");
 	By NewRuleBased_S1_Search = By.xpath("//input[@id='btnSearch']");
@@ -109,8 +106,7 @@ public class WorkFlowBrowser {
 	By NewRuleBased_S2_Next = By.xpath("//img[@id='imgNextEvent']");
 	By NewRuleBased_S2_Cancel = By.xpath("//div[@id='ViewsCallBackEventDiv']/TABLE[2]/TBODY[1]/TR[1]/TD[4]/IMG[1]");
 	By NewRuleBased_S3_TaxYear = By.xpath("//select[@name='ctlstval_23_Tax_year']");
-	By NewRuleBased_S3_TaxAcPeriodStartDate = By
-			.xpath("//input[@name='ctlval_23_rb_Tax Accounting Period Start Date']");
+	By NewRuleBased_S3_TaxAcPeriodStartDate = By.xpath("//input[@name='ctlval_23_rb_Tax Accounting Period Start Date']");
 	By NewRuleBased_S3_TaxAcPeriodEndDate = By.xpath("//input[@name='ctlval_23_rb_Tax Accounting Period End Date']");
 	By NewRuleBased_S3_Year = By.xpath("//select[@name='ctlval_23_fldr_4']");
 	By NewRuleBased_S3_Period = By.xpath("//select[@name='ctlval_23_fldr_5']");
@@ -118,11 +114,9 @@ public class WorkFlowBrowser {
 	By NewRuleBased_S3_Jurisdiction = By.xpath("//input[@name='ctlval_23_wf_17']");
 	By NewRuleBased_S3_WorkFlowAssociation = By.xpath("//select[@name='ctlval_23_wf_18']");
 	By NewRuleBased_S3_Description = By.xpath("//*[@name='ctlval_23_fw_workflow_name']");
-	By NewRuleBased_S3_Previous = By
-			.xpath("//DIV[@id='ViewsCallBackWFInstanceDiv']/TABLE[1]/TBODY[1]/TR[4]/TD[1]/IMG[1]");
+	By NewRuleBased_S3_Previous = By.xpath("//DIV[@id='ViewsCallBackWFInstanceDiv']/TABLE[1]/TBODY[1]/TR[4]/TD[1]/IMG[1]");
 	By NewRuleBased_S3_Finish = By.xpath("//img[@id='btnFinish']");
-	By NewRuleBased_S3_Cancel = By
-			.xpath("//div[@id='ViewsCallBackWFInstanceDiv']/TABLE[1]/TBODY[1]/TR[4]/TD[1]/IMG[3]");
+	By NewRuleBased_S3_Cancel = By.xpath("//div[@id='ViewsCallBackWFInstanceDiv']/TABLE[1]/TBODY[1]/TR[4]/TD[1]/IMG[3]");
 
 	public void NewRuleBased_S1_Entityname(String temp) throws InterruptedException {
 		fm.fnWebEdit(driver, NewRuleBased_S1_EntityName, temp, "Entity Name");
@@ -240,5 +234,53 @@ public class WorkFlowBrowser {
 		fm.fnWebButton(driver, NewRuleBased_S3_Cancel, "Cancel");
 	}
 
+	//----------------------New Workflow and WorkFlowProperties--------------------------------------------------------------------
 	
+		By WFP_NWF_WFTemplate = By.xpath("//*[@id='ctlval_fw_workflow_template_id']");
+	    By WFP_NWF_EntityName = By.xpath("//*[@id='ctlval_wf_14']");
+	    By WFP_NWF_EntityID = By.xpath("//*[@id='ctlval_wf_15']");
+	    By WFP_NWF_Jurisdiction = By.xpath("//*[@id='ctlval_wf_17']");
+	    By WFP_NWF_DueDate = By.xpath("//*[@id='ctlval_fw_due_date']");
+	    By WFP_NWF_WFDescription = By.xpath("//*[@id='ctlval_fw_workflow_name']");
+	    By WFP_NWF_RIRouteToGroup = By.xpath("//*[@id='ddlAssignedToGroup']");
+	    By WFP_NWF_RIRouteToPerson = By.xpath("//*[@id='ddlAssignedToPerson']");
+	    By WFP_NWF_RIDueDate = By.xpath("//*[@id='pkDateDue']");
+	    By WFP_NWF_RI_CC_Email = By.xpath("//*[@id='txtNotifyCC']");
+	    By WFP_NWF_Save = By.xpath("//*[@id='btnOK']");
+
+	    public void WFP_NWF_WfTemplate(String text)  throws InterruptedException{
+	        fm.fnWebList(driver, WFP_NWF_WFTemplate, text,"WF Template");
+	    }
+	    public void WFP_NWF_Entityname(String text) throws InterruptedException{
+	    	fm.fnWebEdit(driver, WFP_NWF_EntityName,text,"Entity Name");
+	    }
+	    public void WFP_NWF_EntityId(String text) throws InterruptedException{
+	    	fm.fnWebEdit(driver, WFP_NWF_EntityID,text,"Entity ID");
+	    }
+	    public void WFP_NWF_jurisdiction(String text) throws InterruptedException{
+	    	fm.fnWebEdit(driver, WFP_NWF_Jurisdiction,text,"Jurisdiction");
+	    }
+	    public void WFP_NWF_Duedate(String text) throws InterruptedException{
+	    	fm.fnWebEdit(driver, WFP_NWF_DueDate,text,"Due Date");
+	    }
+	    public void WFP_NWF_WFDescription(String text) throws InterruptedException{
+	    	fm.fnWebEdit(driver, WFP_NWF_WFDescription,text,"Description");
+	    }
+	    public void WFP_NWF_save() throws InterruptedException{
+	    	fm.fnWebButton(driver, WFP_NWF_Save, "Save");  
+	    }
+	    public void WFP_NWF_RIRoutetoGroup(String text) throws InterruptedException{
+	    	 fm.fnWebList(driver, WFP_NWF_RIRouteToGroup, text,"Route To Group");
+	    }
+	    public void WFP_NWF_RIRoutetoPerson(String text) throws InterruptedException{
+	    	 fm.fnWebList(driver, WFP_NWF_RIRouteToPerson, text,"Route To Person");
+	    }
+	    public void WFP_NWF_RIDuedate(String text) throws InterruptedException{
+	    	fm.fnWebEdit(driver, WFP_NWF_RIDueDate,text,"Due Date");
+	    }
+	    public void WFP_NWF_RI_CCEmail(String text) throws InterruptedException{
+	    	fm.fnWebButton(driver, WFP_NWF_RI_CC_Email, "CC Email");    
+	    }
+	  //
+
 }
