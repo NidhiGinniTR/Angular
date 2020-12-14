@@ -229,4 +229,104 @@ public class Documents {
 		fm.fnWebEdit(driver, MoveDoc_EntityName, text, "Entity Name");
 	}
 
+	//----------------------Docment Properties-------------------------------
+    By DocProp_AssignedTo = By.xpath("//select[@id='assigned_to']");
+    By DocProp_DocumentStatus = By.xpath("//select[@id='document_status']");
+    By DocProp_DueDate = By.xpath("//input[@id='due_date']");
+    
+    public void DocProp_Assignedto(String text) throws InterruptedException{
+    	fm.fnWebList(driver, DocProp_AssignedTo, text, "Assigned To");
+    }
+    public void DocProp_Documentstatus(String text) throws InterruptedException{
+    	fm.fnWebList(driver, DocProp_DocumentStatus, text, "Document Status");
+    }
+    public void DocProp_Duedate(String text) throws InterruptedException{
+    	fm.fnWebEdit(driver,DocProp_DueDate , text,"Due Date");
+    }
+    
+    //------------------Customize View-------------------------------------
+    By Doc_CustView_Save = By.xpath("//INPUT[@id='btnSave']");
+    
+    public void Doc_Custview_Save() throws InterruptedException{
+    	fm.fnWebButton(driver, Doc_CustView_Save, "Save");
+    }
+    
+    //-----------------Saved Search----------------------------------------
+    By SavedSearch_SavedSearches = By.xpath("//select[@id='saved_searches']"); 
+    By SavedSearch_DocID = By.xpath("//input[@id='d.doc_id']");
+    By SavedSearch_Year = By.xpath("//select[@id='idx_000000000E_ddl']");
+    By SavedSearch_Period = By.xpath("//select[@id='idx_000000000F_ddl']");
+    By SavedSearch_TaxType = By.xpath("//select[@id='idx_000000000D_ddl']");
+    By SavedSearch_WFTemplate = By.xpath("//select[@id='wt_name']");
+    By SavedSearch_WFAssociation = By.xpath("//select[@id='idx_000000000L_ddl']");
+    By SavedSearch_WorkFlowType = By.xpath("//select[@id='fw_workflow_type']");
+    By SavedSearch_FileSection = By.xpath("//select[@id='idx_000000000I_ddl']");
+    By SavedSearch_DocumentType = By.xpath("//select[@id='idx_000000000J_ddl']");
+    By SavedSearch_DocumentDate =  By.xpath("//input[@id='dt_range_idx_000000000K_FOLDERDOCUMENTS']");
+    By SavedSearch_Status = By.xpath("//select[@id='folder_workflow_status_id_ddl']");
+    By SavedSearch_GroupCodes = By.xpath("//select[@id='group_codes']");
+    By SavedSearch_Text = By.xpath("//input[@id='full_text_search_text']");
+    By SavedSearch_TextOperator = By.xpath("//select[@id='full_text_search_operator']");
+    By SavedSearch_Save = By.xpath("//div[@id='divDocumentsCrit']/TABLE[1]/TBODY[1]/TR[8]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/IMG[1]");
+    By SavedSearch_Delete = By.xpath("//div[@id='divDocumentsCrit']/TABLE[1]/TBODY[1]/TR[8]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]/IMG[2]");
+    By SavedSearch_Search = By.xpath("//div[@id='divDocumentsCrit']/TABLE[1]/TBODY[1]/TR[8]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/IMG[1]");
+    By SavedSearch_Clear = By.xpath("//div[@id=\"divDocumentsCrit\"]/TABLE[1]/TBODY[1]/TR[8]/TD[1]/TABLE[1]/TBODY[1]/TR[1]/TD[2]/IMG[2]");
+    By SavedSearch_Close = By.xpath("//img[@id='btnClose']"); 
+    
+   
+    public void SavedSearch_Savedsearches(String text) throws InterruptedException{
+    	fm.fnWebList(driver, SavedSearch_SavedSearches, text,"Saved Searches");
+    }
+    public void SavedSearch_DocId(String text) throws InterruptedException{
+    	fm.fnWebEdit(driver, SavedSearch_DocID, text,"Doc ID");
+    }
+    public void SavedSearch_year(String text) throws InterruptedException{
+    	fm.fnWebList(driver, SavedSearch_Year, text,"Year");
+    }
+    public void SavedSearch_period(String text) throws InterruptedException{
+    	fm.fnWebList(driver, SavedSearch_Period, text,"Period");
+    }
+    public void SavedSearch_Taxtype(String text) throws InterruptedException{
+    	fm.fnWebList(driver, SavedSearch_TaxType, text, "Tax Type");
+    }
+    public void SavedSearch_WFtemplate(String text) throws InterruptedException{
+    	fm.fnWebList(driver, SavedSearch_WFTemplate, text,"WF Template");
+    }
+    public void SavedSearch_WfAssociation(String text) throws InterruptedException{
+    	fm.fnWebList(driver, SavedSearch_WFAssociation, text,"WF Association");
+    }
+    public void SavedSearch_FileSection(String text) throws InterruptedException{
+    	fm.fnWebList(driver, SavedSearch_FileSection, text,"FileSection");
+    }
+    public void SavedSearch_DocumentType(String text) throws InterruptedException{
+    	fm.fnWebList(driver, SavedSearch_DocumentType, text,"Document Type");
+    }
+    public void SavedSearch_DocumentDate(String text) throws InterruptedException{
+    	fm.fnWebEdit(driver, SavedSearch_DocumentDate, text,"Document Date");
+    }
+    public void SavedSearch_Status(String text) throws InterruptedException{
+    	fm.fnWebList(driver, SavedSearch_Status, text,"Status");
+    }
+    public void SavedSearch_GroupCodes(String text) throws InterruptedException{
+    	fm.fnWebList(driver, SavedSearch_GroupCodes, text,"Group Codes");
+    }
+    public void SavedSearch_Text(String text) throws InterruptedException{
+    	fm.fnWebEdit(driver, SavedSearch_Text, text,"Text");
+    }
+    public void SavedSearch_TextOperator(String text) throws InterruptedException{
+    	fm.fnWebList(driver, SavedSearch_TextOperator, text,"Text Operator Filter");
+    }
+    public void SavedSearch_Save() throws InterruptedException{
+    	fm.fnWebButton(driver, SavedSearch_Save, "Save");
+    }
+    public void SavedSearch_Search() throws InterruptedException{
+    	fm.fnWebButton(driver, SavedSearch_Search, "Search");
+    }
+    public void SavedSearch_Delete() throws InterruptedException{
+    	fm.fnWebButton(driver, SavedSearch_Delete, "Delete");
+    }
+    public void SavedSearch_Clear() throws InterruptedException{
+    	fm.fnWebButton(driver, SavedSearch_Clear, "Clear");
+    }
+
 }
