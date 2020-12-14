@@ -33,19 +33,19 @@ public class Tasks {
 		By fwf_Task_Save = By.xpath("//IMG[@id='btnOK']");
 		By fwf_Task_Cancel = By.xpath("//IMG[@id='btnCancel']");
 		
-		public void fwf_Task_TaskProperties(String temp) throws InterruptedException {
+		public void fwf_Task_TaskProperties() throws InterruptedException {
 			fm.fnWebButton(driver, fwf_Task_TaskProperties, "Task Properties");
 		}
 		
-		public void fwf_Task_PageLinks(String temp) throws InterruptedException {
+		public void fwf_Task_PageLinks() throws InterruptedException {
 			fm.fnWebButton(driver, fwf_Task_PageLinks, "Page Links");
 		}
 		
-		public void fwf_Task_CheckLists(String temp) throws InterruptedException {
+		public void fwf_Task_CheckLists() throws InterruptedException {
 			fm.fnWebButton(driver, fwf_Task_CheckLists, "Checklist");
 		}
 		
-		public void fwf_Task_Documents(String temp) throws InterruptedException {
+		public void fwf_Task_Documents() throws InterruptedException {
 			fm.fnWebButton(driver, fwf_Task_Documents, "Documents");
 		}
 		
@@ -97,11 +97,11 @@ public class Tasks {
 			fm.fnWebButton(driver, fwf_Task_AddDocument, "Add Document");
 		}
 		
-		public void fwf_Task_Save(String temp) throws InterruptedException {
+		public void fwf_Task_Save() throws InterruptedException {
 			fm.fnWebButton(driver, fwf_Task_Save, "Save");
 		}
 		
-		public void fwf_Task_Cancel(String temp) throws InterruptedException {
+		public void fwf_Task_Cancel() throws InterruptedException {
 			fm.fnWebButton(driver, fwf_Task_Cancel, "Cancel");
 		}
 		
@@ -162,19 +162,19 @@ public class Tasks {
 			fm.fnWebCheckBox(driver, fwf_Task_AD_Notify,"Notify");
 		}
 		
-		public void fwf_Task_AD_NotifyUsersList(String temp) throws InterruptedException {
+		public void fwf_Task_AD_NotifyUsersList() throws InterruptedException {
 			fm.fnWebButton(driver, fwf_Task_AD_NotifyUsersList, "Users List");
 		}
 		
-		public void fwf_Task_AD_Clear(String temp) throws InterruptedException {
+		public void fwf_Task_AD_Clear() throws InterruptedException {
 			fm.fnWebButton(driver, fwf_Task_AD_Clear, "Clear");
 		}
 		
-		public void fwf_Task_AD_Save(String temp) throws InterruptedException {
+		public void fwf_Task_AD_Save() throws InterruptedException {
 			fm.fnWebButton(driver, fwf_Task_AD_Save, "Save");
 		}
 		
-		public void fwf_Task_AD_Cancel(String temp) throws InterruptedException {
+		public void fwf_Task_AD_Cancel() throws InterruptedException {
 			fm.fnWebButton(driver, fwf_Task_AD_Cancel, "Cancel");
 		}
 		
@@ -228,7 +228,7 @@ public class Tasks {
 			fm.fnWebList(driver, fwf_Task_RT_NewPriority, temp, "Priority");
 		}
 		
-		public void fwf_Task_RT_CurrentTaskList(String temp) throws InterruptedException {
+		public void fwf_Task_RT_CurrentTaskList() throws InterruptedException {
 			fm.fnWebButton(driver, fwf_Task_RT_CurrentTaskList, "Task List");
 		}
 		
@@ -244,15 +244,15 @@ public class Tasks {
 			fm.fnWebEdit(driver, fwf_Task_RT_Comment, temp, "Comment");
 		}
 		
-		public void fwf_Task_RT_NotifyEmailList(String temp) throws InterruptedException {
+		public void fwf_Task_RT_NotifyEmailList() throws InterruptedException {
 			fm.fnWebButton(driver, fwf_Task_RT_NotifyEmailList, "Email List");
 		}
 		
-		public void fwf_Task_RT_Save(String temp) throws InterruptedException {
+		public void fwf_Task_RT_Save() throws InterruptedException {
 			fm.fnWebButton(driver, fwf_Task_RT_Save, "Save");
 		}
 		
-		public void fwf_Task_RT_Cancel(String temp) throws InterruptedException {
+		public void fwf_Task_RT_Cancel() throws InterruptedException {
 			fm.fnWebButton(driver, fwf_Task_RT_Cancel, "Cancel");
 		}
 		
