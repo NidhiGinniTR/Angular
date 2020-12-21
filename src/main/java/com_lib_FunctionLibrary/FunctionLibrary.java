@@ -29,39 +29,16 @@ public class FunctionLibrary extends ExtentManager {
 	{
 		childTest = test.createNode("Launching Application. <br> << Screen Name : LS1 Dashboard>>");
 		driver.switchTo().frame("header");
-		
-		OneSourceDashboard Lp = new OneSourceDashboard(driver);
-		Lp.launchApplications();
-		driver.switchTo().parentFrame();
-		driver.switchTo().frame("menuPopup");
-
-		switch (strAppName) {
-		case "Calendar":
-			Lp.appMenuSelection("Calendar");
-			break;
-		case "Checkpoint Learning":
-			Lp.appMenuSelection("Checkpoint Learning");
-			break;
-		case "Checkpoint World":
-			Lp.appMenuSelection("Checkpoint World");
-			break;
-		case "DataFlow":
-			Lp.appMenuSelection("Data Flow");
-			break;
-		case "Entity Manager":
-			Lp.appMenuSelection("Entity Manager");
-			break;
-		case "FileRoom":
-			Lp.appMenuSelection("FileRoom");
-			break;
-		case "My Work":
-			Lp.appMenuSelection("My Work");
-			break;
-		case "WorkFlow Manager":
-			Lp.appMenuSelection("WorkFlow Manager");
-			break;
+		if(driver.getTitle().equalsIgnoreCase("ONESOURCE")) {
+			driver.switchTo().frame("header");
+			OneSourceDashboard Lp = new OneSourceDashboard(driver);
+			Lp.launchApplications();
+			Thread.sleep(300);
+			driver.switchTo().parentFrame();
+			driver.switchTo().frame("menuPopup");
+			Lp.appMenuSelection(strAppName);
+			System.out.println(strAppName + "is selected from Applications dropdown");
 		}
-		System.out.println(strAppName);
 	}
 	
 	public static void fnNavigateTab(WebDriver driver, String tab) throws InterruptedException 
