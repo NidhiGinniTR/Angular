@@ -51,7 +51,7 @@ public class OWM_Actions_Test extends BrowserInvoke {
 		Actions action = new Actions(driver);
 		action.moveToElement(driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td"))).doubleClick().build().perform();
 		Thread.sleep(10000);
-		
+	//Step-6------------------------------------------------
 		//--------------------------------------------Login----------------------------------------------------------------------
 		//-------------------------------------Launch WorkFlow Manager-----------------------------------------------------------
 		//-----------------------------------Navigate to Respective Tab----------------------------------------------------------
