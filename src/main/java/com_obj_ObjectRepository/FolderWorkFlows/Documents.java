@@ -229,7 +229,7 @@ public class Documents {
 		fm.fnWebEdit(driver, MoveDoc_EntityName, text, "Entity Name");
 	}
 
-	//----------------------Docment Properties-------------------------------
+	//----------------------Document Properties-------------------------------
     By DocProp_AssignedTo = By.xpath("//select[@id='assigned_to']");
     By DocProp_DocumentStatus = By.xpath("//select[@id='document_status']");
     By DocProp_DueDate = By.xpath("//input[@id='due_date']");
