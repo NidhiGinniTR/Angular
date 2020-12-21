@@ -7,6 +7,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
@@ -44,8 +46,7 @@ public class FWF_Tasks_Test extends BrowserInvoke {
 			Thread.sleep(900);
 			
 		//Step-4:-----Search for the Required Workflow------------------//
-			FunctionLibrary.fnWorkflowBrowserSearch(driver, propParallelData);
-			Thread.sleep(3000);
+			FunctionLibrary.fnWorkflowBrowserSearch(driver, propSerialData);
 			
 		//Step-5:-----Double click on the workflow to Folder Workflows---//
 			driver.switchTo().frame("viewIFrame");
@@ -67,5 +68,15 @@ public class FWF_Tasks_Test extends BrowserInvoke {
 		//Step-17:----Save Preferences for All--------------------------//
 		//Step-18:----LogOff-------------------------------------------//
 		
+	}
+	
+	@AfterClass
+	void closeBrowser() throws InterruptedException {
+		//FunctionLibrary.fnLogOff(driver);
+	}
+
+	@AfterSuite
+	public void aftersuite() {
+		ExtentManager.endReport();
 	}
 }

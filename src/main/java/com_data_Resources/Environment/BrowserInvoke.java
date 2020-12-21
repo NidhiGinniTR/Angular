@@ -12,23 +12,23 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 public class BrowserInvoke {
 	public WebDriver driver;
 	public Properties propData;
-	public Properties propEnv, propParallelData;
+	public Properties propEnv, propSerialData;
 
 	public WebDriver InvokeDriver() throws IOException {
 
 		propData = new Properties();
 		// InputStream stream
 		// =getClass().getResourceAsStream("environmentFile.properties");
-		FileInputStream data = new FileInputStream(".\\src\\main\\java\\resources\\newFolderdata.properties");
-		FileInputStream paralleldata = new FileInputStream(
-				".\\src\\main\\java\\resources\\paralleltemplatedata.properties");
+		//FileInputStream data = new FileInputStream(".\\src\\main\\java\\resources\\newFolderdata.properties");
+		FileInputStream serialdata = new FileInputStream(
+				".\\src\\main\\java\\resources\\serialtemplatedata.properties");
 		FileInputStream launchandLogin = new FileInputStream(
 				".\\src\\main\\java\\resources\\environmentFile.properties");
 		propEnv = new Properties();
 		propEnv.load(launchandLogin);
-		propData.load(data);
-		propParallelData = new Properties();
-		propParallelData.load(paralleldata);
+		//propData.load(data);
+		propSerialData = new Properties();
+		propSerialData.load(serialdata);
 		String BrowserName = propEnv.getProperty("Browser");
 		switch (BrowserName) {
 		case "IE":
