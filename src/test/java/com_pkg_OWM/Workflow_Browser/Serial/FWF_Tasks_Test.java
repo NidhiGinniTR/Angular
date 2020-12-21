@@ -22,6 +22,7 @@ public class FWF_Tasks_Test extends BrowserInvoke {
 		ExtentManager.createInstance();
 	}
 	
+	@Test
 	public void Initialize() throws IOException {
 		driver = InvokeDriver();
 		driver.get(propEnv.getProperty("URL"));
@@ -34,16 +35,16 @@ public class FWF_Tasks_Test extends BrowserInvoke {
 			FunctionLibrary.fnLogin(driver, propEnv);
 			
 		//Step-2:-----Launch WorkFlow Manager---------------------------//
-			FunctionLibrary.fnlaunchApplication(driver, "WorkFlow Manager");
+			FunctionLibrary.fnLaunchApplication(driver, "WorkFlow Manager");
 			Thread.sleep(3000);
 			
 		//Step-3:-----Navigate to Respective Tab------------------------//
 			new WebDriverWait(driver,50).until(ExpectedConditions.numberOfWindowsToBe(2));
-			FunctionLibrary.fnNavigateToTab(driver, "WorkFlow Browser");
+			FunctionLibrary.fnNavigateTab(driver, "WorkFlow Browser");
 			Thread.sleep(900);
 			
 		//Step-4:-----Search for the Required Workflow------------------//
-			FunctionLibrary.fnWorkFlowBrowserSearch(driver, propParallelData);
+			FunctionLibrary.fnWorkflowBrowserSearch(driver, propParallelData);
 			Thread.sleep(3000);
 			
 		//Step-5:-----Double click on the workflow to Folder Workflows---//
