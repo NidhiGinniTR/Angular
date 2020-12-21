@@ -3,6 +3,8 @@ package com_obj_ObjectRepository.FolderWorkFlows;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
 import com_lib_FunctionLibrary.FrameWork;
 
 public class Tasks {
@@ -121,63 +123,61 @@ public class Tasks {
 		By fwf_Task_AD_Clear = By.xpath("//IMG[@id='btnClear']");
 		By fwf_Task_AD_Save = By.xpath("//IMG[@id='btnOK']");
 		By fwf_Task_AD_Cancel = By.xpath("//IMG[@id='Img1']");
+		By fwf_Task_AD_UserList = By.xpath("//table[@id='UsersTable']");
+ 		By fwf_Task_AD_UserList_Save = By.xpath("//*[@id='btnSaveValues']");
+ 		By fwf_Task_AD_UserList_Cancel = By.xpath("//*[@id='btnCancel']");
 		
 		public void fwf_Task_AD_ElectronicDocument(String temp) throws InterruptedException {
 			fm.fnWebEdit(driver, fwf_Task_AD_ElectronicDocument, temp, "Electronic Document");
 		}
-		
 		public void fwf_Task_AD_LinkToFile(String temp) throws InterruptedException {
 			fm.fnWebEdit(driver, fwf_Task_AD_LinkToFile, temp, "Link To File");
 		}
-		
 		public void fwf_Task_AD_Description(String temp) throws InterruptedException {
 			fm.fnWebEdit(driver, fwf_Task_AD_Description, temp, "Description");
 		}
-		
 		public void fwf_Task_AD_FileSection(String temp) throws InterruptedException {
 			fm.fnWebList(driver, fwf_Task_AD_FileSection, temp, "File Section");
 		}
-		
 		public void fwf_Task_AD_DocumentType(String temp) throws InterruptedException {
 			fm.fnWebList(driver, fwf_Task_AD_DocumentType, temp, "Document Type");
 		}
-		
 		public void fwf_Task_AD_DocumentDate(String temp) throws InterruptedException {
 			fm.fnWebEdit(driver, fwf_Task_AD_DocumentDate, temp, "Document Date");
 		}
-		
 		public void fwf_Task_AD_AssignedTo(String temp) throws InterruptedException {
 			fm.fnWebList(driver, fwf_Task_AD_AssignedTo, temp, "Assigned To");
 		}
-		
 		public void fwf_Task_AD_DocumentStatus(String temp) throws InterruptedException {
 			fm.fnWebList(driver, fwf_Task_AD_DocumentStatus, temp, "Document Status");
 		}
-		
 		public void fwf_Task_AD_DueDate(String temp) throws InterruptedException {
 			fm.fnWebEdit(driver, fwf_Task_AD_DueDate, temp, "Due Date");
 		}
-		
 		public void fwf_Task_AD_Notify() throws InterruptedException {
 			fm.fnWebCheckBox(driver, fwf_Task_AD_Notify,"Notify");
 		}
-		
 		public void fwf_Task_AD_NotifyUsersList() throws InterruptedException {
 			fm.fnWebButton(driver, fwf_Task_AD_NotifyUsersList, "Users List");
 		}
-		
 		public void fwf_Task_AD_Clear() throws InterruptedException {
 			fm.fnWebButton(driver, fwf_Task_AD_Clear, "Clear");
 		}
-		
 		public void fwf_Task_AD_Save() throws InterruptedException {
 			fm.fnWebButton(driver, fwf_Task_AD_Save, "Save");
 		}
-		
 		public void fwf_Task_AD_Cancel() throws InterruptedException {
 			fm.fnWebButton(driver, fwf_Task_AD_Cancel, "Cancel");
 		}
-		
+		public WebElement fwf_Task_AD_UserList() throws InterruptedException{
+ 			return driver.findElement(fwf_Task_AD_UserList);
+ 		}
+ 		public void fwf_Task_AD_UserList_Save() throws InterruptedException{
+ 			fm.fnWebButton(driver, fwf_Task_AD_UserList_Save, "Save");
+ 		}
+ 		public void fwf_Task_AD_UserList_Cancel() throws InterruptedException{
+ 			fm.fnWebButton(driver, fwf_Task_AD_UserList_Cancel, "Save");
+ 		}
 
 		// ---------------Route Task-----------------------------------------------------------------------------
 		By fwf_Task_RT_CurrentTask = By.xpath("//INPUT[@id='txtTaskName']");
