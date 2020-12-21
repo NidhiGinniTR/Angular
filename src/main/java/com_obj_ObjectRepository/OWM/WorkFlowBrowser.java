@@ -15,7 +15,7 @@ public class WorkFlowBrowser {
 	}
 
 	// ---------------New Folder Page-----------------------------------------------------------------------------
-	By Actions = By.xpath("spActions");
+	By Actions = By.xpath("//*[@id='spActions']");
 	By nf_Year = By.xpath("//*[@id='ctlval_fldr_4']");
 	By nf_TaxType = By.xpath("//*[@id='ctlval_fldr_6']");
 	By nf_Period = By.xpath("//*[@id='ctlval_fldr_5']");
