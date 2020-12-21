@@ -281,6 +281,13 @@ public class WorkFlowBrowser {
 	    public void WFP_NWF_RI_CCEmail(String text) throws InterruptedException{
 	    	fm.fnWebButton(driver, WFP_NWF_RI_CC_Email, "CC Email");    
 	    }
-	  //
-
+	  
+	  //------------------Customize View-------------------------------------
+	    By Doc_CustView_Save = By.xpath("//INPUT[@id='btnSave']");
+	    
+	    public void Doc_Custview_Save() throws InterruptedException{
+	    	fm.fnWebButton(driver, Doc_CustView_Save, "Save");
+	    }
+	    
+	    
 }
