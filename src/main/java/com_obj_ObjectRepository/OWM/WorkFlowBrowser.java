@@ -15,7 +15,7 @@ public class WorkFlowBrowser {
 	}
 
 	// ---------------New Folder Page-----------------------------------------------------------------------------
-
+	By Actions = By.xpath("spActions");
 	By nf_Year = By.xpath("//*[@id='ctlval_fldr_4']");
 	By nf_TaxType = By.xpath("//*[@id='ctlval_fldr_6']");
 	By nf_Period = By.xpath("//*[@id='ctlval_fldr_5']");
@@ -24,7 +24,11 @@ public class WorkFlowBrowser {
 	By nf_EntityID = By.xpath("//*[@id='ctlval_wf_15']");
 	By nf_Jurisdiction = By.xpath("//*[@id='ctlval_wf_17']");
 	By nf_SaveOK = By.xpath("//*[@id='btnOK']");
-
+	
+	public void Actions() throws InterruptedException {
+		fm.fnWebButton(driver, Actions, "Action");
+	}
+	
 	public void newfolderYear(String temp) throws InterruptedException {
 		fm.fnWebList(driver, nf_Year, temp, "Year");
 	}
@@ -86,6 +90,68 @@ public class WorkFlowBrowser {
 		fm.fnWebButton(driver, CustView_Cancel, "Save");
 	}
 
+	// --------------Search Fields-------------------------------------------------------------------------
+	By Sf_Clear = By.xpath("//*[@id='btnCancel' and @title='Clear'] | //*[@class='btn btn-mini' and @title='Clear Search Criteria']");
+	By Sf_Year =  By.xpath("//*[id('fldr_4')]");
+	By Sf_Period =  By.xpath("//*[id('fldr_5']");
+	By Sf_TaxType =  By.xpath("//*[id('fldr_6']"); 
+	By Sf_WFTemplate =  By.xpath("//*[id('wt_name']");
+	By Sf_EntityName =  By.xpath("//*[id('wf_14']");
+	By Sf_EntityId =  By.xpath("//*[id('wf_15']");
+	By Sf_Jurisdiction =  By.xpath("//*[id('wf_17']");
+	By Sf_WorkflowAssociation =  By.xpath("//*[id('wf_18']");
+	By Sf_WorkflowType =  By.xpath("//*[id('fw_workflow_type']");
+	By Sf_GroupCodes =  By.xpath("//*[id('gc_group_code_id']");
+	By Sf_Search =  By.xpath("//*[id('btnSearch']");
+	
+	public void SearchClear() throws InterruptedException {
+		fm.fnWebButton(driver, Sf_Clear, "Clear");
+	}
+	
+	public void SearchYear(String temp) throws InterruptedException {
+		fm.fnWebList(driver, Sf_Year, temp, "Year");
+	}
+	
+	public void SerachPeriod(String temp) throws InterruptedException {
+		fm.fnWebList(driver, Sf_Period, temp, "Period");
+	}
+
+	public void SearchTaxtype(String temp) throws InterruptedException {
+		fm.fnWebList(driver, Sf_TaxType, temp, "TaxType");
+	}
+
+	public void SearchWFTemplate(String temp) throws InterruptedException {
+		fm.fnWebList(driver, Sf_WFTemplate, temp, "WorkFlow Template");
+	}
+
+	public void SearchEntityName(String temp) throws InterruptedException {
+		fm.fnWebEdit(driver, Sf_EntityName, temp, "EntityName");
+	}
+
+	public void SearchEntityID(String temp) throws InterruptedException {
+		fm.fnWebEdit(driver, Sf_EntityId, temp, "Entity ID");
+	}
+
+	public void SearchJurisdiction(String temp) throws InterruptedException {
+		fm.fnWebEdit(driver, Sf_Jurisdiction, temp, "Jurisdiction");
+	}
+	
+	public void SearchWorkflowAssociation(String temp) throws InterruptedException {
+		fm.fnWebList(driver, Sf_WorkflowAssociation, temp, "WorkFlow Association");
+	}
+	
+	public void SearchWorkflowType(String temp) throws InterruptedException {
+		fm.fnWebList(driver, Sf_WorkflowType, temp, "WorkFlow Type");
+	}
+	
+	public void SearchGroupCodes(String temp) throws InterruptedException {
+		fm.fnWebList(driver, Sf_GroupCodes, temp, "Group Codes");
+	}
+	
+	public void Search() throws InterruptedException {
+		fm.fnWebButton(driver, Sf_Search, "Search");
+	}
+	
 	// --------------New Rule Based Workflow-------------------------------------------------------------------------
 	By NewRuleBased_S1_EntityName = By.xpath("//input[@name='wf_14']");
 	By NewRuleBased_S1_EntityID = By.xpath("//input[@name='wf_15']");
