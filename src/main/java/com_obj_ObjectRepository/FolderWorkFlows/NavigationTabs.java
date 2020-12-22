@@ -14,7 +14,7 @@ public class NavigationTabs {
 	}
 	
 	// ----------------Folder Workflow Tabs-----------------------------------------------------------------------------
-	By fwf_Tasks = By.xpath("//*[@id='TabStrip1_0']");
+	/*By fwf_Tasks = By.xpath("//*[@id='TabStrip1_0']");
 	By fwf_Events = By.xpath("//*[@id='TabStrip1_1']");
 	By fwf_Documents = By.xpath("//*[@id='TabStrip1_2']");
 	By fwf_Dataflow = By.xpath("//*[@id='TabStrip1_3']");
@@ -22,9 +22,14 @@ public class NavigationTabs {
 	By fwf_DeliveryInstruction = By.xpath("//*[@id='TabStrip1_6']");
 	By fwf_Notes = By.xpath("//*[@id='TabStrip1_7']");
 	By fwf_Reasearch = By.xpath("//*[@id='TabStrip1_8']");
-	By fwf_CustomForms = By.xpath("//*[@id='TabStrip1_9']");
+	By fwf_CustomForms = By.xpath("//*[@id='TabStrip1_9']");*/
 	
-	public void fwf_Tasks() throws InterruptedException {
+	public void fwf_tabSelection(String text) throws InterruptedException{
+		By tabItem = By.xpath("//*[@id='TabStrip1']//*[contains(text(),'"+text+"')]");
+		fm.fnWebButton(driver, tabItem, text);
+	}
+	
+	/*public void fwf_Tasks() throws InterruptedException {
 		fm.fnWebButton(driver, fwf_Tasks, "Task");
 	}
 	
@@ -58,5 +63,5 @@ public class NavigationTabs {
 	
 	public void fwf_CustomForms() throws InterruptedException {
 		fm.fnWebButton(driver, fwf_CustomForms, "Custom Forms");
-	}
+	}*/
 }

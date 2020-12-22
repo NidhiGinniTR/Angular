@@ -185,35 +185,8 @@ public class FunctionLibrary extends ExtentManager {
         Thread.sleep(500);
         driver.switchTo().window(childid1);
         Thread.sleep(500);
-        
         NavigationTabs St = new NavigationTabs(driver);
-		switch (tab) {
-		case "Tasks":
-			St.fwf_Tasks();
-			break;
-		case "Events":
-			St.fwf_Events();
-			break;
-		case "Documents":
-			St.fwf_Documents();
-			break;
-		case "Checklist":
-			St.fwf_Checklist();
-			break;
-		case "Data Flow":
-			St.fwf_Dataflow();
-			break;
-		case "Delivery Instruction":
-			St.fwf_DeliveryInstruction();
-			break;
-		case "Notes":
-			St.fwf_Notes();
-			break;
-		case "Custom Forms":
-			St.fwf_CustomForms();
-			break;
-		
-		}	
+		St.fwf_tabSelection(tab);
 	}
 
 }
