@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2020-12-22T16:34:11 IST" name="Suite" finished-at="2020-12-22T16:34:22 IST" duration-ms="10913">
+    <groups>
+    </groups>
+    <test started-at="2020-12-22T16:34:11 IST" name="Regression" finished-at="2020-12-22T16:34:22 IST" duration-ms="10913">
+      <class name="com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test">
+        <test-method is-config="true" signature="beforeStart()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test@dd0c991]" started-at="2020-12-22T16:34:11 IST" name="beforeStart" finished-at="2020-12-22T16:34:11 IST" duration-ms="446" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeStart -->
+        <test-method signature="Initialize()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test@dd0c991]" started-at="2020-12-22T16:34:11 IST" name="Initialize" finished-at="2020-12-22T16:34:18 IST" duration-ms="6654" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Initialize -->
+        <test-method signature="Tasks()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test@dd0c991]" started-at="2020-12-22T16:34:18 IST" name="Tasks" finished-at="2020-12-22T16:34:22 IST" depends-on-methods="com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test.Initialize" duration-ms="4176" status="FAIL">
+          <exception class="java.lang.IllegalArgumentException">
+            <message>
+              <![CDATA[Keys to send should be a not null CharSequence]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:97)
+at com_lib_FunctionLibrary.FrameWork.fnWebEdit(FrameWork.java:23)
+at com_obj_ObjectRepository.LS1.OneSourceLogin.enterUsername(OneSourceLogin.java:23)
+at com_lib_FunctionLibrary.FunctionLibrary.fnLogin(FunctionLibrary.java:33)
+at com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test.Tasks(FWF_Tasks_Test.java:38)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.IllegalArgumentException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Tasks -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test@dd0c991]" started-at="2020-12-22T16:34:22 IST" name="closeBrowser" finished-at="2020-12-22T16:34:22 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="aftersuite()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test@dd0c991]" started-at="2020-12-22T16:34:22 IST" name="aftersuite" finished-at="2020-12-22T16:34:23 IST" duration-ms="499" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aftersuite -->
+      </class> <!-- com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test -->
+    </test> <!-- Regression -->
+  </suite> <!-- Suite -->
+</testng-results>

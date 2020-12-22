@@ -30,7 +30,7 @@ public class FunctionLibrary extends ExtentManager {
 		if (driver.getTitle().equalsIgnoreCase("ONESOURCE") || driver.getTitle().equalsIgnoreCase("THOMSON REUTERS")) {
 			OneSourceLogin Lp = new OneSourceLogin(driver);
 			Lp.reloadPage();
-			Lp.enterUsername(Env.getProperty("UniversalId"));
+			Lp.enterUsername(Env.getProperty("UserName"));
 			Lp.enterPassword(Env.getProperty("Password"));
 			Lp.clickonSignIn();
 		}

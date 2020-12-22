@@ -21,9 +21,9 @@ public class BrowserInvoke {
 		// =getClass().getResourceAsStream("environmentFile.properties");
 		//FileInputStream data = new FileInputStream(".\\src\\main\\java\\resources\\newFolderdata.properties");
 		FileInputStream serialdata = new FileInputStream(
-				".\\src\\main\\java\\resources\\serialtemplatedata.properties");
+				".\\src\\main\\java\\com_data_Resources\\Environment\\Serialtemplatedata.properties");
 		FileInputStream launchandLogin = new FileInputStream(
-				".\\src\\main\\java\\resources\\environmentFile.properties");
+				".\\src\\main\\java\\com_data_Resources\\Environment\\environmentFile.properties");
 		propEnv = new Properties();
 		propEnv.load(launchandLogin);
 		//propData.load(data);
