@@ -2,31 +2,32 @@
 <testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-12-22T16:34:11 IST" name="Suite" finished-at="2020-12-22T16:34:22 IST" duration-ms="10913">
+  <suite started-at="2020-12-22T19:30:29 IST" name="Suite" finished-at="2020-12-22T19:31:47 IST" duration-ms="78096">
     <groups>
     </groups>
-    <test started-at="2020-12-22T16:34:11 IST" name="Regression" finished-at="2020-12-22T16:34:22 IST" duration-ms="10913">
+    <test started-at="2020-12-22T19:30:29 IST" name="Regression" finished-at="2020-12-22T19:31:47 IST" duration-ms="78096">
       <class name="com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test">
-        <test-method is-config="true" signature="beforeStart()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test@dd0c991]" started-at="2020-12-22T16:34:11 IST" name="beforeStart" finished-at="2020-12-22T16:34:11 IST" duration-ms="446" status="PASS">
+        <test-method is-config="true" signature="beforeStart()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test@6bf0219d]" started-at="2020-12-22T19:30:28 IST" name="beforeStart" finished-at="2020-12-22T19:30:29 IST" duration-ms="409" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeStart -->
-        <test-method signature="Initialize()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test@dd0c991]" started-at="2020-12-22T16:34:11 IST" name="Initialize" finished-at="2020-12-22T16:34:18 IST" duration-ms="6654" status="PASS">
+        <test-method signature="Initialize()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test@6bf0219d]" started-at="2020-12-22T19:30:29 IST" name="Initialize" finished-at="2020-12-22T19:30:33 IST" duration-ms="4524" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Initialize -->
-        <test-method signature="Tasks()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test@dd0c991]" started-at="2020-12-22T16:34:18 IST" name="Tasks" finished-at="2020-12-22T16:34:22 IST" depends-on-methods="com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test.Initialize" duration-ms="4176" status="FAIL">
-          <exception class="java.lang.IllegalArgumentException">
+        <test-method signature="Tasks()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test@6bf0219d]" started-at="2020-12-22T19:30:33 IST" name="Tasks" finished-at="2020-12-22T19:31:47 IST" depends-on-methods="com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test.Initialize" duration-ms="73506" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[Keys to send should be a not null CharSequence]]>
+              <![CDATA[Expected condition failed: waiting for visibility of element located by By.xpath: //*[id='fldr_4')] (tried for 30 second(s) with 500 milliseconds interval)]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
-at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:97)
-at com_lib_FunctionLibrary.FrameWork.fnWebEdit(FrameWork.java:23)
-at com_obj_ObjectRepository.LS1.OneSourceLogin.enterUsername(OneSourceLogin.java:23)
-at com_lib_FunctionLibrary.FunctionLibrary.fnLogin(FunctionLibrary.java:33)
-at com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test.Tasks(FWF_Tasks_Test.java:38)
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[id='fldr_4')] (tried for 30 second(s) with 500 milliseconds interval)
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+at com_lib_FunctionLibrary.FrameWork.fnWebList(FrameWork.java:42)
+at com_obj_ObjectRepository.OWM.WorkFlowBrowser.SearchYear(WorkFlowBrowser.java:112)
+at com_lib_FunctionLibrary.FunctionLibrary.fnWorkflowBrowserSearch(FunctionLibrary.java:228)
+at com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test.Tasks(FWF_Tasks_Test.java:51)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -55,17 +56,44 @@ at org.testng.TestNG.run(TestNG.java:1037)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.InvalidSelectorException: Unable to locate an element with the xpath expression //*[id='fldr_4')] because of the following error:
+Error: Bad token, expected: ] got: )
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/invalid_selector_exception.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'USE2DEVP0289', ip: '10.178.161.24', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:3665/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: fe856252-30cd-46ae-b019-dd46f9642441
+*** Element info: {Using=xpath, value=//*[id='fldr_4')]}
+at jdk.internal.reflect.GeneratedConstructorAccessor10.newInstance(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
+at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+... 32 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.IllegalArgumentException -->
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Tasks -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test@dd0c991]" started-at="2020-12-22T16:34:22 IST" name="closeBrowser" finished-at="2020-12-22T16:34:22 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test@6bf0219d]" started-at="2020-12-22T19:31:47 IST" name="closeBrowser" finished-at="2020-12-22T19:31:47 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="aftersuite()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test@dd0c991]" started-at="2020-12-22T16:34:22 IST" name="aftersuite" finished-at="2020-12-22T16:34:23 IST" duration-ms="499" status="PASS">
+        <test-method is-config="true" signature="aftersuite()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test@6bf0219d]" started-at="2020-12-22T19:31:47 IST" name="aftersuite" finished-at="2020-12-22T19:31:47 IST" duration-ms="459" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- aftersuite -->

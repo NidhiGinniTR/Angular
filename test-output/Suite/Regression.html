@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Dec 22 16:34:11 IST 2020</td>
+<td>Started on:</td><td>Tue Dec 22 19:30:29 IST 2020</td>
 </tr>
-<tr><td>Total time:</td><td>10 seconds (10913 ms)</td>
+<tr><td>Total time:</td><td>78 seconds (78096 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,20 +76,45 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test.Tasks()'><b>Tasks</b><br>Test class: com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test</td>
-<td><div><pre>java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
-	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:97)
-	at com_lib_FunctionLibrary.FrameWork.fnWebEdit(FrameWork.java:23)
-	at com_obj_ObjectRepository.LS1.OneSourceLogin.enterUsername(OneSourceLogin.java:23)
-	at com_lib_FunctionLibrary.FunctionLibrary.fnLogin(FunctionLibrary.java:33)
-	at com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test.Tasks(FWF_Tasks_Test.java:38)
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[id=&apos;fldr_4&apos;)] (tried for 30 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at com_lib_FunctionLibrary.FrameWork.fnWebList(FrameWork.java:42)
+	at com_obj_ObjectRepository.OWM.WorkFlowBrowser.SearchYear(WorkFlowBrowser.java:112)
+	at com_lib_FunctionLibrary.FunctionLibrary.fnWorkflowBrowserSearch(FunctionLibrary.java:228)
+	at com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test.Tasks(FWF_Tasks_Test.java:51)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1430207342", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1430207342'><pre>java.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
-	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:97)
-	at com_lib_FunctionLibrary.FrameWork.fnWebEdit(FrameWork.java:23)
-	at com_obj_ObjectRepository.LS1.OneSourceLogin.enterUsername(OneSourceLogin.java:23)
-	at com_lib_FunctionLibrary.FunctionLibrary.fnLogin(FunctionLibrary.java:33)
-	at com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test.Tasks(FWF_Tasks_Test.java:38)
+Caused by: org.openqa.selenium.InvalidSelectorException: Unable to locate an element with the xpath expression //*[id=&apos;fldr_4&apos;)] because of the following error:
+Error: Bad token, expected: ] got: )
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/invalid_selector_exception.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;USE2DEVP0289&apos;, ip: &apos;10.178.161.24&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;14.0.2&apos;
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:3665/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: fe856252-30cd-46ae-b019-dd46f9642441
+*** Element info: {Using=xpath, value=//*[id=&apos;fldr_4&apos;)]}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 32 more
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace105393903", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace105393903'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[id=&apos;fldr_4&apos;)] (tried for 30 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at com_lib_FunctionLibrary.FrameWork.fnWebList(FrameWork.java:42)
+	at com_obj_ObjectRepository.OWM.WorkFlowBrowser.SearchYear(WorkFlowBrowser.java:112)
+	at com_lib_FunctionLibrary.FunctionLibrary.fnWorkflowBrowserSearch(FunctionLibrary.java:228)
+	at com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test.Tasks(FWF_Tasks_Test.java:51)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -118,9 +143,36 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.InvalidSelectorException: Unable to locate an element with the xpath expression //*[id=&apos;fldr_4&apos;)] because of the following error:
+Error: Bad token, expected: ] got: )
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/invalid_selector_exception.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;USE2DEVP0289&apos;, ip: &apos;10.178.161.24&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;14.0.2&apos;
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:3665/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: fe856252-30cd-46ae-b019-dd46f9642441
+*** Element info: {Using=xpath, value=//*[id=&apos;fldr_4&apos;)]}
+	at jdk.internal.reflect.GeneratedConstructorAccessor10.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 32 more
 </pre></div></td>
-<td>4</td>
-<td>com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test@dd0c991</td></tr>
+<td>73</td>
+<td>com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test@6bf0219d</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -132,8 +184,8 @@ function toggleAllBoxes() {
 <tr>
 <td title='com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test.Initialize()'><b>Initialize</b><br>Test class: com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test</td>
 <td></td>
-<td>6</td>
-<td>com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test@dd0c991</td></tr>
+<td>4</td>
+<td>com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test@6bf0219d</td></tr>
 </table><p>
 </body>
 </html>

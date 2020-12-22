@@ -1,6 +1,7 @@
 package com_pkg_OWM.Workflow_Browser.Serial;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -11,7 +12,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com_data_Resources.Environment.BrowserInvoke;
@@ -29,13 +29,14 @@ public class FWF_Tasks_Test extends BrowserInvoke {
 	public void Initialize() throws IOException {
 		driver = InvokeDriver();
 		driver.get(propEnv.getProperty("URL"));
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 	
 	@Test(dependsOnMethods = "Initialize")
 	public void Tasks() throws InterruptedException {
 		//Step-1:-----Login---------------------------------------------//
 			FunctionLibrary.fnLogin(driver, propEnv);
+			Thread.sleep(3000);
 			
 		//Step-2:-----Launch WorkFlow Manager---------------------------//
 			FunctionLibrary.fnLaunchApplication(driver, "WorkFlow Manager");
@@ -44,7 +45,7 @@ public class FWF_Tasks_Test extends BrowserInvoke {
 		//Step-3:-----Navigate to Respective Tab------------------------//
 			new WebDriverWait(driver,50).until(ExpectedConditions.numberOfWindowsToBe(2));
 			FunctionLibrary.fnNavigateTab(driver, "WorkFlow Browser");
-			Thread.sleep(900);
+			Thread.sleep(1800);
 			
 		//Step-4:-----Search for the Required Workflow------------------//
 			FunctionLibrary.fnWorkflowBrowserSearch(driver, propSerialData);

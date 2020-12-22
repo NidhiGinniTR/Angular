@@ -39,7 +39,6 @@ public class FunctionLibrary extends ExtentManager {
 	public static void fnLaunchApplication(WebDriver driver, String strAppName) throws InterruptedException {
 		childTest = test.createNode("Description: Launching " + strAppName + " from Applications." + "<br>"
 				+ "<< Screen Name: OneSource Dashboard >></br>");
-		driver.switchTo().frame("header");
 		if (driver.getTitle().equalsIgnoreCase("ONESOURCE")) {
 			driver.switchTo().frame("header");
 			OneSourceDashboard Lp = new OneSourceDashboard(driver);
