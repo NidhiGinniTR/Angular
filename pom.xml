@@ -26,7 +26,7 @@
 							<version>2.22.1</version>
 							<configuration>
 								<suiteXmlFiles>
-									<suiteXmlFile>report.xml</suiteXmlFile>
+									<suiteXmlFile>testng.xml</suiteXmlFile>
 								</suiteXmlFiles>
 							</configuration>
 						</plugin>
@@ -71,14 +71,7 @@
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
-			<version>2.7</version>
-		</dependency>
-
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.11</version>
-			<scope>test</scope>
+			<version>2.6</version>
 		</dependency>
 	</dependencies>
 
