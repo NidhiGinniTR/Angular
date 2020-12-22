@@ -70,27 +70,27 @@ public class FWF_Tasks_Test extends BrowserInvoke {
 	        driver.findElement(By.xpath("//td[@id='btnActionsMenu']")).click();
 			Thread.sleep(300);
 		//Step-7:-----Change Status-------------------------------------//
-	        FunctionLibrary.fnOWMActionsMenu(driver,"Change Status");
+	        FunctionLibrary.fnOWMActionsMenu(driver,"Change Status","Not Started");
 		//Step-8:-----Route Task----------------------------------------//
-	        FunctionLibrary.fnOWMActionsMenu(driver,"Route Task");
+	        FunctionLibrary.fnOWMActionsMenu(driver,"Route Task","");
 		//Step-9:-----Task Properties-----------------------------------//
-	        FunctionLibrary.fnOWMActionsMenu(driver,"Task Properties");
+	        FunctionLibrary.fnOWMActionsMenu(driver,"Task Properties","");
 		//Step-10:----Task History--------------------------------------//
-	        FunctionLibrary.fnOWMActionsMenu(driver,"Task History");
+	        FunctionLibrary.fnOWMActionsMenu(driver,"Task History","");
 		//Step-11:----Reset Checklist-----------------------------------//
-	        FunctionLibrary.fnOWMActionsMenu(driver,"Reset Checklist");
+	        FunctionLibrary.fnOWMActionsMenu(driver,"Reset Checklist","");
 		//Step-12:----Add Documents-------------------------------------//
-	        FunctionLibrary.fnOWMActionsMenu(driver,"Add Document");
+	        FunctionLibrary.fnOWMActionsMenu(driver,"Add Document","");
 		//Step-13:----View Documents------------------------------------//
-	        FunctionLibrary.fnOWMActionsMenu(driver,"View Document(s)");
+	        FunctionLibrary.fnOWMActionsMenu(driver,"View Document(s)","");
 		//Step-14:----Export--------------------------------------------//
-	        FunctionLibrary.fnOWMActionsMenu(driver,"Export");
+	        FunctionLibrary.fnOWMActionsMenu(driver,"Export","");
 		//Step-15:----Customize View-------------------------------------//
-	        FunctionLibrary.fnOWMActionsMenu(driver,"Customize View");
+	        FunctionLibrary.fnOWMActionsMenu(driver,"Customize View","");
 		//Step-16:----Save Preferences----------------------------------//
-	        FunctionLibrary.fnOWMActionsMenu(driver,"Save Preferences");
+	        FunctionLibrary.fnOWMActionsMenu(driver,"Save Preferences","");
 		//Step-17:----Save Preferences for All--------------------------//
-	        FunctionLibrary.fnOWMActionsMenu(driver,"Save Preferences for All");
+	        FunctionLibrary.fnOWMActionsMenu(driver,"Save Preferences for All","");
 		//Step-18:----LogOff-------------------------------------------//
 		
 	}

@@ -1,5 +1,6 @@
 package com_lib_FunctionLibrary;
 
+import java.util.List;
 import java.util.Properties;
 import java.util.Set;
 
@@ -99,7 +100,7 @@ public class FunctionLibrary extends ExtentManager {
 		}
 	}
 	
-	public static void fnOWMActionsMenu(WebDriver driver, String item) throws InterruptedException 
+	public static void fnOWMActionsMenu(WebDriver driver, String item,String subItem) throws InterruptedException 
 	{
 		driver.switchTo().defaultContent();
 		driver.switchTo().frame("bottom");
@@ -116,6 +117,17 @@ public class FunctionLibrary extends ExtentManager {
 				if (item.equals(menuitems.get(i).getText())) {
 					String menuitem = menuitems.get(i).getAttribute("id");
 					driver.findElement(By.id(menuitem)).click();
+					if(!subItem.isEmpty()) {
+						List<WebElement> submenuItems = driver.findElements(By.className("MenuItemHover"));
+						for(int j=0;j<submenuItems.size();j++) {
+							if(subItem.equals(submenuItems.get(j).getText())) {
+							String submenuItem = submenuItems.get(j).getAttribute("id");
+							driver.findElement(By.id(submenuItem)).click();
+							System.out.println(subItem+ " is selected from"+item);
+							break;
+							}
+						}
+					}
 					System.out.println(item + " is enabled and is selected from actions menu");
 					break;
 				}
