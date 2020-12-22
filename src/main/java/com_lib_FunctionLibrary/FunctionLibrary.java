@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import com_helper_Reporting.ExtentManager;
+import com_obj_ObjectRepository.FolderWorkFlows.NavigationTabs;
 import com_obj_ObjectRepository.LS1.OneSourceDashboard;
 import com_obj_ObjectRepository.LS1.OneSourceLogin;
 import com_obj_ObjectRepository.OWM.Navigations;
@@ -172,6 +173,47 @@ public class FunctionLibrary extends ExtentManager {
 		Sf.SearchWorkflowType(prop.getProperty("Workflow_Type"));
 		//Sf.SearchGroupCodes(prop.getProperty("Group_Codes"));
 		Sf.Search();
+	}
+
+	public static void fnFWFSwitchingTab(WebDriver driver,String tab) throws InterruptedException 
+	{
+		Set<String> ids = driver.getWindowHandles();
+        java.util.Iterator<String> it = ids.iterator();
+        String parentid = it.next();
+        String childid = it.next();
+        String childid1 = it.next();
+        Thread.sleep(500);
+        driver.switchTo().window(childid1);
+        Thread.sleep(500);
+        
+        NavigationTabs St = new NavigationTabs(driver);
+		switch (tab) {
+		case "Tasks":
+			St.fwf_Tasks();
+			break;
+		case "Events":
+			St.fwf_Events();
+			break;
+		case "Documents":
+			St.fwf_Documents();
+			break;
+		case "Checklist":
+			St.fwf_Checklist();
+			break;
+		case "Data Flow":
+			St.fwf_Dataflow();
+			break;
+		case "Delivery Instruction":
+			St.fwf_DeliveryInstruction();
+			break;
+		case "Notes":
+			St.fwf_Notes();
+			break;
+		case "Custom Forms":
+			St.fwf_CustomForms();
+			break;
+		
+		}	
 	}
 
 }
