@@ -92,17 +92,17 @@ public class WorkFlowBrowser {
 
 	// --------------Search Fields-------------------------------------------------------------------------
 	By Sf_Clear = By.xpath("//*[@id='btnCancel' and @title='Clear'] | //*[@class='btn btn-mini' and @title='Clear Search Criteria']");
-	By Sf_Year =  By.xpath("//*[id='fldr_4')]");
-	By Sf_Period =  By.xpath("//*[id='fldr_5']");
-	By Sf_TaxType =  By.xpath("//*[id='fldr_6']"); 
-	By Sf_WFTemplate =  By.xpath("//*[id='wt_name']");
-	By Sf_EntityName =  By.xpath("//*[id='wf_14']");
-	By Sf_EntityId =  By.xpath("//*[id='wf_15']");
-	By Sf_Jurisdiction =  By.xpath("//*[id='wf_17']");
-	By Sf_WorkflowAssociation =  By.xpath("//*[id='wf_18']");
-	By Sf_WorkflowType =  By.xpath("//*[id='fw_workflow_type']");
-	By Sf_GroupCodes =  By.xpath("//*[id='gc_group_code_id']");
-	By Sf_Search =  By.xpath("//*[id='btnSearch']");
+	By Sf_Year =  By.xpath("//*[@id='fldr_4']");
+	By Sf_Period =  By.xpath("//*[@id='fldr_5']");
+	By Sf_TaxType =  By.xpath("//*[@id='fldr_6']"); 
+	By Sf_WFTemplate =  By.xpath("//*[@id='wt_name']");
+	By Sf_EntityName =  By.xpath("//*[@id='wf_14']");
+	By Sf_EntityId =  By.xpath("//*[@id='wf_15']");
+	By Sf_Jurisdiction =  By.xpath("//*[@id='wf_17']");
+	By Sf_WorkflowAssociation =  By.xpath("//*[@id='wf_18']");
+	By Sf_WorkflowType =  By.xpath("//*[@id='fw_workflow_type']");
+	By Sf_GroupCodes =  By.xpath("//*[@id='gc_group_code_id']");
+	By Sf_Search =  By.xpath("//*[@id='btnSearch']");
 	
 	public void SearchClear() throws InterruptedException {
 		fm.fnWebButton(driver, Sf_Clear, "Clear");
