@@ -49,6 +49,7 @@ public class FWF_Tasks_Test extends BrowserInvoke {
 			
 		//Step-4:-----Search for the Required Workflow------------------//
 			FunctionLibrary.fnWorkflowBrowserSearch(driver, propSerialData);
+			Thread.sleep(2000);
 			
 		//Step-5:-----Double click on the workflow to Folder Workflows---//
 			driver.switchTo().frame("viewIFrame");

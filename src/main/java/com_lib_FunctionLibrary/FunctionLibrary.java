@@ -236,6 +236,7 @@ public class FunctionLibrary extends ExtentManager {
 		Sf.SearchWorkflowType(prop.getProperty("Workflow_Type"));
 		// Sf.SearchGroupCodes(prop.getProperty("Group_Codes"));
 		Sf.Search();
+		Thread.sleep(2500);
 	}
 
 	public static void fnFWFSwitchingTab(WebDriver driver, String tab) throws InterruptedException {
