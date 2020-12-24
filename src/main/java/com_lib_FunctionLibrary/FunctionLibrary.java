@@ -318,14 +318,14 @@ public class FunctionLibrary extends ExtentManager {
 		childTest = test.createNode(
 				"Description: Creating a New Schedule Event." + "<br>" + "<< Screen Name: Folder Workflows >></br>");
 		new WebDriverWait(driver,25000).until(ExpectedConditions.numberOfWindowsToBe(4));
-        Set<String> ids1 = driver.getWindowHandles();
-		java.util.Iterator<String> it1 = ids1.iterator();
-        String parentid1 = it1.next();
-        String childid2 = it1.next();
-        String childid3 = it1.next();
-        String childid4= it1.next() ;
+        Set<String> ids = driver.getWindowHandles();
+		java.util.Iterator<String> it = ids.iterator();
+        String parentid = it.next();
+        String childid = it.next();
+        String childid2 = it.next();
+        String childid3= it.next() ;
         Thread.sleep(2500);
-        driver.switchTo().window(childid4);
+        driver.switchTo().window(childid3);
         Events SNE=new Events(driver);
         SNE.fwf_Events_SNE_Clear();
         SNE.fwf_Events_SNE_EventTemplateName(prop.getProperty(""));
