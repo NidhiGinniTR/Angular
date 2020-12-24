@@ -1,5 +1,6 @@
 package com_lib_FunctionLibrary;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 import java.util.Set;
@@ -15,11 +16,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.aventstack.extentreports.Status;
 
 import com_helper_Reporting.ExtentManager;
+import com_obj_ObjectRepository.FolderWorkFlows.Events;
 import com_obj_ObjectRepository.FolderWorkFlows.NavigationTabs;
 import com_obj_ObjectRepository.LS1.OneSourceDashboard;
 import com_obj_ObjectRepository.LS1.OneSourceLogin;
 import com_obj_ObjectRepository.OWM.Navigations;
 import com_obj_ObjectRepository.OWM.WorkFlowBrowser;
+
 
 
 public class FunctionLibrary extends ExtentManager {
@@ -193,7 +196,7 @@ public class FunctionLibrary extends ExtentManager {
 				driver.switchTo().frame("bottomFrame");
 				fnOWMActionsMenu(driver, "New Folder", "");
 				Thread.sleep(5000);
-				new WebDriverWait(driver, 50).until(ExpectedConditions.numberOfWindowsToBe(3));
+				new WebDriverWait(driver, 2500).until(ExpectedConditions.numberOfWindowsToBe(3));
 				fnNewFolderCreation(driver, prop);
 			}
 		} else {
@@ -310,4 +313,52 @@ public class FunctionLibrary extends ExtentManager {
 			childTest.log(Status.FAIL, "Customize view window failed to Open/Not in focus mode");
 		}
 	}
+
+	public static void fnFWFScheduleNewEvent(WebDriver driver, Properties prop) throws InterruptedException {
+		childTest = test.createNode(
+				"Description: Creating a New Schedule Event." + "<br>" + "<< Screen Name: Folder Workflows >></br>");
+		new WebDriverWait(driver,25000).until(ExpectedConditions.numberOfWindowsToBe(4));
+        Set<String> ids1 = driver.getWindowHandles();
+		java.util.Iterator<String> it1 = ids1.iterator();
+        String parentid1 = it1.next();
+        String childid2 = it1.next();
+        String childid3 = it1.next();
+        String childid4= it1.next() ;
+        Thread.sleep(2500);
+        driver.switchTo().window(childid4);
+        Events SNE=new Events(driver);
+        SNE.fwf_Events_SNE_Clear();
+        SNE.fwf_Events_SNE_EventTemplateName(prop.getProperty(""));
+        SNE.fwf_Events_SNE_TaxType(prop.getProperty(""));
+        SNE.fwf_Events_SNE_Search();
+        Thread.sleep(1500);
+        
+        ArrayList<WebElement> cells1 = (ArrayList<WebElement>) driver.findElements(By.xpath("//DIV[@id='grd_SE_Event_dom']/table/tbody/tr"));
+        System.out.println(cells1.size());
+        if (cells1.size()>=2) {
+        	SNE.fwf_Events_SNE_EventTemplateWebTable();
+        	//driver.findElement(By.xpath("//*[@id='grd_SE_Event_cell_0_1']")).click();
+        }else {
+        	driver.quit();
+        }
+        SNE.fwf_Events_SNE_Next2();
+        Thread.sleep(1000);
+        SNE.fwf_Events_SNE_AssignedTo(prop.getProperty(""));
+        SNE.fwf_Events_SNE_AssignedToCkBx();
+        SNE.fwf_Events_SNE_Next3();
+        Thread.sleep(500);
+        List<WebElement> chkBox = driver.findElements(By.xpath("//DIV[@id='grd_SE_Entity_Event_dom']/TABLE/tbody/tr"));
+        int no=chkBox.size();  
+        System.out.println(no);
+        if (no > 1) {
+        	SNE.fwf_Events_SNE_EventWebCheckbox();
+        	//driver.findElement(By.xpath("//*[@id='chkEntityEvent']")).click();
+        }
+        SNE.fwf_Events_SNE_Finish();
+        Thread.sleep(1500);
+        System.out.println(driver.switchTo().alert().getText());
+        driver.switchTo().alert().accept();
+       
+    }
+
 }
