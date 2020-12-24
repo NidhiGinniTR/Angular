@@ -3,6 +3,7 @@ package com_lib_FunctionLibrary;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -90,5 +91,16 @@ public class FrameWork extends ExtentManager {
 			flag = 0;
 		}
 	}
-
+	
+	public static void fnWebTable(WebDriver driver,WebElement oParent, String operation) {
+		Actions action = new Actions(driver);
+		switch (operation) {
+		case "Click":
+			action.moveToElement(oParent).click().build().perform();
+			break;
+		case "DoubleClick":
+			action.moveToElement(oParent).doubleClick().build().perform();
+			break;
+		}
+	}
 }
