@@ -322,10 +322,10 @@ public class FunctionLibrary extends ExtentManager {
 		java.util.Iterator<String> it = ids.iterator();
         String parentid = it.next();
         String childid = it.next();
-        String childid2 = it.next();
-        String childid3= it.next() ;
+        String childid1 = it.next();
+        String childid2= it.next() ;
         Thread.sleep(2500);
-        driver.switchTo().window(childid3);
+        driver.switchTo().window(childid2);
         Events SNE=new Events(driver);
         SNE.fwf_Events_SNE_Clear();
         SNE.fwf_Events_SNE_EventTemplateName(prop.getProperty(""));
