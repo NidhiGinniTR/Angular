@@ -25,6 +25,7 @@ import com_obj_ObjectRepository.OWM.WorkFlowBrowser;
 
 
 
+
 public class FunctionLibrary extends ExtentManager {
 
 	public static void fnLogin(WebDriver driver, Properties Env) throws InterruptedException {
@@ -360,5 +361,145 @@ public class FunctionLibrary extends ExtentManager {
         driver.switchTo().alert().accept();
        
     }
+
+	public static void fnFWFESEMarkDone(WebDriver driver) throws InterruptedException {
+		childTest = test.createNode(
+				"Description: Mark Done" + "<br>" + "<< Screen Name: Folder Workflows >></br>");
+		new WebDriverWait(driver,45000).until(ExpectedConditions.numberOfWindowsToBe(4));
+        Set<String> ids1 = driver.getWindowHandles();
+		 java.util.Iterator<String> it1 = ids1.iterator();
+        String parentid = it1.next();
+        String childid = it1.next();
+        String childid1 = it1.next();
+        String childid2= it1.next() ;
+        Thread.sleep(2500);
+        driver.switchTo().window(childid2);
+        Events ESE=new Events(driver);
+        Thread.sleep(2500);
+        System.out.println(driver.getTitle());
+        ESE.fwf_Events_ESE_Actions();
+        Thread.sleep(1500);
+        ESE.fwf_Events_ESE_MarkDone();
+        ESE.fwf_EditEventtabSelection("Work Status");
+        Thread.sleep(500);
+        ESE.fwf_Events_Save();
+        Thread.sleep(2500);
+        if(driver.switchTo().alert().getText().equalsIgnoreCase("The selected Scheduled Event(s) have been updated.") ) {
+				Thread.sleep(2500);
+				driver.switchTo().alert().accept();
+		 }else {
+				driver.close();
+		 }
+    }
+
+	 public static void fnFWFSelectEvent(WebDriver driver , Properties prop) throws InterruptedException {
+		 childTest = test.createNode(
+					"Description: Select a Event." + "<br>" + "<< Screen Name: Folder Workflows >></br>");
+		 Set<String> ids = driver.getWindowHandles();
+		 java.util.Iterator<String> it = ids.iterator();
+		 String parentid = it.next();
+         String childid1 = it.next();
+         String childid2 = it.next();
+         Thread.sleep(500);
+         driver.switchTo().window(childid2);
+         Thread.sleep(500);
+         driver.switchTo().frame("tabIFrame");
+         Thread.sleep(500);
+       
+         ArrayList<WebElement> cells = (ArrayList<WebElement>) driver.findElements(By.xpath("//DIV[@id='grdEvents_dom']/table/tbody/tr/td"));
+        
+        for (WebElement cell : cells) {
+            if(cell.getText().equals(prop.getProperty(""))) {
+            	//Framework.fnWebTable(driver,cell,"Click");
+           	break;
+	        }
+	    }
+   }
+
+	 public static void fnFWFESERollForward(WebDriver driver) throws InterruptedException {
+		 childTest = test.createNode(
+					"Description: Roll Forward" + "<br>" + "<< Screen Name: Folder Workflows >></br>");
+		 	new WebDriverWait(driver, 25000).until(ExpectedConditions.numberOfWindowsToBe(4));
+			Set<String> ids11 = driver.getWindowHandles();
+			java.util.Iterator<String> it11 = ids11.iterator();
+			String parentid = it11.next();
+			String childid = it11.next();
+			String childid1 = it11.next();
+			String childid2 = it11.next();
+			Thread.sleep(2500);
+			driver.switchTo().window(childid2);
+			Events ESE = new Events(driver);
+			Thread.sleep(2500);
+			System.out.println(driver.getTitle());
+			ESE.fwf_Events_ESE_Actions();
+			Thread.sleep(1500);
+			ESE.fwf_Events_ESE_RollForward();
+			Thread.sleep(1500);
+			new WebDriverWait(driver, 25000).until(ExpectedConditions.numberOfWindowsToBe(5));
+			Set<String> ids1 = driver.getWindowHandles();
+			java.util.Iterator<String> it1 = ids1.iterator();
+			String parentid1 = it1.next();
+			String childid3 = it1.next();
+			String childid4 = it1.next();
+			String childid5 = it1.next();
+			String childid6 = it1.next();
+			
+			Thread.sleep(2500);
+			driver.switchTo().window(childid6);
+			//Framework.fnWebCheckBox1(driver, element, label);
+			System.out.println(driver.getTitle());
+			ESE.fwf_Events_ESE_RollForwardCkBx();
+			//driver.findElement(By.xpath("//INPUT[@id='chkRollAll']")).click();
+			Thread.sleep(1500);
+			ESE.fwf_Events_ESE_RollForward_Ok();
+			//driver.findElement(By.xpath("//INPUT[@id='RolloverSchedEvents']")).click();
+			//driver.findElement(By.xpath("//INPUT[@id='btnCancel']")).click();
+			Thread.sleep(2500);
+			System.out.println(driver.switchTo().alert().getText());
+			if (driver.switchTo().alert().getText().equalsIgnoreCase(
+					"Roll Forward has been processed for 1  event(s). An email will be sent to you when the Roll Forward process is completed.")) {
+				driver.switchTo().alert().accept();
+			}
+			Thread.sleep(1500);
+			ESE.fwf_Events_Save();
+			Thread.sleep(1500);
+			if(driver.switchTo().alert().getText().equalsIgnoreCase("The selected Scheduled Event(s) have been updated.") ) {
+				Thread.sleep(500);
+				driver.switchTo().alert().accept();
+			}else {
+				driver.close();
+			}
+		}
+
+	 public static void fnFWFESEReCalculate(WebDriver driver) throws InterruptedException {
+		 childTest = test.createNode(
+					"Description: Re-Calculate." + "<br>" + "<< Screen Name: Folder Workflows >></br>");
+		 	new WebDriverWait(driver, 25000).until(ExpectedConditions.numberOfWindowsToBe(4));
+			Set<String> ids11 = driver.getWindowHandles();
+			java.util.Iterator<String> it11 = ids11.iterator();
+			String parentid = it11.next();
+			String childid = it11.next();
+			String childid1 = it11.next();
+			String childid2 = it11.next();
+			Thread.sleep(2500);
+			driver.switchTo().window(childid2);
+			Events ESE = new Events(driver);
+			Thread.sleep(2500);
+			ESE.fwf_Events_ESE_Recalculate();
+			Thread.sleep(2500);
+			if(driver.switchTo().alert().getText().equalsIgnoreCase("1 out of 1 record(s) processed.") ) {
+				Thread.sleep(2500);
+				driver.switchTo().alert().accept();
+			}else {
+				driver.close();
+			}
+			ESE.fwf_Events_Save();
+			if(driver.switchTo().alert().getText().equalsIgnoreCase("The selected Scheduled Event(s) have been updated.") ) {
+				Thread.sleep(2500);
+				driver.switchTo().alert().accept();
+			}else {
+				driver.close();
+			}
+		}
 
 }

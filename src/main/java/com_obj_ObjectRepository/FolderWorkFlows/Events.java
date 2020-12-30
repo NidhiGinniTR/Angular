@@ -13,9 +13,6 @@ public class Events {
 			this.driver = driver;
 		}
 		
-		// ---------------Events-----------------------------------------------------------------------------
-		//By fwf_Events = By.xpath("//TABLE[@id='TabStrip1_1']");
-		
 		// ---------------Schedule New Events Page1-----------------------------------------------------------------------------
 				By fwf_Events_SNE_EntityName = By.xpath("//INPUT[@id='tcet_bi_name']");
 				By fwf_Events_SNE_EntityID = By.xpath("//INPUT[@id='tcet_bi_id']");
@@ -261,6 +258,10 @@ public class Events {
 				public void fwf_Events_SNE_EventWebCheckbox() throws InterruptedException {
 					fm.fnWebButton(driver, fwf_Events_SNE_EventWebCheckbox, "Event Checkbox");
 				}
+				//public void fwf_Events_SNE_EventWebCheckbox() throws InterruptedException {
+				//	fm.fnWebCheckBox(driver, fwf_Events_SNE_EventWebCheckbox,"Event Checkbox");
+				//}
+				
 				
 				//DIV[@id='grd_SE_Entity_Event_dom']/TABLE[1]
 				
@@ -272,12 +273,61 @@ public class Events {
 				}
 				
 				// ---------------Edit Schedule Event-----------------------------------------------------------------------------
+				By fwf_Events_ESE_Actions = By.className("actionsMiddle");
 				By fwf_Events_ESE_Status = By.xpath("//SELECT[@id='ddlStatusWS']");
 				By fwf_Events_ESE_Priority = By.xpath("//SELECT[@id='ddlPriorityWS']");
 				By fwf_Events_ESE_OWM_W_F_Template = By.xpath("//INPUT[@id='txtRelatedToWF']");
 				By fwf_Events_ESE_NotifyCkBx = By.xpath("//IMG[@id='chkNotifyAssigned_mcbox']");
 				By fwf_Events_Save = By.xpath("//INPUT[@id='btnSave']");
+				By fwf_Events_ESE_MarkDone = By.xpath("//*[@id='mnuProperties_0']");
+				By fwf_Events_ESE_ExtendEvent = By.xpath("//*[@id='mnuProperties_1']");
+				By fwf_Events_ESE_RollForward = By.xpath("//*[@id='mnuProperties_2']");
+				By fwf_Events_ESE_Recalculate = By.xpath("//*[@id='mnuProperties_3']");
+				By fwf_Events_ESE_UndoExtension = By.xpath("//*[@id='mnuProperties_4']");
+				By fwf_Events_ESE_PrintCertifiedMailer = By.xpath("//*[@id='mnuProperties_5']");
+				By fwf_Events_ESE_RollForwardCkBx = By.xpath("//INPUT[@id='chkRollAll']");
+				By fwf_Events_ESE_RollForward_Ok = By.xpath("//INPUT[@id='RolloverSchedEvents']");
+				By fwf_Events_ESE_RollForward_Cancel = By.xpath("//INPUT[@id='btnCancel']");
 				
+				public void fwf_Events_ESE_RollForwardCkBx() throws InterruptedException {
+					fm.fnWebCheckBox(driver, fwf_Events_ESE_RollForwardCkBx,"Roll Forward CheckBox");
+				}
+				
+				public void fwf_Events_ESE_RollForward_Ok() throws InterruptedException {
+					fm.fnWebButton(driver, fwf_Events_ESE_RollForward_Ok, "OK");
+				}
+				
+				public void fwf_Events_ESE_RollForward_Cancel() throws InterruptedException {
+					fm.fnWebButton(driver, fwf_Events_ESE_Actions, "Cancel");
+				}
+				
+				public void fwf_Events_ESE_Actions() throws InterruptedException {
+					fm.fnWebButton(driver, fwf_Events_ESE_Actions, "Action");
+				}
+				
+				public void fwf_Events_ESE_MarkDone() throws InterruptedException {
+					fm.fnWebButton(driver, fwf_Events_ESE_MarkDone, "Mark Done");
+				}
+				
+				public void fwf_Events_ESE_ExtendEvent() throws InterruptedException {
+					fm.fnWebButton(driver, fwf_Events_ESE_ExtendEvent, "Extend Event");
+				}
+				
+				public void fwf_Events_ESE_RollForward() throws InterruptedException {
+					fm.fnWebButton(driver, fwf_Events_ESE_RollForward, "Roll Forward");
+				}
+				
+				public void fwf_Events_ESE_Recalculate() throws InterruptedException {
+					fm.fnWebButton(driver, fwf_Events_ESE_Recalculate, "Re-Calculate");
+				}
+				
+				public void fwf_Events_ESE_UndoExtension() throws InterruptedException {
+					fm.fnWebButton(driver, fwf_Events_ESE_UndoExtension, "Undo Extension");
+				}
+				
+				public void fwf_Events_ESE_PrintCertifiedMailer() throws InterruptedException {
+					fm.fnWebButton(driver, fwf_Events_ESE_PrintCertifiedMailer, "Print Ceritified Mailer");
+				}
 				public void fwf_Events_ESE_Status(String temp) throws InterruptedException {
 					fm.fnWebList(driver, fwf_Events_ESE_Status, temp, "Status");
 				}
@@ -296,7 +346,18 @@ public class Events {
 				public void fwf_Events_Save() throws InterruptedException {
 					fm.fnWebButton(driver, fwf_Events_Save, "Save");
 				}
-			// ---------------Roll Forward-----------------------------------------------------------------------------
-			//DIV[@id='grd_Rollover_dom']/TABLE[1]
+				
+				public void fwf_EditEventtabSelection(String text) throws InterruptedException{
+					By tabItem = By.xpath("//*[@id='TabStripStepProperties']//*[contains(text(),'"+text+"')]");
+					fm.fnWebButton(driver, tabItem, text);
+				}
+				
+				public void fwf_Events_EditActionsMenu(String text) throws InterruptedException{
+					By tabItem = By.xpath("//*[@id='mnuProperties']//*[contains(text(),'"+text+"')]");
+					fm.fnWebButton(driver, tabItem, text);
+				}
+				
+				// ---------------Roll Forward-----------------------------------------------------------------------------
+				//DIV[@id='grd_Rollover_dom']/TABLE[1]
 	}
 
