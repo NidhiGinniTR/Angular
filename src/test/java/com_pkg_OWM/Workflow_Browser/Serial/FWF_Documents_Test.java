@@ -1,5 +1,6 @@
 package com_pkg_OWM.Workflow_Browser.Serial;
 
+import java.awt.AWTException;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
@@ -30,7 +31,7 @@ public class FWF_Documents_Test extends BrowserInvoke{
 	}
 	
 	@Test(dependsOnMethods = "Initialize")
-	public void Tasks() throws InterruptedException {
+	public void Tasks() throws InterruptedException, AWTException {
 		//Step-1:-----Login---------------------------------------------//
 			FunctionLibrary.fnLogin(driver, propEnv);
 			Thread.sleep(3000);
@@ -56,74 +57,74 @@ public class FWF_Documents_Test extends BrowserInvoke{
 			
 		//Step-6:----Navigate to Document Tab----------------------------//
 			FunctionLibrary.fnFWFSwitchingTab(driver,"Documents");
-			Thread.sleep(999);
+			Thread.sleep(2000);
 			driver.switchTo().frame("tabIFrame");
 		//Step-7:----Actions---------------------------------------------//
 				//---Add Document~New Document--------------------------//
 			NavigationTabs nav = new NavigationTabs(driver);
-			nav.Actions(driver);
-			Thread.sleep(300);
+			nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Add Document","New Document");
 	        Thread.sleep(3000);
+	        FunctionLibrary.fnFWFAddDocument(driver,propEnv);
 	        
 		//Step-8:----Email Documents-------------------------------------//
-	        driver.findElement(By.xpath("//td[@id='btnActionsMenu']")).click();
-			Thread.sleep(300);
+	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Email Document(s)","");
 	        Thread.sleep(3000);
+	        FunctionLibrary.fwf_fnEmailDocument(driver, propEnv);
 	        
 		//Step-9:-----Change Status--------------------------------------//
-	        driver.findElement(By.xpath("//td[@id='btnActionsMenu']")).click();
-			Thread.sleep(300);
+	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Change Status","In Progress");
 	        Thread.sleep(3000);
 	        
 		//Step-10:----Review Documents-----------------------------------//
-	        driver.findElement(By.xpath("//td[@id='btnActionsMenu']")).click();
-			Thread.sleep(300);
+	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Review Document(s)","Archive");
 	        Thread.sleep(3000);
 	        
 		//Step-11:----Associate Documents to workflow--------------------//
-	        driver.findElement(By.xpath("//td[@id='btnActionsMenu']")).click();
-			Thread.sleep(300);
+	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Associate Document(s) to WorkFlow","");
 	        Thread.sleep(3000);
 	        
 		//Step-12:----Document Properties--------------------------------//
-	        driver.findElement(By.xpath("//td[@id='btnActionsMenu']")).click();
+	        nav.Actions();
 			Thread.sleep(300);
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Document Properties","");
 	        Thread.sleep(3000);
+	        FunctionLibrary.fwf_fnDocumentProperties(driver, propEnv);
 	        
 		//Step-13:---Document History-----------------------------------//
-	        driver.findElement(By.xpath("//td[@id='btnActionsMenu']")).click();
-			Thread.sleep(300);
+	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Document History","");
 	        Thread.sleep(3000);
 	        
 		//Step-14:---Customize View-------------------------------------//
-	        driver.findElement(By.xpath("//td[@id='btnActionsMenu']")).click();
-			Thread.sleep(300);
+	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Customize View","");
 	        Thread.sleep(3000);
+	        String[] array= new String[] {"Task","Status","Checklist","Assigned To","Priority","Link Name","Due Date"};
+	        FunctionLibrary.fnOWMCustomizeView(driver,array);
 	        
 		//Step-15:----Save Preferences-----------------------------------//
-	        driver.findElement(By.xpath("//td[@id='btnActionsMenu']")).click();
-			Thread.sleep(300);
+	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Save Preferences","");
 	        Thread.sleep(3000);
+	        FunctionLibrary.fnOWMSavePreferences(driver,"Save Preferences");
 	        
 		//Step-16:---Save Preferences for all---------------------------//
-	        driver.findElement(By.xpath("//td[@id='btnActionsMenu']")).click();
-			Thread.sleep(300);
+	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Save Preferences for All","");
 	        Thread.sleep(3000);
+	        FunctionLibrary.fnOWMSavePreferences(driver,"Save Preferences for All");
+	        
 		//Step-17:---Saved Search---------------------------------------//
-	        driver.findElement(By.xpath("//td[@id='btnActionsMenu']")).click();
-			Thread.sleep(300);
+	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Saved Search","");
 	        Thread.sleep(3000);
+	        FunctionLibrary.fwf_fnSavedSearch(driver, propEnv);
+	        
 	    //Step-18:---Log Off---------------------------------------------//
 			
 }

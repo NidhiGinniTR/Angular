@@ -25,7 +25,7 @@ public class NavigationTabs {
 	By fwf_CustomForms = By.xpath("//*[@id='TabStrip1_9']");*/
 	By Actions = By.xpath("//td[@id='btnActionsMenu']");
 	
-	public void Actions(WebDriver driver ) throws InterruptedException {
+	public void Actions() throws InterruptedException {
 		fm.fnWebButton(driver, Actions, "Actions");
 	}
 	public void fwf_tabSelection(String text) throws InterruptedException{

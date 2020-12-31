@@ -798,5 +798,7 @@ public class FunctionLibrary extends ExtentManager {
 			}
 		}
 
-
+		public static void fnWindowHandle(WebDriver driver,String window) {
+			
+		}
 }
