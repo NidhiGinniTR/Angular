@@ -14,7 +14,7 @@ public class Documents {
 	public Documents(WebDriver driver) {
 		this.driver = driver;
 	}
-
+	
 	// -------------Email Documents ------------------------------------------
 
 	By EmailDoc_To = By.xpath("//INPUT[@id='txtTo']");
@@ -23,6 +23,7 @@ public class Documents {
 	By EmailDoc_Subject = By.xpath("//INPUT[@id='txtSubject']");
 	By EmailDoc_Message = By.xpath("//TEXTAREA[@id='txtMsg']");
 	By EmailDoc_AttachmentType = By.xpath("//*[@id='rdAttachmentType1']");
+	By EmailDoc_AttachmenType_asLink = By.xpath("//*[@id='rdAttachmentType0']");
 	By EmailDoc_Save = By.xpath("//IMG[@id='btnOK']");
 	By EmailDoc_Cancel = By.xpath("//IMG[@id='btnCancel']");
 
@@ -50,6 +51,9 @@ public class Documents {
 		return driver.findElement(EmailDoc_AttachmentType);
 	}
 
+	public void EmailDoc_AttachmenType_asLink() throws InterruptedException {
+		fm.fnWebButton(driver, EmailDoc_AttachmenType_asLink, "As a Link");
+	}
 	public void Emaildoc_Save() throws InterruptedException {
 		fm.fnWebButton(driver, EmailDoc_Save, "Save");
 	}
@@ -60,16 +64,16 @@ public class Documents {
 
 	// -------------------------Copy
 	// Documents---------------------------------------------------
-	By Documents_EntityName = By.xpath("//input[@id='idx_000000000B']");
+	public By Documents_EntityName = By.xpath("//input[@id='idx_000000000B']");
 	By Documents_EntityID = By.xpath("//input[@id='idx_000000000C']");
 	By Documents_TaxType = By.xpath("//select[@id='idx_000000000D']");
 	By Documents_Year = By.xpath("//select[@id='idx_000000000E']");
 	By Documents_Period = By.xpath("//select[@id='idx_000000000F']");
 	By Documents_Jurisdiction = By.xpath("//input[@id='idx_000000000G']");
-	By Documents_Description = By.xpath("//input[@id='idx_000000000H']");
-	By Documents_FileSection = By.xpath("//select[@id='idx_000000000I']");
-	By Documents_DocumentType = By.xpath("//select[@id='idx_000000000J']");
-	By Documents_DocumentDate = By.xpath("//input[@id='idx_000000000K']");
+	public By Documents_Description = By.xpath("//input[@id='idx_000000000H']");
+	public By Documents_FileSection = By.xpath("//select[@id='idx_000000000I']");
+	public By Documents_DocumentType = By.xpath("//select[@id='idx_000000000J']");
+	public By Documents_DocumentDate = By.xpath("//input[@id='idx_000000000K']");
 	By Documents_WorkFLowAssociation = By.xpath("//select[@id='idx_000000000L']");
 	By Documents_AssignedTo = By.xpath("//select[@id='DropDownListDocumentUIDAssignTo']");
 	By Documents_DocumentStatus = By.xpath("//select[@id='DropDownListDocumentStatus']");
@@ -230,9 +234,9 @@ public class Documents {
 	}
 
 	//----------------------Document Properties-------------------------------
-    By DocProp_AssignedTo = By.xpath("//select[@id='assigned_to']");
-    By DocProp_DocumentStatus = By.xpath("//select[@id='document_status']");
-    By DocProp_DueDate = By.xpath("//input[@id='due_date']");
+    public By DocProp_AssignedTo = By.xpath("//select[@id='assigned_to']");
+    public By DocProp_DocumentStatus = By.xpath("//select[@id='document_status']");
+    public By DocProp_DueDate = By.xpath("//input[@id='due_date']");
     
     public void DocProp_Assignedto(String text) throws InterruptedException{
     	fm.fnWebList(driver, DocProp_AssignedTo, text, "Assigned To");
@@ -328,5 +332,7 @@ public class Documents {
     public void SavedSearch_Clear() throws InterruptedException{
     	fm.fnWebButton(driver, SavedSearch_Clear, "Clear");
     }
-
+    public void SavedSearch_Close() throws InterruptedException {
+		fm.fnWebButton(driver, SavedSearch_Close, "Close");
+	}
 }

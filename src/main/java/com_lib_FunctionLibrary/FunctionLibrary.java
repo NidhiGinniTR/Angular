@@ -1,6 +1,13 @@
 package com_lib_FunctionLibrary;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Properties;
 import java.util.Set;
@@ -11,17 +18,21 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.aventstack.extentreports.Status;
 
 import com_helper_Reporting.ExtentManager;
+import com_obj_ObjectRepository.FolderWorkFlows.Documents;
 import com_obj_ObjectRepository.FolderWorkFlows.Events;
 import com_obj_ObjectRepository.FolderWorkFlows.NavigationTabs;
+import com_obj_ObjectRepository.FolderWorkFlows.Tasks;
 import com_obj_ObjectRepository.LS1.OneSourceDashboard;
 import com_obj_ObjectRepository.LS1.OneSourceLogin;
 import com_obj_ObjectRepository.OWM.Navigations;
 import com_obj_ObjectRepository.OWM.WorkFlowBrowser;
+
 
 
 
@@ -501,5 +512,291 @@ public class FunctionLibrary extends ExtentManager {
 				driver.close();
 			}
 		}
+	 
+	 public static void setClipboardData(String string) {
+			StringSelection stringSelection = new StringSelection(string);
+			Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
+		}
+	 
+	 public static void fnFWFAddDocument(WebDriver driver, Properties data) throws InterruptedException, AWTException {
+			childTest = test.createNode("Description: Add Document " + "<br>" + "<< Screen Name: Folder WorkFlows >></br>");
+			Tasks owm = new Tasks(driver);
+			if (driver.getTitle().equalsIgnoreCase("Add document")) {
+				owm.fwf_Task_AD_Clear();
+				Thread.sleep(200);
+				owm.fwf_Task_AD_Save();
+				Thread.sleep(1500);
+				WebDriverWait w = new WebDriverWait(driver, 15);
+				w.until(ExpectedConditions.alertIsPresent());
+				String text = driver.switchTo().alert().getText();
+				if (text.contains("Select a physical document to upload.")) {
+					Thread.sleep(500);
+					driver.switchTo().alert().accept();
+					childTest.pass("Verification: Click on Save before uploading a document alert" + "<br>" + text
+							+ " exists </br>");
+				} else {
+					childTest.fail("Verification: Click on Save before uploading a document alert is missing");
+				}
+				Thread.sleep(2000);
+				String path = "C:\\RapidScripts\\Documents\\Doc";
+				setClipboardData(path);
+				driver.findElement(By.xpath("//TD[@id='tdSelectDocument']/TABLE[1]/tbody/tr[2]/td[2]")).click();
+				Thread.sleep(2000);
+				Robot robot = new Robot();
+				robot.keyPress(KeyEvent.VK_CONTROL);
+				robot.keyPress(KeyEvent.VK_V);
+				robot.keyRelease(KeyEvent.VK_V);
+				robot.keyRelease(KeyEvent.VK_CONTROL);
+				robot.keyPress(KeyEvent.VK_ENTER);
+				robot.keyRelease(KeyEvent.VK_ENTER);
+				Thread.sleep(2000);
+				owm.fwf_Task_AD_Save();
+				WebDriverWait w1 = new WebDriverWait(driver, 15);
+				w1.until(ExpectedConditions.alertIsPresent());
+				String text1 = driver.switchTo().alert().getText();
+				if (text1.contains("Select a physical document")) {
+					Thread.sleep(500);
+					driver.switchTo().alert().accept();
+					childTest.pass("Verification: Mandatory field alert " + "<br>" + text1 + " exists </br>");
+				} else {
+					childTest.fail("Verification: Mandatory field alert is  missing");
+				}
+				Thread.sleep(2000);
+				owm.fwf_Task_AD_Description("Test Purpose");
+				owm.fwf_Task_AD_FileSection("=SUM(1,1)");
+				owm.fwf_Task_AD_DocumentType("=SUM(1,1)");
+				owm.fwf_Task_AD_DocumentDate("12/17/2020");
+				owm.fwf_Task_AD_AssignedTo("KrishnaVamsi Taduvai");
+				owm.fwf_Task_AD_DocumentStatus("");
+				owm.fwf_Task_AD_DueDate("");
+				owm.fwf_Task_AD_Notify();
+				owm.fwf_Task_AD_NotifyUsersList();
+				owm.fwf_Task_AD_Save();
+				Thread.sleep(3000);
+			}
+		}
+
+		public static void fnWindowHandler(WebDriver driver, String Wname) {
+
+		}
+
+		public static void fwf_fnEmailDocument(WebDriver driver, Properties data) throws InterruptedException {
+			childTest = test
+					.createNode("Description: Email Documents " + "<br>" + "<< Screen Name: Folder WorkFlows >></br>");
+			Documents owm = new Documents(driver);
+			if (driver.getTitle().equalsIgnoreCase("Email Document(s)")) {
+				owm.Emaildoc_Save();
+				Thread.sleep(1500);
+				WebDriverWait w = new WebDriverWait(driver, 20);
+				w.until(ExpectedConditions.alertIsPresent());
+				String text = driver.switchTo().alert().getText();
+				if (text.contains("To address cannot be blank.")) {
+					Thread.sleep(200);
+					driver.switchTo().alert().accept();
+					childTest.pass(
+							"Verification: Click on Save before Emailing document alert" + "<br>" + text + " exists </br>");
+				} else {
+					childTest.fail("Verification: Click on Save before Emailing document alert is missing");
+				}
+				owm.Emaildoc_To("nidhi.ginni@thomsonreuters.com");
+				owm.Emaildoc_CC("nitish.maturi@thomsonreuters.com");
+				owm.Emaildoc_Subject("Test document to verify Email documents functionality.");
+				owm.Emaildoc_Message("Hi All," + "+<br>+"
+						+ " This email is intended to verify Email Document's as a link/Attachment functionality</br>");
+				owm.EmailDoc_AttachmenType_asLink();
+				owm.Emaildoc_Save();
+				Thread.sleep(900);
+				w.until(ExpectedConditions.alertIsPresent());
+				String text1 = driver.switchTo().alert().getText();
+				if (text1.contains("Your email has been sent.")) {
+					Thread.sleep(200);
+					driver.switchTo().alert().accept();
+					childTest.pass(
+							"Verification: Click on Save after Emailing document: Alert" + "<br>" + text + " exists </br>");
+				} else {
+					childTest.fail("Verification: Click on Save after Emailing document: Alert is missing");
+				}
+			}
+		}
+
+		public static void fwf_fnCopyDocuments(WebDriver driver, Properties data) throws InterruptedException {
+			childTest = test
+					.createNode("Description: Copy Documents " + "<br>" + "<< Screen Name: Folder WorkFlows >></br>");
+			Documents owm = new Documents(driver);
+			if (driver.getTitle().equalsIgnoreCase("Copy Document(s)")) {
+				owm.Documents_Entityname("");
+				owm.Documents_save();
+				Thread.sleep(800);
+				WebDriverWait w = new WebDriverWait(driver, 20);
+				w.until(ExpectedConditions.alertIsPresent());
+				String text = driver.switchTo().alert().getText();
+				if (text.contains("is required")) {
+					Thread.sleep(200);
+					driver.switchTo().alert().accept();
+					childTest.pass("Verification: Click on Save before Copy documents mandatory field alert" + "<br>" + text
+							+ " exists </br>");
+				} else {
+					childTest.fail("Verification: Click on Save before copy documents mandatory field alert is missing");
+				}
+				Thread.sleep(800);
+				owm.Documents_Reset();
+				Thread.sleep(800);
+				owm.Documents_save();
+				w.until(ExpectedConditions.alertIsPresent());
+				String text1 = driver.switchTo().alert().getText();
+				if (text1.contains("Click 'OK' to continue")) {
+					Thread.sleep(200);
+					driver.switchTo().alert().accept();
+					childTest.pass("Verification: Click on Save:Copy documents confirmation alert 1" + "<br>" + text
+							+ " exists </br>");
+					Thread.sleep(1500);
+					w.until(ExpectedConditions.alertIsPresent());
+					String text2 = driver.switchTo().alert().getText();
+					if (text2.contains("Documents successfully copied and re-indexed: 1")) {
+						Thread.sleep(200);
+						driver.switchTo().alert().accept();
+						childTest.pass("Verification: Click on Save:Copy documents confirmation alert 2" + "<br>" + text
+								+ " exists </br>");
+					} else {
+						childTest.fail("Verification: Click on Save: Copy documents confirmation alert 2 is missing");
+					}
+				} else {
+					childTest.fail("Verification: Click on Save: Copy documents confirmation alert 1 is missing");
+				}
+			}
+		}
+
+		public static void fwf_fnMoveDocument(WebDriver driver, Properties data) throws InterruptedException {
+			childTest = test
+					.createNode("Description: Copy Documents " + "<br>" + "<< Screen Name: Folder WorkFlows >></br>");
+			Documents owm = new Documents(driver);
+			if (driver.getTitle().equalsIgnoreCase("Move Document")) {
+				owm.MoveDoc_drawers("OC Drawer");
+				WebDriverWait w = new WebDriverWait(driver, 20);
+				WebElement exist = w
+						.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='idx_0000000004']")));
+				if (exist.isDisplayed()) {
+					owm.MoveDoc_save();
+					Thread.sleep(800);
+					String text = driver.switchTo().alert().getText();
+					if (text.contains("is required")) {
+						Thread.sleep(200);
+						driver.switchTo().alert().accept();
+						childTest.pass("Verification: Click on Save: before Move document mandatory field alert" + "<br>"
+								+ text + " exists </br>");
+					} else {
+						childTest
+								.fail("Verification: Click on Save: before Move document mandatory field alert is missing");
+					}
+					owm.MoveDoc_EntityName("ABC");
+					owm.MoveDoc_EntityID("ABC");
+					owm.MoveDoc_TaxType("AUDIT");
+					owm.MoveDoc_FileSection("AUDIT FS1");
+					owm.MoveDoc_Year("2016");
+					owm.MoveDoc_Description("Test purpose");
+					owm.MoveDoc_Period("12/31");
+					owm.MoveDoc_save();
+					w.until(ExpectedConditions.alertIsPresent());
+					String text1 = driver.switchTo().alert().getText();
+					if (text1.contains("Click 'OK' to continue")) {
+						Thread.sleep(200);
+						driver.switchTo().alert().accept();
+						childTest.pass("Verification: Click on Save:Move document confirmation alert 1" + "<br>" + text
+								+ " exists </br>");
+						Thread.sleep(2000);
+						w.until(ExpectedConditions.alertIsPresent());
+						String text2 = driver.switchTo().alert().getText();
+						if (text2.contains("Document successfully moved and re-indexed")) {
+							Thread.sleep(200);
+							driver.switchTo().alert().accept();
+							childTest.pass("Verification: Click on Save: Move document confirmation alert 2" + "<br>" + text
+									+ " exists </br>");
+						} else {
+							childTest.fail("Verification: Click on Save: Move document confirmation alert 2 is missing");
+						}
+					} else {
+						childTest.fail("Verification: Click on Save: Move document confirmation alert 1 is missing");
+					}
+				}
+			}
+		}
+
+		public static void fwf_fnDocumentProperties(WebDriver driver, Properties data) throws InterruptedException {
+			childTest = test
+					.createNode("Description: Document Properties " + "<br>" + "<< Screen Name: Folder WorkFlows >></br>");
+			Documents owm = new Documents(driver);
+			if (driver.getTitle().equalsIgnoreCase("Document Properties")) {
+
+				HashMap<By, String> txtCompare = new HashMap<By, String>();
+				txtCompare.put(owm.Documents_Description, ""); // Description
+				txtCompare.put(owm.Documents_FileSection, ""); // FileSection
+				txtCompare.put(owm.Documents_DocumentType, ""); // Document Type
+				txtCompare.put(owm.Documents_DocumentDate, ""); // Document Date
+				txtCompare.put(owm.DocProp_AssignedTo, ""); // Assigned To
+				txtCompare.put(owm.DocProp_DocumentStatus, ""); // Document Status
+				txtCompare.put(owm.DocProp_DueDate, ""); // Due Date
+
+				Set<By> map = txtCompare.keySet();
+				for (Iterator<By> i = map.iterator(); i.hasNext();) {
+					By key = (By) i.next();
+					String value = (String) txtCompare.get(key);
+					WebElement wait = new WebDriverWait(driver, 30)
+							.until(ExpectedConditions.visibilityOfElementLocated(key));
+					if (wait.isDisplayed()) {
+						if (driver.findElement(key).getAttribute("value").equals(value)) {
+							childTest.log(Status.PASS, value + " is matched.");
+						} else {
+							Select sel = new Select(driver.findElement(key));
+							WebElement currValue = sel.getFirstSelectedOption();
+							String option = currValue.getText();
+							if (option.equals(value)) {
+								childTest.log(Status.PASS, value + " is matched.");
+							} else {
+								childTest.log(Status.FAIL, value + " is not matched");
+							}
+						}
+					}else {
+						childTest.log(Status.FAIL, "Element is not visible");
+					}
+				}
+				owm.Documents_save();
+				Thread.sleep(3000);
+				WebDriverWait w = new WebDriverWait(driver, 20);
+				w.until(ExpectedConditions.alertIsPresent());
+				String text2 = driver.switchTo().alert().getText();
+				if (text2.contains("Successfully re-indexed Documents: 1")) {
+					Thread.sleep(200);
+					driver.switchTo().alert().accept();
+					childTest.pass("Verification: Click on Save: Move document confirmation alert 1" + "<br>" + text2
+							+ " exists </br>");
+				} else {
+					childTest.fail("Verification: Click on Save: Move document confirmation alert 1 is missing");
+				}
+			}
+
+		}
+
+		public static void fwf_fnSavedSearch(WebDriver driver, Properties data) throws InterruptedException {
+			childTest = test.createNode(
+					"Description: Saved Seach/Document Search " + "<br>" + "<< Screen Name: Folder WorkFlows >></br>");
+			Documents owm = new Documents(driver);
+			if (driver.getTitle().equalsIgnoreCase("Documents Search")) {
+				owm.SavedSearch_Clear();
+				owm.SavedSearch_year("2017");
+				owm.SavedSearch_period("12/31");
+				owm.SavedSearch_Taxtype("SALES TAX");
+				owm.SavedSearch_WFtemplate("Auto_Serial_01");
+				// owm.SavedSearch_WfAssociation("");
+				owm.Documents_Entityname("Auto_001");
+				owm.Documents_EntityId("A001");
+				owm.Documents_jurisdiction("INDIA");
+				owm.Documents_Description("Angular Test purpose");
+				owm.SavedSearch_FileSection("SALES TAX FS1");
+				owm.SavedSearch_DocumentType("SALES TAX FS1 DT1");
+				owm.Documents_Assignedto("Kishore Katuri");
+				owm.SavedSearch_Close();
+			}
+		}
+
 
 }
