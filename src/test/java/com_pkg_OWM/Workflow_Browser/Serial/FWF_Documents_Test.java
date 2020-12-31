@@ -15,6 +15,7 @@ import org.testng.annotations.Test;
 import com_data_Resources.Environment.BrowserInvoke;
 import com_helper_Reporting.ExtentManager;
 import com_lib_FunctionLibrary.FunctionLibrary;
+import com_obj_ObjectRepository.FolderWorkFlows.NavigationTabs;
 
 public class FWF_Documents_Test extends BrowserInvoke{
 	@BeforeSuite
@@ -54,10 +55,13 @@ public class FWF_Documents_Test extends BrowserInvoke{
 			Thread.sleep(10000);
 			
 		//Step-6:----Navigate to Document Tab----------------------------//
-		
+			FunctionLibrary.fnFWFSwitchingTab(driver,"Documents");
+			Thread.sleep(999);
+			driver.switchTo().frame("tabIFrame");
 		//Step-7:----Actions---------------------------------------------//
 				//---Add Document~New Document--------------------------//
-			driver.findElement(By.xpath("//td[@id='btnActionsMenu']")).click();
+			NavigationTabs nav = new NavigationTabs(driver);
+			nav.Actions(driver);
 			Thread.sleep(300);
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Add Document","New Document");
 	        Thread.sleep(3000);

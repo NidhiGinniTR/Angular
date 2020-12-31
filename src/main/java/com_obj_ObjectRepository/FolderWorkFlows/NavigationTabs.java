@@ -23,7 +23,11 @@ public class NavigationTabs {
 	By fwf_Notes = By.xpath("//*[@id='TabStrip1_7']");
 	By fwf_Reasearch = By.xpath("//*[@id='TabStrip1_8']");
 	By fwf_CustomForms = By.xpath("//*[@id='TabStrip1_9']");*/
+	By Actions = By.xpath("//td[@id='btnActionsMenu']");
 	
+	public void Actions(WebDriver driver ) throws InterruptedException {
+		fm.fnWebButton(driver, Actions, "Actions");
+	}
 	public void fwf_tabSelection(String text) throws InterruptedException{
 		By tabItem = By.xpath("//*[@id='TabStrip1']//*[contains(text(),'"+text+"')]");
 		fm.fnWebButton(driver, tabItem, text);
