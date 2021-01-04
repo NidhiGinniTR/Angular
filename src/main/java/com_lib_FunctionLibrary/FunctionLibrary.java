@@ -562,13 +562,13 @@ public class FunctionLibrary extends ExtentManager {
 					childTest.fail("Verification: Mandatory field alert is  missing");
 				}
 				Thread.sleep(2000);
-				owm.fwf_Task_AD_Description("Test Purpose");
-				owm.fwf_Task_AD_FileSection("=SUM(1,1)");
-				owm.fwf_Task_AD_DocumentType("=SUM(1,1)");
-				owm.fwf_Task_AD_DocumentDate("12/17/2020");
-				owm.fwf_Task_AD_AssignedTo("KrishnaVamsi Taduvai");
-				owm.fwf_Task_AD_DocumentStatus("");
-				owm.fwf_Task_AD_DueDate("");
+				owm.fwf_Task_AD_Description(data.getProperty(""));
+				owm.fwf_Task_AD_FileSection(data.getProperty(""));
+				owm.fwf_Task_AD_DocumentType(data.getProperty(""));
+				owm.fwf_Task_AD_DocumentDate(data.getProperty(""));
+				owm.fwf_Task_AD_AssignedTo(data.getProperty(""));
+				owm.fwf_Task_AD_DocumentStatus(data.getProperty(""));
+				owm.fwf_Task_AD_DueDate(data.getProperty(""));
 				owm.fwf_Task_AD_Notify();
 				owm.fwf_Task_AD_NotifyUsersList();
 				owm.fwf_Task_AD_Save();
@@ -598,9 +598,9 @@ public class FunctionLibrary extends ExtentManager {
 				} else {
 					childTest.fail("Verification: Click on Save before Emailing document alert is missing");
 				}
-				owm.Emaildoc_To("nidhi.ginni@thomsonreuters.com");
-				owm.Emaildoc_CC("nitish.maturi@thomsonreuters.com");
-				owm.Emaildoc_Subject("Test document to verify Email documents functionality.");
+				owm.Emaildoc_To(data.getProperty(""));
+				owm.Emaildoc_CC(data.getProperty(""));
+				owm.Emaildoc_Subject(data.getProperty(""));
 				owm.Emaildoc_Message("Hi All," + "+<br>+"
 						+ " This email is intended to verify Email Document's as a link/Attachment functionality</br>");
 				owm.EmailDoc_AttachmenType_asLink();
@@ -671,7 +671,7 @@ public class FunctionLibrary extends ExtentManager {
 					.createNode("Description: Copy Documents " + "<br>" + "<< Screen Name: Folder WorkFlows >></br>");
 			Documents owm = new Documents(driver);
 			if (driver.getTitle().equalsIgnoreCase("Move Document")) {
-				owm.MoveDoc_drawers("OC Drawer");
+				owm.MoveDoc_drawers(data.getProperty(""));
 				WebDriverWait w = new WebDriverWait(driver, 20);
 				WebElement exist = w
 						.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='idx_0000000004']")));
@@ -688,13 +688,13 @@ public class FunctionLibrary extends ExtentManager {
 						childTest
 								.fail("Verification: Click on Save: before Move document mandatory field alert is missing");
 					}
-					owm.MoveDoc_EntityName("ABC");
-					owm.MoveDoc_EntityID("ABC");
-					owm.MoveDoc_TaxType("AUDIT");
-					owm.MoveDoc_FileSection("AUDIT FS1");
-					owm.MoveDoc_Year("2016");
-					owm.MoveDoc_Description("Test purpose");
-					owm.MoveDoc_Period("12/31");
+					owm.MoveDoc_EntityName(data.getProperty(""));
+					owm.MoveDoc_EntityID(data.getProperty(""));
+					owm.MoveDoc_TaxType(data.getProperty(""));
+					owm.MoveDoc_FileSection(data.getProperty(""));
+					owm.MoveDoc_Year(data.getProperty(""));
+					owm.MoveDoc_Description(data.getProperty(""));
+					owm.MoveDoc_Period(data.getProperty(""));
 					owm.MoveDoc_save();
 					w.until(ExpectedConditions.alertIsPresent());
 					String text1 = driver.switchTo().alert().getText();
@@ -728,13 +728,13 @@ public class FunctionLibrary extends ExtentManager {
 			if (driver.getTitle().equalsIgnoreCase("Document Properties")) {
 
 				HashMap<By, String> txtCompare = new HashMap<By, String>();
-				txtCompare.put(owm.Documents_Description, ""); // Description
-				txtCompare.put(owm.Documents_FileSection, ""); // FileSection
-				txtCompare.put(owm.Documents_DocumentType, ""); // Document Type
-				txtCompare.put(owm.Documents_DocumentDate, ""); // Document Date
-				txtCompare.put(owm.DocProp_AssignedTo, ""); // Assigned To
-				txtCompare.put(owm.DocProp_DocumentStatus, ""); // Document Status
-				txtCompare.put(owm.DocProp_DueDate, ""); // Due Date
+				txtCompare.put(owm.Documents_Description, data.getProperty("")); // Description
+				txtCompare.put(owm.Documents_FileSection, data.getProperty("")); // FileSection
+				txtCompare.put(owm.Documents_DocumentType, data.getProperty("")); // Document Type
+				txtCompare.put(owm.Documents_DocumentDate, data.getProperty("")); // Document Date
+				txtCompare.put(owm.DocProp_AssignedTo, data.getProperty("")); // Assigned To
+				txtCompare.put(owm.DocProp_DocumentStatus, data.getProperty("")); // Document Status
+				txtCompare.put(owm.DocProp_DueDate, data.getProperty("")); // Due Date
 
 				Set<By> map = txtCompare.keySet();
 				for (Iterator<By> i = map.iterator(); i.hasNext();) {
@@ -782,18 +782,18 @@ public class FunctionLibrary extends ExtentManager {
 			Documents owm = new Documents(driver);
 			if (driver.getTitle().equalsIgnoreCase("Documents Search")) {
 				owm.SavedSearch_Clear();
-				owm.SavedSearch_year("2017");
-				owm.SavedSearch_period("12/31");
-				owm.SavedSearch_Taxtype("SALES TAX");
-				owm.SavedSearch_WFtemplate("Auto_Serial_01");
+				owm.SavedSearch_year(data.getProperty(""));
+				owm.SavedSearch_period(data.getProperty(""));
+				owm.SavedSearch_Taxtype(data.getProperty(""));
+				owm.SavedSearch_WFtemplate(data.getProperty(""));
 				// owm.SavedSearch_WfAssociation("");
-				owm.Documents_Entityname("Auto_001");
-				owm.Documents_EntityId("A001");
-				owm.Documents_jurisdiction("INDIA");
-				owm.Documents_Description("Angular Test purpose");
-				owm.SavedSearch_FileSection("SALES TAX FS1");
-				owm.SavedSearch_DocumentType("SALES TAX FS1 DT1");
-				owm.Documents_Assignedto("Kishore Katuri");
+				owm.Documents_Entityname(data.getProperty(""));
+				owm.Documents_EntityId(data.getProperty(""));
+				owm.Documents_jurisdiction(data.getProperty(""));
+				owm.Documents_Description(data.getProperty(""));
+				owm.SavedSearch_FileSection(data.getProperty(""));
+				owm.SavedSearch_DocumentType(data.getProperty(""));
+				owm.Documents_Assignedto(data.getProperty(""));
 				owm.SavedSearch_Close();
 			}
 		}
