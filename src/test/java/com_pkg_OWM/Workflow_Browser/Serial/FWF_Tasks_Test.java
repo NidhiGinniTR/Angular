@@ -17,6 +17,7 @@ import org.testng.annotations.Test;
 import com_data_Resources.Environment.BrowserInvoke;
 import com_helper_Reporting.ExtentManager;
 import com_lib_FunctionLibrary.FunctionLibrary;
+import com_obj_ObjectRepository.FolderWorkFlows.NavigationTabs;
 
 public class FWF_Tasks_Test extends BrowserInvoke {
 
@@ -71,63 +72,53 @@ public class FWF_Tasks_Test extends BrowserInvoke {
 	        Thread.sleep(300);
 	        
 		//Step-7:-----Change Status-------------------------------------//
-	        driver.findElement(By.xpath("//td[@id='btnActionsMenu']")).click();
-			Thread.sleep(300);
+	        NavigationTabs nav = new NavigationTabs(driver);
+	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Change Status","Not Started");
 	        Thread.sleep(3000);
 	        
 		//Step-8:-----Route Task----------------------------------------//
-	        driver.findElement(By.xpath("//td[@id='btnActionsMenu']")).click();
-			Thread.sleep(300);
+	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Route Task","");
 	        
 		//Step-9:-----Task Properties-----------------------------------//
-	        driver.findElement(By.xpath("//td[@id='btnActionsMenu']")).click();
-			Thread.sleep(300);
+	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Task Properties","");
 	        
 		//Step-10:----Task History--------------------------------------//
-	        driver.findElement(By.xpath("//td[@id='btnActionsMenu']")).click();
-			Thread.sleep(300);
+	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Task History","");
 	        
 		//Step-11:----Reset Checklist-----------------------------------//
-	        driver.findElement(By.xpath("//td[@id='btnActionsMenu']")).click();
-			Thread.sleep(300);
+	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Reset Checklist","");
 	        
 	        
 		//Step-12:----Add Documents-------------------------------------//
-	        driver.findElement(By.xpath("//td[@id='btnActionsMenu']")).click();
-			Thread.sleep(300);
+	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Add Document","");
 	        
 		//Step-13:----View Documents------------------------------------//
-	        driver.findElement(By.xpath("//td[@id='btnActionsMenu']")).click();
-			Thread.sleep(300);
+	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"View Document(s)","");
 	        
 		//Step-14:----Export--------------------------------------------//
-	        driver.findElement(By.xpath("//td[@id='btnActionsMenu']")).click();
-			Thread.sleep(300);
+	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Export","");
 	        
 		//Step-15:----Customize View-------------------------------------//
-	        driver.findElement(By.xpath("//td[@id='btnActionsMenu']")).click();
-			Thread.sleep(300);
+	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Customize View","");
 	        String[] array= new String[] {"Task","Status","Checklist","Assigned To","Priority","Link Name","Due Date"};
 	        FunctionLibrary.fnOWMCustomizeView(driver, array);
 	        
 		//Step-16:----Save Preferences----------------------------------//
-	        driver.findElement(By.xpath("//td[@id='btnActionsMenu']")).click();
-			Thread.sleep(300);
+	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Save Preferences","");
 	        FunctionLibrary.fnOWMSavePreferences(driver,"Save Preferences");
 	        
 		//Step-17:----Save Preferences for All--------------------------//
-	        driver.findElement(By.xpath("//td[@id='btnActionsMenu']")).click();
-			Thread.sleep(300);
+	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Save Preferences for All","");
 	        FunctionLibrary.fnOWMSavePreferences(driver,"Save Preferences for All");
 		//Step-18:----LogOff-------------------------------------------//
