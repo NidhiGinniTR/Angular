@@ -798,7 +798,23 @@ public class FunctionLibrary extends ExtentManager {
 			}
 		}
 
-		public static void fnWindowHandle(WebDriver driver,String window) {
-			
+		public static void fnSwitchtoWindow(WebDriver driver,int winNum,String winName) throws InterruptedException {
+			new WebDriverWait(driver,50).until(ExpectedConditions.numberOfWindowsToBe(winNum));
+			Set<String> s = driver.getWindowHandles();
+			Iterator<String> ite = s.iterator();
+			int i=1;
+			while(ite.hasNext() && i<=s.size()) {
+				String popHandle = ite.next().toString();
+				driver.switchTo().window(popHandle);
+				System.out.println(driver.getTitle());
+				if(i==winNum) break;
+				i++;
+			}
+			if(driver.getTitle().equals(winName)) {
+				childTest.info("Switched to "+winName+" window.");
+			}else {
+				childTest.fail("Failed to Switch to "+winName+" window.");
+			}
 		}
+
 }
