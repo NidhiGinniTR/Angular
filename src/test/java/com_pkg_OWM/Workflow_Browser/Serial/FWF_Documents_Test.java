@@ -54,10 +54,12 @@ public class FWF_Documents_Test extends BrowserInvoke{
 			Actions action = new Actions(driver);
 			action.moveToElement(driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td"))).doubleClick().build().perform();
 			Thread.sleep(10000);
-			
+			driver.switchTo().parentFrame();
 		//Step-6:----Navigate to Document Tab----------------------------//
-			FunctionLibrary.fnFWFSwitchingTab(driver,"Documents");
+			FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
 			Thread.sleep(2000);
+			FunctionLibrary.fnFWFSwitchingTab(driver,"Documents");
+			Thread.sleep(3000);
 			driver.switchTo().frame("tabIFrame");
 		//Step-7:----Actions---------------------------------------------//
 				//---Add Document~New Document--------------------------//
@@ -65,12 +67,16 @@ public class FWF_Documents_Test extends BrowserInvoke{
 			nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Add Document","New Document");
 	        Thread.sleep(3000);
+	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Add document");
+	        Thread.sleep(999);
 	        FunctionLibrary.fnFWFAddDocument(driver,propEnv);
 	        
 		//Step-8:----Email Documents-------------------------------------//
+	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id=\"grdDocumentHitList_dom\"]/TABLE[1]/TBODY[1]/TR[2]"))).click().build().perform();
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Email Document(s)","");
 	        Thread.sleep(3000);
+	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Email Document(s)");
 	        FunctionLibrary.fwf_fnEmailDocument(driver, propEnv);
 	        
 		//Step-9:-----Change Status--------------------------------------//
@@ -93,36 +99,42 @@ public class FWF_Documents_Test extends BrowserInvoke{
 			Thread.sleep(300);
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Document Properties","");
 	        Thread.sleep(3000);
+	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Document Properties");
 	        FunctionLibrary.fwf_fnDocumentProperties(driver, propEnv);
 	        
 		//Step-13:---Document History-----------------------------------//
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Document History","");
 	        Thread.sleep(3000);
+	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Document History");
 	        
 		//Step-14:---Customize View-------------------------------------//
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Customize View","");
 	        Thread.sleep(3000);
 	        String[] array= new String[] {"Task","Status","Checklist","Assigned To","Priority","Link Name","Due Date"};
+	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Customize View");
 	        FunctionLibrary.fnOWMCustomizeView(driver,array);
 	        
 		//Step-15:----Save Preferences-----------------------------------//
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Save Preferences","");
 	        Thread.sleep(3000);
+	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Save Preferences");
 	        FunctionLibrary.fnOWMSavePreferences(driver,"Save Preferences");
 	        
 		//Step-16:---Save Preferences for all---------------------------//
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Save Preferences for All","");
 	        Thread.sleep(3000);
+	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Save Preferences");
 	        FunctionLibrary.fnOWMSavePreferences(driver,"Save Preferences for All");
 	        
 		//Step-17:---Saved Search---------------------------------------//
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Saved Search","");
 	        Thread.sleep(3000);
+	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Documents Search");
 	        FunctionLibrary.fwf_fnSavedSearch(driver, propEnv);
 	        
 	    //Step-18:---Log Off---------------------------------------------//
