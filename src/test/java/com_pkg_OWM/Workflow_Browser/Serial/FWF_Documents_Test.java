@@ -1,10 +1,14 @@
 package com_pkg_OWM.Workflow_Browser.Serial;
 
 import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -64,6 +68,22 @@ public class FWF_Documents_Test extends BrowserInvoke{
 		//Step-7:----Actions---------------------------------------------//
 				//---Add Document~New Document--------------------------//
 			NavigationTabs nav = new NavigationTabs(driver);
+			List<WebElement> rows = driver.findElements(By.xpath("//DIV[@id=\"grdDocumentHitList_dom\"]/TABLE[1]/TBODY[1]/TR"));
+			if(rows.size()>1) {
+				Robot robot = new Robot();
+		        robot.keyPress(KeyEvent.VK_CONTROL);
+		        for(int i=1;i<=rows.size();i++) {
+		        	action.moveToElement(driver.findElement(By.xpath("//DIV[@id=\"grdDocumentHitList_dom\"]/TABLE[1]/TBODY[1]/TR["+i+"]"))).click().build().perform();
+		        }
+				robot.keyRelease(KeyEvent.VK_CONTROL);
+				nav.Actions();
+		        FunctionLibrary.fnOWMActionsMenu(driver,"Other Actions","Delete Document(s)");
+		        Thread.sleep(1122);
+		        driver.switchTo().alert().accept();
+		        Thread.sleep(1122);
+		        driver.switchTo().alert().accept();
+		        Thread.sleep(3999);
+			}
 			nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Add Document","New Document");
 	        Thread.sleep(3000);
@@ -72,6 +92,7 @@ public class FWF_Documents_Test extends BrowserInvoke{
 	        FunctionLibrary.fnFWFAddDocument(driver,propEnv);
 	        
 		//Step-8:----Email Documents-------------------------------------//
+	        FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
 	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id=\"grdDocumentHitList_dom\"]/TABLE[1]/TBODY[1]/TR[2]"))).click().build().perform();
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Email Document(s)","");
@@ -80,21 +101,66 @@ public class FWF_Documents_Test extends BrowserInvoke{
 	        FunctionLibrary.fwf_fnEmailDocument(driver, propEnv);
 	        
 		//Step-9:-----Change Status--------------------------------------//
+	        FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
+	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id=\"grdDocumentHitList_dom\"]/TABLE[1]/TBODY[1]/TR[2]"))).click().build().perform();
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Change Status","In Progress");
-	        Thread.sleep(3000);
+	        Thread.sleep(500);
+	        String text = driver.switchTo().alert().getText();
+			if (text.contains("Successfully updated 1 document(s).")) {
+				Thread.sleep(500);
+				driver.switchTo().alert().accept();	
+			}
+	        Thread.sleep(5000);
 	        
+	    //Step--:----Other Actions-----------------------------------------//
+	        FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
+	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id=\"grdDocumentHitList_dom\"]/TABLE[1]/TBODY[1]/TR[2]"))).click().build().perform();
+	        nav.Actions();
+	        FunctionLibrary.fnOWMActionsMenu(driver,"Other Actions","Copy Document(s)");
+	        Thread.sleep(3000);
+	        //-------Copy Documents--------//
+	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Copy Document(s)");
+	        FunctionLibrary.fwf_fnCopyDocuments(driver, propEnv);
+	        Thread.sleep(1000);
+	        //-------Copy Documents to ClipBoard---//
+	        //-------Move Document--------//
+	        //-------Export Document-------//
+	        //-------Delete Document-------//
 		//Step-10:----Review Documents-----------------------------------//
+	        FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
+	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id=\"grdDocumentHitList_dom\"]/TABLE[1]/TBODY[1]/TR[2]"))).click().build().perform();
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Review Document(s)","Archive");
+	        Thread.sleep(500);
+	        String text1 = driver.switchTo().alert().getText();
+			if (text1.contains("The selected document(s) have been successfully Archived.")) {
+				Thread.sleep(500);
+				driver.switchTo().alert().accept();	
+			}
+	        Thread.sleep(3000);
+	        //-------UnArchive---------------//
+	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id=\"grdDocumentHitList_dom\"]/TABLE[1]/TBODY[1]/TR[2]"))).click().build().perform();
+	        nav.Actions();
+	        FunctionLibrary.fnOWMActionsMenu(driver,"Review Document(s)","Unarchive");
+	        Thread.sleep(500);
+	        String text2 = driver.switchTo().alert().getText();
+			if (text2.contains("Successfully removed the Archived Status for the selected document(s).")) {
+				Thread.sleep(500);
+				driver.switchTo().alert().accept();	
+			}
 	        Thread.sleep(3000);
 	        
 		//Step-11:----Associate Documents to workflow--------------------//
+	        FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
+	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id=\"grdDocumentHitList_dom\"]/TABLE[1]/TBODY[1]/TR[2]"))).click().build().perform();
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Associate Document(s) to WorkFlow","");
 	        Thread.sleep(3000);
 	        
 		//Step-12:----Document Properties--------------------------------//
+	        FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
+	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id=\"grdDocumentHitList_dom\"]/TABLE[1]/TBODY[1]/TR[2]"))).click().build().perform();
 	        nav.Actions();
 			Thread.sleep(300);
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Document Properties","");
@@ -102,13 +168,16 @@ public class FWF_Documents_Test extends BrowserInvoke{
 	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Document Properties");
 	        FunctionLibrary.fwf_fnDocumentProperties(driver, propEnv);
 	        
-		//Step-13:---Document History-----------------------------------//
+		/*//Step-13:---Document History-----------------------------------//
+	        FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
+	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id=\"grdDocumentHitList_dom\"]/TABLE[1]/TBODY[1]/TR[2]"))).click().build().perform();
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Document History","");
 	        Thread.sleep(3000);
-	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Document History");
+	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Document History");*/
 	        
 		//Step-14:---Customize View-------------------------------------//
+	        FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Customize View","");
 	        Thread.sleep(3000);
@@ -117,6 +186,7 @@ public class FWF_Documents_Test extends BrowserInvoke{
 	        FunctionLibrary.fnOWMCustomizeView(driver,array);
 	        
 		//Step-15:----Save Preferences-----------------------------------//
+	        FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Save Preferences","");
 	        Thread.sleep(3000);
@@ -124,6 +194,7 @@ public class FWF_Documents_Test extends BrowserInvoke{
 	        FunctionLibrary.fnOWMSavePreferences(driver,"Save Preferences");
 	        
 		//Step-16:---Save Preferences for all---------------------------//
+	        FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Save Preferences for All","");
 	        Thread.sleep(3000);
@@ -131,12 +202,19 @@ public class FWF_Documents_Test extends BrowserInvoke{
 	        FunctionLibrary.fnOWMSavePreferences(driver,"Save Preferences for All");
 	        
 		//Step-17:---Saved Search---------------------------------------//
+	        FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
+	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id=\"grdDocumentHitList_dom\"]/TABLE[1]/TBODY[1]/TR[2]"))).click().build().perform();
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Saved Search","");
 	        Thread.sleep(3000);
 	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Documents Search");
 	        FunctionLibrary.fwf_fnSavedSearch(driver, propEnv);
 	        
+	        //Delete Document uploaded------//
+	        FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
+	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id=\"grdDocumentHitList_dom\"]/TABLE[1]/TBODY[1]/TR[2]"))).click().build().perform();
+	        nav.Actions();
+	        FunctionLibrary.fnOWMActionsMenu(driver,"Saved Search","");
 	    //Step-18:---Log Off---------------------------------------------//
 			
 }
