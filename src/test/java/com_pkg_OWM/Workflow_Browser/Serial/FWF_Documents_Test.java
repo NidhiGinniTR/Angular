@@ -125,6 +125,13 @@ public class FWF_Documents_Test extends BrowserInvoke{
 	        Thread.sleep(1000);
 	        //-------Copy Documents to ClipBoard---//
 	        //-------Move Document--------//
+	        FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
+	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id=\"grdDocumentHitList_dom\"]/TABLE[1]/TBODY[1]/TR[2]"))).click().build().perform();
+	        nav.Actions();
+	        FunctionLibrary.fnOWMActionsMenu(driver,"Other Actions","Move Document");
+	        Thread.sleep(3000);
+	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Move Document");
+	        FunctionLibrary.fwf_fnMoveDocument(driver, propEnv);
 	        //-------Export Document-------//
 	        //-------Delete Document-------//
 		//Step-10:----Review Documents-----------------------------------//
@@ -181,7 +188,7 @@ public class FWF_Documents_Test extends BrowserInvoke{
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Customize View","");
 	        Thread.sleep(3000);
-	        String[] array= new String[] {"Task","Status","Checklist","Assigned To","Priority","Link Name","Due Date"};
+	        String[] array= new String[] {"Description","File Section","Document Type","Document Date","Status","Assigned To","Due Date"};
 	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Customize View");
 	        FunctionLibrary.fnOWMCustomizeView(driver,array);
 	        

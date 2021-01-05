@@ -1,5 +1,6 @@
 package com_pkg_OWM.Workflow_Browser.Serial;
 
+import java.awt.AWTException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Set;
@@ -33,7 +34,7 @@ public class FWF_Tasks_Test extends BrowserInvoke {
 	}
 	
 	@Test(dependsOnMethods = "Initialize")
-	public void Tasks() throws InterruptedException {
+	public void Tasks() throws InterruptedException, AWTException {
 		//Step-1:-----Login---------------------------------------------//
 			FunctionLibrary.fnLogin(driver, propEnv);
 			Thread.sleep(3000);
@@ -60,12 +61,7 @@ public class FWF_Tasks_Test extends BrowserInvoke {
 		//Step-6:-----Click on Tasks Tab and Actions--------------------//
 			new WebDriverWait(driver,50).until(ExpectedConditions.numberOfWindowsToBe(3));
 			driver.switchTo().parentFrame();
-			Set<String> ids = driver.getWindowHandles();
-	        java.util.Iterator<String> it = ids.iterator();
-	        String parentid = it.next();
-	        String childid = it.next();
-	        String childid1 = it.next();
-	        driver.switchTo().window(childid1);
+			FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
 	        Thread.sleep(8000);
 	        driver.switchTo().frame("tabIFrame");
 	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id='grdTasks_dom']/table/tbody/tr[2]"))).click().build().perform();
@@ -74,53 +70,81 @@ public class FWF_Tasks_Test extends BrowserInvoke {
 		//Step-7:-----Change Status-------------------------------------//
 	        NavigationTabs nav = new NavigationTabs(driver);
 	        nav.Actions();
-	        FunctionLibrary.fnOWMActionsMenu(driver,"Change Status","Not Started");
-	        Thread.sleep(3000);
+	        FunctionLibrary.fnOWMActionsMenu(driver,"Change Status","In Progress");
+	        Thread.sleep(5000);
 	        
-		//Step-8:-----Route Task----------------------------------------//
+		/*//Step-8:-----Route Task----------------------------------------//
+	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id='grdTasks_dom']/table/tbody/tr[2]"))).click().build().perform();
 	        nav.Actions();
-	        FunctionLibrary.fnOWMActionsMenu(driver,"Route Task","");
+	        FunctionLibrary.fnOWMActionsMenu(driver,"Route Task","");*/
 	        
 		//Step-9:-----Task Properties-----------------------------------//
+	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id='grdTasks_dom']/table/tbody/tr[2]"))).click().build().perform();
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Task Properties","");
-	        
-		//Step-10:----Task History--------------------------------------//
+	        Thread.sleep(2345);
+	        //FunctionLibrary.	        
+		/*//Step-10:----Task History--------------------------------------//
 	        nav.Actions();
-	        FunctionLibrary.fnOWMActionsMenu(driver,"Task History","");
+	        FunctionLibrary.fnOWMActionsMenu(driver,"Task History","");*/
 	        
 		//Step-11:----Reset Checklist-----------------------------------//
+	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id='grdTasks_dom']/table/tbody/tr[2]"))).click().build().perform();
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Reset Checklist","");
-	        
+	        Thread.sleep(500);
+	        String text = driver.switchTo().alert().getText();
+			if (text.contains("Are you sure you want to proceed?")) {
+				Thread.sleep(500);
+				driver.switchTo().alert().accept();	
+			}
 	        
 		//Step-12:----Add Documents-------------------------------------//
+			action.moveToElement(driver.findElement(By.xpath("//DIV[@id='grdTasks_dom']/table/tbody/tr[2]"))).click().build().perform();
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Add Document","");
+	        Thread.sleep(3000);
+	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Add document");
+	        Thread.sleep(999);
+	        FunctionLibrary.fnFWFAddDocument(driver,propEnv);
+	        
 	        
 		//Step-13:----View Documents------------------------------------//
+	        FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
+	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id='grdTasks_dom']/table/tbody/tr[2]"))).click().build().perform();
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"View Document(s)","");
+	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Task Properties");
 	        
-		//Step-14:----Export--------------------------------------------//
+	        
+		/*//Step-14:----Export--------------------------------------------//
 	        nav.Actions();
-	        FunctionLibrary.fnOWMActionsMenu(driver,"Export","");
+	        FunctionLibrary.fnOWMActionsMenu(driver,"Export","");*/
 	        
 		//Step-15:----Customize View-------------------------------------//
+	        FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
+	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id='grdTasks_dom']/table/tbody/tr[2]"))).click().build().perform();
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Customize View","");
 	        String[] array= new String[] {"Task","Status","Checklist","Assigned To","Priority","Link Name","Due Date"};
 	        FunctionLibrary.fnOWMCustomizeView(driver, array);
 	        
 		//Step-16:----Save Preferences----------------------------------//
+	        FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
+	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id='grdTasks_dom']/table/tbody/tr[2]"))).click().build().perform();
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Save Preferences","");
+	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Save Preferences");
 	        FunctionLibrary.fnOWMSavePreferences(driver,"Save Preferences");
 	        
 		//Step-17:----Save Preferences for All--------------------------//
+	        FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
+	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id='grdTasks_dom']/table/tbody/tr[2]"))).click().build().perform();
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Save Preferences for All","");
+	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Save Preferences");
 	        FunctionLibrary.fnOWMSavePreferences(driver,"Save Preferences for All");
+	        
 		//Step-18:----LogOff-------------------------------------------//
 		
 	}
