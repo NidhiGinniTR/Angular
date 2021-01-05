@@ -6,6 +6,8 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
@@ -152,4 +154,14 @@ public class OWM_Actions_Test extends BrowserInvoke {
 
 	}
 
+	@AfterClass
+	void closeBrowser() throws InterruptedException {
+		//FunctionLibrary.fnLogOff(driver);
+	}
+
+	@AfterSuite
+	public void aftersuite() {
+		ExtentManager.endReport();
+	}
+	
 }
