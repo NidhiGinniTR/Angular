@@ -911,13 +911,13 @@ public class FunctionLibrary extends ExtentManager {
 			driver.switchTo().frame("bottom");// Switch to respective window
 			driver.switchTo().frame("content");
 			driver.switchTo().frame("bottomFrame");
-			/*Logout Lo = new Logout(driver);
+			Navigations Lo = new Navigations(driver);
 			Lo.OWMLogout();
 			Thread.sleep(500);
 			driver.switchTo().window(parentid);
 			driver.switchTo().frame("header");
 			Lo.LS1Logout();
-			driver.close();*/
+			driver.close();
 		}
 	 
 }

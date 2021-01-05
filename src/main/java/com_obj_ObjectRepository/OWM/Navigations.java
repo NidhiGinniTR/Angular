@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 import com_lib_FunctionLibrary.FrameWork;
 
+
 public class Navigations {
 	WebDriver driver;
 	FrameWork fm = new FrameWork();
@@ -128,5 +129,17 @@ public class Navigations {
 			fm.fnWebButton(driver, Search, "Search");
 		}
 
+	// ------------------------LogOut------------------------------------------------------------------
+		By OWMLogout = By.xpath("//*[@id='divLogoutLink']"); 
+		By LS1Logout = By.xpath("//*[@id='btnLogOff']");
+		
+		public void OWMLogout() throws InterruptedException {
+			fm.fnWebButton(driver, OWMLogout, "OWMLogout");
+		}
+		
+		public void LS1Logout() throws InterruptedException {
+			fm.fnWebButton(driver, LS1Logout, "LS1Logout");
+		}
+		
 
 }
