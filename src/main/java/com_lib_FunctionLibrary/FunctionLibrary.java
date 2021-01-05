@@ -34,9 +34,6 @@ import com_obj_ObjectRepository.OWM.Navigations;
 import com_obj_ObjectRepository.OWM.WorkFlowBrowser;
 
 
-
-
-
 public class FunctionLibrary extends ExtentManager {
 
 	public static void fnLogin(WebDriver driver, Properties Env) throws InterruptedException {
@@ -576,11 +573,11 @@ public class FunctionLibrary extends ExtentManager {
 			}
 		}
 
-		public static void fnWindowHandler(WebDriver driver, String Wname) {
+	 public static void fnWindowHandler(WebDriver driver, String Wname) {
 
 		}
 
-		public static void fwf_fnEmailDocument(WebDriver driver, Properties data) throws InterruptedException {
+	 public static void fwf_fnEmailDocument(WebDriver driver, Properties data) throws InterruptedException {
 			childTest = test
 					.createNode("Description: Email Documents " + "<br>" + "<< Screen Name: Folder WorkFlows >></br>");
 			Documents owm = new Documents(driver);
@@ -619,7 +616,7 @@ public class FunctionLibrary extends ExtentManager {
 			}
 		}
 
-		public static void fwf_fnCopyDocuments(WebDriver driver, Properties data) throws InterruptedException {
+	 public static void fwf_fnCopyDocuments(WebDriver driver, Properties data) throws InterruptedException {
 			childTest = test
 					.createNode("Description: Copy Documents " + "<br>" + "<< Screen Name: Folder WorkFlows >></br>");
 			Documents owm = new Documents(driver);
@@ -666,7 +663,7 @@ public class FunctionLibrary extends ExtentManager {
 			}
 		}
 
-		public static void fwf_fnMoveDocument(WebDriver driver, Properties data) throws InterruptedException {
+	 public static void fwf_fnMoveDocument(WebDriver driver, Properties data) throws InterruptedException {
 			childTest = test
 					.createNode("Description: Copy Documents " + "<br>" + "<< Screen Name: Folder WorkFlows >></br>");
 			Documents owm = new Documents(driver);
@@ -721,7 +718,7 @@ public class FunctionLibrary extends ExtentManager {
 			}
 		}
 
-		public static void fwf_fnDocumentProperties(WebDriver driver, Properties data) throws InterruptedException {
+	 public static void fwf_fnDocumentProperties(WebDriver driver, Properties data) throws InterruptedException {
 			childTest = test
 					.createNode("Description: Document Properties " + "<br>" + "<< Screen Name: Folder WorkFlows >></br>");
 			Documents owm = new Documents(driver);
@@ -776,7 +773,7 @@ public class FunctionLibrary extends ExtentManager {
 
 		}
 
-		public static void fwf_fnSavedSearch(WebDriver driver, Properties data) throws InterruptedException {
+	 public static void fwf_fnSavedSearch(WebDriver driver, Properties data) throws InterruptedException {
 			childTest = test.createNode(
 					"Description: Saved Seach/Document Search " + "<br>" + "<< Screen Name: Folder WorkFlows >></br>");
 			Documents owm = new Documents(driver);
@@ -798,7 +795,7 @@ public class FunctionLibrary extends ExtentManager {
 			}
 		}
 
-		public static void fnSwitchtoWindow(WebDriver driver,int winNum,String winName) throws InterruptedException {
+	 public static void fnSwitchtoWindow(WebDriver driver,int winNum,String winName) throws InterruptedException {
 			new WebDriverWait(driver,50).until(ExpectedConditions.numberOfWindowsToBe(winNum));
 			Set<String> s = driver.getWindowHandles();
 			Iterator<String> ite = s.iterator();
@@ -817,4 +814,34 @@ public class FunctionLibrary extends ExtentManager {
 			}
 		}
 
+	 public static void fnOWMNewWorkFlow(WebDriver driver, Properties prop) throws InterruptedException {
+		 childTest = test.createNode(
+					"Description: Create a New WorkFlow " + "<br>" + "<< Screen Name: WorkFlow Browser >></br>");
+			new WebDriverWait(driver,25000).until(ExpectedConditions.numberOfWindowsToBe(3));
+			Set<String> ids1 = driver.getWindowHandles();
+			java.util.Iterator<String> it1 = ids1.iterator();
+			String parentid = it1.next();
+			String childid = it1.next();
+			String childid1 = it1.next();
+			Thread.sleep(2000);
+			driver.switchTo().window(childid1);
+			WorkFlowBrowser NW = new WorkFlowBrowser(driver);
+			NW.WFP_NWF_WfTemplate("");
+			NW.WFP_NWF_Entityname("");
+			NW.WFP_NWF_EntityId("");
+			NW.WFP_NWF_jurisdiction("");
+			Thread.sleep(200);
+			NW.WFP_NWF_save();
+		}
+	 
+	 public static void fnOWMDeleteWorkflow(WebDriver driver, String actualText, String expectedText) {
+		 childTest = test.createNode(
+					"Description: Delete WorkFlow " + "<br>" + "<< Screen Name: Workflow Browser >></br>");
+			if (actualText.equals(expectedText)) {
+				driver.switchTo().alert().accept();
+			} else {
+				driver.switchTo().alert().dismiss();
+			}
+		}
+	 
 }
