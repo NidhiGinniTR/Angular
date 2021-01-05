@@ -34,6 +34,7 @@ import com_obj_ObjectRepository.OWM.Navigations;
 import com_obj_ObjectRepository.OWM.WorkFlowBrowser;
 
 
+
 public class FunctionLibrary extends ExtentManager {
 
 	public static void fnLogin(WebDriver driver, Properties Env) throws InterruptedException {
@@ -398,6 +399,34 @@ public class FunctionLibrary extends ExtentManager {
 		 }else {
 				driver.close();
 		 }
+        
+       // FunctionLibrary.fnFWFSelectEvent(driver, propSerialData);
+ 		Thread.sleep(500);
+ 		driver.findElement(By.xpath("//TD[@id='btnActionsMenu']")).click();
+		Thread.sleep(1000);
+		FunctionLibrary.fnOWMActionsMenu(driver, "Edit Scheduled Event(s)", "");
+		Thread.sleep(1500);
+		/*new WebDriverWait(driver,35000).until(ExpectedConditions.numberOfWindowsToBe(4));
+        Set<String> ids = driver.getWindowHandles();
+		java.util.Iterator<String> it = ids.iterator();
+        String parentid1 = it.next();
+        String childid3 = it.next();
+        String childid4 = it.next();
+        String childid5= it.next() ;
+        Thread.sleep(2500);
+        driver.switchTo().window(childid5);*/
+ 		ESE.fwf_EditEventtabSelection("Work Status");
+        Thread.sleep(500);
+        ESE.fwf_Events_ESE_Status("On Hold");
+        Thread.sleep(2500);
+        ESE.fwf_Events_Save();
+        Thread.sleep(2500);
+        if(driver.switchTo().alert().getText().equalsIgnoreCase("The selected Scheduled Event(s) have been updated.") ) {
+ 			Thread.sleep(2500);
+ 			driver.switchTo().alert().accept();
+ 		}else {
+ 			driver.close();
+ 		}
     }
 
 	 public static void fnFWFSelectEvent(WebDriver driver , Properties prop) throws InterruptedException {
@@ -842,6 +871,53 @@ public class FunctionLibrary extends ExtentManager {
 			} else {
 				driver.switchTo().alert().dismiss();
 			}
+		}
+	
+	 public static void fnFWFESEExtendEvent(WebDriver driver) throws InterruptedException {
+		 childTest = test.createNode(
+					"Description:Extend Event in Edit Schedule Page " + "<br>" + "<< Screen Name: Folder Workflows >></br>");
+		 	new WebDriverWait(driver, 25000).until(ExpectedConditions.numberOfWindowsToBe(4));
+			Set<String> ids11 = driver.getWindowHandles();
+			java.util.Iterator<String> it11 = ids11.iterator();
+			String parentid = it11.next();
+			String childid = it11.next();
+			String childid1 = it11.next();
+			String childid2 = it11.next();
+			Thread.sleep(2500);
+			driver.switchTo().window(childid2);
+			Events ESE = new Events(driver);
+			Thread.sleep(2500);
+			ESE.fwf_Events_ESE_Actions();
+	        Thread.sleep(1500);
+			ESE.fwf_Events_ESE_ExtendEvent();
+			Thread.sleep(2500);
+			if(driver.switchTo().alert().getText().equalsIgnoreCase("The Scheduled Event(s) has been extended.")) {
+				Thread.sleep(500);
+				driver.switchTo().alert().accept();
+			}else {
+				driver.close();
+			}
+		}
+	 
+	 public static void fnLogOff(WebDriver driver) throws InterruptedException {
+		 childTest = test.createNode(
+					"Description:LogOut of the Tool " + "<br>" + "<< Screen Name:  >></br>");
+			Set<String> ids = driver.getWindowHandles();
+			java.util.Iterator<String> it = ids.iterator();
+			String parentid = it.next();
+			String childid = it.next();
+			driver.switchTo().window(childid);
+			driver.switchTo().defaultContent();
+			driver.switchTo().frame("bottom");// Switch to respective window
+			driver.switchTo().frame("content");
+			driver.switchTo().frame("bottomFrame");
+			/*Logout Lo = new Logout(driver);
+			Lo.OWMLogout();
+			Thread.sleep(500);
+			driver.switchTo().window(parentid);
+			driver.switchTo().frame("header");
+			Lo.LS1Logout();
+			driver.close();*/
 		}
 	 
 }

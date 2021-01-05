@@ -1,5 +1,235 @@
 package com_pkg_OWM.Workflow_Browser.Serial;
 
-public class FWF_Events_Test {
+import java.io.IOException;
+import java.util.Set;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Test;
+
+import com_data_Resources.Environment.BrowserInvoke;
+import com_helper_Reporting.ExtentManager;
+import com_lib_FunctionLibrary.FrameWork;
+import com_lib_FunctionLibrary.FunctionLibrary;
+import com_obj_ObjectRepository.FolderWorkFlows.Events;
+
+
+
+public class FWF_Events_Test extends BrowserInvoke {
+	
+	@BeforeSuite
+	public void beforesuit() {
+		ExtentManager.createInstance();
+	}
+	
+	@Test
+	public void Initialize() throws IOException {
+		driver = InvokeDriver();
+		driver.get(propEnv.getProperty("URL"));
+		//driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
+	}
+	
+	@Test(dependsOnMethods = { "Initialize" })
+	public void EventActions() throws InterruptedException {
+	//Step-1:-----Login---------------------------------------------//
+		FunctionLibrary.fnLogin(driver, propEnv);
+		
+	//Step-2:-----Launch WorkFlow Manager---------------------------//
+		FunctionLibrary.fnLaunchApplication(driver, "Calendar");
+		Thread.sleep(1500);
+		
+	//Step-3:-----Navigate to Respective Tab------------------------//
+		new WebDriverWait(driver, 35000).until(ExpectedConditions.numberOfWindowsToBe(2));
+		FunctionLibrary.fnNavigateTab(driver, "WorkFlow Browser");
+		Thread.sleep(1000);
+		
+	//Step-4:---------------Create a New Folder----------------------//
+		//FunctionLibrary.fnOWMActionsMenu(driver, "New Folder","");
+		FunctionLibrary.fnOWMActionsMenu(driver, "New Folder","");
+		Thread.sleep(2500);
+		//Thread.sleep(2500);
+		new WebDriverWait(driver, 25000).until(ExpectedConditions.numberOfWindowsToBe(3));
+		FunctionLibrary.fnNewFolderCreation(driver, propSerialData);
+		
+	//Step-5:---------Search for the Required Workflow---------------//	
+		FunctionLibrary.fnWorkflowBrowserSearch(driver, propSerialData);
+		Thread.sleep(2000);
+		
+	//Step-6:-----Double click on the workflow to Folder Workflows---//
+		driver.switchTo().frame("viewIFrame");
+		FrameWork.fnWebTable(driver, driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td")),
+				"DoubleClick");
+		Thread.sleep(500);
+		
+	//Step-7:------Navigate to Events Tab----------------------------//
+		new WebDriverWait(driver, 25000).until(ExpectedConditions.numberOfWindowsToBe(3));
+		Thread.sleep(2500);
+		FunctionLibrary.fnFWFSwitchingTab(driver, "Events");
+		
+	//Step-8:--------------Actions----------------------------------//
+		Set<String> ids = driver.getWindowHandles();
+		java.util.Iterator<String> it = ids.iterator();
+		String parentid = it.next();
+		String childid = it.next();
+		String childid1 = it.next();
+		Thread.sleep(500);
+		driver.switchTo().window(childid1);
+		Thread.sleep(500);
+		driver.switchTo().frame("tabIFrame");
+		Thread.sleep(500);
+		driver.findElement(By.xpath("//TD[@id='btnActionsMenu']")).click();
+		Thread.sleep(1000);
+		FunctionLibrary.fnOWMActionsMenu(driver, "Schedule New Event(s)", "");	
+		       
+	//Step-9:----Scheduled New Event-------------------------------------//
+		new WebDriverWait(driver, 20500).until(ExpectedConditions.numberOfWindowsToBe(4));
+		FunctionLibrary.fnFWFScheduleNewEvent(driver, propSerialData);
+        
+	//Step-10:-----Select Event--------------------------------------//
+		FunctionLibrary.fnFWFSelectEvent(driver, propSerialData);
+		Thread.sleep(500);
+        
+	//Step-11:----Change Status-----------------------------------//
+		driver.findElement(By.xpath("//TD[@id='btnActionsMenu']")).click();
+		Thread.sleep(1000);
+		FunctionLibrary.fnOWMActionsMenu(driver, "Change Status", "On Hold");
+		Thread.sleep(1500);
+		
+	//Step-12:-----------Select Event--------------------------------------//
+		FunctionLibrary.fnFWFSelectEvent(driver, propSerialData);
+		Thread.sleep(500); 
+		
+	//Step-13:-----------------Extend Events--------------------------//
+		driver.findElement(By.xpath("//TD[@id='btnActionsMenu']")).click();
+		Thread.sleep(1000);
+		FunctionLibrary.fnOWMActionsMenu(driver, "Extend Event(s)", "");
+		Thread.sleep(1500);
+		
+		new WebDriverWait(driver,35000).until(ExpectedConditions.numberOfWindowsToBe(4));
+        Set<String> ids1 = driver.getWindowHandles();
+		java.util.Iterator<String> it1 = ids1.iterator();
+        String parenti1d = it1.next();
+        String childid2 = it1.next();
+        String childid3 = it1.next();
+        String childid4= it1.next() ;
+        Thread.sleep(2500);
+        driver.switchTo().window(childid4);
+        Events SNE=new Events(driver);
+		Thread.sleep(1500);
+		SNE.fwf_Events_SNE_ScheduleExtension();
+		Thread.sleep(1500);
+		System.out.println(driver.switchTo().alert().getText());
+		if(driver.switchTo().alert().getText().equalsIgnoreCase("The Scheduled Event(s) has been extended.")) {
+			driver.switchTo().alert().accept();
+		}else {
+			driver.close();
+		}
+		Thread.sleep(1500);
+        
+	//Step-14:-----------Select Event---------------------------------//
+		FunctionLibrary.fnFWFSelectEvent(driver, propSerialData);
+		Thread.sleep(500);
+		
+        
+	//Step-15:----------------Re-Calculate-----------------------------------//
+		driver.findElement(By.xpath("//TD[@id='btnActionsMenu']")).click();
+		Thread.sleep(1000);
+		FunctionLibrary.fnOWMActionsMenu(driver, "Re-calculate", "");
+		Thread.sleep(1500);
+		if(driver.switchTo().alert().getText().equalsIgnoreCase("0 out of 1 record(s) processed.") ) {
+			Thread.sleep(2500);
+			driver.switchTo().alert().accept();
+		}else {
+			driver.close();
+		}
+		Thread.sleep(1500);
+        
+	//Step-16:--------Select Event------------------------------------//
+		FunctionLibrary.fnFWFSelectEvent(driver, propSerialData);
+		Thread.sleep(500);
+	
+	//Step-17:--------Edit Scheduled Event - Mark Done------------------------------------//	
+		driver.findElement(By.xpath("//TD[@id='btnActionsMenu']")).click();
+		Thread.sleep(1000);
+		FunctionLibrary.fnOWMActionsMenu(driver, "Edit Scheduled Event(s)", "");
+		Thread.sleep(1500);
+		FunctionLibrary.fnFWFESEMarkDone(driver);
+		Thread.sleep(1500);
+		
+	//Step-18:--------Select Event------------------------------------//
+		FunctionLibrary.fnFWFSelectEvent(driver, propSerialData);
+		Thread.sleep(500);
+			
+	//Step-19:--------Edit Scheduled Event - Roll Forward------------------------------------//	
+		driver.findElement(By.xpath("//TD[@id='btnActionsMenu']")).click();
+		Thread.sleep(1500);
+		FunctionLibrary.fnOWMActionsMenu(driver, "Edit Scheduled Event(s)", "");
+		Thread.sleep(1500);
+		FunctionLibrary.fnFWFESERollForward(driver);
+		Thread.sleep(1500);
+	
+	//Step-20:--------Select Event------------------------------------//
+		FunctionLibrary.fnFWFSelectEvent(driver, propSerialData);
+		Thread.sleep(500);
+	
+	//Step-21:--------Edit Scheduled Event-Re-Calculate-------------------------------------//
+		driver.findElement(By.xpath("//TD[@id='btnActionsMenu']")).click();
+		Thread.sleep(1000);
+		FunctionLibrary.fnOWMActionsMenu(driver, "Edit Scheduled Event(s)", "");
+		Thread.sleep(1500);
+		FunctionLibrary.fnFWFESEReCalculate(driver);
+		
+	//Step-22:--------Select Event------------------------------------//
+		FunctionLibrary.fnFWFSelectEvent(driver, propSerialData);
+		Thread.sleep(500);
+		 
+	//Step-23:--------Edit Scheduled Event-Extend Event-------------------------------------//
+		driver.findElement(By.xpath("//TD[@id='btnActionsMenu']")).click();
+		Thread.sleep(1000);
+		FunctionLibrary.fnOWMActionsMenu(driver, "Edit Scheduled Event(s)", "");
+		Thread.sleep(1500);
+		FunctionLibrary.fnFWFESEExtendEvent(driver);
+	
+	//Step-22:--------Select Event------------------------------------//
+		FunctionLibrary.fnFWFSelectEvent(driver, propSerialData);
+		Thread.sleep(500);
+				
+	//Step-24:--------Customize View------------------------------------//
+		driver.findElement(By.xpath("//TD[@id='btnActionsMenu']")).click();
+		Thread.sleep(1000);
+		FunctionLibrary.fnOWMActionsMenu(driver, "Customize View", "");
+		String[] array= new String[] {"Event","Status","Date Completed","Assigned To","Extended","Authority","Due Date"};
+	    FunctionLibrary.fnOWMCustomizeView(driver, array);
+		Thread.sleep(1500);
+		
+	//Step-25:----Save Preferences-----------------------------------//
+		 driver.findElement(By.xpath("//TD[@id='btnActionsMenu']")).click();
+		 FunctionLibrary.fnOWMActionsMenu(driver,"Save Preferences","");
+	     Thread.sleep(3000);
+	     FunctionLibrary.fnOWMSavePreferences(driver,"Save Preferences");
+	        
+	//Step-26:---Save Preferences for all---------------------------//
+	      driver.findElement(By.xpath("//TD[@id='btnActionsMenu']")).click();
+	      FunctionLibrary.fnOWMActionsMenu(driver,"Save Preferences for All","");
+	      Thread.sleep(3000);
+	      FunctionLibrary.fnOWMSavePreferences(driver,"Save Preferences for All");
+        
+    //Step-27:---Log Off---------------------------------------------//
+	      
+	}
+	
+	@AfterClass
+	void closeBrowser() throws InterruptedException {
+		//FunctionLibrary.fnLogOff(driver);
+	}
+	
+	@AfterSuite
+	public void aftersuite() {
+		ExtentManager.endReport();
+	}
+	
 }
