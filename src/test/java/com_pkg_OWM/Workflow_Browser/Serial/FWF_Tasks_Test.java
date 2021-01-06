@@ -27,6 +27,7 @@ public class FWF_Tasks_Test extends BrowserInvoke {
 		ExtentManager.createInstance();
 	}
 	
+	@Test
 	public void Initialize() throws IOException {
 		driver = InvokeDriver();
 		driver.get(propEnv.getProperty("URL"));
@@ -61,15 +62,16 @@ public class FWF_Tasks_Test extends BrowserInvoke {
 		//Step-6:-----Click on Tasks Tab and Actions--------------------//
 			new WebDriverWait(driver,50).until(ExpectedConditions.numberOfWindowsToBe(3));
 			driver.switchTo().parentFrame();
-			FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
+			FunctionLibrary.fnSwitchtoWindow(driver,3, "");
 	        Thread.sleep(8000);
 	        driver.switchTo().frame("tabIFrame");
-	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id='grdTasks_dom']/table/tbody/tr[2]"))).click().build().perform();
+	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id='grdTasks_dom']/table/tbody/tr[2]/td"))).click().build().perform();
 	        Thread.sleep(300);
 	        
 		//Step-7:-----Change Status-------------------------------------//
 	        NavigationTabs nav = new NavigationTabs(driver);
 	        nav.Actions();
+	        driver.switchTo().frame("tabIFrame");
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Change Status","In Progress");
 	        Thread.sleep(5000);
 	        

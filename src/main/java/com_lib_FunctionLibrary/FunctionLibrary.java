@@ -122,15 +122,10 @@ public class FunctionLibrary extends ExtentManager {
 	}
 
 	public static void fnOWMActionsMenu(WebDriver driver, String item, String subItem) throws InterruptedException {
-		driver.switchTo().defaultContent();
-		driver.switchTo().frame("bottom");
-		driver.switchTo().frame("content");
-		driver.switchTo().frame("bottomFrame");
-		if (driver.getTitle().equalsIgnoreCase("WorkFlow Manager")) {
+		if (driver.getTitle().equalsIgnoreCase("WorkFlow Manager")|| driver.getTitle().equalsIgnoreCase("Folder WorkFlows")) {
 			WorkFlowBrowser actionsMenu = new WorkFlowBrowser(driver);
 			actionsMenu.Actions();
 			Thread.sleep(1000);
-			driver.switchTo().frame("viewIFrame");
 			java.util.List<WebElement> menuitems = driver.findElements(By.className("MenuItem"));
 			for (int i = 0; i < menuitems.size(); i++) {
 				// String name = webelement.getText();
