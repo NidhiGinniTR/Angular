@@ -110,7 +110,7 @@ public class FWF_Tasks_Test extends BrowserInvoke {
 	        Thread.sleep(1567);
 	        driver.switchTo().frame("frame1");
 	        FunctionLibrary.fnFWFAddDocument(driver,propSerialData);
-	        
+	        Thread.sleep(3000);
 	        
 		/*//Step-13:----View Documents------------------------------------//
 	        FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
@@ -126,25 +126,33 @@ public class FWF_Tasks_Test extends BrowserInvoke {
 	        
 		//Step-15:----Customize View-------------------------------------//
 	        FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
+	        driver.switchTo().frame("tabIFrame");
 	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id='grdTasks_dom']/table/tbody/tr[2]"))).click().build().perform();
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Customize View","");
+	        Thread.sleep(7000);
+	        FunctionLibrary.fnSwitchtoWindow(driver,4,"Grid Columns");
+	        Thread.sleep(1567);
 	        String[] array= new String[] {"Task","Status","Checklist","Assigned To","Priority","Link Name","Due Date"};
 	        FunctionLibrary.fnOWMCustomizeView(driver, array);
+	        Thread.sleep(1000);
 	        
 		//Step-16:----Save Preferences----------------------------------//
 	        FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
 	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id='grdTasks_dom']/table/tbody/tr[2]"))).click().build().perform();
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Save Preferences","");
+	        Thread.sleep(5000);
 	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Save Preferences");
 	        FunctionLibrary.fnOWMSavePreferences(driver,"Save Preferences");
+	        Thread.sleep(1000);
 	        
 		//Step-17:----Save Preferences for All--------------------------//
 	        FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
 	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id='grdTasks_dom']/table/tbody/tr[2]"))).click().build().perform();
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Save Preferences for All","");
+	        Thread.sleep(5000);
 	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Save Preferences");
 	        FunctionLibrary.fnOWMSavePreferences(driver,"Save Preferences for All");
 	        

@@ -296,12 +296,6 @@ public class FunctionLibrary extends ExtentManager {
 	
 	public static void fnOWMCustomizeView(WebDriver driver, String[] array) throws InterruptedException {
 		childTest = test.createNode("Description: Customize View" + "<br>" + "<< Screen Name: OWM >></br>");
-		Set<String> ids1 = driver.getWindowHandles();
-		java.util.Iterator<String> it1 = ids1.iterator();
-		String parentid = it1.next();
-		String childid = it1.next();
-		String childid1 = it1.next();
-		driver.switchTo().window(childid1);
 		WorkFlowBrowser owm = new WorkFlowBrowser(driver);
 		if (driver.getTitle().equalsIgnoreCase("Grid Columns")) {
 			for (int i = 0; i < array.length; i++) {
