@@ -71,14 +71,13 @@ public class FWF_Tasks_Test extends BrowserInvoke {
 		//Step-7:-----Change Status-------------------------------------//
 	        NavigationTabs nav = new NavigationTabs(driver);
 	        nav.Actions();
-	        driver.switchTo().frame("tabIFrame");
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Change Status","In Progress");
 	        Thread.sleep(5000);
 	        
 		/*//Step-8:-----Route Task----------------------------------------//
 	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id='grdTasks_dom']/table/tbody/tr[2]"))).click().build().perform();
 	        nav.Actions();
-	        FunctionLibrary.fnOWMActionsMenu(driver,"Route Task","");*/
+	        FunctionLibrary.fnOWMActionsMenu(driver,"Route Task","");
 	        
 		//Step-9:-----Task Properties-----------------------------------//
 	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id='grdTasks_dom']/table/tbody/tr[2]"))).click().build().perform();
@@ -86,7 +85,7 @@ public class FWF_Tasks_Test extends BrowserInvoke {
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Task Properties","");
 	        Thread.sleep(2345);
 	        //FunctionLibrary.	        
-		/*//Step-10:----Task History--------------------------------------//
+		//Step-10:----Task History--------------------------------------//
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Task History","");*/
 	        
@@ -100,18 +99,20 @@ public class FWF_Tasks_Test extends BrowserInvoke {
 				Thread.sleep(500);
 				driver.switchTo().alert().accept();	
 			}
+			Thread.sleep(4000);
 	        
 		//Step-12:----Add Documents-------------------------------------//
 			action.moveToElement(driver.findElement(By.xpath("//DIV[@id='grdTasks_dom']/table/tbody/tr[2]"))).click().build().perform();
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Add Document","");
-	        Thread.sleep(3000);
-	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Add document");
-	        Thread.sleep(999);
-	        FunctionLibrary.fnFWFAddDocument(driver,propEnv);
+	        Thread.sleep(5000);
+	        FunctionLibrary.fnSwitchtoWindow(driver,4,"Add document");
+	        Thread.sleep(1567);
+	        driver.switchTo().frame("frame1");
+	        FunctionLibrary.fnFWFAddDocument(driver,propSerialData);
 	        
 	        
-		//Step-13:----View Documents------------------------------------//
+		/*//Step-13:----View Documents------------------------------------//
 	        FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
 	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id='grdTasks_dom']/table/tbody/tr[2]"))).click().build().perform();
 	        nav.Actions();
@@ -119,7 +120,7 @@ public class FWF_Tasks_Test extends BrowserInvoke {
 	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Task Properties");
 	        
 	        
-		/*//Step-14:----Export--------------------------------------------//
+		//Step-14:----Export--------------------------------------------//
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Export","");*/
 	        

@@ -124,7 +124,6 @@ public class FunctionLibrary extends ExtentManager {
 	public static void fnOWMActionsMenu(WebDriver driver, String item, String subItem) throws InterruptedException {
 		if (driver.getTitle().equalsIgnoreCase("WorkFlow Manager")|| driver.getTitle().equalsIgnoreCase("Folder WorkFlows")) {
 			WorkFlowBrowser actionsMenu = new WorkFlowBrowser(driver);
-			actionsMenu.Actions();
 			Thread.sleep(1000);
 			java.util.List<WebElement> menuitems = driver.findElements(By.className("MenuItem"));
 			for (int i = 0; i < menuitems.size(); i++) {
@@ -575,7 +574,7 @@ public class FunctionLibrary extends ExtentManager {
 				WebDriverWait w1 = new WebDriverWait(driver, 15);
 				w1.until(ExpectedConditions.alertIsPresent());
 				String text1 = driver.switchTo().alert().getText();
-				if (text1.contains("Select a physical document")) {
+				if (text1.contains("is required.")) {
 					Thread.sleep(500);
 					driver.switchTo().alert().accept();
 					childTest.pass("Verification: Mandatory field alert " + "<br>" + text1 + " exists </br>");
@@ -583,13 +582,13 @@ public class FunctionLibrary extends ExtentManager {
 					childTest.fail("Verification: Mandatory field alert is  missing");
 				}
 				Thread.sleep(2000);
-				owm.fwf_Task_AD_Description(data.getProperty(""));
-				owm.fwf_Task_AD_FileSection(data.getProperty(""));
-				owm.fwf_Task_AD_DocumentType(data.getProperty(""));
-				owm.fwf_Task_AD_DocumentDate(data.getProperty(""));
-				owm.fwf_Task_AD_AssignedTo(data.getProperty(""));
-				owm.fwf_Task_AD_DocumentStatus(data.getProperty(""));
-				owm.fwf_Task_AD_DueDate(data.getProperty(""));
+				owm.fwf_Task_AD_Description(data.getProperty("doc_Description"));
+				owm.fwf_Task_AD_FileSection(data.getProperty("doc_FileSection"));
+				owm.fwf_Task_AD_DocumentType(data.getProperty("doc_DocumentType"));
+				owm.fwf_Task_AD_DocumentDate(data.getProperty("doc_DocumentDate"));
+				owm.fwf_Task_AD_AssignedTo(data.getProperty("doc_AssignedTo"));
+				owm.fwf_Task_AD_DocumentStatus(data.getProperty("doc_DocumentStatus"));
+				owm.fwf_Task_AD_DueDate(data.getProperty("doc_DueDate"));
 				owm.fwf_Task_AD_Notify();
 				owm.fwf_Task_AD_NotifyUsersList();
 				owm.fwf_Task_AD_Save();
@@ -827,11 +826,10 @@ public class FunctionLibrary extends ExtentManager {
 			while(ite.hasNext() && i<=s.size()) {
 				String popHandle = ite.next().toString();
 				driver.switchTo().window(popHandle);
-				System.out.println(driver.getTitle());
 				if(i==winNum) break;
 				i++;
 			}
-			if(driver.getTitle().equals(winName)) {
+			if(winName!=null ||driver.getTitle().equals(winName)) {
 				childTest.info("Switched to "+winName+" window.");
 			}else {
 				childTest.fail("Failed to Switch to "+winName+" window.");
