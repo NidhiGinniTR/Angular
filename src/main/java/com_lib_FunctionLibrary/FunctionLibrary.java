@@ -262,12 +262,6 @@ public class FunctionLibrary extends ExtentManager {
 	public static void fnOWMSavePreferences(WebDriver driver, String menuitem) throws InterruptedException {
 		childTest = test.createNode("Description: Save Preferences For All" + "<br>" + "<< Screen Name: OWM >></br>");
 		WorkFlowBrowser owm = new WorkFlowBrowser(driver);
-		Set<String> ids1 = driver.getWindowHandles();
-		java.util.Iterator<String> it1 = ids1.iterator();
-		String parentid = it1.next();
-		String childid = it1.next();
-		String childid1 = it1.next();
-		driver.switchTo().window(childid1);
 		if (menuitem.equals("Save Preferences for All")) {
 			if (driver.getTitle().equals("Save Preferences")) {
 				System.out.println(driver.getTitle());
@@ -275,7 +269,6 @@ public class FunctionLibrary extends ExtentManager {
 				Thread.sleep(1000);
 				owm.SavePreforAll_Save();
 				Thread.sleep(3000);
-				driver.switchTo().window(childid);
 				if (driver.switchTo().alert().getText().contains("Screen preferences changed for all users")) {
 					driver.switchTo().alert().accept();
 					childTest.log(Status.PASS, "Clicked on OK in the Alert Popup");
@@ -284,7 +277,6 @@ public class FunctionLibrary extends ExtentManager {
 				}
 			}
 		} else if (menuitem.equals("Save Preferences")) {
-			driver.switchTo().window(childid);
 			if (driver.switchTo().alert().getText().contains("Your changes have been saved")) {
 				driver.switchTo().alert().accept();
 				childTest.log(Status.PASS, "Clicked on OK in the Alert Popup");

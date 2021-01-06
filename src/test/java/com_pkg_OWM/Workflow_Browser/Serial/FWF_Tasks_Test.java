@@ -135,7 +135,7 @@ public class FWF_Tasks_Test extends BrowserInvoke {
 	        Thread.sleep(1567);
 	        String[] array= new String[] {"Task","Status","Checklist","Assigned To","Priority","Link Name","Due Date"};
 	        FunctionLibrary.fnOWMCustomizeView(driver, array);
-	        Thread.sleep(1000);
+	        Thread.sleep(5000);
 	        
 		//Step-16:----Save Preferences----------------------------------//
 	        FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
@@ -145,7 +145,7 @@ public class FWF_Tasks_Test extends BrowserInvoke {
 	        Thread.sleep(5000);
 	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Save Preferences");
 	        FunctionLibrary.fnOWMSavePreferences(driver,"Save Preferences");
-	        Thread.sleep(1000);
+	        Thread.sleep(4000);
 	        
 		//Step-17:----Save Preferences for All--------------------------//
 	        FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
