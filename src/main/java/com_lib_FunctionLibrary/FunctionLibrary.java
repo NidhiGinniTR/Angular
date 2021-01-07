@@ -244,14 +244,7 @@ public class FunctionLibrary extends ExtentManager {
 		Thread.sleep(2500);
 	}
 
-	public static void fnFWFSwitchingTab(WebDriver driver, String tab) throws InterruptedException {
-		Set<String> ids = driver.getWindowHandles();
-		java.util.Iterator<String> it = ids.iterator();
-		String parentid = it.next();
-		String childid = it.next();
-		String childid1 = it.next();
-		Thread.sleep(500);
-		driver.switchTo().window(childid1);
+	public static void fnFWFSwitchingTab(WebDriver driver, String tab) throws InterruptedException{
 		Thread.sleep(500);
 		NavigationTabs St = new NavigationTabs(driver);
 		St.fwf_tabSelection(tab);

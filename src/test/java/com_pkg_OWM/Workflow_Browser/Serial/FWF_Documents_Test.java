@@ -27,7 +27,7 @@ public class FWF_Documents_Test extends BrowserInvoke{
 	public void beforeStart() {
 		ExtentManager.createInstance();
 	}
-	
+	@Test
 	public void Initialize() throws IOException {
 		driver = InvokeDriver();
 		driver.get(propEnv.getProperty("URL"));
@@ -35,7 +35,7 @@ public class FWF_Documents_Test extends BrowserInvoke{
 	}
 	
 	@Test(dependsOnMethods = "Initialize")
-	public void Tasks() throws InterruptedException, AWTException {
+	public void Documents() throws InterruptedException, AWTException {
 		//Step-1:-----Login---------------------------------------------//
 			FunctionLibrary.fnLogin(driver, propEnv);
 			Thread.sleep(3000);
@@ -58,10 +58,10 @@ public class FWF_Documents_Test extends BrowserInvoke{
 			Actions action = new Actions(driver);
 			action.moveToElement(driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td"))).doubleClick().build().perform();
 			Thread.sleep(10000);
-			driver.switchTo().parentFrame();
+			//driver.switchTo().parentFrame();
 		//Step-6:----Navigate to Document Tab----------------------------//
 			FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
-			Thread.sleep(2000);
+			Thread.sleep(4000);
 			FunctionLibrary.fnFWFSwitchingTab(driver,"Documents");
 			Thread.sleep(3000);
 			driver.switchTo().frame("tabIFrame");
@@ -86,10 +86,10 @@ public class FWF_Documents_Test extends BrowserInvoke{
 			}
 			nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Add Document","New Document");
-	        Thread.sleep(3000);
+	        Thread.sleep(5000);
 	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Add document");
 	        Thread.sleep(999);
-	        FunctionLibrary.fnFWFAddDocument(driver,propEnv);
+	        FunctionLibrary.fnFWFAddDocument(driver,propSerialData);
 	        
 		//Step-8:----Email Documents-------------------------------------//
 	        FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
@@ -98,7 +98,7 @@ public class FWF_Documents_Test extends BrowserInvoke{
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Email Document(s)","");
 	        Thread.sleep(3000);
 	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Email Document(s)");
-	        FunctionLibrary.fwf_fnEmailDocument(driver, propEnv);
+	        FunctionLibrary.fwf_fnEmailDocument(driver, propSerialData);
 	        
 		//Step-9:-----Change Status--------------------------------------//
 	        FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");

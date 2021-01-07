@@ -6,7 +6,7 @@
 	</listeners>
 	<test thread-count="5" name="Regression">
 		<classes>
-			<class name="com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test" />
+			<class name="com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
