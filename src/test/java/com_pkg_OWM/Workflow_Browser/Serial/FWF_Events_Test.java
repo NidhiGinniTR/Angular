@@ -43,16 +43,15 @@ public class FWF_Events_Test extends BrowserInvoke {
 		Thread.sleep(1500);
 		
 	//Step-3:-----Navigate to Respective Tab------------------------//
-		new WebDriverWait(driver, 35000).until(ExpectedConditions.numberOfWindowsToBe(2));
+		new WebDriverWait(driver, 50).until(ExpectedConditions.numberOfWindowsToBe(2));
 		FunctionLibrary.fnNavigateTab(driver, "WorkFlow Browser");
 		Thread.sleep(1000);
 		
 	//Step-4:---------------Create a New Folder----------------------//
-		//FunctionLibrary.fnOWMActionsMenu(driver, "New Folder","");
 		FunctionLibrary.fnOWMActionsMenu(driver, "New Folder","");
 		Thread.sleep(2500);
 		//Thread.sleep(2500);
-		new WebDriverWait(driver, 25000).until(ExpectedConditions.numberOfWindowsToBe(3));
+		new WebDriverWait(driver, 30).until(ExpectedConditions.numberOfWindowsToBe(3));
 		FunctionLibrary.fnNewFolderCreation(driver, propSerialData);
 		
 	//Step-5:---------Search for the Required Workflow---------------//	
@@ -66,19 +65,13 @@ public class FWF_Events_Test extends BrowserInvoke {
 		Thread.sleep(500);
 		
 	//Step-7:------Navigate to Events Tab----------------------------//
-		new WebDriverWait(driver, 25000).until(ExpectedConditions.numberOfWindowsToBe(3));
+		FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
 		Thread.sleep(2500);
 		FunctionLibrary.fnFWFSwitchingTab(driver, "Events");
 		
 	//Step-8:--------------Actions----------------------------------//
-		Set<String> ids = driver.getWindowHandles();
-		java.util.Iterator<String> it = ids.iterator();
-		String parentid = it.next();
-		String childid = it.next();
-		String childid1 = it.next();
-		Thread.sleep(500);
-		driver.switchTo().window(childid1);
-		Thread.sleep(500);
+		FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
+		Thread.sleep(1000);
 		driver.switchTo().frame("tabIFrame");
 		Thread.sleep(500);
 		driver.findElement(By.xpath("//TD[@id='btnActionsMenu']")).click();
@@ -86,7 +79,7 @@ public class FWF_Events_Test extends BrowserInvoke {
 		FunctionLibrary.fnOWMActionsMenu(driver, "Schedule New Event(s)", "");	
 		       
 	//Step-9:----Scheduled New Event-------------------------------------//
-		new WebDriverWait(driver, 20500).until(ExpectedConditions.numberOfWindowsToBe(4));
+		FunctionLibrary.fnSwitchtoWindow(driver,4, "Folder WorkFlows");
 		FunctionLibrary.fnFWFScheduleNewEvent(driver, propSerialData);
         
 	//Step-10:-----Select Event--------------------------------------//
@@ -107,17 +100,8 @@ public class FWF_Events_Test extends BrowserInvoke {
 		driver.findElement(By.xpath("//TD[@id='btnActionsMenu']")).click();
 		Thread.sleep(1000);
 		FunctionLibrary.fnOWMActionsMenu(driver, "Extend Event(s)", "");
-		Thread.sleep(1500);
-		
-		new WebDriverWait(driver,35000).until(ExpectedConditions.numberOfWindowsToBe(4));
-        Set<String> ids1 = driver.getWindowHandles();
-		java.util.Iterator<String> it1 = ids1.iterator();
-        String parenti1d = it1.next();
-        String childid2 = it1.next();
-        String childid3 = it1.next();
-        String childid4= it1.next() ;
-        Thread.sleep(2500);
-        driver.switchTo().window(childid4);
+		Thread.sleep(3500);
+		FunctionLibrary.fnSwitchtoWindow(driver,4, "Folder WorkFlows");
         Events SNE=new Events(driver);
 		Thread.sleep(1500);
 		SNE.fwf_Events_SNE_ScheduleExtension();

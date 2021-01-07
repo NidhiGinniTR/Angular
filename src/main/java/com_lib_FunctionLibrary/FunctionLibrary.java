@@ -35,6 +35,7 @@ import com_obj_ObjectRepository.OWM.WorkFlowBrowser;
 
 
 
+
 public class FunctionLibrary extends ExtentManager {
 
 	public static void fnLogin(WebDriver driver, Properties Env) throws InterruptedException {
@@ -354,15 +355,7 @@ public class FunctionLibrary extends ExtentManager {
 	public static void fnFWFESEMarkDone(WebDriver driver) throws InterruptedException {
 		childTest = test.createNode(
 				"Description: Mark Done" + "<br>" + "<< Screen Name: Folder Workflows >></br>");
-		new WebDriverWait(driver,45000).until(ExpectedConditions.numberOfWindowsToBe(4));
-        Set<String> ids1 = driver.getWindowHandles();
-		 java.util.Iterator<String> it1 = ids1.iterator();
-        String parentid = it1.next();
-        String childid = it1.next();
-        String childid1 = it1.next();
-        String childid2= it1.next() ;
-        Thread.sleep(2500);
-        driver.switchTo().window(childid2);
+		FunctionLibrary.fnSwitchtoWindow(driver,4, "Folder WorkFlows");
         Events ESE=new Events(driver);
         Thread.sleep(2500);
         System.out.println(driver.getTitle());
@@ -380,7 +373,7 @@ public class FunctionLibrary extends ExtentManager {
 				driver.close();
 		 }
         
-       // FunctionLibrary.fnFWFSelectEvent(driver, propSerialData);
+       /* FunctionLibrary.fnFWFSelectEvent(driver, propSerialData);
  		Thread.sleep(500);
  		driver.findElement(By.xpath("//TD[@id='btnActionsMenu']")).click();
 		Thread.sleep(1000);
@@ -394,7 +387,7 @@ public class FunctionLibrary extends ExtentManager {
         String childid4 = it.next();
         String childid5= it.next() ;
         Thread.sleep(2500);
-        driver.switchTo().window(childid5);*/
+        driver.switchTo().window(childid5);
  		ESE.fwf_EditEventtabSelection("Work Status");
         Thread.sleep(500);
         ESE.fwf_Events_ESE_Status("On Hold");
@@ -406,7 +399,7 @@ public class FunctionLibrary extends ExtentManager {
  			driver.switchTo().alert().accept();
  		}else {
  			driver.close();
- 		}
+ 		}*/
     }
 
 	 public static void fnFWFSelectEvent(WebDriver driver , Properties prop) throws InterruptedException {
@@ -436,15 +429,7 @@ public class FunctionLibrary extends ExtentManager {
 	 public static void fnFWFESERollForward(WebDriver driver) throws InterruptedException {
 		 childTest = test.createNode(
 					"Description: Roll Forward" + "<br>" + "<< Screen Name: Folder Workflows >></br>");
-		 	new WebDriverWait(driver, 25000).until(ExpectedConditions.numberOfWindowsToBe(4));
-			Set<String> ids11 = driver.getWindowHandles();
-			java.util.Iterator<String> it11 = ids11.iterator();
-			String parentid = it11.next();
-			String childid = it11.next();
-			String childid1 = it11.next();
-			String childid2 = it11.next();
-			Thread.sleep(2500);
-			driver.switchTo().window(childid2);
+		 	FunctionLibrary.fnSwitchtoWindow(driver,4, "Folder WorkFlows");
 			Events ESE = new Events(driver);
 			Thread.sleep(2500);
 			System.out.println(driver.getTitle());
@@ -491,15 +476,7 @@ public class FunctionLibrary extends ExtentManager {
 	 public static void fnFWFESEReCalculate(WebDriver driver) throws InterruptedException {
 		 childTest = test.createNode(
 					"Description: Re-Calculate." + "<br>" + "<< Screen Name: Folder Workflows >></br>");
-		 	new WebDriverWait(driver, 25000).until(ExpectedConditions.numberOfWindowsToBe(4));
-			Set<String> ids11 = driver.getWindowHandles();
-			java.util.Iterator<String> it11 = ids11.iterator();
-			String parentid = it11.next();
-			String childid = it11.next();
-			String childid1 = it11.next();
-			String childid2 = it11.next();
-			Thread.sleep(2500);
-			driver.switchTo().window(childid2);
+		 FunctionLibrary.fnSwitchtoWindow(driver,4, "Folder WorkFlows");
 			Events ESE = new Events(driver);
 			Thread.sleep(2500);
 			ESE.fwf_Events_ESE_Recalculate();
@@ -825,14 +802,7 @@ public class FunctionLibrary extends ExtentManager {
 	 public static void fnOWMNewWorkFlow(WebDriver driver, Properties prop) throws InterruptedException {
 		 childTest = test.createNode(
 					"Description: Create a New WorkFlow " + "<br>" + "<< Screen Name: WorkFlow Browser >></br>");
-			new WebDriverWait(driver,25000).until(ExpectedConditions.numberOfWindowsToBe(3));
-			Set<String> ids1 = driver.getWindowHandles();
-			java.util.Iterator<String> it1 = ids1.iterator();
-			String parentid = it1.next();
-			String childid = it1.next();
-			String childid1 = it1.next();
-			Thread.sleep(2000);
-			driver.switchTo().window(childid1);
+		 FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
 			WorkFlowBrowser NW = new WorkFlowBrowser(driver);
 			NW.WFP_NWF_WfTemplate("");
 			NW.WFP_NWF_Entityname("");
@@ -855,15 +825,7 @@ public class FunctionLibrary extends ExtentManager {
 	 public static void fnFWFESEExtendEvent(WebDriver driver) throws InterruptedException {
 		 childTest = test.createNode(
 					"Description:Extend Event in Edit Schedule Page " + "<br>" + "<< Screen Name: Folder Workflows >></br>");
-		 	new WebDriverWait(driver, 25000).until(ExpectedConditions.numberOfWindowsToBe(4));
-			Set<String> ids11 = driver.getWindowHandles();
-			java.util.Iterator<String> it11 = ids11.iterator();
-			String parentid = it11.next();
-			String childid = it11.next();
-			String childid1 = it11.next();
-			String childid2 = it11.next();
-			Thread.sleep(2500);
-			driver.switchTo().window(childid2);
+		 FunctionLibrary.fnSwitchtoWindow(driver,4, "Folder WorkFlows");
 			Events ESE = new Events(driver);
 			Thread.sleep(2500);
 			ESE.fwf_Events_ESE_Actions();
