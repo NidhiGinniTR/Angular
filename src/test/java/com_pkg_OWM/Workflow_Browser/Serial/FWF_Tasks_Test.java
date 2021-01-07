@@ -107,7 +107,7 @@ public class FWF_Tasks_Test extends BrowserInvoke {
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Add Document","");
 	        Thread.sleep(5000);
 	        FunctionLibrary.fnSwitchtoWindow(driver,4,"Add document");
-	        Thread.sleep(1567);
+	        Thread.sleep(3000);
 	        driver.switchTo().frame("frame1");
 	        FunctionLibrary.fnFWFAddDocument(driver,propSerialData);
 	        Thread.sleep(5000);
@@ -120,7 +120,7 @@ public class FWF_Tasks_Test extends BrowserInvoke {
 	        FunctionLibrary.fnOWMActionsMenu(driver,"View Document(s)","");
 	        Thread.sleep(4000);
 	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Task Properties");
-	        Thread.sleep(2000);
+	        Thread.sleep(5000);
 	        FunctionLibrary.fnFWFViewDocuments(driver,propSerialData);
 	        Thread.sleep(2000);
 	        
