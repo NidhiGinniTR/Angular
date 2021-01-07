@@ -112,7 +112,7 @@ public class FWF_Tasks_Test extends BrowserInvoke {
 	        FunctionLibrary.fnFWFAddDocument(driver,propSerialData);
 	        Thread.sleep(3000);
 	        
-		/*//Step-13:----View Documents------------------------------------//
+		//Step-13:----View Documents------------------------------------//
 	        FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
 	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id='grdTasks_dom']/table/tbody/tr[2]"))).click().build().perform();
 	        nav.Actions();
@@ -120,7 +120,7 @@ public class FWF_Tasks_Test extends BrowserInvoke {
 	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Task Properties");
 	        
 	        
-		//Step-14:----Export--------------------------------------------//
+		/*//Step-14:----Export--------------------------------------------//
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Export","");*/
 	        

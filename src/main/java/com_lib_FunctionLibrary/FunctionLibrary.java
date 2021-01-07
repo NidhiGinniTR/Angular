@@ -35,6 +35,7 @@ import com_obj_ObjectRepository.OWM.WorkFlowBrowser;
 
 
 
+
 public class FunctionLibrary extends ExtentManager {
 
 	public static void fnLogin(WebDriver driver, Properties Env) throws InterruptedException {
@@ -897,6 +898,27 @@ public class FunctionLibrary extends ExtentManager {
 			driver.switchTo().frame("header");
 			Lo.LS1Logout();
 			driver.close();
+		}
+	 
+	 public static void fnFWFViewDocuments(WebDriver driver,Properties data) {
+			childTest = test.createNode(
+					"Description: Saved Seach/Document Search " + "<br>" + "<< Screen Name: Folder WorkFlows >></br>");
+			if (driver.getTitle().equalsIgnoreCase("Documents Properties")) {
+				//TR[@id="grdTaskDocumentHitList_top_head"]/TD[2]/DIV[1]/TABLE[1]/TBODY[1]/TR[1]/TD[1]
+				List<WebElement> rows = driver.findElements(By.xpath("//TR[@id='grdTaskDocumentHitList_top_head']/TD[2]/DIV[1]/TABLE[1]/TBODY[1]/TR"));
+				for(int i=0;i<=rows.size();i++) {
+					List<WebElement> columns = rows.get(i).findElements(By.tagName("td"));
+					for(int j=0;j<columns.size();j++) {
+						String text= columns.get(j).getText();
+						for(Object key:data.keySet()) {
+							if(data.getProperty(key.toString()).equals(text)) {
+								childTest.log(Status.INFO, text+" is matched in the Documents Table");
+								break;
+							}
+						}
+					}
+				}
+			}
 		}
 	 
 }
