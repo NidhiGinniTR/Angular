@@ -32,7 +32,7 @@ public class Tasks {
 		By fwf_Task_NotifyByCCEmailList = By.xpath("//INPUT[@id='btnEmailList']");
 		By fwf_Task_Comment = By.xpath("//*[@id='txtNotes']");
 		By fwf_Task_AddDocument = By.xpath("//*[@id='btnAddDoc']");
-		By fwf_Task_Save = By.xpath("//IMG[@id='btnOK']");
+		By fwf_Task_Save = By.xpath("//*[@id='btnOK']");
 		By fwf_Task_Cancel = By.xpath("//IMG[@id='btnCancel']");
 		
 		public void fwf_Task_TaskProperties() throws InterruptedException {
