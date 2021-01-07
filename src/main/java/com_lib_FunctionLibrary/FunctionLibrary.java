@@ -258,7 +258,7 @@ public class FunctionLibrary extends ExtentManager {
 	}
 
 	public static void fnOWMSavePreferences(WebDriver driver, String menuitem) throws InterruptedException {
-		childTest = test.createNode("Description: Save Preferences For All" + "<br>" + "<< Screen Name: OWM >></br>");
+		childTest = test.createNode("Description: Save Preferences/For All" + "<br>" + "<< Screen Name: OWM >></br>");
 		WorkFlowBrowser owm = new WorkFlowBrowser(driver);
 		if (menuitem.equals("Save Preferences for All")) {
 			if (driver.getTitle().equals("Save Preferences")) {
@@ -267,7 +267,7 @@ public class FunctionLibrary extends ExtentManager {
 				Thread.sleep(1000);
 				owm.SavePreforAll_Save();
 				Thread.sleep(3000);
-				if (driver.switchTo().alert().getText().contains("Screen preferences changed for all users")) {
+				if (driver.switchTo().alert().getText().contains("Screen preferences changed for all users.Notifications were sent.")) {
 					driver.switchTo().alert().accept();
 					childTest.log(Status.PASS, "Clicked on OK in the Alert Popup");
 				} else {
@@ -275,7 +275,7 @@ public class FunctionLibrary extends ExtentManager {
 				}
 			}
 		} else if (menuitem.equals("Save Preferences")) {
-			if (driver.switchTo().alert().getText().contains("Your changes have been saved")) {
+			if (driver.switchTo().alert().getText().contains("Your changes have been saved.")) {
 				driver.switchTo().alert().accept();
 				childTest.log(Status.PASS, "Clicked on OK in the Alert Popup");
 			} else {
@@ -865,13 +865,16 @@ public class FunctionLibrary extends ExtentManager {
 					for (Object key : data.keySet()) {
 						if (data.getProperty(key.toString()).equals(text)) {
 							childTest.log(Status.INFO, text + " is matched in the Documents Table");
-							
-							return;
+							break;
 						}
 					}
+					break;
 				}
+				break;
 			}
+			tsk.fwf_Task_Save();
 		}
+		
 	}
 
 }
