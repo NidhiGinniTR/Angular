@@ -172,16 +172,22 @@ public class FWF_Documents_Test extends BrowserInvoke{
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Associate Document(s) to WorkFlow","");
 	        Thread.sleep(3000);
+	        String text3 = driver.switchTo().alert().getText();
+			if (text3.contains("Selected document(s) have been associated to the")) {
+				Thread.sleep(500);
+				driver.switchTo().alert().accept();	
+			}
 	        
 		//Step-12:----Document Properties--------------------------------//
 	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id=\"grdDocumentHitList_dom\"]/TABLE[1]/TBODY[1]/TR[2]"))).click().build().perform();
 	        nav.Actions();
 			Thread.sleep(300);
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Document Properties","");
-	        Thread.sleep(5000);
+	        Thread.sleep(8000);
 	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Document Properties");
-	        Thread.sleep(1000);
+	        Thread.sleep(2000);
 	        FunctionLibrary.fwf_fnDocumentProperties(driver, propSerialData);
+	        Thread.sleep(4000);
 	        
 		/*//Step-13:---Document History-----------------------------------//
 	        FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
@@ -196,7 +202,7 @@ public class FWF_Documents_Test extends BrowserInvoke{
 	        driver.switchTo().frame("tabIFrame");
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Customize View","");
-	        Thread.sleep(3000);
+	        Thread.sleep(6000);
 	        String[] array= new String[] {"Description","File Section","Document Type","Document Date","Status","Assigned To","Due Date"};
 	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Customize View");
 	        FunctionLibrary.fnOWMCustomizeView(driver,array);
@@ -211,8 +217,8 @@ public class FWF_Documents_Test extends BrowserInvoke{
 	        FunctionLibrary.fnOWMSavePreferences(driver,"Save Preferences");
 	        
 		//Step-16:---Save Preferences for all---------------------------//
-	        FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
-	        driver.switchTo().frame("tabIFrame");
+	        //FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
+	        //driver.switchTo().frame("tabIFrame");
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Save Preferences for All","");
 	        Thread.sleep(3000);
@@ -225,15 +231,16 @@ public class FWF_Documents_Test extends BrowserInvoke{
 	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id=\"grdDocumentHitList_dom\"]/TABLE[1]/TBODY[1]/TR[2]"))).click().build().perform();
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Saved Search","");
-	        Thread.sleep(3000);
+	        Thread.sleep(5000);
 	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Documents Search");
-	        FunctionLibrary.fwf_fnSavedSearch(driver, propEnv);
+	        FunctionLibrary.fwf_fnSavedSearch(driver, propSerialData);
 	        
 	        //Delete Document uploaded------//
 	        FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
+	        driver.switchTo().frame("tabIFrame");
 	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id=\"grdDocumentHitList_dom\"]/TABLE[1]/TBODY[1]/TR[2]"))).click().build().perform();
 	        nav.Actions();
-	        FunctionLibrary.fnOWMActionsMenu(driver,"Saved Search","");
+	        FunctionLibrary.fnOWMActionsMenu(driver,"Other Actions","Delete Document(s)");
 	    //Step-18:---Log Off---------------------------------------------//
 			
 }

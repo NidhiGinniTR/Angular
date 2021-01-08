@@ -694,13 +694,13 @@ public class FunctionLibrary extends ExtentManager {
 		if (driver.getTitle().equalsIgnoreCase("Document Properties")) {
 
 			HashMap<By, String> txtCompare = new HashMap<By, String>();
-			txtCompare.put(owm.Documents_Description, data.getProperty("")); // Description
-			txtCompare.put(owm.Documents_FileSection, data.getProperty("")); // FileSection
-			txtCompare.put(owm.Documents_DocumentType, data.getProperty("")); // Document Type
-			txtCompare.put(owm.Documents_DocumentDate, data.getProperty("")); // Document Date
-			txtCompare.put(owm.DocProp_AssignedTo, data.getProperty("")); // Assigned To
-			txtCompare.put(owm.DocProp_DocumentStatus, data.getProperty("")); // Document Status
-			txtCompare.put(owm.DocProp_DueDate, data.getProperty("")); // Due Date
+			txtCompare.put(owm.Documents_Description, data.getProperty("doc_Description")); // Description
+			txtCompare.put(owm.Documents_FileSection, data.getProperty("doc_FileSection")); // FileSection
+			txtCompare.put(owm.Documents_DocumentType, data.getProperty("doc_DocumentType")); // Document Type
+			txtCompare.put(owm.Documents_DocumentDate, data.getProperty("doc_DocumentDate")); // Document Date
+			txtCompare.put(owm.DocProp_AssignedTo, data.getProperty("doc_AssignedTo")); // Assigned To
+			txtCompare.put(owm.DocProp_DocumentStatus, data.getProperty("doc_DocumentStatus")); // Document Status
+			txtCompare.put(owm.DocProp_DueDate, data.getProperty("doc_DueDate")); // Due Date
 
 			Set<By> map = txtCompare.keySet();
 			for (Iterator<By> i = map.iterator(); i.hasNext();) {
@@ -745,21 +745,22 @@ public class FunctionLibrary extends ExtentManager {
 	public static void fwf_fnSavedSearch(WebDriver driver, Properties data) throws InterruptedException {
 		childTest = test.createNode(
 				"Description: Saved Seach/Document Search " + "<br>" + "<< Screen Name: Folder WorkFlows >></br>");
+		Thread.sleep(3000);
 		Documents owm = new Documents(driver);
 		if (driver.getTitle().equalsIgnoreCase("Documents Search")) {
 			owm.SavedSearch_Clear();
-			owm.SavedSearch_year(data.getProperty(""));
-			owm.SavedSearch_period(data.getProperty(""));
-			owm.SavedSearch_Taxtype(data.getProperty(""));
-			owm.SavedSearch_WFtemplate(data.getProperty(""));
+			owm.SavedSearch_year(data.getProperty("Year"));
+			owm.SavedSearch_period(data.getProperty("Period"));
+			owm.SavedSearch_Taxtype(data.getProperty("TaxType"));
+			owm.SavedSearch_WFtemplate(data.getProperty("WF_Template"));
 			// owm.SavedSearch_WfAssociation("");
-			owm.Documents_Entityname(data.getProperty(""));
-			owm.Documents_EntityId(data.getProperty(""));
-			owm.Documents_jurisdiction(data.getProperty(""));
-			owm.Documents_Description(data.getProperty(""));
-			owm.SavedSearch_FileSection(data.getProperty(""));
-			owm.SavedSearch_DocumentType(data.getProperty(""));
-			owm.Documents_Assignedto(data.getProperty(""));
+			owm.Documents_Entityname(data.getProperty("Entity_Name"));
+			owm.Documents_EntityId(data.getProperty("Entity_Id"));
+			owm.Documents_jurisdiction(data.getProperty("Jurisdiction"));
+			owm.Documents_Description(data.getProperty("doc_Description"));
+			owm.SavedSearch_FileSection(data.getProperty("doc_FileSection"));
+			owm.SavedSearch_DocumentType(data.getProperty("doc_DocumentType"));
+			owm.Documents_Assignedto(data.getProperty("doc_AssignedTo"));
 			owm.SavedSearch_Close();
 		}
 	}
