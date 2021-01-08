@@ -590,7 +590,7 @@ public class FunctionLibrary extends ExtentManager {
 				.createNode("Description: Copy Documents " + "<br>" + "<< Screen Name: Folder WorkFlows >></br>");
 		Documents owm = new Documents(driver);
 		if (driver.getTitle().equalsIgnoreCase("Copy Document(s)")) {
-			owm.Documents_Entityname("");
+			//owm.Documents_Entityname("");
 			owm.Documents_save();
 			Thread.sleep(800);
 			WebDriverWait w = new WebDriverWait(driver, 20);

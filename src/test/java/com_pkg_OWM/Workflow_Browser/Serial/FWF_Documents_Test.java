@@ -68,7 +68,7 @@ public class FWF_Documents_Test extends BrowserInvoke{
 		//Step-7:----Actions---------------------------------------------//
 				//---Add Document~New Document--------------------------//
 			NavigationTabs nav = new NavigationTabs(driver);
-			List<WebElement> rows = driver.findElements(By.xpath("//DIV[@id=\"grdDocumentHitList_dom\"]/TABLE[1]/TBODY[1]/TR"));
+			/*List<WebElement> rows = driver.findElements(By.xpath("//DIV[@id=\"grdDocumentHitList_dom\"]/TABLE[1]/TBODY[1]/TR"));
 			if(rows.size()>2) {
 				Robot robot = new Robot();
 		        robot.keyPress(KeyEvent.VK_CONTROL);
@@ -91,17 +91,19 @@ public class FWF_Documents_Test extends BrowserInvoke{
 	        Thread.sleep(1500);
 	        driver.switchTo().frame("frame1");
 	        FunctionLibrary.fnFWFAddDocument(driver,propSerialData);
+	        Thread.sleep(3000)*/
 	        
 		//Step-8:----Email Documents-------------------------------------//
-	        FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
-	        driver.switchTo().frame("tabIFrame");
+	       // FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
+	        //driver.switchTo().frame("tabIFrame");
 	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id=\"grdDocumentHitList_dom\"]/TABLE[1]/TBODY[1]/TR[2]"))).click().build().perform();
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Email Document(s)","");
 	        Thread.sleep(5000);
 	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Email Document(s)");
-	        Thread.sleep(1500);
+	        Thread.sleep(3000);
 	        FunctionLibrary.fwf_fnEmailDocument(driver, propSerialData);
+	        Thread.sleep(2000);
 	        
 		//Step-9:-----Change Status--------------------------------------//
 	        FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
@@ -121,7 +123,7 @@ public class FWF_Documents_Test extends BrowserInvoke{
 	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id=\"grdDocumentHitList_dom\"]/TABLE[1]/TBODY[1]/TR[2]"))).click().build().perform();
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Other Actions","Copy Document(s)");
-	        Thread.sleep(5000);
+	        Thread.sleep(8000);
 	        //-------Copy Documents--------//
 	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Copy Document(s)");
 	        Thread.sleep(1500);
