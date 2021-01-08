@@ -31,7 +31,7 @@ public class FWF_Documents_Test extends BrowserInvoke{
 	public void Initialize() throws IOException {
 		driver = InvokeDriver();
 		driver.get(propEnv.getProperty("URL"));
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 	}
 	
 	@Test(dependsOnMethods = "Initialize")
@@ -57,7 +57,7 @@ public class FWF_Documents_Test extends BrowserInvoke{
 			driver.switchTo().frame("viewIFrame");
 			Actions action = new Actions(driver);
 			action.moveToElement(driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td"))).doubleClick().build().perform();
-			Thread.sleep(10000);
+			//Thread.sleep(10000);
 			//driver.switchTo().parentFrame();
 		//Step-6:----Navigate to Document Tab----------------------------//
 			FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
@@ -68,7 +68,7 @@ public class FWF_Documents_Test extends BrowserInvoke{
 		//Step-7:----Actions---------------------------------------------//
 				//---Add Document~New Document--------------------------//
 			NavigationTabs nav = new NavigationTabs(driver);
-			/*List<WebElement> rows = driver.findElements(By.xpath("//DIV[@id=\"grdDocumentHitList_dom\"]/TABLE[1]/TBODY[1]/TR"));
+			List<WebElement> rows = driver.findElements(By.xpath("//DIV[@id=\"grdDocumentHitList_dom\"]/TABLE[1]/TBODY[1]/TR"));
 			if(rows.size()>2) {
 				Robot robot = new Robot();
 		        robot.keyPress(KeyEvent.VK_CONTROL);
@@ -91,7 +91,7 @@ public class FWF_Documents_Test extends BrowserInvoke{
 	        Thread.sleep(1500);
 	        driver.switchTo().frame("frame1");
 	        FunctionLibrary.fnFWFAddDocument(driver,propSerialData);
-	        Thread.sleep(3000)*/
+	        Thread.sleep(3000);
 	        
 		//Step-8:----Email Documents-------------------------------------//
 	       // FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
