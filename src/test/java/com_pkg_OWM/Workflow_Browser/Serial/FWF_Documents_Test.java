@@ -94,8 +94,8 @@ public class FWF_Documents_Test extends BrowserInvoke{
 	        Thread.sleep(3000);
 	        
 		//Step-8:----Email Documents-------------------------------------//
-	       // FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
-	        //driver.switchTo().frame("tabIFrame");
+	        FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
+	        driver.switchTo().frame("tabIFrame");
 	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id=\"grdDocumentHitList_dom\"]/TABLE[1]/TBODY[1]/TR[2]"))).click().build().perform();
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Email Document(s)","");

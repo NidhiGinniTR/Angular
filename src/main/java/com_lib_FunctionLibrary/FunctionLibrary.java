@@ -634,10 +634,10 @@ public class FunctionLibrary extends ExtentManager {
 
 	public static void fwf_fnMoveDocument(WebDriver driver, Properties data) throws InterruptedException {
 		childTest = test
-				.createNode("Description: Copy Documents " + "<br>" + "<< Screen Name: Folder WorkFlows >></br>");
+				.createNode("Description: Move Document " + "<br>" + "<< Screen Name: Folder WorkFlows >></br>");
 		Documents owm = new Documents(driver);
 		if (driver.getTitle().equalsIgnoreCase("Move Document")) {
-			owm.MoveDoc_drawers(data.getProperty(""));
+			owm.MoveDoc_drawers(data.getProperty("doc_MoveD_Drawer"));
 			WebDriverWait w = new WebDriverWait(driver, 20);
 			WebElement exist = w
 					.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='idx_0000000004']")));
