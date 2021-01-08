@@ -9,9 +9,9 @@
       <class name="com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test">
         <methods>
           <include name="closeBrowser"/>
+          <include name="Documents"/>
           <include name="beforeStart"/>
           <include name="aftersuite"/>
-          <include name="Tasks"/>
           <include name="Initialize"/>
         </methods>
       </class> <!-- com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test -->

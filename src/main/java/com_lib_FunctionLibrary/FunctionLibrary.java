@@ -564,9 +564,9 @@ public class FunctionLibrary extends ExtentManager {
 			} else {
 				childTest.fail("Verification: Click on Save before Emailing document alert is missing");
 			}
-			owm.Emaildoc_To(data.getProperty(""));
-			owm.Emaildoc_CC(data.getProperty(""));
-			owm.Emaildoc_Subject(data.getProperty(""));
+			owm.Emaildoc_To(data.getProperty("doc_EmailTO"));
+			owm.Emaildoc_CC(data.getProperty("doc_EmailCC"));
+			owm.Emaildoc_Subject(data.getProperty("doc_EmailSubject"));
 			owm.Emaildoc_Message("Hi All," + "+<br>+"
 					+ " This email is intended to verify Email Document's as a link/Attachment functionality</br>");
 			owm.EmailDoc_AttachmenType_asLink();
@@ -654,13 +654,13 @@ public class FunctionLibrary extends ExtentManager {
 					childTest
 							.fail("Verification: Click on Save: before Move document mandatory field alert is missing");
 				}
-				owm.MoveDoc_EntityName(data.getProperty(""));
-				owm.MoveDoc_EntityID(data.getProperty(""));
-				owm.MoveDoc_TaxType(data.getProperty(""));
-				owm.MoveDoc_FileSection(data.getProperty(""));
-				owm.MoveDoc_Year(data.getProperty(""));
-				owm.MoveDoc_Description(data.getProperty(""));
-				owm.MoveDoc_Period(data.getProperty(""));
+				owm.MoveDoc_EntityName(data.getProperty("doc_MoveD_EntityName"));
+				owm.MoveDoc_EntityID(data.getProperty("doc_MoveD_EntityNum"));
+				owm.MoveDoc_TaxType(data.getProperty("TaxType"));
+				owm.MoveDoc_FileSection(data.getProperty("doc_FileSection"));
+				owm.MoveDoc_Year(data.getProperty("Year"));
+				owm.MoveDoc_Description(data.getProperty("doc_Description"));
+				owm.MoveDoc_Period(data.getProperty("Period"));
 				owm.MoveDoc_save();
 				w.until(ExpectedConditions.alertIsPresent());
 				String text1 = driver.switchTo().alert().getText();

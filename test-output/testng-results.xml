@@ -2,40 +2,40 @@
 <testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-01-07T20:26:19 IST" name="Suite" finished-at="2021-01-07T20:30:28 IST" duration-ms="249612">
+  <suite started-at="2021-01-08T15:28:38 IST" name="Suite" finished-at="2021-01-08T15:38:17 IST" duration-ms="579597">
     <groups>
     </groups>
-    <test started-at="2021-01-07T20:26:19 IST" name="Regression" finished-at="2021-01-07T20:30:28 IST" duration-ms="249612">
+    <test started-at="2021-01-08T15:28:38 IST" name="Regression" finished-at="2021-01-08T15:38:17 IST" duration-ms="579597">
       <class name="com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test">
-        <test-method is-config="true" signature="beforeStart()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@dd0c991]" started-at="2021-01-07T20:26:18 IST" name="beforeStart" finished-at="2021-01-07T20:26:19 IST" duration-ms="344" status="PASS">
+        <test-method is-config="true" signature="beforeStart()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@dd0c991]" started-at="2021-01-08T15:28:37 IST" name="beforeStart" finished-at="2021-01-08T15:28:38 IST" duration-ms="405" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeStart -->
-        <test-method signature="Initialize()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@dd0c991]" started-at="2021-01-07T20:26:19 IST" name="Initialize" finished-at="2021-01-07T20:26:26 IST" duration-ms="6839" status="PASS">
+        <test-method signature="Initialize()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@dd0c991]" started-at="2021-01-08T15:28:38 IST" name="Initialize" finished-at="2021-01-08T15:28:45 IST" duration-ms="7385" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Initialize -->
-        <test-method signature="Tasks()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@dd0c991]" started-at="2021-01-07T20:26:26 IST" name="Tasks" finished-at="2021-01-07T20:30:28 IST" depends-on-methods="com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test.Initialize" duration-ms="242719" status="FAIL">
+        <test-method signature="Documents()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@dd0c991]" started-at="2021-01-08T15:28:45 IST" name="Documents" finished-at="2021-01-08T15:38:17 IST" depends-on-methods="com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test.Initialize" duration-ms="572115" status="FAIL">
           <exception class="org.openqa.selenium.TimeoutException">
             <message>
               <![CDATA[Expected condition failed: waiting for number of open windows to be 3 (tried for 50 second(s) with 500 milliseconds interval)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'USE2DEVP0289', ip: '10.178.161.24', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
 Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:26297/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: a966c657-51e3-4dd6-a9fc-9a3bb1d46775]]>
+Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:28618/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: d78b9b91-f622-4e6e-993e-548c57f18a9d]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for number of open windows to be 3 (tried for 50 second(s) with 500 milliseconds interval)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'USE2DEVP0289', ip: '10.178.161.24', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
 Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:26297/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: a966c657-51e3-4dd6-a9fc-9a3bb1d46775
+Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:28618/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: d78b9b91-f622-4e6e-993e-548c57f18a9d
 at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
 at com_lib_FunctionLibrary.FunctionLibrary.fnSwitchtoWindow(FunctionLibrary.java:768)
-at com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test.Tasks(FWF_Documents_Test.java:95)
+at com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test.Documents(FWF_Documents_Test.java:106)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -69,12 +69,12 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Tasks -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@dd0c991]" started-at="2021-01-07T20:30:28 IST" name="closeBrowser" finished-at="2021-01-07T20:30:28 IST" duration-ms="1" status="PASS">
+        </test-method> <!-- Documents -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@dd0c991]" started-at="2021-01-08T15:38:17 IST" name="closeBrowser" finished-at="2021-01-08T15:38:17 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="aftersuite()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@dd0c991]" started-at="2021-01-07T20:30:28 IST" name="aftersuite" finished-at="2021-01-07T20:30:29 IST" duration-ms="429" status="PASS">
+        <test-method is-config="true" signature="aftersuite()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@dd0c991]" started-at="2021-01-08T15:38:17 IST" name="aftersuite" finished-at="2021-01-08T15:38:18 IST" duration-ms="516" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- aftersuite -->
