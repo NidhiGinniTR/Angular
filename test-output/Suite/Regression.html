@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Jan 08 19:00:34 IST 2021</td>
+<td>Started on:</td><td>Mon Jan 11 13:32:41 IST 2021</td>
 </tr>
-<tr><td>Total time:</td><td>675 seconds (675998 ms)</td>
+<tr><td>Total time:</td><td>185 seconds (185019 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,22 +76,44 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test.Documents()'><b>Documents</b><br>Test class: com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;String.contains(java.lang.CharSequence)&quot; because &quot;toEscape&quot; is null
-	at org.openqa.selenium.support.ui.Quotes.escape(Quotes.java:42)
-	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:113)
-	at com_lib_FunctionLibrary.FrameWork.fnWebList(FrameWork.java:46)
-	at com_obj_ObjectRepository.FolderWorkFlows.Documents.MoveDoc_drawers(Documents.java:181)
-	at com_lib_FunctionLibrary.FunctionLibrary.fwf_fnMoveDocument(FunctionLibrary.java:640)
-	at com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test.Documents(FWF_Documents_Test.java:142)
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@id=&apos;TabStrip1&apos;]//*[contains(text(),&apos;Documents&apos;)] (tried for 30 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at com_lib_FunctionLibrary.FrameWork.fnWebButton(FrameWork.java:64)
+	at com_obj_ObjectRepository.FolderWorkFlows.NavigationTabs.fwf_tabSelection(NavigationTabs.java:33)
+	at com_lib_FunctionLibrary.FunctionLibrary.fnFWFSwitchingTab(FunctionLibrary.java:250)
+	at com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test.Documents(FWF_Documents_Test.java:65)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace258027623", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace258027623'><pre>java.lang.NullPointerException: Cannot invoke &quot;String.contains(java.lang.CharSequence)&quot; because &quot;toEscape&quot; is null
-	at org.openqa.selenium.support.ui.Quotes.escape(Quotes.java:42)
-	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:113)
-	at com_lib_FunctionLibrary.FrameWork.fnWebList(FrameWork.java:46)
-	at com_obj_ObjectRepository.FolderWorkFlows.Documents.MoveDoc_drawers(Documents.java:181)
-	at com_lib_FunctionLibrary.FunctionLibrary.fwf_fnMoveDocument(FunctionLibrary.java:640)
-	at com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test.Documents(FWF_Documents_Test.java:142)
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to find element with xpath == //*[@id=&apos;TabStrip1&apos;]//*[contains(text(),&apos;Documents&apos;)]
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;USE2DEVP0289&apos;, ip: &apos;10.178.161.24&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;14.0.2&apos;
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:20904/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: fb88fa6d-79cf-4628-99a0-a5c32b490611
+*** Element info: {Using=xpath, value=//*[@id=&apos;TabStrip1&apos;]//*[contains(text(),&apos;Documents&apos;)]}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 32 more
+... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1545644729", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1545644729'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@id=&apos;TabStrip1&apos;]//*[contains(text(),&apos;Documents&apos;)] (tried for 30 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at com_lib_FunctionLibrary.FrameWork.fnWebButton(FrameWork.java:64)
+	at com_obj_ObjectRepository.FolderWorkFlows.NavigationTabs.fwf_tabSelection(NavigationTabs.java:33)
+	at com_lib_FunctionLibrary.FunctionLibrary.fnFWFSwitchingTab(FunctionLibrary.java:250)
+	at com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test.Documents(FWF_Documents_Test.java:65)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -120,8 +142,35 @@ function toggleAllBoxes() {
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to find element with xpath == //*[@id=&apos;TabStrip1&apos;]//*[contains(text(),&apos;Documents&apos;)]
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;USE2DEVP0289&apos;, ip: &apos;10.178.161.24&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;14.0.2&apos;
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:20904/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: fb88fa6d-79cf-4628-99a0-a5c32b490611
+*** Element info: {Using=xpath, value=//*[@id=&apos;TabStrip1&apos;]//*[contains(text(),&apos;Documents&apos;)]}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 32 more
 </pre></div></td>
-<td>670</td>
+<td>178</td>
 <td>com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@dd0c991</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
@@ -134,7 +183,7 @@ function toggleAllBoxes() {
 <tr>
 <td title='com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test.Initialize()'><b>Initialize</b><br>Test class: com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test</td>
 <td></td>
-<td>5</td>
+<td>6</td>
 <td>com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@dd0c991</td></tr>
 </table><p>
 </body>

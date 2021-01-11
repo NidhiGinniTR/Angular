@@ -101,9 +101,8 @@ public class FWF_Documents_Test extends BrowserInvoke{
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Email Document(s)","");
 	        Thread.sleep(5000);
 	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Email Document(s)");
-	        Thread.sleep(3000);
 	        FunctionLibrary.fwf_fnEmailDocument(driver, propSerialData);
-	        Thread.sleep(2000);
+	        //Thread.sleep(2000);
 	        
 		//Step-9:-----Change Status--------------------------------------//
 	        FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
