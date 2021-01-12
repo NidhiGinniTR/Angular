@@ -17,6 +17,7 @@ import com_helper_Reporting.ExtentManager;
 import com_lib_FunctionLibrary.FrameWork;
 import com_lib_FunctionLibrary.FunctionLibrary;
 import com_obj_ObjectRepository.FolderWorkFlows.Events;
+import com_obj_ObjectRepository.OWM.WorkFlowBrowser;
 
 
 
@@ -49,9 +50,11 @@ public class FWF_Events_Test extends BrowserInvoke {
 		Thread.sleep(1000);
 		
 	//Step-4:---------------Create a New Folder----------------------//
+		WorkFlowBrowser actionsMenu = new WorkFlowBrowser(driver);
+		actionsMenu.Actions();
+		Thread.sleep(1000);
 		FunctionLibrary.fnOWMActionsMenu(driver, "New Folder","");
 		Thread.sleep(2500);
-		//Thread.sleep(2500);
 		new WebDriverWait(driver, 30).until(ExpectedConditions.numberOfWindowsToBe(3));
 		FunctionLibrary.fnNewFolderCreation(driver, propSerialData);
 		
