@@ -2,6 +2,7 @@ package com_pkg_OWM.Workflow_Browser.Serial;
 
 import java.io.IOException;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -30,10 +31,10 @@ public class FWF_Events_Test extends BrowserInvoke {
 	public void Initialize() throws IOException {
 		driver = InvokeDriver();
 		driver.get(propEnv.getProperty("URL"));
-		//driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 	}
 	
-	@Test(dependsOnMethods = { "Initialize" })
+	@Test(dependsOnMethods =  "Initialize" )
 	public void EventActions() throws InterruptedException {
 	//Step-1:-----Login---------------------------------------------//
 		FunctionLibrary.fnLogin(driver, propEnv);
