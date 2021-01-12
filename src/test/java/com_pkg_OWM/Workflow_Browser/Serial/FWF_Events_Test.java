@@ -145,7 +145,7 @@ public class FWF_Events_Test extends BrowserInvoke {
 		Thread.sleep(1500);
 		
 	//Step-18:--------Select Event------------------------------------//
-		FunctionLibrary.fnFWFSelectEvent(driver, propSerialData);
+		/*FunctionLibrary.fnFWFSelectEvent(driver, propSerialData);
 		Thread.sleep(500);
 			
 	//Step-19:--------Edit Scheduled Event - Roll Forward------------------------------------//	
@@ -153,7 +153,7 @@ public class FWF_Events_Test extends BrowserInvoke {
 		Thread.sleep(1500);
 		FunctionLibrary.fnOWMActionsMenu(driver, "Edit Scheduled Event(s)", "");
 		Thread.sleep(1500);
-		FunctionLibrary.fnFWFESERollForward(driver);
+		FunctionLibrary.fnFWFESERollForward(driver);*/
 		Thread.sleep(1500);
 	
 	//Step-20:--------Select Event------------------------------------//
@@ -168,7 +168,7 @@ public class FWF_Events_Test extends BrowserInvoke {
 		FunctionLibrary.fnFWFESEReCalculate(driver);
 		
 	//Step-22:--------Select Event------------------------------------//
-		FunctionLibrary.fnFWFSelectEvent(driver, propSerialData);
+		/*FunctionLibrary.fnFWFSelectEvent(driver, propSerialData);
 		Thread.sleep(500);
 		 
 	//Step-23:--------Edit Scheduled Event-Extend Event-------------------------------------//
@@ -176,7 +176,7 @@ public class FWF_Events_Test extends BrowserInvoke {
 		Thread.sleep(1000);
 		FunctionLibrary.fnOWMActionsMenu(driver, "Edit Scheduled Event(s)", "");
 		Thread.sleep(1500);
-		FunctionLibrary.fnFWFESEExtendEvent(driver);
+		FunctionLibrary.fnFWFESEExtendEvent(driver);*/
 	
 	//Step-22:--------Select Event------------------------------------//
 		FunctionLibrary.fnFWFSelectEvent(driver, propSerialData);
@@ -208,7 +208,7 @@ public class FWF_Events_Test extends BrowserInvoke {
 	
 	@AfterClass
 	void closeBrowser() throws InterruptedException {
-		//FunctionLibrary.fnLogOff(driver);
+		FunctionLibrary.fnLogOff(driver);
 	}
 	
 	@AfterSuite
