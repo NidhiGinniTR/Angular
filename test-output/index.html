@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
-                    <span>C:\Users\X017406\eclipse-workspace\Nidhi\AngularProject\report.xml</span>
+                    <span>C:\Users\x010611\git\Angular\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -144,15 +144,15 @@
                   <a name="EventActions">
                   </a> <!-- EventActions -->
                   <span class="method-name">EventActions</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for number of open windows to be 3 (tried for 30 second(s) with 500 milliseconds interval)
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for number of open windows to be 2 (tried for 50 second(s) with 500 milliseconds interval)
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;USE2DEVP0672&apos;, ip: &apos;10.178.164.5&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.1&apos;
+System info: host: &apos;USE2DEVP0924&apos;, ip: &apos;10.178.166.113&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;14.0.2&apos;
 Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:39904/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 22cfc57c-6003-4d0d-bab2-fde3b656f380
+Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:20259/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 990a4b73-430f-4947-9f76-1af34c5bfb18
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test.EventActions(FWF_Events_Test.java:58)
+	at com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test.EventActions(FWF_Events_Test.java:48)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 ... Removed 27 stack frames
 </div> <!-- stack-trace -->
@@ -178,7 +178,7 @@ Session ID: 22cfc57c-6003-4d0d-bab2-fde3b656f380
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\X017406\eclipse-workspace\Nidhi\AngularProject\report.xml</span>
+            <span class="header-content">C:\Users\x010611\git\Angular\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -188,11 +188,11 @@ Session ID: 22cfc57c-6003-4d0d-bab2-fde3b656f380
   &lt;listeners&gt;
     &lt;listener class-name=&quot;com_helper_Reporting.ListenersClass&quot;/&gt;
   &lt;/listeners&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Regression&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Test --&gt;
+  &lt;/test&gt; &lt;!-- Regression --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -204,7 +204,7 @@ Session ID: 22cfc57c-6003-4d0d-bab2-fde3b656f380
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Test (1 class)</span>
+                <span class="test-name">Regression (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -234,16 +234,16 @@ data.addRows(2);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'EventActions')
 data.setCell(0, 2, 'com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test')
-data.setCell(0, 3, 119516);
+data.setCell(0, 3, 83447);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'Initialize')
 data.setCell(1, 2, 'com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test')
-data.setCell(1, 3, 5863);
+data.setCell(1, 3, 7863);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 2 minutes</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -276,21 +276,23 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="test-method">
                 <span class="method-name">Initialize</span>
-                <span class="method-start">316 ms</span>
+                <span class="method-start">312 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">EventActions</span>
-                <span class="method-start">6193 ms</span>
+                <span class="method-start">8193 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">125716 ms</span>
+                <span class="method-start">91666 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-suite after">
                 <span class="method-name">aftersuite</span>
-                <span class="method-start">134990 ms</span>
+                <span class="method-start">91802 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
