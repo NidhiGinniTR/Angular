@@ -105,9 +105,9 @@ public class FWF_Tasks_Test extends BrowserInvoke {
 			action.moveToElement(driver.findElement(By.xpath("//DIV[@id='grdTasks_dom']/table/tbody/tr[2]"))).click().build().perform();
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Add Document","");
-	        Thread.sleep(5000);
+	        Thread.sleep(6000);
 	        FunctionLibrary.fnSwitchtoWindow(driver,4,"Add document");
-	        Thread.sleep(3000);
+	        Thread.sleep(2000);
 	        driver.switchTo().frame("frame1");
 	        FunctionLibrary.fnFWFAddDocument(driver,propSerialData);
 	        Thread.sleep(5000);

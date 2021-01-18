@@ -2,35 +2,34 @@
 <testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-01-18T15:02:07 IST" name="Suite" finished-at="2021-01-18T15:03:28 IST" duration-ms="80445">
+  <suite started-at="2021-01-18T16:26:08 IST" name="Suite" finished-at="2021-01-18T16:31:43 IST" duration-ms="334845">
     <groups>
     </groups>
-    <test started-at="2021-01-18T15:02:07 IST" name="Regression" finished-at="2021-01-18T15:03:28 IST" duration-ms="80445">
-      <class name="com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test">
-        <test-method is-config="true" signature="beforeStart()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test@dd0c991]" started-at="2021-01-18T15:02:07 IST" name="beforeStart" finished-at="2021-01-18T15:02:07 IST" duration-ms="445" status="PASS">
+    <test started-at="2021-01-18T16:26:08 IST" name="Regression" finished-at="2021-01-18T16:31:43 IST" duration-ms="334845">
+      <class name="com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test">
+        <test-method is-config="true" signature="beforeStart()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@6bf0219d]" started-at="2021-01-18T16:26:08 IST" name="beforeStart" finished-at="2021-01-18T16:26:08 IST" duration-ms="310" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeStart -->
-        <test-method signature="Initialize()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test@dd0c991]" started-at="2021-01-18T15:02:07 IST" name="Initialize" finished-at="2021-01-18T15:02:11 IST" duration-ms="4181" status="PASS">
+        <test-method signature="Initialize()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@6bf0219d]" started-at="2021-01-18T16:26:08 IST" name="Initialize" finished-at="2021-01-18T16:26:13 IST" duration-ms="4490" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Initialize -->
-        <test-method signature="Tasks()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test@dd0c991]" started-at="2021-01-18T15:02:12 IST" name="Tasks" finished-at="2021-01-18T15:03:28 IST" depends-on-methods="com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test.Initialize" duration-ms="76195" status="FAIL">
+        <test-method signature="Documents()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@6bf0219d]" started-at="2021-01-18T16:26:13 IST" name="Documents" finished-at="2021-01-18T16:31:43 IST" depends-on-methods="com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test.Initialize" duration-ms="330297" status="FAIL">
           <exception class="org.openqa.selenium.NoSuchFrameException">
             <message>
-              <![CDATA[No frame element found by name or id header
+              <![CDATA[No frame element found by name or id frame1
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'USE2DEVP0289', ip: '10.178.161.24', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
 Driver info: driver.version: unknown]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchFrameException: No frame element found by name or id header
+              <![CDATA[org.openqa.selenium.NoSuchFrameException: No frame element found by name or id frame1
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'USE2DEVP0289', ip: '10.178.161.24', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
 Driver info: driver.version: unknown
 at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.frame(RemoteWebDriver.java:885)
-at com_lib_FunctionLibrary.FunctionLibrary.fnLaunchApplication(FunctionLibrary.java:54)
-at com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test.Tasks(FWF_Tasks_Test.java:44)
+at com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test.Documents(FWF_Documents_Test.java:93)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -64,16 +63,16 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- org.openqa.selenium.NoSuchFrameException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Tasks -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test@dd0c991]" started-at="2021-01-18T15:03:28 IST" name="closeBrowser" finished-at="2021-01-18T15:03:28 IST" duration-ms="0" status="PASS">
+        </test-method> <!-- Documents -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@6bf0219d]" started-at="2021-01-18T16:31:43 IST" name="closeBrowser" finished-at="2021-01-18T16:31:43 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="aftersuite()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test@dd0c991]" started-at="2021-01-18T15:03:28 IST" name="aftersuite" finished-at="2021-01-18T15:03:28 IST" duration-ms="569" status="PASS">
+        <test-method is-config="true" signature="aftersuite()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@6bf0219d]" started-at="2021-01-18T16:31:43 IST" name="aftersuite" finished-at="2021-01-18T16:31:44 IST" duration-ms="439" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- aftersuite -->
-      </class> <!-- com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test -->
+      </class> <!-- com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test -->
     </test> <!-- Regression -->
   </suite> <!-- Suite -->
 </testng-results>

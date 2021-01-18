@@ -487,7 +487,7 @@ public class FunctionLibrary extends ExtentManager {
 	public static void fnFWFAddDocument(WebDriver driver, Properties data) throws InterruptedException, AWTException {
 		childTest = test.createNode("Description: Add Document " + "<br>" + "<< Screen Name: Folder WorkFlows >></br>");
 		Tasks owm = new Tasks(driver);
-		driver.switchTo().frame("frame1");
+		//driver.switchTo().frame("frame1");
 		if (driver.getTitle().equalsIgnoreCase("Add document")) {
 			owm.fwf_Task_AD_Clear();
 			Thread.sleep(200);
