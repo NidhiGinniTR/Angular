@@ -44,7 +44,7 @@
 		<!-- nav-right -->
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<a href='#!'>
-			<span class='label blue darken-3 suite-start-time'>Jan 11, 2021 01:32:41 PM</span>
+			<span class='label blue darken-3 suite-start-time'>Jan 18, 2021 01:14:48 PM</span>
 			</a>
 		</ul>
 	</div>
@@ -117,10 +117,10 @@
                     <canvas id='child-analysis' width='90' height='70'></canvas>
                 </div>
                 <div class='block text-small'>
-                    <span class='tooltipped' data-position='top' data-tooltip='75%'><span class='strong'>3</span> step(s) passed</span>
+                    <span class='tooltipped' data-position='top' data-tooltip='83.333%'><span class='strong'>5</span> step(s) passed</span>
                 </div>
                 <div class='block text-small'>
-                    <span class='strong tooltipped' data-position='top' data-tooltip='25%'>1</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+                    <span class='strong tooltipped' data-position='top' data-tooltip='16.667%'>1</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
                 </div>
             </div>
         </div>
@@ -141,14 +141,14 @@
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>Initialize</span>
-						<span class='test-time'>Jan 11, 2021 01:32:41 PM</span>
+						<span class='test-time'>Jan 18, 2021 01:14:48 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jan 11, 2021 01:32:41 PM</span>
-	<span class='label end-time'>Jan 11, 2021 01:32:48 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 6s+44ms</span>
+	<span class='label start-time'>Jan 18, 2021 01:14:48 PM</span>
+	<span class='label end-time'>Jan 18, 2021 01:14:52 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+961ms</span>
 </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
@@ -162,7 +162,7 @@
 		<tbody>
 			<tr class='log' status='pass'>
 				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-				<td class='timestamp'>1:32:48 PM</td>
+				<td class='timestamp'>1:14:52 PM</td>
 				<td class='step-details'>
 						<span class='badge white-text green'>Initialize - test case is passed</span>
 					
@@ -176,14 +176,14 @@
 				<li class='test displayed active has-leaf fail' status='fail' bdd='false' test-id='2'>
 					<div class='test-heading'>
 						<span class='test-name'>Documents</span>
-						<span class='test-time'>Jan 11, 2021 01:32:48 PM</span>
+						<span class='test-time'>Jan 18, 2021 01:14:52 PM</span>
 						<span class='test-status right fail'>fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jan 11, 2021 01:32:48 PM</span>
-	<span class='label end-time'>Jan 11, 2021 01:35:46 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 2m 58s+907ms</span>
+	<span class='label start-time'>Jan 18, 2021 01:14:52 PM</span>
+	<span class='label end-time'>Jan 18, 2021 01:22:23 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 7m 30s+321ms</span>
 </div>
 <div class='test-steps'>
 	<table class='bordered table-results'>
@@ -197,7 +197,7 @@
 		<tbody>
 			<tr class='log' status='fail'>
 				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>1:35:46 PM</td>
+				<td class='timestamp'>1:22:23 PM</td>
 				<td class='step-details'>
 						<span class='badge white-text red'>Documents - test case is failed</span>
 					
@@ -205,9 +205,14 @@
 			</tr>
 			<tr class='log' status='fail'>
 				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>1:35:46 PM</td>
+				<td class='timestamp'>1:22:23 PM</td>
 				<td class='step-details'>
-						<span class='badge white-text red'>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@id='TabStrip1']//*[contains(text(),'Documents')] (tried for 30 second(s) with 500 milliseconds interval) - test case failed</span>
+						<span class='badge white-text red'>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for number of open windows to be 3 (tried for 50 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'USE2DEVP0289', ip: '10.178.161.24', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:30238/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 9cc6d68c-9592-47eb-9a14-96e4b7afe6ee - test case failed</span>
 					
 				</td>
 			</tr>
@@ -218,8 +223,8 @@
 	<li class='node level-1 leaf pass' status='pass' test-id='3'>
 		<div class='collapsible-header'>
 			<div class='node-name'>Description: Entering UniversalID and Password.<br><< Screen Name : OneSource Login Page >></br></div>
-			<span class='node-time'>Jan 11, 2021 01:32:48 PM</span>
-			&middot; <span class='node-duration'>0h 0m 19s+575ms</span>
+			<span class='node-time'>Jan 18, 2021 01:14:52 PM</span>
+			&middot; <span class='node-duration'>0h 0m 19s+205ms</span>
 			<span class='test-status right pass'>pass</span>
 		</div>
 		<div class='collapsible-body'>
@@ -235,7 +240,7 @@
 					<tbody>
 						<tr class='log' status='pass'>
 							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>1:32:53 PM</td>
+							<td class='timestamp'>1:14:55 PM</td>
 							<td class='step-details'>
 									Clicked on English-US.
 								
@@ -243,7 +248,7 @@
 						</tr>
 						<tr class='log' status='pass'>
 							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>1:32:56 PM</td>
+							<td class='timestamp'>1:14:58 PM</td>
 							<td class='step-details'>
 									UniversalID = krishnavamsi@rapidscripts.9i0.
 								
@@ -251,7 +256,7 @@
 						</tr>
 						<tr class='log' status='pass'>
 							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>1:32:59 PM</td>
+							<td class='timestamp'>1:15:01 PM</td>
 							<td class='step-details'>
 									Password = Password@5.
 								
@@ -259,7 +264,7 @@
 						</tr>
 						<tr class='log' status='pass'>
 							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>1:33:07 PM</td>
+							<td class='timestamp'>1:15:12 PM</td>
 							<td class='step-details'>
 									Clicked on SignIn.
 								
@@ -273,8 +278,8 @@
 	<li class='node level-1 leaf pass' status='pass' test-id='4'>
 		<div class='collapsible-header'>
 			<div class='node-name'>Description: Launching WorkFlow Manager from Applications.<br><< Screen Name: OneSource Dashboard >></br></div>
-			<span class='node-time'>Jan 11, 2021 01:33:10 PM</span>
-			&middot; <span class='node-duration'>0h 0m 6s+959ms</span>
+			<span class='node-time'>Jan 18, 2021 01:15:15 PM</span>
+			&middot; <span class='node-duration'>0h 0m 6s+948ms</span>
 			<span class='test-status right pass'>pass</span>
 		</div>
 		<div class='collapsible-body'>
@@ -290,7 +295,7 @@
 					<tbody>
 						<tr class='log' status='pass'>
 							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>1:33:13 PM</td>
+							<td class='timestamp'>1:15:17 PM</td>
 							<td class='step-details'>
 									Clicked on Applications.
 								
@@ -298,7 +303,7 @@
 						</tr>
 						<tr class='log' status='pass'>
 							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>1:33:17 PM</td>
+							<td class='timestamp'>1:15:22 PM</td>
 							<td class='step-details'>
 									Clicked on WorkFlow Manager.
 								
@@ -312,17 +317,17 @@
 	<li class='node level-1 leaf pass' status='pass' test-id='5'>
 		<div class='collapsible-header'>
 			<div class='node-name'>Description: Navigating to: WorkFlow Browser.<br><< Screen Name: OWM >></br></div>
-			<span class='node-time'>Jan 11, 2021 01:33:20 PM</span>
+			<span class='node-time'>Jan 18, 2021 01:15:25 PM</span>
 			&middot; <span class='node-duration'>0h 0m 0s+0ms</span>
 			<span class='test-status right pass'>pass</span>
 		</div>
 	</li>
-	<li class='node level-1 leaf fail' status='fail' test-id='6'>
+	<li class='node level-1 leaf pass' status='pass' test-id='6'>
 		<div class='collapsible-header'>
 			<div class='node-name'>Description: Searching workflow with required fields<br><<Screen Name: OWM >></br></div>
-			<span class='node-time'>Jan 11, 2021 01:33:23 PM</span>
-			&middot; <span class='node-duration'>0h 2m 22s+964ms</span>
-			<span class='test-status right fail'>fail</span>
+			<span class='node-time'>Jan 18, 2021 01:15:28 PM</span>
+			&middot; <span class='node-duration'>0h 2m 46s+53ms</span>
+			<span class='test-status right pass'>pass</span>
 		</div>
 		<div class='collapsible-body'>
 			<div class='node-steps'>
@@ -337,7 +342,7 @@
 					<tbody>
 						<tr class='log' status='pass'>
 							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>1:33:27 PM</td>
+							<td class='timestamp'>1:15:31 PM</td>
 							<td class='step-details'>
 									Clicked on Clear.
 								
@@ -345,7 +350,7 @@
 						</tr>
 						<tr class='log' status='pass'>
 							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>1:33:30 PM</td>
+							<td class='timestamp'>1:15:34 PM</td>
 							<td class='step-details'>
 									Year = 2016.
 								
@@ -353,7 +358,7 @@
 						</tr>
 						<tr class='log' status='pass'>
 							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>1:33:33 PM</td>
+							<td class='timestamp'>1:15:37 PM</td>
 							<td class='step-details'>
 									Period = 3/31.
 								
@@ -361,7 +366,7 @@
 						</tr>
 						<tr class='log' status='pass'>
 							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>1:33:35 PM</td>
+							<td class='timestamp'>1:15:39 PM</td>
 							<td class='step-details'>
 									TaxType = INCOME TAX.
 								
@@ -369,7 +374,7 @@
 						</tr>
 						<tr class='log' status='pass'>
 							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>1:33:38 PM</td>
+							<td class='timestamp'>1:15:42 PM</td>
 							<td class='step-details'>
 									WorkFlow Template = Auto_Serial_01.
 								
@@ -377,7 +382,7 @@
 						</tr>
 						<tr class='log' status='pass'>
 							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>1:33:41 PM</td>
+							<td class='timestamp'>1:15:45 PM</td>
 							<td class='step-details'>
 									EntityName = THOMSONREUTERS2.
 								
@@ -385,7 +390,7 @@
 						</tr>
 						<tr class='log' status='pass'>
 							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>1:33:44 PM</td>
+							<td class='timestamp'>1:15:48 PM</td>
 							<td class='step-details'>
 									Entity ID = TR02.
 								
@@ -393,7 +398,7 @@
 						</tr>
 						<tr class='log' status='pass'>
 							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>1:33:47 PM</td>
+							<td class='timestamp'>1:15:51 PM</td>
 							<td class='step-details'>
 									Jurisdiction = INDIA.
 								
@@ -401,7 +406,7 @@
 						</tr>
 						<tr class='log' status='pass'>
 							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>1:33:50 PM</td>
+							<td class='timestamp'>1:15:54 PM</td>
 							<td class='step-details'>
 									WorkFlow Type = Serial.
 								
@@ -409,7 +414,7 @@
 						</tr>
 						<tr class='log' status='pass'>
 							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-							<td class='timestamp'>1:33:53 PM</td>
+							<td class='timestamp'>1:15:57 PM</td>
 							<td class='step-details'>
 									Clicked on Search.
 								
@@ -417,15 +422,253 @@
 						</tr>
 						<tr class='log' status='info'>
 							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-							<td class='timestamp'>1:34:52 PM</td>
+							<td class='timestamp'>1:16:56 PM</td>
 							<td class='step-details'>
 									Switched to Folder WorkFlows window.
 								
 							</td>
 						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:17:04 PM</td>
+							<td class='step-details'>
+									Clicked on Documents.
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:18:00 PM</td>
+							<td class='step-details'>
+									Clicked on Actions.
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:18:05 PM</td>
+							<td class='step-details'>
+									New Document is selected from  Add Document
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:18:05 PM</td>
+							<td class='step-details'>
+									Add Document is enabled and is selected from actions menu.
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>1:18:14 PM</td>
+							<td class='step-details'>
+									Switched to Add document window.
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+	<li class='node level-1 leaf pass' status='pass' test-id='7'>
+		<div class='collapsible-header'>
+			<div class='node-name'>Description: Add Document <br><< Screen Name: Folder WorkFlows >></br></div>
+			<span class='node-time'>Jan 18, 2021 01:19:07 PM</span>
+			&middot; <span class='node-duration'>0h 2m 25s+788ms</span>
+			<span class='test-status right pass'>pass</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:19:10 PM</td>
+							<td class='step-details'>
+									Clicked on Clear.
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:19:13 PM</td>
+							<td class='step-details'>
+									Clicked on Save.
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:19:16 PM</td>
+							<td class='step-details'>
+									Verification: Click on Save before uploading a document alert<br>Select a physical document to upload. exists </br>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:19:27 PM</td>
+							<td class='step-details'>
+									Clicked on Save.
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:19:29 PM</td>
+							<td class='step-details'>
+									Verification: Mandatory field alert <br>Description is required. exists </br>
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:19:36 PM</td>
+							<td class='step-details'>
+									Description = Angular Test.
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:19:42 PM</td>
+							<td class='step-details'>
+									File Section = INCOME TAX FS1.
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:19:47 PM</td>
+							<td class='step-details'>
+									Document Type = INCOME TAX FS1 DT1.
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:19:52 PM</td>
+							<td class='step-details'>
+									Document Date = 1/6/2021.
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:20:01 PM</td>
+							<td class='step-details'>
+									Assigned To = Kishore Katuri.
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:20:07 PM</td>
+							<td class='step-details'>
+									Document Status = In Progress.
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:20:12 PM</td>
+							<td class='step-details'>
+									Due Date = 1/30/2021.
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:20:17 PM</td>
+							<td class='step-details'>
+									Notify is Checked.
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:20:20 PM</td>
+							<td class='step-details'>
+									Clicked on Users List.
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:20:23 PM</td>
+							<td class='step-details'>
+									Clicked on Save.
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>1:20:30 PM</td>
+							<td class='step-details'>
+									Switched to Folder WorkFlows window.
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:21:23 PM</td>
+							<td class='step-details'>
+									Clicked on Actions.
+								
+							</td>
+						</tr>
+						<tr class='log' status='pass'>
+							<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+							<td class='timestamp'>1:21:26 PM</td>
+							<td class='step-details'>
+									Email Document(s) is enabled and is selected from actions menu.
+								
+							</td>
+						</tr>
+						<tr class='log' status='info'>
+							<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+							<td class='timestamp'>1:21:32 PM</td>
+							<td class='step-details'>
+									Switched to Email Document(s) window.
+								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</li>
+	<li class='node level-1 leaf fail' status='fail' test-id='8'>
+		<div class='collapsible-header'>
+			<div class='node-name'>Description: Email Documents <br><< Screen Name: Folder WorkFlows >></br></div>
+			<span class='node-time'>Jan 18, 2021 01:21:32 PM</span>
+			&middot; <span class='node-duration'>0h 0m 50s+286ms</span>
+			<span class='test-status right fail'>fail</span>
+		</div>
+		<div class='collapsible-body'>
+			<div class='node-steps'>
+				<table class='bordered table-results'>
+					<thead>
+						<tr>
+							<th>Status</th>
+							<th>Timestamp</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<tbody>
 						<tr class='log' status='fail'>
 							<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-							<td class='timestamp'>1:35:46 PM</td>
+							<td class='timestamp'>1:22:23 PM</td>
 							<td class='step-details'>
 									<span class='badge white-text red'>Documents is failed</span>
 								
@@ -473,25 +716,25 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>4</div>
+					<div class='panel-lead'>6</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Jan 11, 2021 01:32:41 PM</div>
+					<div class='panel-lead'>Jan 18, 2021 01:14:48 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Jan 11, 2021 01:35:46 PM</div>
+			 		<div class='panel-lead'>Jan 18, 2021 01:22:23 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 3m 5s+396ms</div>
+					<div class='panel-lead'>0h 7m 34s+585ms</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -530,8 +773,8 @@
 				warningParent: 0,
 				skipParent: 0,
 				exceptionsParent: 1,
-				childCount: 4,
-				passChild: 3,
+				childCount: 6,
+				passChild: 5,
 				failChild: 1,
 				fatalChild: 0,
 				errorChild: 0,
@@ -554,7 +797,7 @@
 		</script>
 		<script>
 			var timeline = {
-			        "Initialize":6.044,"Documents":178.907
+			        "Initialize":3.961,"Documents":450.321
 			};
 		</script>
 		<script src='https://cdn.rawgit.com/extent-framework/extent-github-cdn/b65cd69/v3html/js/extent.js' type='text/javascript'></script>

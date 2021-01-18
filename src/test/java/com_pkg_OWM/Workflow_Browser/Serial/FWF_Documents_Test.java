@@ -89,7 +89,7 @@ public class FWF_Documents_Test extends BrowserInvoke{
 	        Thread.sleep(8000);
 	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Add document");
 	        Thread.sleep(1500);
-	        driver.switchTo().frame("frame1");
+//	        driver.switchTo().frame("frame1");
 	        FunctionLibrary.fnFWFAddDocument(driver,propSerialData);
 	        Thread.sleep(3000);
 	        

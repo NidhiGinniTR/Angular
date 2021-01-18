@@ -6,15 +6,15 @@
   </listeners>
   <test thread-count="5" name="Regression(failed)">
     <classes>
-      <class name="com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test">
+      <class name="com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test">
         <methods>
-          <include name="EventActions"/>
-          <include name="beforesuit"/>
-          <include name="Initialize"/>
+          <include name="beforeStart"/>
           <include name="closeBrowser"/>
+          <include name="Tasks"/>
+          <include name="Initialize"/>
           <include name="aftersuite"/>
         </methods>
-      </class> <!-- com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test -->
+      </class> <!-- com_pkg_OWM.Workflow_Browser.Serial.FWF_Tasks_Test -->
     </classes>
   </test> <!-- Regression(failed) -->
 </suite> <!-- Failed suite [Suite] -->
