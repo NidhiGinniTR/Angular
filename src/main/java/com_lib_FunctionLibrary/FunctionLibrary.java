@@ -246,9 +246,10 @@ public class FunctionLibrary extends ExtentManager {
 	}
 
 	public static void fnFWFSwitchingTab(WebDriver driver, String tab) throws InterruptedException{
+		if(driver.getTitle().equalsIgnoreCase("Folder WorkFlows")) {
 		Thread.sleep(500);
 		NavigationTabs St = new NavigationTabs(driver);
-		St.fwf_tabSelection(tab);
+		St.fwf_tabSelection(tab);}
 	}
 
 	public static void fnOWMSavePreferences(WebDriver driver, String menuitem) throws InterruptedException {
@@ -491,9 +492,9 @@ public class FunctionLibrary extends ExtentManager {
 		//driver.switchTo().frame("frame1");
 		if (driver.getTitle().equalsIgnoreCase("Add document")) {
 			owm.fwf_Task_AD_Clear();
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			//driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			owm.fwf_Task_AD_Save();
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			//driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			WebDriverWait w = new WebDriverWait(driver, 15);
 			w.until(ExpectedConditions.alertIsPresent());
 			String text = driver.switchTo().alert().getText();
@@ -509,7 +510,7 @@ public class FunctionLibrary extends ExtentManager {
 			String path = "C:\\RapidScripts\\Documents\\Doc";
 			setClipboardData(path);
 			driver.findElement(By.xpath("//TD[@id='tdSelectDocument']/TABLE[1]/tbody/tr[2]/td[2]")).click();
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			Robot robot = new Robot();
 			robot.keyPress(KeyEvent.VK_CONTROL);
 			robot.keyPress(KeyEvent.VK_V);
@@ -517,9 +518,10 @@ public class FunctionLibrary extends ExtentManager {
 			robot.keyRelease(KeyEvent.VK_CONTROL);
 			robot.keyPress(KeyEvent.VK_ENTER);
 			robot.keyRelease(KeyEvent.VK_ENTER);
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			Thread.sleep(1000);
 			owm.fwf_Task_AD_Save();
-			WebDriverWait w1 = new WebDriverWait(driver, 15);
+			Thread.sleep(2000);
+			WebDriverWait w1 = new WebDriverWait(driver, 20);
 			w1.until(ExpectedConditions.alertIsPresent());
 			String text1 = driver.switchTo().alert().getText();
 			if (text1.contains("is required.")) {
@@ -529,7 +531,7 @@ public class FunctionLibrary extends ExtentManager {
 			} else {
 				childTest.fail("Verification: Mandatory field alert is  missing");
 			}
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			Thread.sleep(500);
 			owm.fwf_Task_AD_Description(data.getProperty("doc_Description"));
 			owm.fwf_Task_AD_FileSection(data.getProperty("doc_FileSection"));
 			owm.fwf_Task_AD_DocumentType(data.getProperty("doc_DocumentType"));
@@ -540,7 +542,6 @@ public class FunctionLibrary extends ExtentManager {
 			owm.fwf_Task_AD_Notify();
 			owm.fwf_Task_AD_NotifyUsersList();
 			owm.fwf_Task_AD_Save();
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		}
 	}
 
@@ -772,12 +773,21 @@ public class FunctionLibrary extends ExtentManager {
 		Set<String> s = driver.getWindowHandles();
 		Iterator<String> ite = s.iterator();
 		int i = 1;
-		while (ite.hasNext() && i <= s.size()) {
+		/*while (ite.hasNext() && i <= s.size()) {
 			String popHandle = ite.next().toString();
 			driver.switchTo().window(popHandle);
 			if (i == winNum)
 				break;
 			i++;
+		}*/
+		for(int j=0;j==winNum;j++) {
+			String[] child = new String[winNum];
+			 child[j]= ite.next();
+			 if(j==winNum) {
+				 driver.switchTo().window(child[j]);
+				 break;
+			 }
+			 
 		}
 		if (winName != null || driver.getTitle().equals(winName)) {
 			childTest.info("Switched to " + winName + " window.");

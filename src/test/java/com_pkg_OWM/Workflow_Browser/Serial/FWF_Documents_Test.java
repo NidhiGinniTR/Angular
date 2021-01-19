@@ -31,39 +31,38 @@ public class FWF_Documents_Test extends BrowserInvoke{
 	public void Initialize() throws IOException {
 		driver = InvokeDriver();
 		driver.get(propEnv.getProperty("URL"));
-		//driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 	}
 	
 	@Test(dependsOnMethods = "Initialize")
 	public void Documents() throws InterruptedException, AWTException {
-		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 		//Step-1:-----Login---------------------------------------------//
 			FunctionLibrary.fnLogin(driver, propEnv);
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			
 		//Step-2:-----Launch WorkFlow Manager---------------------------//
 			FunctionLibrary.fnLaunchApplication(driver, "WorkFlow Manager");
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			
 		//Step-3:-----Navigate to Respective Tab------------------------//
 			new WebDriverWait(driver,50).until(ExpectedConditions.numberOfWindowsToBe(2));
 			FunctionLibrary.fnNavigateTab(driver, "WorkFlow Browser");
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			
 		//Step-4:-----Search for the Required Workflow------------------//
 			FunctionLibrary.fnWorkflowBrowserSearch(driver, propSerialData);
-			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+			//driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 			
 		//Step-5:-----Double click on the workflow to Folder Workflows---//
 			driver.switchTo().frame("viewIFrame");
 			Actions action = new Actions(driver);
 			action.moveToElement(driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td"))).doubleClick().build().perform();
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			//Thread.sleep(10000);
 			//driver.switchTo().parentFrame();
 		//Step-6:----Navigate to Document Tab----------------------------//
 			FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			Thread.sleep(3000);
 			FunctionLibrary.fnFWFSwitchingTab(driver,"Documents");
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			driver.switchTo().frame("tabIFrame");
@@ -88,16 +87,16 @@ public class FWF_Documents_Test extends BrowserInvoke{
 			}
 			nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Add Document","New Document");
-	        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Add document");
-	        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-	        driver.switchTo().frame("frame1");
+	        new WebDriverWait(driver,50).until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("frame1"));
+	        //driver.switchTo().frame("frame1");
 	        FunctionLibrary.fnFWFAddDocument(driver,propSerialData);
-	        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	        //new WebDriverWait(driver,50).until(ExpectedConditions.numberOfWindowsToBe(4));
 	        
 		//Step-8:----Email Documents-------------------------------------//
-	        FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
-	        driver.switchTo().frame("tabIFrame");
+	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Folder WorkFlows");
+	        new WebDriverWait(driver,50).until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("tabIFrame"));
+	        //driver.switchTo().frame("tabIFrame");
 	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id=\"grdDocumentHitList_dom\"]/TABLE[1]/TBODY[1]/TR[2]"))).click().build().perform();
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Email Document(s)","");

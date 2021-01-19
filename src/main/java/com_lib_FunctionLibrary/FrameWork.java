@@ -17,7 +17,7 @@ public class FrameWork extends ExtentManager {
 	Object flag = null;
 
 	public void fnWebEdit(WebDriver driver, By element, String text, String label) throws InterruptedException {
-		WebElement wait = new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(element));
+		WebElement wait = new WebDriverWait(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(element));
 		if (wait.isDisplayed()) {
 			driver.findElement(element).clear();
 			Thread.sleep(100);
@@ -40,7 +40,7 @@ public class FrameWork extends ExtentManager {
 	}
 
 	public void fnWebList(WebDriver driver, By element, String text, String label) throws InterruptedException {
-		WebElement wait = new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(element));
+		WebElement wait = new WebDriverWait(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(element));
 		if (wait.isDisplayed()) {
 			Select listelement = new Select(driver.findElement(element));
 			listelement.selectByVisibleText(text);
@@ -61,7 +61,7 @@ public class FrameWork extends ExtentManager {
 	}
 
 	public void fnWebButton(WebDriver driver, By element, String label) throws InterruptedException {
-		WebElement wait = new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(element));
+		WebElement wait = new WebDriverWait(driver, 100).until(ExpectedConditions.visibilityOfElementLocated(element));
 		if (wait.isDisplayed()) {
 			driver.findElement(element).click();
 			Thread.sleep(1000);
@@ -73,7 +73,7 @@ public class FrameWork extends ExtentManager {
 	}
 
 	public void fnWebCheckBox(WebDriver driver, By element, String label) throws InterruptedException {
-		WebElement wait = new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(element));
+		WebElement wait = new WebDriverWait(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(element));
 		if (wait.isDisplayed()) {
 			driver.findElement(element).click();
 			Thread.sleep(2000);
