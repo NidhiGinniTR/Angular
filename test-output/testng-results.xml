@@ -2,34 +2,39 @@
 <testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-01-19T19:37:44 IST" name="Suite" finished-at="2021-01-19T19:40:14 IST" duration-ms="149771">
+  <suite started-at="2021-01-19T19:58:29 IST" name="Suite" finished-at="2021-01-19T20:00:01 IST" duration-ms="92353">
     <groups>
     </groups>
-    <test started-at="2021-01-19T19:37:44 IST" name="Test" finished-at="2021-01-19T19:40:14 IST" duration-ms="149771">
-      <class name="com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test">
-        <test-method is-config="true" signature="beforeStart()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@78aab498]" started-at="2021-01-19T19:37:44 IST" name="beforeStart" finished-at="2021-01-19T19:37:44 IST" duration-ms="290" status="PASS">
+    <test started-at="2021-01-19T19:58:29 IST" name="Test" finished-at="2021-01-19T20:00:01 IST" duration-ms="92353">
+      <class name="com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test">
+        <test-method is-config="true" signature="beforesuit()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test@78aab498]" started-at="2021-01-19T19:58:29 IST" name="beforesuit" finished-at="2021-01-19T19:58:29 IST" duration-ms="303" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforeStart -->
-        <test-method signature="Initialize()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@78aab498]" started-at="2021-01-19T19:37:44 IST" name="Initialize" finished-at="2021-01-19T19:37:51 IST" duration-ms="6589" status="PASS">
+        </test-method> <!-- beforesuit -->
+        <test-method signature="Initialize()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test@78aab498]" started-at="2021-01-19T19:58:29 IST" name="Initialize" finished-at="2021-01-19T19:58:33 IST" duration-ms="3755" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Initialize -->
-        <test-method signature="Documents()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@78aab498]" started-at="2021-01-19T19:37:51 IST" name="Documents" finished-at="2021-01-19T19:40:14 IST" depends-on-methods="com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test.Initialize" duration-ms="143125" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchFrameException">
+        <test-method signature="EventActions()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test@78aab498]" started-at="2021-01-19T19:58:33 IST" name="EventActions" finished-at="2021-01-19T19:59:54 IST" depends-on-methods="com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test.Initialize" duration-ms="81213" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[No frame element found by name or id tabIFrame
+              <![CDATA[Expected condition failed: waiting for number of open windows to be 3 (tried for 30 second(s) with 500 milliseconds interval)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'USE2DEVP0672', ip: '10.178.164.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'
-Driver info: driver.version: unknown]]>
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:27523/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: cd82fcb5-24e6-4a50-98e8-90ce4c359826]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchFrameException: No frame element found by name or id tabIFrame
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for number of open windows to be 3 (tried for 30 second(s) with 500 milliseconds interval)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'USE2DEVP0672', ip: '10.178.164.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'
-Driver info: driver.version: unknown
-at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.frame(RemoteWebDriver.java:885)
-at com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test.Documents(FWF_Documents_Test.java:68)
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:27523/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: cd82fcb5-24e6-4a50-98e8-90ce4c359826
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+at com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test.EventActions(FWF_Events_Test.java:58)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -60,19 +65,19 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchFrameException -->
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Documents -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@78aab498]" started-at="2021-01-19T19:40:14 IST" name="closeBrowser" finished-at="2021-01-19T19:40:14 IST" duration-ms="1" status="PASS">
+        </test-method> <!-- EventActions -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test@78aab498]" started-at="2021-01-19T19:59:54 IST" name="closeBrowser" finished-at="2021-01-19T20:00:01 IST" duration-ms="7305" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="aftersuite()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@78aab498]" started-at="2021-01-19T19:40:14 IST" name="aftersuite" finished-at="2021-01-19T19:40:15 IST" duration-ms="584" status="PASS">
+        <test-method is-config="true" signature="aftersuite()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test@78aab498]" started-at="2021-01-19T20:00:01 IST" name="aftersuite" finished-at="2021-01-19T20:00:02 IST" duration-ms="912" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- aftersuite -->
-      </class> <!-- com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test -->
+      </class> <!-- com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>
