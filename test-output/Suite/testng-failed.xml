@@ -4,7 +4,7 @@
   <listeners>
     <listener class-name="com_helper_Reporting.ListenersClass"/>
   </listeners>
-  <test thread-count="5" name="Regression(failed)">
+  <test thread-count="5" name="Test(failed)">
     <classes>
       <class name="com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test">
         <methods>
@@ -16,5 +16,5 @@
         </methods>
       </class> <!-- com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test -->
     </classes>
-  </test> <!-- Regression(failed) -->
+  </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

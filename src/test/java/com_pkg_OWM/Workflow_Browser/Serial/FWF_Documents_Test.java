@@ -61,10 +61,11 @@ public class FWF_Documents_Test extends BrowserInvoke{
 			//Thread.sleep(10000);
 			//driver.switchTo().parentFrame();
 		//Step-6:----Navigate to Document Tab----------------------------//
+			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 			FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
 			Thread.sleep(3000);
 			FunctionLibrary.fnFWFSwitchingTab(driver,"Documents");
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 			driver.switchTo().frame("tabIFrame");
 		//Step-7:----Actions---------------------------------------------//
 				//---Add Document~New Document--------------------------//

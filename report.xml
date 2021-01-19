@@ -7,7 +7,7 @@
   <test thread-count="5" name="Test">
     <classes>
       
-      <class name="com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test"/>
+      <class name="com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test"/>
     
     </classes>
   </test> <!-- Test -->
