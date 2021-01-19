@@ -11,6 +11,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Properties;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
@@ -123,7 +124,7 @@ public class FunctionLibrary extends ExtentManager {
 		if (driver.getTitle().equalsIgnoreCase("WorkFlow Manager")
 				|| driver.getTitle().equalsIgnoreCase("Folder WorkFlows")) {
 			WorkFlowBrowser actionsMenu = new WorkFlowBrowser(driver);
-			Thread.sleep(1000);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			java.util.List<WebElement> menuitems = driver.findElements(By.className("MenuItem"));
 			for (int i = 0; i < menuitems.size(); i++) {
 				// String name = webelement.getText();
@@ -241,7 +242,7 @@ public class FunctionLibrary extends ExtentManager {
 		Sf.SearchWorkflowType(prop.getProperty("Workflow_Type"));
 		// Sf.SearchGroupCodes(prop.getProperty("Group_Codes"));
 		Sf.Search();
-		Thread.sleep(2500);
+		Thread.sleep(200);
 	}
 
 	public static void fnFWFSwitchingTab(WebDriver driver, String tab) throws InterruptedException{
@@ -490,9 +491,9 @@ public class FunctionLibrary extends ExtentManager {
 		//driver.switchTo().frame("frame1");
 		if (driver.getTitle().equalsIgnoreCase("Add document")) {
 			owm.fwf_Task_AD_Clear();
-			Thread.sleep(200);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			owm.fwf_Task_AD_Save();
-			Thread.sleep(1500);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			WebDriverWait w = new WebDriverWait(driver, 15);
 			w.until(ExpectedConditions.alertIsPresent());
 			String text = driver.switchTo().alert().getText();
@@ -504,11 +505,11 @@ public class FunctionLibrary extends ExtentManager {
 			} else {
 				childTest.fail("Verification: Click on Save before uploading a document alert is missing");
 			}
-			Thread.sleep(2000);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			String path = "C:\\RapidScripts\\Documents\\Doc";
 			setClipboardData(path);
 			driver.findElement(By.xpath("//TD[@id='tdSelectDocument']/TABLE[1]/tbody/tr[2]/td[2]")).click();
-			Thread.sleep(2000);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			Robot robot = new Robot();
 			robot.keyPress(KeyEvent.VK_CONTROL);
 			robot.keyPress(KeyEvent.VK_V);
@@ -516,7 +517,7 @@ public class FunctionLibrary extends ExtentManager {
 			robot.keyRelease(KeyEvent.VK_CONTROL);
 			robot.keyPress(KeyEvent.VK_ENTER);
 			robot.keyRelease(KeyEvent.VK_ENTER);
-			Thread.sleep(2000);
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			owm.fwf_Task_AD_Save();
 			WebDriverWait w1 = new WebDriverWait(driver, 15);
 			w1.until(ExpectedConditions.alertIsPresent());
@@ -528,7 +529,7 @@ public class FunctionLibrary extends ExtentManager {
 			} else {
 				childTest.fail("Verification: Mandatory field alert is  missing");
 			}
-			Thread.sleep(2000);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			owm.fwf_Task_AD_Description(data.getProperty("doc_Description"));
 			owm.fwf_Task_AD_FileSection(data.getProperty("doc_FileSection"));
 			owm.fwf_Task_AD_DocumentType(data.getProperty("doc_DocumentType"));
@@ -539,7 +540,7 @@ public class FunctionLibrary extends ExtentManager {
 			owm.fwf_Task_AD_Notify();
 			owm.fwf_Task_AD_NotifyUsersList();
 			owm.fwf_Task_AD_Save();
-			Thread.sleep(3000);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		}
 	}
 
@@ -553,7 +554,7 @@ public class FunctionLibrary extends ExtentManager {
 		Documents owm = new Documents(driver);
 		if (driver.getTitle().equalsIgnoreCase("Email Document(s)")) {
 			owm.Emaildoc_Save();
-			Thread.sleep(1500);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			WebDriverWait w = new WebDriverWait(driver, 20);
 			w.until(ExpectedConditions.alertIsPresent());
 			String text = driver.switchTo().alert().getText();

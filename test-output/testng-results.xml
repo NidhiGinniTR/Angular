@@ -3,20 +3,32 @@
   <reporter-output>
   </reporter-output>
 <<<<<<< HEAD
+<<<<<<< HEAD
   <suite started-at="2021-01-15T17:12:50 IST" name="Suite" finished-at="2021-01-15T17:14:19 IST" duration-ms="88392">
 =======
   <suite started-at="2021-01-18T16:26:08 IST" name="Suite" finished-at="2021-01-18T16:31:43 IST" duration-ms="334845">
 >>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
+=======
+  <suite started-at="2021-01-18T20:55:32 IST" name="Suite" finished-at="2021-01-18T20:59:32 IST" duration-ms="240121">
+>>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
     <groups>
     </groups>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <test started-at="2021-01-15T17:12:50 IST" name="Test" finished-at="2021-01-15T17:14:19 IST" duration-ms="88392">
       <class name="com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test">
         <test-method is-config="true" signature="beforesuit()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test@78aab498]" started-at="2021-01-15T17:12:50 IST" name="beforesuit" finished-at="2021-01-15T17:12:50 IST" duration-ms="269" status="PASS">
 =======
     <test started-at="2021-01-18T16:26:08 IST" name="Regression" finished-at="2021-01-18T16:31:43 IST" duration-ms="334845">
+=======
+    <test started-at="2021-01-18T20:55:32 IST" name="Regression" finished-at="2021-01-18T20:59:32 IST" duration-ms="240121">
+>>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
       <class name="com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test">
+<<<<<<< HEAD
         <test-method is-config="true" signature="beforeStart()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@6bf0219d]" started-at="2021-01-18T16:26:08 IST" name="beforeStart" finished-at="2021-01-18T16:26:08 IST" duration-ms="310" status="PASS">
+>>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
+=======
+        <test-method is-config="true" signature="beforeStart()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@dd0c991]" started-at="2021-01-18T20:55:31 IST" name="beforeStart" finished-at="2021-01-18T20:55:32 IST" duration-ms="542" status="PASS">
 >>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
           <reporter-output>
           </reporter-output>
@@ -25,11 +37,16 @@
         <test-method signature="Initialize()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test@78aab498]" started-at="2021-01-15T17:12:50 IST" name="Initialize" finished-at="2021-01-15T17:12:56 IST" duration-ms="5812" status="PASS">
 =======
         </test-method> <!-- beforeStart -->
+<<<<<<< HEAD
         <test-method signature="Initialize()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@6bf0219d]" started-at="2021-01-18T16:26:08 IST" name="Initialize" finished-at="2021-01-18T16:26:13 IST" duration-ms="4490" status="PASS">
+>>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
+=======
+        <test-method signature="Initialize()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@dd0c991]" started-at="2021-01-18T20:55:32 IST" name="Initialize" finished-at="2021-01-18T20:55:39 IST" duration-ms="6687" status="PASS">
 >>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Initialize -->
+<<<<<<< HEAD
 <<<<<<< HEAD
         <test-method signature="EventActions()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test@78aab498]" started-at="2021-01-15T17:12:56 IST" name="EventActions" finished-at="2021-01-15T17:14:19 IST" depends-on-methods="com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test.Initialize" duration-ms="82509" status="FAIL">
           <exception class="org.openqa.selenium.TimeoutException">
@@ -37,11 +54,19 @@
         <test-method signature="Documents()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@6bf0219d]" started-at="2021-01-18T16:26:13 IST" name="Documents" finished-at="2021-01-18T16:31:43 IST" depends-on-methods="com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test.Initialize" duration-ms="330297" status="FAIL">
           <exception class="org.openqa.selenium.NoSuchFrameException">
 >>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
+=======
+        <test-method signature="Documents()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@dd0c991]" started-at="2021-01-18T20:55:39 IST" name="Documents" finished-at="2021-01-18T20:59:32 IST" depends-on-methods="com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test.Initialize" duration-ms="233357" status="FAIL">
+          <exception class="org.openqa.selenium.UnhandledAlertException">
+>>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
             <message>
+<<<<<<< HEAD
 <<<<<<< HEAD
               <![CDATA[Expected condition failed: waiting for number of open windows to be 2 (tried for 50 second(s) with 500 milliseconds interval)
 =======
               <![CDATA[No frame element found by name or id frame1
+>>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
+=======
+              <![CDATA[Modal dialog present with text: : 
 >>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 <<<<<<< HEAD
@@ -51,14 +76,25 @@ Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browse
 Session ID: 3c2c3894-0cae-4350-9b25-131b4ed1b8e0]]>
 =======
 System info: host: 'USE2DEVP0289', ip: '10.178.161.24', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
+<<<<<<< HEAD
 Driver info: driver.version: unknown]]>
+>>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
+=======
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:17610/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 094a72e9-3526-4161-9c8e-82f45cb49b57
+*** Element info: {Using=xpath, value=//IMG[@id='btnOK']}]]>
 >>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
             </message>
             <full-stacktrace>
 <<<<<<< HEAD
+<<<<<<< HEAD
               <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for number of open windows to be 2 (tried for 50 second(s) with 500 milliseconds interval)
 =======
               <![CDATA[org.openqa.selenium.NoSuchFrameException: No frame element found by name or id frame1
+>>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
+=======
+              <![CDATA[org.openqa.selenium.UnhandledAlertException: Modal dialog present with text: : 
 >>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 <<<<<<< HEAD
@@ -71,9 +107,32 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
 at com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test.EventActions(FWF_Events_Test.java:48)
 =======
 System info: host: 'USE2DEVP0289', ip: '10.178.161.24', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
+<<<<<<< HEAD
 Driver info: driver.version: unknown
 at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.frame(RemoteWebDriver.java:885)
 at com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test.Documents(FWF_Documents_Test.java:93)
+>>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
+=======
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:17610/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 094a72e9-3526-4161-9c8e-82f45cb49b57
+*** Element info: {Using=xpath, value=//IMG[@id='btnOK']}
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
+at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+at com_lib_FunctionLibrary.FrameWork.fnWebButton(FrameWork.java:64)
+at com_obj_ObjectRepository.FolderWorkFlows.Tasks.fwf_Task_AD_Save(Tasks.java:167)
+at com_lib_FunctionLibrary.FunctionLibrary.fnFWFAddDocument(FunctionLibrary.java:521)
+at com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test.Documents(FWF_Documents_Test.java:95)
 >>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -105,7 +164,7 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchFrameException -->
+          </exception> <!-- org.openqa.selenium.UnhandledAlertException -->
           <reporter-output>
           </reporter-output>
 <<<<<<< HEAD
@@ -149,15 +208,23 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- java.util.NoSuchElementException -->
 =======
         </test-method> <!-- Documents -->
+<<<<<<< HEAD
         <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@6bf0219d]" started-at="2021-01-18T16:31:43 IST" name="closeBrowser" finished-at="2021-01-18T16:31:43 IST" duration-ms="1" status="PASS">
+>>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
+=======
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@dd0c991]" started-at="2021-01-18T20:59:32 IST" name="closeBrowser" finished-at="2021-01-18T20:59:32 IST" duration-ms="0" status="PASS">
 >>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
 <<<<<<< HEAD
+<<<<<<< HEAD
         <test-method is-config="true" signature="aftersuite()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test@78aab498]" started-at="2021-01-15T17:14:19 IST" name="aftersuite" finished-at="1970-01-01T05:30:00 IST" duration-ms="-1610711059147" status="SKIP">
 =======
         <test-method is-config="true" signature="aftersuite()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@6bf0219d]" started-at="2021-01-18T16:31:43 IST" name="aftersuite" finished-at="2021-01-18T16:31:44 IST" duration-ms="439" status="PASS">
+>>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
+=======
+        <test-method is-config="true" signature="aftersuite()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@dd0c991]" started-at="2021-01-18T20:59:32 IST" name="aftersuite" finished-at="2021-01-18T20:59:33 IST" duration-ms="497" status="PASS">
 >>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
           <reporter-output>
           </reporter-output>
