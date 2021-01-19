@@ -39,32 +39,33 @@ public class FWF_Documents_Test extends BrowserInvoke{
 		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 		//Step-1:-----Login---------------------------------------------//
 			FunctionLibrary.fnLogin(driver, propEnv);
-			driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			
 		//Step-2:-----Launch WorkFlow Manager---------------------------//
 			FunctionLibrary.fnLaunchApplication(driver, "WorkFlow Manager");
-			driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			
 		//Step-3:-----Navigate to Respective Tab------------------------//
 			new WebDriverWait(driver,50).until(ExpectedConditions.numberOfWindowsToBe(2));
 			FunctionLibrary.fnNavigateTab(driver, "WorkFlow Browser");
-			driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			
 		//Step-4:-----Search for the Required Workflow------------------//
 			FunctionLibrary.fnWorkflowBrowserSearch(driver, propSerialData);
-			driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 			
 		//Step-5:-----Double click on the workflow to Folder Workflows---//
 			driver.switchTo().frame("viewIFrame");
 			Actions action = new Actions(driver);
 			action.moveToElement(driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td"))).doubleClick().build().perform();
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			//Thread.sleep(10000);
 			//driver.switchTo().parentFrame();
 		//Step-6:----Navigate to Document Tab----------------------------//
 			FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
-			driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			FunctionLibrary.fnFWFSwitchingTab(driver,"Documents");
-			driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			driver.switchTo().frame("tabIFrame");
 		//Step-7:----Actions---------------------------------------------//
 				//---Add Document~New Document--------------------------//
@@ -79,20 +80,20 @@ public class FWF_Documents_Test extends BrowserInvoke{
 				robot.keyRelease(KeyEvent.VK_CONTROL);
 				nav.Actions();
 		        FunctionLibrary.fnOWMActionsMenu(driver,"Other Actions","Delete Document(s)");
-		        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+		        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		        driver.switchTo().alert().accept();
-		        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+		        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		        driver.switchTo().alert().accept();
-		        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+		        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			}
 			nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Add Document","New Document");
-	        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+	        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Add document");
-	        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+	        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	        driver.switchTo().frame("frame1");
 	        FunctionLibrary.fnFWFAddDocument(driver,propSerialData);
-	        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+	        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	        
 		//Step-8:----Email Documents-------------------------------------//
 	        FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
@@ -100,10 +101,11 @@ public class FWF_Documents_Test extends BrowserInvoke{
 	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id=\"grdDocumentHitList_dom\"]/TABLE[1]/TBODY[1]/TR[2]"))).click().build().perform();
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Email Document(s)","");
-	        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+	        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Email Document(s)");
+	        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	        FunctionLibrary.fwf_fnEmailDocument(driver, propSerialData);
-	        //Thread.sleep(2000);
+	        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	        
 		//Step-9:-----Change Status--------------------------------------//
 	        FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
@@ -117,18 +119,18 @@ public class FWF_Documents_Test extends BrowserInvoke{
 				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 				driver.switchTo().alert().accept();	
 			}
-			driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	        
 	    //Step--:----Other Actions-----------------------------------------//
 	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id=\"grdDocumentHitList_dom\"]/TABLE[1]/TBODY[1]/TR[2]"))).click().build().perform();
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Other Actions","Copy Document(s)");
-	        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+	        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	        //-------Copy Documents--------//
 	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Copy Document(s)");
-	        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+	        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	        FunctionLibrary.fwf_fnCopyDocuments(driver, propSerialData);
-	        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+	        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	        //-------Copy Documents to ClipBoard---//
 	        //-------Move Document--------//
 	        FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
@@ -136,9 +138,9 @@ public class FWF_Documents_Test extends BrowserInvoke{
 	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id=\"grdDocumentHitList_dom\"]/TABLE[1]/TBODY[1]/TR[2]"))).click().build().perform();
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Other Actions","Move Document");
-	        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+	        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	        FunctionLibrary.fnSwitchtoWindow(driver,4, "Move Document");
-	        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+	        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	        FunctionLibrary.fwf_fnMoveDocument(driver, propSerialData);
 	        //-------Export Document-------//
 	        //-------Delete Document-------//
@@ -148,30 +150,30 @@ public class FWF_Documents_Test extends BrowserInvoke{
 	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id=\"grdDocumentHitList_dom\"]/TABLE[1]/TBODY[1]/TR[2]"))).click().build().perform();
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Review Document(s)","Archive");
-	        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+	        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	        String text1 = driver.switchTo().alert().getText();
 			if (text1.contains("The selected document(s) have been successfully Archived.")) {
 				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 				driver.switchTo().alert().accept();	
 			}
-			driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	        //-------UnArchive---------------//
 	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id=\"grdDocumentHitList_dom\"]/TABLE[1]/TBODY[1]/TR[2]"))).click().build().perform();
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Review Document(s)","Unarchive");
-	        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+	        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	        String text2 = driver.switchTo().alert().getText();
 			if (text2.contains("Successfully removed the Archived Status for the selected document(s).")) {
-				driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 				driver.switchTo().alert().accept();	
 			}
-			driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	        
 		//Step-11:----Associate Documents to workflow--------------------//
 	        action.moveToElement(driver.findElement(By.xpath("//DIV[@id=\"grdDocumentHitList_dom\"]/TABLE[1]/TBODY[1]/TR[2]"))).click().build().perform();
 	        nav.Actions();
 	        FunctionLibrary.fnOWMActionsMenu(driver,"Associate Document(s) to WorkFlow","");
-	        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+	        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	        String text3 = driver.switchTo().alert().getText();
 			if (text3.contains("Selected document(s) have been associated to the")) {
 				Thread.sleep(500);

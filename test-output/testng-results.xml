@@ -2,34 +2,54 @@
 <testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-01-18T16:26:08 IST" name="Suite" finished-at="2021-01-18T16:31:43 IST" duration-ms="334845">
+  <suite started-at="2021-01-18T20:55:32 IST" name="Suite" finished-at="2021-01-18T20:59:32 IST" duration-ms="240121">
     <groups>
     </groups>
-    <test started-at="2021-01-18T16:26:08 IST" name="Regression" finished-at="2021-01-18T16:31:43 IST" duration-ms="334845">
+    <test started-at="2021-01-18T20:55:32 IST" name="Regression" finished-at="2021-01-18T20:59:32 IST" duration-ms="240121">
       <class name="com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test">
-        <test-method is-config="true" signature="beforeStart()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@6bf0219d]" started-at="2021-01-18T16:26:08 IST" name="beforeStart" finished-at="2021-01-18T16:26:08 IST" duration-ms="310" status="PASS">
+        <test-method is-config="true" signature="beforeStart()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@dd0c991]" started-at="2021-01-18T20:55:31 IST" name="beforeStart" finished-at="2021-01-18T20:55:32 IST" duration-ms="542" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeStart -->
-        <test-method signature="Initialize()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@6bf0219d]" started-at="2021-01-18T16:26:08 IST" name="Initialize" finished-at="2021-01-18T16:26:13 IST" duration-ms="4490" status="PASS">
+        <test-method signature="Initialize()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@dd0c991]" started-at="2021-01-18T20:55:32 IST" name="Initialize" finished-at="2021-01-18T20:55:39 IST" duration-ms="6687" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Initialize -->
-        <test-method signature="Documents()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@6bf0219d]" started-at="2021-01-18T16:26:13 IST" name="Documents" finished-at="2021-01-18T16:31:43 IST" depends-on-methods="com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test.Initialize" duration-ms="330297" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchFrameException">
+        <test-method signature="Documents()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@dd0c991]" started-at="2021-01-18T20:55:39 IST" name="Documents" finished-at="2021-01-18T20:59:32 IST" depends-on-methods="com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test.Initialize" duration-ms="233357" status="FAIL">
+          <exception class="org.openqa.selenium.UnhandledAlertException">
             <message>
-              <![CDATA[No frame element found by name or id frame1
+              <![CDATA[Modal dialog present with text: : 
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'USE2DEVP0289', ip: '10.178.161.24', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
-Driver info: driver.version: unknown]]>
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:17610/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 094a72e9-3526-4161-9c8e-82f45cb49b57
+*** Element info: {Using=xpath, value=//IMG[@id='btnOK']}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchFrameException: No frame element found by name or id frame1
+              <![CDATA[org.openqa.selenium.UnhandledAlertException: Modal dialog present with text: : 
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'USE2DEVP0289', ip: '10.178.161.24', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
-Driver info: driver.version: unknown
-at org.openqa.selenium.remote.RemoteWebDriver$RemoteTargetLocator.frame(RemoteWebDriver.java:885)
-at com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test.Documents(FWF_Documents_Test.java:93)
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:17610/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 094a72e9-3526-4161-9c8e-82f45cb49b57
+*** Element info: {Using=xpath, value=//IMG[@id='btnOK']}
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:120)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
+at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+at com_lib_FunctionLibrary.FrameWork.fnWebButton(FrameWork.java:64)
+at com_obj_ObjectRepository.FolderWorkFlows.Tasks.fwf_Task_AD_Save(Tasks.java:167)
+at com_lib_FunctionLibrary.FunctionLibrary.fnFWFAddDocument(FunctionLibrary.java:521)
+at com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test.Documents(FWF_Documents_Test.java:95)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -60,15 +80,15 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchFrameException -->
+          </exception> <!-- org.openqa.selenium.UnhandledAlertException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Documents -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@6bf0219d]" started-at="2021-01-18T16:31:43 IST" name="closeBrowser" finished-at="2021-01-18T16:31:43 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@dd0c991]" started-at="2021-01-18T20:59:32 IST" name="closeBrowser" finished-at="2021-01-18T20:59:32 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="aftersuite()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@6bf0219d]" started-at="2021-01-18T16:31:43 IST" name="aftersuite" finished-at="2021-01-18T16:31:44 IST" duration-ms="439" status="PASS">
+        <test-method is-config="true" signature="aftersuite()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test@dd0c991]" started-at="2021-01-18T20:59:32 IST" name="aftersuite" finished-at="2021-01-18T20:59:33 IST" duration-ms="497" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- aftersuite -->
