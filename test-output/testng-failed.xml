@@ -4,17 +4,17 @@
   <listeners>
     <listener class-name="com_helper_Reporting.ListenersClass"/>
   </listeners>
-  <test thread-count="5" name="Test(failed)">
+  <test thread-count="5" name="Regression(failed)">
     <classes>
-      <class name="com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test">
+      <class name="com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test">
         <methods>
-          <include name="EventActions"/>
-          <include name="beforesuit"/>
-          <include name="Initialize"/>
           <include name="closeBrowser"/>
+          <include name="Documents"/>
+          <include name="beforeStart"/>
           <include name="aftersuite"/>
+          <include name="Initialize"/>
         </methods>
-      </class> <!-- com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test -->
+      </class> <!-- com_pkg_OWM.Workflow_Browser.Serial.FWF_Documents_Test -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Regression(failed) -->
 </suite> <!-- Failed suite [Suite] -->
