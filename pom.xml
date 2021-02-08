@@ -17,9 +17,7 @@
 			<id>Smoke</id>
 			<build>
 				<pluginManagement>
-
 					<plugins>
-
 						<plugin>
 							<artifactId>maven-surefire-plugin</artifactId>
 							<version>2.22.1</version>
@@ -29,11 +27,9 @@
 								</suiteXmlFiles>
 							</configuration>
 						</plugin>
-
 					</plugins>
 				</pluginManagement>
 			</build>
-
 		</profile>
 	</profiles>
 

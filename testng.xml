@@ -4,7 +4,7 @@
 	<listeners>
 		<listener class-name="com_helper_Reporting.ListenersClass"></listener>
 	</listeners>
-	<test thread-count="5" name="Regression">
+	<test thread-count="5" name="Test">
 		<classes>
 			<class name="com_pkg_OWM.Workflow_Browser.Serial.OWM_Test_WorkFlowBrowserActions" />
 		</classes>
