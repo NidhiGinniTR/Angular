@@ -18,7 +18,7 @@ public class FWF_Tasks_Test extends BrowserInvoke {
 	public void beforeStart() {
 		ExtentManager.createInstance();
 	}
-
+	@Test
 	public void Initialize() throws IOException {
 		driver = InvokeDriver();
 		driver.get(propEnv.getProperty("URL"));

@@ -146,8 +146,10 @@ public class OWM_Test_WorkFlowBrowserActions extends BrowserInvoke {
 		driver.switchTo().frame("viewIFrame");
 		lp.fnOWMActionsMenu("Save Preferences", "");
 		owm.fnOWMSavePreferences("Save Preferences");
+		driver.switchTo().parentFrame();
 		// Step-22:---Save Preferences for all---------------------------//
 		owm.Actions();
+		driver.switchTo().frame("viewIFrame");
 		lp.fnOWMActionsMenu("Save Preferences for All", "");
 		owm.fnOWMSavePreferences("Save Preferences for All");
 		driver.switchTo().parentFrame();
