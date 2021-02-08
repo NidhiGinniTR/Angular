@@ -10,10 +10,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import com.aventstack.extentreports.Status;
+
 import com_helper_Reporting.ExtentManager;
 
 
-public class FrameWork extends ExtentManager {
+
+public class FrameWork extends ExtentManager{
 	Object flag = null;
 
 	public void fnWebEdit(WebDriver driver, By element, String text, String label) throws InterruptedException {

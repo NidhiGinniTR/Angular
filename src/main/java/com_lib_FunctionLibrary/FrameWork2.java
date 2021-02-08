@@ -7,8 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
-
+//import org.testng.Assert;
 import com.aventstack.extentreports.Status;
 import com_helper_Reporting.ExtentManager;
 
@@ -26,10 +25,10 @@ public class FrameWork2 extends ExtentManager {
 			Thread.sleep(500);
 			String enteredText = driver.findElement(element).getAttribute("value");
 			if (enteredText.equalsIgnoreCase(text)) {
-				Assert.assertTrue(true);
+				//Assert.assertTrue(true);
 				childTest.log(Status.PASS, label + " = " + text + ".");
 			} else {
-				Assert.assertTrue(false);
+				//Assert.assertTrue(false);
 				childTest.log(Status.FAIL, label + " = " + text + ".");
 			}
 		}
@@ -43,10 +42,10 @@ public class FrameWork2 extends ExtentManager {
 			Thread.sleep(500);
 			String enteredText = listelement.getFirstSelectedOption().getText();
 			if (enteredText.equalsIgnoreCase(text)) {
-				Assert.assertTrue(true);
+				//Assert.assertTrue(true);
 				childTest.log(Status.PASS, label + " = " + text + ".");
 			} else {
-				Assert.assertTrue(false);
+				//Assert.assertTrue(false);
 				childTest.log(Status.FAIL, label + " = " + text + ".");
 				
 			}
@@ -68,11 +67,11 @@ public class FrameWork2 extends ExtentManager {
 			driver.findElement(element).click();
 			Thread.sleep(500);
 			if (driver.findElement(element).isSelected()) {
-				Assert.assertTrue(true);
+				//Assert.assertTrue(true);
 				childTest.log(Status.PASS, "" + label + " is Checked.");
 				flag = 1;
 			} else {
-				Assert.assertTrue(false);
+				//Assert.assertTrue(false);
 				childTest.log(Status.FAIL, "" + label + " is Checked.");
 				flag = 0;
 			}
