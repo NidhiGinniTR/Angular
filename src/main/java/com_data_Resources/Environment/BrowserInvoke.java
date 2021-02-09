@@ -40,6 +40,7 @@ public class BrowserInvoke {
 	        capability.setCapability("ignoreZoomSetting", true);
 	        capability.setCapability(InternetExplorerDriver.
 	            INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
+	        System.setProperty("webdriver.ie.whitelistedips", "");
 			driver = new InternetExplorerDriver();
 			System.out.println("Browser " + BrowserName + " is Initialized");
 			break;
