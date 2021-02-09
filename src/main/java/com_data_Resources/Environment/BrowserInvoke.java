@@ -45,7 +45,8 @@ public class BrowserInvoke {
 	        driver = new InternetExplorerDriver();
 	        //WebDriver driver = new RemoteWebDriver();
 	        System.setProperty("webdriver.ie.whitelistedips", "10.21.4.117");
-			driver = new InternetExplorerDriver();
+	        driver = new RemoteWebDriver(new URL("http://10.21.4.117:4444/wd/hub"), capability);
+			//driver = new InternetExplorerDriver();
 			System.out.println("Browser " + BrowserName + " is Initialized");
 			break;
 		case "Chrome":
