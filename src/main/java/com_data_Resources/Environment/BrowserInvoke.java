@@ -44,9 +44,9 @@ public class BrowserInvoke {
 	            INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
 	        driver = new InternetExplorerDriver();
 	        //WebDriver driver = new RemoteWebDriver();
-	        System.setProperty("webdriver.ie.whitelistedips", "10.21.4.117");
-	        driver = new RemoteWebDriver(new URL("http://10.21.4.117:4444/wd/hub"), capability);
-			//driver = new InternetExplorerDriver();
+	        //System.setProperty("webdriver.ie.whitelistedips", "10.21.4.117");
+	        //driver = new RemoteWebDriver(new URL("http://10.21.4.117:4444/wd/hub"), capability);
+			driver = new InternetExplorerDriver();
 			System.out.println("Browser " + BrowserName + " is Initialized");
 			break;
 		case "Chrome":
