@@ -40,6 +40,7 @@ public class BrowserInvoke {
 			break;
 		case "Chrome":
 			System.setProperty("webdriver.chrome.driver", "C:\\SeleniumDrivers\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.whitelistedIps", "");
 			driver = new ChromeDriver();
 			System.out.println("Browser " + BrowserName + " is Initialized");
 			break;
