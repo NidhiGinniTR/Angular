@@ -8,6 +8,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class BrowserInvoke {
 	public WebDriver driver;
@@ -35,6 +36,10 @@ public class BrowserInvoke {
 			// System.setProperty("webdriver.ie.driver",System.getProperty("user.dir")+System.getProperty("file.seperator")+"IEDriverServer.exe");
 			System.setProperty("webdriver.ie.driver", "C:\\SeleniumDrivers\\IEDriverServer.exe");
 			// WebDriverManager.iedriver().setup();
+			DesiredCapabilities capability = DesiredCapabilities.internetExplorer();
+	        capability.setCapability("ignoreZoomSetting", true);
+	        capability.setCapability(InternetExplorerDriver.
+	            INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
 			driver = new InternetExplorerDriver();
 			System.out.println("Browser " + BrowserName + " is Initialized");
 			break;
