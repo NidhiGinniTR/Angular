@@ -2,6 +2,7 @@ package com_data_Resources.Environment;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.URL;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -9,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class BrowserInvoke {
 	public WebDriver driver;
@@ -40,7 +42,9 @@ public class BrowserInvoke {
 	        capability.setCapability("ignoreZoomSetting", true);
 	        capability.setCapability(InternetExplorerDriver.
 	            INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
-			driver = new InternetExplorerDriver();
+	        driver = new InternetExplorerDriver();
+	        //WebDriver driver = new RemoteWebDriver();
+			
 			System.out.println("Browser " + BrowserName + " is Initialized");
 			break;
 		case "Chrome":
