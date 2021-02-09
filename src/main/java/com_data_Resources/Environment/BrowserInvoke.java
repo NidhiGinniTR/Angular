@@ -42,9 +42,14 @@ public class BrowserInvoke {
 	        capability.setCapability("ignoreZoomSetting", true);
 	        capability.setCapability(InternetExplorerDriver.
 	            INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
+<<<<<<< HEAD
 	        driver = new InternetExplorerDriver();
 	        //WebDriver driver = new RemoteWebDriver();
 			
+=======
+	        System.setProperty("webdriver.ie.whitelistedips", "");
+			driver = new InternetExplorerDriver();
+>>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
 			System.out.println("Browser " + BrowserName + " is Initialized");
 			break;
 		case "Chrome":
