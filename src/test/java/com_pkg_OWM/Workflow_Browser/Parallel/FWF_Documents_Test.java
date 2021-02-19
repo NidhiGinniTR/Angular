@@ -10,6 +10,8 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -19,9 +21,11 @@ import com_data_Resources.Environment.BrowserInvoke;
 import com_helper_Reporting.ExtentManager;
 import com_lib_FunctionLibrary.FrameWork;
 import com_lib_FunctionLibrary.FunctionLibrary;
+import com_lib_FunctionLibrary.loginPage;
 import com_obj_ObjectRepository.FolderWorkflows1.Events;
 import com_obj_ObjectRepository.FolderWorkflows1.Tasks;
 import com_obj_ObjectRepository.LS1.LS1;
+import com_obj_ObjectRepository.OWM.OWM;
 import com_obj_ObjectRepository.OWM.WorkflowBrowser1;
 import com_obj_ObjectRepository.FolderWorkflows1.Documents;
 
@@ -41,32 +45,35 @@ public class FWF_Documents_Test extends BrowserInvoke {
 	@Test(dependsOnMethods = "Initialize")
 	public void Documents() throws InterruptedException, AWTException {
 		// Step-1:-----Login---------------------------------------------//
-		LS1 lp = new LS1(driver, propEnv, propSerialData);
+		loginPage lp = new loginPage(driver,propEnv,propSerialData);
+		OWM owm = new com_obj_ObjectRepository.OWM.OWM(driver,propSerialData);
 		lp.fnLogin();
-
+		
 		// Step-2:-----Launch WorkFlow Manager---------------------------//
 		lp.LaunchApplication("WorkFlow Manager");
-
+		Thread.sleep(5000);
+		new WebDriverWait(driver,50).until(ExpectedConditions.numberOfWindowsToBe(2));
+		
 		// Step-3:-----Navigate to Respective Tab------------------------//
 		lp.fnSwitchtoWindow(2, "WorkFlow Manager");
-		driver.manage().window().maximize();
-
+		owm.fnNavigateTab("WorkFlow Browser");
+		Thread.sleep(1000);
+		
 		// Step-4:---------Search for the Required Workflow---------------//
-		FunctionLibrary.fnWorkflowBrowserSearch(driver, propSerialData);
+		owm.fnWorkflowBrowserSearch();
 
 		// Step-5:-----Double click on the workflow to Folder Workflows---//
 		driver.switchTo().frame("viewIFrame");
-		FrameWork.fnWebTable(driver, driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td")),
-				"DoubleClick");
+		FrameWork.fnWebTable(driver, driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td")),"DoubleClick");
+		Thread.sleep(5000);
 
-		// Step-6:------Navigate to Events Tab----------------------------//
+		// Step-6:------Navigate to Documents Tab----------------------------//
 		Thread.sleep(1000);
 		lp.fnSwitchtoWindow(3, "Folder WorkFlows");
 		Events Ev = new Events(driver,propSerialData);
 		Ev.fnFWFSwitchingTab("Documents");
 
-		// Step-7:--------------Delete Existing
-		// Documents----------------------------------//
+		// Step-7:--------------Delete ExistingDocuments----------------------------------//
 		driver.switchTo().frame("tabIFrame");
 		Actions action = new Actions(driver);
 		WorkflowBrowser1 Wb = new WorkflowBrowser1(driver, propEnv, propSerialData);
@@ -82,8 +89,13 @@ public class FWF_Documents_Test extends BrowserInvoke {
 			}
 			robot.keyRelease(KeyEvent.VK_CONTROL);
 			Ev.fnFWFClickActions();
-			Wb.fnOWMActionsMenu(driver, "Other Actions", "Delete Document(s)");
+			lp.fnOWMActionsMenu("Other Actions", "Delete Document(s)");
+			//WebDriverWait w = new WebDriverWait(driver, 40);
+			//w.until(ExpectedConditions.alertIsPresent());
+			Thread.sleep(2000);
 			driver.switchTo().alert().accept();
+			Thread.sleep(2000);
+			//w.until(ExpectedConditions.alertIsPresent());
 			driver.switchTo().alert().accept();
 		}
 
@@ -91,8 +103,9 @@ public class FWF_Documents_Test extends BrowserInvoke {
 		Ev.fnFWFClickActions();
 
 		// Step-9:--------------Add New Document----------------------------------//
-		Wb.fnOWMActionsMenu(driver, "Add Document", "New Document");
-		lp.fnSwitchtoWindow(4, "Folder WorkFlows");
+		lp.fnOWMActionsMenu("Add Document", "New Document");
+		lp.fnSwitchtoWindow(4, "Add document");
+		Thread.sleep(500);
 		driver.switchTo().frame("frame1");
 		Tasks Tk = new Tasks(driver, propSerialData);
 		Tk.fnFWFAddDocument();
@@ -104,9 +117,10 @@ public class FWF_Documents_Test extends BrowserInvoke {
 				driver.findElement(By.xpath("//DIV[@id=\"grdDocumentHitList_dom\"]/TABLE[1]/TBODY[1]/TR[2]"))).click()
 				.build().perform();
 		Ev.fnFWFClickActions();
-		Wb.fnOWMActionsMenu(driver, "Email Document(s)", "");
-		lp.fnSwitchtoWindow(4, "Folder WorkFlows");
+		lp.fnOWMActionsMenu("Email Document(s)", "");
+		lp.fnSwitchtoWindow(4, "Email Document(s)");
 		Documents Doc = new Documents(driver, propSerialData);
+		new WebDriverWait(driver,50).until(ExpectedConditions.numberOfWindowsToBe(4));
 		Doc.fwf_fnEmailDocument();
 
 		// Step-11:--------------Change Status----------------------------------//
@@ -116,7 +130,7 @@ public class FWF_Documents_Test extends BrowserInvoke {
 				driver.findElement(By.xpath("//DIV[@id=\"grdDocumentHitList_dom\"]/TABLE[1]/TBODY[1]/TR[2]"))).click()
 				.build().perform();
 		Ev.fnFWFClickActions();
-		Wb.fnOWMActionsMenu(driver, "Change Status", "In Progress");
+		lp.fnOWMActionsMenu("Change Status", "In Progress");
 		String text = driver.switchTo().alert().getText();
 		if (text.contains("Successfully updated 1 document(s).")) {
 			driver.switchTo().alert().accept();
@@ -128,19 +142,20 @@ public class FWF_Documents_Test extends BrowserInvoke {
 				driver.findElement(By.xpath("//DIV[@id=\"grdDocumentHitList_dom\"]/TABLE[1]/TBODY[1]/TR[2]"))).click()
 				.build().perform();
 		Ev.fnFWFClickActions();
-		Wb.fnOWMActionsMenu(driver, "Other Actions", "Copy Document(s)");
-		lp.fnSwitchtoWindow(4, "Folder WorkFlows");
+		lp.fnOWMActionsMenu("Other Actions", "Copy Document(s)");
+		new WebDriverWait(driver,50).until(ExpectedConditions.numberOfWindowsToBe(4));
+		lp.fnSwitchtoWindow(4, "Copy Document(s)");
 		Doc.fwf_fnCopyDocuments();
 
 		// Step-14:--------------Move Document----------------------------------//
 		lp.fnSwitchtoWindow(3, "Folder WorkFlows");
 		driver.switchTo().frame("tabIFrame");
-		action.moveToElement(
-				driver.findElement(By.xpath("//DIV[@id=\"grdDocumentHitList_dom\"]/TABLE[1]/TBODY[1]/TR[2]"))).click()
-				.build().perform();
+		action.moveToElement(driver.findElement(By.xpath("//DIV[@id=\"grdDocumentHitList_dom\"]/TABLE[1]/TBODY[1]/TR[2]"))).click().build().perform();
 		Ev.fnFWFClickActions();
-		Wb.fnOWMActionsMenu(driver, "Other Actions", "Move Document");
-		lp.fnSwitchtoWindow(4, "Folder WorkFlows");
+		lp.fnOWMActionsMenu("Other Actions", "Move Document");
+		new WebDriverWait(driver,50).until(ExpectedConditions.numberOfWindowsToBe(4));
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		lp.fnSwitchtoWindow(4, "Move Document");
 		Doc.fwf_fnMoveDocument();
 
 		// Step-15:--------------Export Document----------------------------------//
@@ -153,7 +168,7 @@ public class FWF_Documents_Test extends BrowserInvoke {
 				driver.findElement(By.xpath("//DIV[@id=\"grdDocumentHitList_dom\"]/TABLE[1]/TBODY[1]/TR[2]"))).click()
 				.build().perform();
 		Ev.fnFWFClickActions();
-		Wb.fnOWMActionsMenu(driver, "Review Document(s)", "Archive");
+		lp.fnOWMActionsMenu("Review Document(s)", "Archive");
 		String text1 = driver.switchTo().alert().getText();
 		if (text1.contains("The selected document(s) have been successfully Archived.")) {
 			driver.switchTo().alert().accept();
@@ -164,7 +179,7 @@ public class FWF_Documents_Test extends BrowserInvoke {
 				driver.findElement(By.xpath("//DIV[@id=\"grdDocumentHitList_dom\"]/TABLE[1]/TBODY[1]/TR[2]"))).click()
 				.build().perform();
 		Ev.fnFWFClickActions();
-		Wb.fnOWMActionsMenu(driver, "Review Document(s)", "Unarchive");
+		lp.fnOWMActionsMenu("Review Document(s)", "Unarchive");
 		String text2 = driver.switchTo().alert().getText();
 		if (text2.contains("Successfully removed the Archived Status for the selected document(s).")) {
 			driver.switchTo().alert().accept();
@@ -175,7 +190,7 @@ public class FWF_Documents_Test extends BrowserInvoke {
 				driver.findElement(By.xpath("//DIV[@id=\"grdDocumentHitList_dom\"]/TABLE[1]/TBODY[1]/TR[2]"))).click()
 				.build().perform();
 		Ev.fnFWFClickActions();
-		Wb.fnOWMActionsMenu(driver, "Associate Document(s) to WorkFlow", "");
+		lp.fnOWMActionsMenu("Associate Document(s) to WorkFlow", "");
 		String text3 = driver.switchTo().alert().getText();
 		if (text3.contains("Selected document(s) have been associated to the")) {
 			Thread.sleep(500);

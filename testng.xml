@@ -6,7 +6,7 @@
 	</listeners>
 	<test thread-count="5" name="Test">
 		<classes>
-			<class name="com_pkg_OWM.Workflow_Browser.Serial.OWM_Test_WorkFlowBrowserActions" />
+			<class name="com_pkg_OWM.EntityManager" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
