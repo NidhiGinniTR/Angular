@@ -22,7 +22,7 @@ import com_lib_FunctionLibrary.loginPage;
 import com_obj_ObjectRepository.LS1.EntityUnitBrowser;
 import com_obj_ObjectRepository.OWM.OWM;
 
-public class EntityUnitBrowser_DBA extends BrowserInvoke {
+public class EntityUnitBrowser_DBA_Test extends BrowserInvoke {
 	@BeforeSuite
 	public void beforeStart() {
 		ExtentManager.createInstance();
