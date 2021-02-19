@@ -41,7 +41,7 @@ public class BrowserInvoke {
 	        capability.setCapability("ignoreZoomSetting", true);
 	        capability.setCapability(InternetExplorerDriver.
 	            INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
-	        driver = new InternetExplorerDriver();
+	        //driver = new InternetExplorerDriver();
 	        //System.setProperty("webdriver.ie.whitelistedIps","");
 	        //driver = new RemoteWebDriver(new URL("http://10.21.4.117:4444/wd/hub"), capability);
 			driver = new InternetExplorerDriver();
