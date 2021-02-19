@@ -23,7 +23,7 @@
 							<version>2.22.1</version>
 							<configuration>
 								<suiteXmlFiles>
-									<suiteXmlFile>testng.xml</suiteXmlFile>
+									<suiteXmlFile>EntityManager.xml</suiteXmlFile>
 								</suiteXmlFiles>
 							</configuration>
 						</plugin>
