@@ -129,6 +129,7 @@ public class Tasks extends ExtentManager {
 			String path = "C:\\RapidScripts\\Documents\\Doc";
 			setClipboardData(path);
 			driver.findElement(By.xpath("//TD[@id='tdSelectDocument']/TABLE[1]/tbody/tr[2]/td[2]")).click();
+			Thread.sleep(900);
 			Robot robot = new Robot();
 			robot.keyPress(KeyEvent.VK_CONTROL);
 			robot.keyPress(KeyEvent.VK_V);
@@ -159,8 +160,9 @@ public class Tasks extends ExtentManager {
 					"Document Status");
 			fm.fnWebEdit(driver, fwf_Task_AD_DueDate, template.getProperty("doc_DueDate"), "Due Date");
 			fm.fnWebCheckBox(driver, fwf_Task_AD_Notify, "Notify");
-			fm.fnWebButton(driver, fwf_Task_AD_NotifyUsersList, "Users List");
+			//fm.fnWebButton(driver, fwf_Task_AD_NotifyUsersList, "Users List");
 			fm.fnWebButton(driver, fwf_Task_AD_Save, "Save");
+			Thread.sleep(1500);
 		}
 	}
 

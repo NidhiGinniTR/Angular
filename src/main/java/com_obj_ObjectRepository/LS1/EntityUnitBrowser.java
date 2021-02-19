@@ -15,6 +15,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.aventstack.extentreports.Status;
@@ -26,7 +27,7 @@ public class EntityUnitBrowser extends ExtentManager {
 
 	WebDriver driver;
 	FrameWork fm = new FrameWork();
-	Properties loginData;
+	Properties data;
 	Properties template;
 
 	/***************************************************************************************
@@ -117,12 +118,72 @@ public class EntityUnitBrowser extends ExtentManager {
 	By TaxIds_Actions = By.className("btn btn-primary dropdown-toggle");
 	//gridFrame1
 	
+	/***************************************************************************************
+	 * These element locators belongs to Entity Group creation Webpage of Entity
+	 * Manager
+	 ***************************************************************************************/
+	By EM_EntityGroup_Dropdown = By.xpath("//img[@id='entitygroupid_DropImage']");
+	By EM_EntityGroup_Dropdown_ANEG = By.xpath("//div[@id='entitygroupid_DropDownContent']/DIV[2]/NOBR[1]");
+	By EM_EntityGroup = By.xpath("//input[@id='entitygroupid_Input']");
+	By EM_EntityGroup_Name = By.xpath("//input[@id='txtEntityGroup']");
+	By EM_EntityGroup_Add = By.xpath("//input[@id='btnAdd']");
+	By EM_EntityGroup_Delete = By.xpath("//input[@id='btnDelete']");
+	By EM_EntityGroup_Edit = By.xpath("//input[@id='btnEdit']");
+	By EM_EntityGroup_Save = By.xpath("//INPUT[@id='btnSave']");
+	By EM_EntityGroup_Cancel = By.xpath("//INPUT[@id='btnCancel']");
+	By EM_EntityGroup_List = By.xpath("//SELECT[@id='listEntityGroup']");
+	By EM_EntityGroup_msgLabel = By.xpath("//SPAN[@id='MessageLabel']");
 	
+	/***************************************************************************************
+	 * These element locators belongs to DBA creation Webpage of Entity Unit Browser
+	 ***************************************************************************************/
+	By EM_DBA_AN_DoingBusinessAs = By.xpath("//input[@id='doingbusinessas']");
+	By EM_DBA_AN_BusinessID = By.xpath("//input[@id='businessid']");
+	By EM_DBA_AN_Description = By.xpath("//input[@id='description']");
+	By EM_DBA_AN_Status = By.xpath("//select[@id='status']");
+	By EM_DBA_AN_Address1 = By.xpath("//input[@id='address1']");
+	By EM_DBA_AN_Address2 = By.xpath("//input[@id='address2']");
+	By EM_DBA_AN_City = By.xpath("//input[@id='city']");
+	By EM_DBA_AN_Country_Region = By.xpath("//input[@id='country_Input']");
+	By EM_DBA_AN_Zip = By.xpath("//input[@id='zip']");
+	By EM_DBA_AN_County = By.xpath("//input[@id='county']");
+	By EM_DBA_AN_State = By.xpath("//input[@id='state_Input']");
+	By EM_DBA_AN_ContactName = By.xpath("//input[@id='contactname']");
+	By EM_DBA_AN_MainTelephone = By.xpath("//input[@id='maintelephone']");
+	By EM_DBA_AN_AlternateTelephone = By.xpath("//input[@id='alternatetelephone']");
+	By EM_DBA_AN_Fax = By.xpath("//input[@id='fax']");
+	By EM_DBA_AN_Email = By.xpath("//input[@id='email']");
+	By EM_DBA_AN_FromdDate = By.xpath("//input[@id='fromdate']");
+	By EM_DBA_AN_ToDate = By.xpath("//input[@id='todate']");
+	By EM_DBA_AN_Notes = By.xpath("//textarea[@id='notes']");
+	By EM_DBA_AN_Save = By.xpath("//input[@id='btnSave']");
+	By EM_DBA_AN_Cancel = By.xpath("//input[@id='btnClose']");
+	By EM_DBA_AN_ErrorMessageLabel = By.xpath("//*[@id='spaErrorMessage']");
+
+	/***************************************************************************************
+	 * These element locators belongs to Owners sub tab of Ownership tab in Entity
+	 * Manager
+	 ***************************************************************************************/
+	By EM_Owners_OwnerType = By.xpath("//select[@id='ownertype']");
+	By EM_Owners_OwnerName1 = By.xpath("//input[@id='owner1_Input']");
+	By EM_Owners_OwnerName2 = By.xpath("//input[@id='owner2_Input']");
+	By EM_Owners_Labelpercentage = By.xpath("//label[@id='lbl1']");
+	By EM_Owners_OwnerID1 = By.xpath("//input[@id='ownerId1_Input']");
+	By EM_Owners_OwnerID2 = By.xpath("//input[@id='ownerId2_Input']");
+	By EM_Owners_PercentageOwned1 = By.xpath("//input[@id='percentage1']");
+	By EM_Owners_PercentageOwned2 = By.xpath("//input[@id='percentage2']");
+	By EM_Owners_AsofDate1 = By.xpath("//input[@id='AsOfDate1']");
+	By EM_Owners_AsofDate2 = By.xpath("//input[@id='AsOfDate1']");
+	By EM_Owners_AddOwner = By.xpath("//input[@id='btnAddOwner']");
+	By EM_Owners_Save = By.xpath("//input[@id='btnSave']");
+	By EM_Owners_Close = By.xpath("//input[@id='btnClose']");
+	By EM_Owners_errMessage = By.xpath("//span[@id='spaErrorMessage']");
+	By EM_Owners_totoalPercentage = By.xpath("//div[@id='divRunningTotal']");
 
 	public EntityUnitBrowser(WebDriver driver, Properties data2, Properties data) {
 		this.driver = driver;
 		this.template = data;
-		this.loginData = data2;
+		this.data = data2;
 	}
 
 	/***************************************************************************************
@@ -282,7 +343,7 @@ public class EntityUnitBrowser extends ExtentManager {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		fm.fnWebButton(driver, ClientName_Lookup, "Client Name Lookup");
 
-		LS1 Lp = new LS1(driver, loginData, template);
+		LS1 Lp = new LS1(driver, data, template);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		Thread.sleep(1000);
 		Lp.fnSwitchtoWindow(3, "Client Name LookUp");
@@ -395,7 +456,7 @@ public class EntityUnitBrowser extends ExtentManager {
 
 		fm.fnWebButton(driver, ClientName_Lookup, "Client Name Lookup");
 
-		LS1 Lp = new LS1(driver, loginData, template);
+		LS1 Lp = new LS1(driver, data, template);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		Lp.fnSwitchtoWindow(3, "Client Name LookUp");
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -504,4 +565,289 @@ public class EntityUnitBrowser extends ExtentManager {
 		//fm.fnWebButton(driver, TaxIds_Actions, "Actions");
 	}
 
+	/***************************************************************************************
+	 * This function is used to perform Add New function in DBA tab 
+	 ***************************************************************************************/
+	public void fnDBAAddNew() {
+		childTest = test
+				.createNode("Description: DBA : Add New" + "<br>" + "<< Screen Name: Entity Unit Browser>></br>");
+		try {
+			System.out.println(driver.getTitle());
+			driver.switchTo().frame("Iframe1");
+			fm.fnWebButton(driver, EM_DBA_AN_Save, "Save");
+			Thread.sleep(1500);
+			/*
+			 * new WebDriverWait(driver, 50)
+			 * .until(ExpectedConditions.visibilityOfElementLocated(EM_EntityGroup_msgLabel)
+			 * ); String dbaErrText1 =
+			 * driver.findElement(EM_EntityGroup_msgLabel).getText(); if
+			 * (dbaErrText1.equals("Doing Business As is required")) {
+			 * childTest.log(Status.PASS,
+			 * "Verification: With out entering any details, click on Save '" + dbaErrText1
+			 * + "' alert/Message exists"); } else { childTest.log(Status.ERROR,
+			 * "Verification: With out entering any details, click on Save alert/Message does not exists"
+			 * ); }
+			 */
+			fm.fnWebEdit(driver, EM_DBA_AN_DoingBusinessAs, data.getProperty("DBA_DoingBusinessAs"),
+					"Doing Business As");
+			fm.fnWebEdit(driver, EM_DBA_AN_BusinessID, data.getProperty("DBA_BusinessId"), "Business ID");
+			fm.fnWebEdit(driver, EM_DBA_AN_Description, data.getProperty("DBA_Description"), "Description");
+			fm.fnWebList(driver, EM_DBA_AN_Status, data.getProperty("DBA_Status"), "Status");
+			fm.fnWebEdit(driver, EM_DBA_AN_Address1, data.getProperty("DBA_Address1"), "Address1");
+			fm.fnWebEdit(driver, EM_DBA_AN_Address2, data.getProperty("DBA_Address2"), "Address2");
+			fm.fnWebEdit(driver, EM_DBA_AN_City, data.getProperty("DBA_City"), "City");
+			fm.fnWebEdit(driver, EM_DBA_AN_Country_Region, data.getProperty("DBA_CountryRegion"), "Country/Region");
+			fm.fnWebEdit(driver, EM_DBA_AN_Zip, data.getProperty("DBA_Zip"), "Zip");
+			fm.fnWebEdit(driver, EM_DBA_AN_County, data.getProperty("DBA_County"), "County");
+			fm.fnWebEdit(driver, EM_DBA_AN_State, data.getProperty("DBA_State"), "State");
+			fm.fnWebEdit(driver, EM_DBA_AN_ContactName, data.getProperty("DBA_ContactName"), "ContactName");
+			fm.fnWebEdit(driver, EM_DBA_AN_MainTelephone, data.getProperty("DBA_MainTelephone"), "Main Telephone");
+			fm.fnWebEdit(driver, EM_DBA_AN_AlternateTelephone, data.getProperty("DBA_AlternateTelephone"),
+					"Alternate Telephone");
+			fm.fnWebEdit(driver, EM_DBA_AN_Fax, data.getProperty("DBA_Fax"), "Fax");
+			fm.fnWebEdit(driver, EM_DBA_AN_Email, data.getProperty("DBA_Email"), "Email");
+			fm.fnWebEdit(driver, EM_DBA_AN_FromdDate, data.getProperty("DBA_FromDate"), "From Date");
+			fm.fnWebEdit(driver, EM_DBA_AN_ToDate, data.getProperty("DBA_ToDate"), "To Date");
+			fm.fnWebEdit(driver, EM_DBA_AN_Notes, data.getProperty("DBA_Notes"), "Notes");
+			fm.fnWebButton(driver, EM_DBA_AN_Save, "Save");
+			/*
+			 * new WebDriverWait(driver, 50)
+			 * .until(ExpectedConditions.visibilityOfElementLocated(EM_EntityGroup_msgLabel)
+			 * ); String dbaErrText2 =
+			 * driver.findElement(EM_EntityGroup_msgLabel).getText(); if
+			 * (dbaErrText2.equals("Your data was successfully saved")) {
+			 * childTest.log(Status.PASS,
+			 * "Verification: After entering any details, click on Save '" + dbaErrText2 +
+			 * "' alert/Message exists"); } else { childTest.log(Status.ERROR,
+			 * "Verification: After entering any details, click on Save alert/Message does not exists"
+			 * ); }
+			 */
+			driver.close();
+		} catch (Exception e) {
+			childTest.fail(e);
+		}
+	}
+	
+	/***************************************************************************************
+	 * This function is used to perform Switch between windows in the application
+	 * 	 ***************************************************************************************/
+	public void fnSwitchtoWindow(int winNum, String winName) throws InterruptedException {
+		new WebDriverWait(driver, 50).until(ExpectedConditions.numberOfWindowsToBe(winNum));
+		Set<String> s = driver.getWindowHandles();
+		Iterator<String> ite = s.iterator();
+		int i = 1;
+		while (ite.hasNext() && i <= s.size()) {
+			String popHandle = ite.next().toString();
+			driver.switchTo().window(popHandle);
+			// System.out.println(driver.getTitle());
+			// driver.manage().window().maximize();
+			if (i == winNum)
+				break;
+			i++;
+		}
+		/*
+		 * for(int j=0;j==winNum;j++) { String[] child = new String[winNum]; child[j]=
+		 * ite.next(); if(j==winNum) { driver.switchTo().window(child[j]); break; } }
+		 */
+		if (winName != null || driver.getTitle().equals(winName)) {
+			childTest.info("Switched to " + winName + " window.");
+		} else {
+			childTest.fail("Failed to Switch to " + winName + " window.");
+		}
+	}
+
+	/***************************************************************************************
+	 * This function is used to perform Add/Edit/Delete Entity Group in Basic info page
+	 * 	 ***************************************************************************************/
+	public void fnEntityGroup(String opr) throws InterruptedException {
+		childTest = test.createNode(
+				"Description: Entity Group-Add/Edit/Delete" + "<br>" + "<< Screen Name: Basic Info >></br>");
+		if (driver.getTitle().equalsIgnoreCase("Entity Information")) {
+			driver.switchTo().frame("addeditFrame1");
+			// fm.fnWebEdit(driver,EM_EntityGroup ,"***","Entity Group");
+			driver.findElement(By.xpath("//INPUT[@id='clientname']")).sendKeys("BDO");
+			driver.findElement(By.xpath("//input[@id='clientnumber']")).sendKeys("SYS_FIRM");
+			Thread.sleep(10000);
+			driver.findElement(EM_EntityGroup_Dropdown).click();
+			driver.findElement(EM_EntityGroup_Dropdown_ANEG).click();
+			Thread.sleep(2000);
+			driver.switchTo().alert().accept();
+			driver.findElement(EM_EntityGroup_Dropdown).click();
+			driver.findElement(EM_EntityGroup_Dropdown_ANEG).click();
+			System.out.println(driver.getWindowHandles().size());
+			fnSwitchtoWindow(3, "Entity Group:");
+			Thread.sleep(3000);
+			// driver.switchTo().frame("_sl_historyFrame");
+			try {
+				if (opr.equalsIgnoreCase("Add")) {
+					System.out.println(driver.getTitle());
+					fm.fnWebButton(driver, EM_EntityGroup_Add, "Add");
+					new WebDriverWait(driver, 50)
+							.until(ExpectedConditions.visibilityOfElementLocated(EM_EntityGroup_msgLabel));
+					String addText = driver.findElement(EM_EntityGroup_msgLabel).getText();
+					if (addText.equals("Please Enter Entity Group")) {
+						childTest.log(Status.PASS, "Verification: With out entering any details, click on Add '"
+								+ addText + "' alert/Message exists");
+					} else {
+						childTest.log(Status.ERROR,
+								"Verification: With out entering any details, click on Add alert/Message does not exists");
+					}
+					fm.fnWebButton(driver, EM_EntityGroup_Edit, "Edit");
+					new WebDriverWait(driver, 50)
+							.until(ExpectedConditions.visibilityOfElementLocated(EM_EntityGroup_msgLabel));
+					String editText = driver.findElement(EM_EntityGroup_msgLabel).getText();
+					if (editText.equals("No Data to Edit")) {
+						childTest.log(Status.PASS, "Verification: With out entering any details, click on Edit '"
+								+ editText + "' alert/Message exists");
+					} else {
+						childTest.log(Status.ERROR,
+								"Verification: With out entering any details, click on Edit alert/Message does not exists");
+					}
+					fm.fnWebButton(driver, EM_EntityGroup_Delete, "Delete");
+					Thread.sleep(1000);
+					driver.switchTo().alert().accept();
+					new WebDriverWait(driver, 50)
+							.until(ExpectedConditions.visibilityOfElementLocated(EM_EntityGroup_msgLabel));
+					String deleteText = driver.findElement(EM_EntityGroup_msgLabel).getText();
+					if (deleteText.equals("No Data to Delete")) {
+						childTest.log(Status.PASS, "Verification: With out entering any details, click on Delete '"
+								+ deleteText + "' alert/Message exists");
+					} else {
+						childTest.log(Status.ERROR,
+								"Verification: With out entering any details, click on Delete alert/Message does not exists");
+					}
+					fm.fnWebButton(driver, EM_EntityGroup_Save, "Save");
+					Thread.sleep(1000);
+					new WebDriverWait(driver, 50)
+							.until(ExpectedConditions.visibilityOfElementLocated(EM_EntityGroup_msgLabel));
+					String saveText = driver.findElement(EM_EntityGroup_msgLabel).getText();
+					if (saveText.equals("Saved Successfully.")) {
+						childTest.log(Status.PASS, "Verification: With out entering any details, click on Save '"
+								+ saveText + "' alert/Message exists");
+					} else {
+						childTest.log(Status.ERROR,
+								"Verification: With out entering any details, click on Save alert/Message does not exists");
+					}
+					Select s = new Select(driver.findElement(EM_EntityGroup_List));
+					List<WebElement> op = s.getOptions();
+					String oldText = op.get(0).getText();
+					if (!oldText.isEmpty()) {
+						fm.fnWebEdit(driver, EM_EntityGroup_Name, oldText, "Entity Group Name");
+						fm.fnWebButton(driver, EM_EntityGroup_Add, "Add");
+						new WebDriverWait(driver, 50)
+								.until(ExpectedConditions.visibilityOfElementLocated(EM_EntityGroup_msgLabel));
+						String repeatText = driver.findElement(EM_EntityGroup_msgLabel).getText();
+						if (saveText.equals("This item already exists in the list.")) {
+							childTest.log(Status.PASS, "Verification: Enter an existing group name, click on Add '"
+									+ repeatText + "' alert/Message exists");
+						} else {
+							childTest.log(Status.ERROR,
+									"Verification: Enter an existing group name, click on Add alert/Message does not exists");
+						}
+					}
+					fm.fnWebEdit(driver, EM_EntityGroup_Name, data.getProperty("EntityGroupName"), "Entity Group");
+					fm.fnWebButton(driver, EM_EntityGroup_Add, "Add");
+					new WebDriverWait(driver, 50)
+							.until(ExpectedConditions.visibilityOfElementLocated(EM_EntityGroup_msgLabel));
+					String errText = driver.findElement(EM_EntityGroup_msgLabel).getText();
+					if (saveText.equals("This item already exists in the list.")) {
+						childTest.log(Status.PASS, "Verification: Enter an existing group name, click on Add '"
+								+ errText + "' alert/Message exists");
+						fm.fnWebButton(driver, EM_EntityGroup_Save, "Save");
+					} else {
+						childTest.log(Status.ERROR,
+								"Verification: Enter an existing group name, click on Add alert/Message does not exists");
+					}
+					fm.fnWebButton(driver, EM_EntityGroup_Save, "Save");
+				}
+				if (opr.equalsIgnoreCase("Edit")) {
+					Thread.sleep(3000);
+					fm.fnWebButton(driver, EM_EntityGroup_Save, "Save");
+					Select s = new Select(driver.findElement(EM_EntityGroup_List));
+					List<WebElement> op = s.getOptions();
+					for (int i = 0; i < op.size(); i++) {
+						if (op.get(i).getText().equalsIgnoreCase(data.getProperty("EntityGroupName"))) {
+							op.get(i).click();
+							Thread.sleep(1000);
+							fm.fnWebEdit(driver, EM_EntityGroup_Name, data.getProperty("EntityGroupNameEdit"),
+									"Entity Group Name");
+							fm.fnWebButton(driver, EM_EntityGroup_Edit, "Edit");
+							Thread.sleep(1000);
+							fm.fnWebButton(driver, EM_EntityGroup_Save, "Save");
+							new WebDriverWait(driver, 50)
+									.until(ExpectedConditions.visibilityOfElementLocated(EM_EntityGroup_msgLabel));
+							String newEditText = driver.findElement(EM_EntityGroup_msgLabel).getText();
+							if (newEditText.equals("Saved Successfully.")) {
+								childTest.log(Status.PASS,
+										"Verification: Edit an existing group name, click on Edit&Save '" + newEditText
+												+ "' alert/Message exists");
+							} else {
+								childTest.log(Status.ERROR,
+										"Verification: Edit an existing group name, click on Edit&Save alert/Message does not exists");
+							}
+						}
+					}
+				}
+				if (opr.equalsIgnoreCase("Delete")) {
+					Thread.sleep(3000);
+					fm.fnWebButton(driver, EM_EntityGroup_Save, "Save");
+					Select s = new Select(driver.findElement(EM_EntityGroup_List));
+					List<WebElement> op = s.getOptions();
+					for (int i = 0; i < op.size(); i++) {
+						if (op.get(i).getText().equalsIgnoreCase(data.getProperty("EntityGroupNameEdit"))) {
+							op.get(i).click();
+							Thread.sleep(1000);
+							fm.fnWebButton(driver, EM_EntityGroup_Delete, "Delete");
+							Thread.sleep(1000);
+							driver.switchTo().alert().accept();
+							fm.fnWebButton(driver, EM_EntityGroup_Save, "Save");
+						}
+					}
+				}
+			} catch (Exception e) {
+				childTest.fail(e);
+			}
+			fm.fnWebButton(driver, EM_EntityGroup_Cancel, "Cancel");
+		}
+	}
+
+	public void fnEntityManagerDBAEdit() {
+		childTest = test.createNode(
+				"Description: DBA :Edit/View Details" + "<br>" + "<< Screen Name: Entity Unit Browser--DBA>></br>");
+		try {
+			if (driver.getTitle().equalsIgnoreCase("Entity Manager")) {
+				driver.switchTo().frame("Iframe1");
+				fm.fnWebEditCompare(driver, EM_DBA_AN_DoingBusinessAs, data.getProperty("DBA_DoingBusinessAs"),
+						"Doing Business As");
+				fm.fnWebEditCompare(driver, EM_DBA_AN_BusinessID, data.getProperty("DBA_BusinessId"), "Business ID");
+				fm.fnWebEditCompare(driver, EM_DBA_AN_Description, data.getProperty("DBA_Description"), "Description");
+				fm.fnWebListCompare(driver, EM_DBA_AN_Status, data.getProperty("DBA_Status"), "Status");
+				fm.fnWebEditCompare(driver, EM_DBA_AN_Address1, data.getProperty("DBA_Address1"), "Address1");
+				fm.fnWebEditCompare(driver, EM_DBA_AN_Address2, data.getProperty("DBA_Address2"), "Address2");
+				fm.fnWebEditCompare(driver, EM_DBA_AN_City, data.getProperty("DBA_City"), "City");
+				fm.fnWebEditCompare(driver, EM_DBA_AN_Country_Region, data.getProperty("DBA_CountryRegion"),
+						"Country/Region");
+				fm.fnWebEditCompare(driver, EM_DBA_AN_Zip, data.getProperty("DBA_Zip"), "Zip");
+				fm.fnWebEditCompare(driver, EM_DBA_AN_County, data.getProperty("DBA_County"), "County");
+				fm.fnWebEditCompare(driver, EM_DBA_AN_State, data.getProperty("DBA_State"), "State");
+				fm.fnWebEditCompare(driver, EM_DBA_AN_ContactName, data.getProperty("DBA_ContactName"), "ContactName");
+				fm.fnWebEditCompare(driver, EM_DBA_AN_MainTelephone, data.getProperty("DBA_MainTelephone"),
+						"Main Telephone");
+				fm.fnWebEditCompare(driver, EM_DBA_AN_AlternateTelephone, data.getProperty("DBA_AlternateTelephone"),
+						"Alternate Telephone");
+				fm.fnWebEditCompare(driver, EM_DBA_AN_Fax, data.getProperty("DBA_Fax"), "Fax");
+				fm.fnWebEditCompare(driver, EM_DBA_AN_Email, data.getProperty("DBA_Email"), "Email");
+				fm.fnWebEditCompare(driver, EM_DBA_AN_FromdDate, data.getProperty("DBA_FromDate"), "From Date");
+				fm.fnWebEditCompare(driver, EM_DBA_AN_ToDate, data.getProperty("DBA_ToDate"), "To Date");
+				fm.fnWebEditCompare(driver, EM_DBA_AN_Notes, data.getProperty("DBA_Notes"), "Notes");
+				fm.fnWebButton(driver, EM_DBA_AN_Save, "Save");
+				Thread.sleep(1000);
+				fm.fnWebButton(driver, SavePre_save, "OK");
+				driver.close();
+			}
+
+		} catch (Exception e) {
+			childTest.fail(e);
+		}
+	}
 }
