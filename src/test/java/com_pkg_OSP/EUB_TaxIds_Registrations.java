@@ -39,7 +39,7 @@ public class EUB_TaxIds_Registrations extends BrowserInvoke {
 		lp.fnLogin();
 
 		// Step-2:-----Launch Entity Unit Browser---------------------------//
-		lp.LaunchApplication("Entity Unit Browser");
+		lp.LaunchApplication("Entity Manager");
 
 		// Step-3:-----Search Entity---------------------------//
 		driver.switchTo().defaultContent();

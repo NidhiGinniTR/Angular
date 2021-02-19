@@ -39,7 +39,7 @@ public class EUB extends BrowserInvoke {
 		lp.fnLogin();
 
 		// Step-2:-----Launch Entity Unit Browser---------------------------//
-		lp.LaunchApplication("Entity Unit Browser");
+		lp.LaunchApplication("Entity Manager");
 
 		// Step-3:-----Verify Search Fields---------------------------//
 		driver.switchTo().defaultContent();
