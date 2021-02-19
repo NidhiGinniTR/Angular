@@ -424,13 +424,13 @@ public class EntityUnitBrowser extends ExtentManager {
 			fm.fnWebButton(driver, Splitter, "Splitter");
 			fm.fnWebButton(driver, EUB_Clear, "Clear");
 			Thread.sleep(5500);
-			WebElement ClientName = driver.findElement(By.xpath("//input[@id='SearchControl9_Input']"));
-			ClientName.sendKeys(template.getProperty("Eub_ClientName"));
-			Thread.sleep(500);
-			ClientName.sendKeys(Keys.ARROW_DOWN);
-			ClientName.sendKeys(Keys.ENTER);
-			childTest.log(Status.PASS, "Entered Client Name successfully.");
-			Thread.sleep(500);
+			//WebElement ClientName = driver.findElement(By.xpath("//input[@id='SearchControl9_Input']"));
+			//ClientName.sendKeys(template.getProperty("Eub_ClientName"));
+			//Thread.sleep(500);
+			//ClientName.sendKeys(Keys.ARROW_DOWN);
+			//ClientName.sendKeys(Keys.ENTER);
+			//childTest.log(Status.PASS, "Entered Client Name successfully.");
+			//Thread.sleep(500);
 			WebElement EntityName = driver.findElement(By.xpath("//input[@id='SearchControl1_Input']"));
 			EntityName.sendKeys(template.getProperty("Eub_EntityName"));
 			EntityName.sendKeys(Keys.ARROW_DOWN);
@@ -472,7 +472,7 @@ public class EntityUnitBrowser extends ExtentManager {
 			if (errormsg.equalsIgnoreCase("Entity Name is required")) {
 				childTest.info("Required feilds to be filled before saving");
 			}
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			/*driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			fm.fnWebButton(driver, ClientName_Lookup, "Client Name Lookup");
 
 			LS1 Lp = new LS1(driver, data, template);
@@ -490,10 +490,10 @@ public class EntityUnitBrowser extends ExtentManager {
 
 			Lp.fnSwitchtoWindow(2, "Create Entity Page");
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			driver.switchTo().frame("addeditFrame1");
+			driver.switchTo().frame("addeditFrame1");*/
 
-			fm.fnWebEdit(driver, entity_name, template.getProperty("EnitytName"), "Name");
-			fm.fnWebEdit(driver, entity_id, template.getProperty("EntityID"), "ID");
+			fm.fnWebEdit(driver, entity_name, template.getProperty("EnitytName"), "Entity Name");
+			fm.fnWebEdit(driver, entity_id, template.getProperty("EntityID"), "Entity ID");
 			fm.fnWebEdit(driver, country, template.getProperty("Country"), "Country");
 			fm.fnWebEdit(driver, state_provision, template.getProperty("State"), "State");
 			fm.fnWebList(driver, entity_type, template.getProperty("Entity_Type"), "Entity Type");
@@ -513,7 +513,6 @@ public class EntityUnitBrowser extends ExtentManager {
 			// System.out.println(driver.findElement(By.xpath("//span[@id='spaErrorMessage']")).getText());
 			if (SaveMsg.equalsIgnoreCase("Your data was successfully saved")) {
 				childTest.info("Required feilds to be filled before saving");
-
 			}
 			fm.fnWebButton(driver, Close, "Close");
 		} catch (Exception e) {
@@ -531,8 +530,8 @@ public class EntityUnitBrowser extends ExtentManager {
 				+ "<br>" + "<< Screen Name : Entity Information >></br>");
 		try {
 			if (driver.getTitle().equalsIgnoreCase("Entity Information")) {
-				fm.fnWebEditCompare(driver, Client_name, template.getProperty("ClientName"), "Client Name");
-				fm.fnWebEditCompare(driver, Client_id, template.getProperty("ClientId"), "Client Id");
+				//fm.fnWebEditCompare(driver, Client_name, template.getProperty("ClientName"), "Client Name");
+				//fm.fnWebEditCompare(driver, Client_id, template.getProperty("ClientId"), "Client Id");
 				fm.fnWebEditCompare(driver, entity_name, template.getProperty("EnitytName"), "Entity Name");
 				fm.fnWebEditCompare(driver, entity_id, template.getProperty("EntityID"), "Entity ID");
 				fm.fnWebEditCompare(driver, country, template.getProperty("Country"), "Country");
@@ -624,10 +623,10 @@ public class EntityUnitBrowser extends ExtentManager {
 				+ "<br>" + "<< Screen Name : Copy Entity >></br>");
 		try {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-
-			fm.fnWebButton(driver, ClientName_Lookup, "Client Name Lookup");
-
 			LS1 Lp = new LS1(driver, data, template);
+			/*fm.fnWebButton(driver, ClientName_Lookup, "Client Name Lookup");
+
+			
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			Lp.fnSwitchtoWindow(3, "Client Name LookUp");
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -639,7 +638,7 @@ public class EntityUnitBrowser extends ExtentManager {
 			fm.fnWebButton(driver, CN_Ok, "Ok");
 
 			Lp.fnSwitchtoWindow(2, "Create Entity Page");
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);*/
 			fm.fnWebEdit(driver, entity_name, template.getProperty("EnitytNameCopy"), "Name");
 			fm.fnWebEdit(driver, entity_id, template.getProperty("EntityIDCopy"), "ID");
 			fm.fnWebButton(driver, save_entity, "Save");
@@ -1065,7 +1064,7 @@ public class EntityUnitBrowser extends ExtentManager {
 			// fm.fnWebEdit(driver, AuthorityName_2,
 			// template.getProperty("TaxId_AuthorityName"), "Authority Name");
 			// fm.fnWebButton(driver, Search, "Search");
-			fm.fnWebTable(driver, driver.findElement(By.xpath("//tr[@id='gridLookup_grdEntityManager_row_4']")),
+			fm.fnWebTable(driver, driver.findElement(By.xpath("//tr[@id='gridLookup_grdEntityManager_row_2']")),
 					"Click");
 			fm.fnWebButton(driver, CN_Ok, "Ok");
 

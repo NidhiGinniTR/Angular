@@ -47,8 +47,7 @@ public class EUB extends BrowserInvoke {
 		driver.switchTo().frame("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad");
 		driver.switchTo().frame("gridFrame");
 		EntityUnitBrowser Eub = new EntityUnitBrowser(driver, propEnv, propSerialData);
-		String[] array = new String[] { "Client Name", "Client Number", "Entity Name", "Entity ID", "Entity Type",
-				"Locations", "Group Code" };
+		String[] array = new String[] { "Entity Name", "Entity ID", "Entity Type","Status","Locations", "Group Code","Entity Group","Archive","PPOB State/Province","PPOB Country/Region" };
 		Eub.fnVerifySearchElements(array);
 
 		// Step-4:------------Verify Action Menu items---------------------------//
@@ -122,7 +121,7 @@ public class EUB extends BrowserInvoke {
 		Eub.fnClickActions();
 		Eub.fnOWMActionsMenu(driver, "Customize View", "");
 		lp.fnSwitchtoWindow(2, "Customize View");
-		String[] array1 = new String[] { "Entity Name", "Status", "Client Name", "Client Number", "Group Code",
+		String[] array1 = new String[] { "Entity Name", "Status", "Entity Id", "State of Inc", "Group Code",
 				"Entity Type", "Entity Group Name" };
 		Eub.fnCustomizeView(array1);
 
@@ -146,6 +145,7 @@ public class EUB extends BrowserInvoke {
 
 	@AfterClass
 	void closeBrowser() throws InterruptedException {
+		driver.quit();
 		// FunctionLibrary.fnLogOff(driver);
 	}
 

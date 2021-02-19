@@ -28,7 +28,7 @@ public class Entity_Manager_PageLinks_Test extends BrowserInvoke{
 			driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 		}
 		@Test(dependsOnMethods = "Initialize")
-		public void NewFolderCreation() throws InterruptedException {
+		public void PageLinks() throws InterruptedException {
 			loginPage lp = new loginPage(driver,propEnv,propSerialData);
 			EntityUnitBrowser Eub = new EntityUnitBrowser(driver, propEnv, propSerialData);
 			//OWM owm = new OWM(driver,propSerialData);
@@ -38,7 +38,7 @@ public class Entity_Manager_PageLinks_Test extends BrowserInvoke{
 			lp.fnLogin();
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			
-			//Step-2:-----Launch WorkFlow Manager---------------------------//
+			//Step-2:-----Launch Entity Manager---------------------------//
 			
 			lp.LaunchApplication("Entity Manager");
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

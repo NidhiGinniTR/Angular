@@ -28,7 +28,7 @@ public class Entity_Manager_KeyContacts_Test extends BrowserInvoke {
 			driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 		}
 		@Test(dependsOnMethods = "Initialize")
-		public void NewFolderCreation() throws InterruptedException {
+		public void KeyContacts() throws InterruptedException {
 			loginPage lp = new loginPage(driver,propEnv,propSerialData);
 			EntityUnitBrowser Eub = new EntityUnitBrowser(driver, propEnv, propSerialData);
 			//OWM owm = new OWM(driver,propSerialData);

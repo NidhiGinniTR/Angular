@@ -6,13 +6,10 @@
 	</listeners>
 	<test thread-count="5" name="Test">
 		<classes>
+			
+			
 			<class name="com_pkg_OSP.EUB" />
-			<class name="com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test" />
-			<class name="com_pkg_OSP.Entity_Manager_ResponsbilityInfo_Test" />
-			<class name="com_pkg_OSP.Entity_Manager_KeyContacts_Test" />
-			<class name="com_pkg_OSP.EntityUnitBrowser_DBA" />
-			<class name="com_pkg_OSP.EUB_TaxIds_Registrations" />
-			<class name="com_pkg_OSP.Entity_Manager_PageLinks_Test" />
+			<class name="com_pkg_OSP.EUB_TaxIds_Registrations " />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
