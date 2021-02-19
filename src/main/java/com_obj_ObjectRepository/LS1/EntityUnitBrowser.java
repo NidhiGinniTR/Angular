@@ -647,6 +647,7 @@ public class EntityUnitBrowser extends ExtentManager {
 			Lp.fnSwitchtoWindow(2, "Create Entity Page");
 			System.out.println(driver.getTitle());
 			driver.switchTo().frame("addeditFrame1");
+			Thread.sleep(500);
 			fm.fnWebButton(driver, Close, "Close");
 		}catch(Exception e) {
 			childTest.fail(e);
