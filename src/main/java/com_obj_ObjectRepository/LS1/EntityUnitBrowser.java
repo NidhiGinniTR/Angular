@@ -14,6 +14,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -213,7 +214,104 @@ public class EntityUnitBrowser extends ExtentManager {
 	By EM_Owners_Close = By.xpath("//input[@id='btnClose']");
 	By EM_Owners_errMessage = By.xpath("//span[@id='spaErrorMessage']");
 	By EM_Owners_totoalPercentage = By.xpath("//div[@id='divRunningTotal']");
+	
 
+	/***************************************************************************************
+	 * These element locators belongs to Business/Tax Info Tab of the Entity Manager
+	 *
+	 ***************************************************************************************/
+	
+	By entityManager_bt_country = By.xpath("//input[@id='country_Input']");
+	By entityManager_bt_state = By.xpath("//input[@id='state_Input']");
+	By entityManager_bt_pbacode = By.xpath("//input[@id='activitycode_Input']");
+	By entityManager_bt_siccode = By.xpath("//input[@id='siccode_Input']");
+	By entityManager_bt_localcurrency = By.xpath("//select[@id='localcurrency']");
+	By entityManager_bt_functionalcurrency = By.xpath("//select[@id='functionalcurrency']");
+	By entityManager_bt_reportingcurrency = By.xpath("//select[@id='reportingcurrency']");
+	By entityManager_bt_fybegdate = By.xpath("//input[@id='finbegdate']");
+	By entityManager_bt_fyenddate = By.xpath("//input[@id='finenddate']");
+	By entityManager_bt_tybegdate = By.xpath("//input[@id='begindate']");
+	By entityManager_bt_tyenddate = By.xpath("//input[@id='enddate']");
+	By entityManager_bt_endmonth = By.xpath("//select[@id='yearendmonthname']");
+	By entityManager_bt_endday = By.xpath("//select[@id='daynameyearend']");
+	By entityManager_bt_methoduse = By.xpath("//select[@id='methodused']");
+	
+	/***************************************************************************************
+	 * These element locators belongs to Responsibility tab in Entity
+	 * Manager
+	 ***************************************************************************************/
+	
+	By entityManager_ri_person_name = By.xpath("//input[@id='personname']");
+	By entityManager_ri_person_address = By.xpath("//input[@id='personaddress']");
+	By entityManager_ri_person_city = By.xpath("//input[@id='personcity']");
+	By entityManager_ri_person_country = By.xpath("//input[@id='personcountry_Input']");
+	By entityManager_ri_person_state = By.xpath("//input[@id='personstate_Input']");
+	By entityManager_ri_person_zip = By.xpath("//input[@id='personzip']");
+	By entityManager_ri_person_phone = By.xpath("//input[@id='personphone']");
+	
+	By entityManager_ri_corp_name = By.xpath("//input[@id='corpname']");
+	By entityManager_ri_corp_address = By.xpath("//input[@id='corpaddress']");
+	By entityManager_ri_corp_city = By.xpath("//input[@id='corpcity']");
+	By entityManager_ri_corp_country = By.xpath("//input[@id='corpcountry_Input']");
+	By entityManager_ri_corp_state = By.xpath("//input[@id='corpstate_Input']");
+	By entityManager_ri_corp_zip = By.xpath("//input[@id='corpzip']");
+	By entityManager_ri_corp_phone = By.xpath("//input[@id='corpphone']");
+	
+	By entityManager_ri_brabch_name = By.xpath("//input[@id='branchname']");
+	By entityManager_ri_brabch_address = By.xpath("//input[@id='branchaddress']");
+	By entityManager_ri_brabch_city = By.xpath("//input[@id='branchcity']");
+	By entityManager_ri_brabch_country = By.xpath("//input[@id='branchcountry_Input']");
+	By entityManager_ri_brabch_state = By.xpath("//input[@id='branchstate_Input']");
+	By entityManager_ri_brabch_zip = By.xpath("//input[@id='branchzip']");
+	By entityManager_ri_brabch_phone = By.xpath("//input[@id='branchphone']");
+	
+	/***************************************************************************************
+	 * These element locators belongs to Key Contacts tab in Entity
+	 * Manager
+	 ***************************************************************************************/
+	
+	By entityManager_kc_mname = By.xpath("//input[@id='mname']");
+	By entityManager_kc_mtitle = By.xpath("//input[@id='mtitle']");
+	By entityManager_kc_memail = By.xpath("//input[@id='memail']");
+	By entityManager_kc_mwphone = By.xpath("//input[@id='mwphone']");
+	By entityManager_kc_mmphone = By.xpath("//input[@id='mmphone']");
+	By entityManager_kc_mhphone = By.xpath("//input[@id='mhphone']");
+	
+	By entityManager_kc_aname = By.xpath("//input[@id='aname']");
+	By entityManager_kc_atitle = By.xpath("//input[@id='atitle']");
+	By entityManager_kc_aemail = By.xpath("//input[@id='aemail']");
+	By entityManager_kc_awphone = By.xpath("//input[@id='awphone']");
+	By entityManager_kc_amphone = By.xpath("//input[@id='amphone']");
+	By entityManager_kc_ahphone = By.xpath("//input[@id='ahphone']");
+	
+	By entityManager_kc_cname = By.xpath("//input[@id='cname']");
+	By entityManager_kc_ctitle = By.xpath("//input[@id='ctitle']");
+	By entityManager_kc_cemail = By.xpath("//input[@id='cemail']");
+	By entityManager_kc_cwphone = By.xpath("//input[@id='cwphone']");
+	By entityManager_kc_cmphone = By.xpath("//input[@id='cmphone']");
+	By entityManager_kc_chphone = By.xpath("//input[@id='chphone']");
+	
+	/***************************************************************************************
+	 * These element locators belongs to Page Links tab in Entity
+	 * Manager
+	 ***************************************************************************************/
+	
+	By entityManager_pl_addtitle = By.xpath("//input[@id='txt_LinkTitle']");
+	By entityManager_pl_addlink = By.xpath("//input[@id='txt_url']");
+	By entityManager_pl_addbutton = By.xpath("//input[@id='btn_OK']");
+	By entityManager_pl_closebutton = By.xpath("//button[@id='dialog-button-close']");
+	By entityManager_pl_delbutton = By.xpath("//button[@id='dialog-button-action']");
+	
+	/***************************************************************************************
+	 * These element locators belongs to Search Entity
+	 * 
+	 ***************************************************************************************/
+	
+		By entityManager_search_withName = By.xpath("//input[@id='SearchControl1_Input']");
+		By entityManager_search_withID = By.xpath("//input[@id='SearchControl2_Input']");
+		By entityManager_search = By.xpath("//input[@id='imgbtnSearch']");
+
+	
 	public EntityUnitBrowser(WebDriver driver, Properties data2, Properties data) {
 		this.driver = driver;
 		this.template = data;
@@ -1113,6 +1211,381 @@ public class EntityUnitBrowser extends ExtentManager {
 		}
 		
 	}
+	
+
+	/***************************************************************************************
+	 * This function is used to perform in Edit on Business Tax Page
+	 ***************************************************************************************/
+
+	public void business_Taxinfo() throws InterruptedException {
+		childTest = test.createNode(
+				"Description: Giving business/Tax info details" + "<br>" + "<<Screen Name: Entity information >></br>");
+		//driver.switchTo().defaultContent();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.findElement(By.xpath("//td[@id='tdBusiness']")).click(); //Navigate to business tab
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.switchTo().frame("addeditFrame1");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		fm.fnWebEdit(driver, entityManager_bt_country, template.getProperty("BT_Country"), "BT_Country");
+		fm.fnWebEdit(driver, entityManager_bt_state, template.getProperty("BT_State"), "BT_State");
+		fm.fnWebEdit(driver, entityManager_bt_pbacode, template.getProperty("BT_PBAcode"), "BT_PBAcode");
+		fm.fnWebEdit(driver, entityManager_bt_siccode, template.getProperty("BT_SICcode"), "BT_SICcode");
+		fm.fnWebList(driver, entityManager_bt_localcurrency, template.getProperty("Local_Currency"), "Local_Currency");
+		fm.fnWebList(driver, entityManager_bt_functionalcurrency, template.getProperty("Fun_Currency"), "Fun_Currency");
+		fm.fnWebList(driver, entityManager_bt_reportingcurrency, template.getProperty("Reporting_Currency"), "Reporting_Currency");
+		fm.fnWebEdit(driver, entityManager_bt_fybegdate, template.getProperty("FY_Begdate"), "FY_Begdate");
+		fm.fnWebEdit(driver, entityManager_bt_fyenddate, template.getProperty("FY_Enddate"), "FY_Enddate");
+		fm.fnWebEdit(driver, entityManager_bt_tybegdate, template.getProperty("TY_Begdate"), "TY_Begdate");
+		//fm.fnWebEdit(driver, entityManager_bt_tyenddate, template.getProperty("TY_Enddate"), "TY_Enddate");
+		fm.fnWebList(driver, entityManager_bt_endmonth, template.getProperty("End_Month"), "End_Month");
+		fm.fnWebList(driver, entityManager_bt_endday, template.getProperty("End_Day"), "End_Day");
+		fm.fnWebList(driver, entityManager_bt_methoduse, template.getProperty("Method"), "Method");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		fm.fnWebButton(driver, click_save, "Save");
+		String errormsg = driver.findElement(By.xpath("//span[@id='spaErrorMessage']")).getText();
+		if(errormsg.equalsIgnoreCase("Your data was successfully saved")) {
+			childTest.info("Entered data was saved successfully");
+		}
+		fm.fnWebButton(driver, Close, "Close");
+	}
+	
+	/***************************************************************************************
+	 * This function is used to perform in Edit and view on Business Tax Page
+	 ***************************************************************************************/
+	public void viewBusinessTax() throws InterruptedException {
+		childTest = test.createNode(
+				"Description: View Business Info Tab " + "<br>" + "<<Screen Name: Entity Information >></br>");
+		try {
+			//driver.switchTo().defaultContent();
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			driver.findElement(By.xpath("//td[@id='tdBusiness']")).click(); //Navigate to business tab
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			driver.switchTo().frame("addeditFrame1");
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			fm.fnWebEditCompare(driver, entityManager_bt_country, template.getProperty("BT_Country"), "BT_Country");
+			fm.fnWebEditCompare(driver, entityManager_bt_state, template.getProperty("BT_State"), "BT_State");
+			fm.fnWebEditCompare(driver, entityManager_bt_pbacode, template.getProperty("BT_PBAcode"), "BT_PBAcode");
+			fm.fnWebEditCompare(driver, entityManager_bt_siccode, template.getProperty("BT_SICcode"), "BT_SICcode");
+			fm.fnWebListCompare(driver, entityManager_bt_localcurrency, template.getProperty("Local_Currency"), "Local_Currency");
+			fm.fnWebListCompare(driver, entityManager_bt_functionalcurrency, template.getProperty("Fun_Currency"), "Fun_Currency");
+			fm.fnWebListCompare(driver, entityManager_bt_reportingcurrency, template.getProperty("Reporting_Currency"), "Reporting_Currency");
+			fm.fnWebEditCompare(driver, entityManager_bt_fybegdate, template.getProperty("FY_Begdate"), "FY_Begdate");
+			fm.fnWebEditCompare(driver, entityManager_bt_fyenddate, template.getProperty("FY_Enddate"), "FY_Enddate");
+			fm.fnWebEditCompare(driver, entityManager_bt_tybegdate, template.getProperty("TY_Begdate"), "TY_Begdate");
+			//fm.fnWebEdit(driver, entityManager_bt_tyenddate, template.getProperty("TY_Enddate"), "TY_Enddate");
+			fm.fnWebListCompare(driver, entityManager_bt_endmonth, template.getProperty("End_Month"), "End_Month");
+			fm.fnWebListCompare(driver, entityManager_bt_endday, template.getProperty("End_Day"), "End_Day");
+			fm.fnWebListCompare(driver, entityManager_bt_methoduse, template.getProperty("Method"), "Method");
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			
+		}
+		catch(Exception e) {
+			childTest.fail(e);
+			
+		}
+		fm.fnWebButton(driver, Close, "Close");
+		
+	}
+	
+	/***************************************************************************************
+	 * This function is used to perform in Edit on Responsibility Info Page
+	 ***************************************************************************************/
+	public void responsibility_info() throws InterruptedException {
+		childTest = test.createNode(
+				"Description: Responsibility Information" + "<br>" + "<<Screen Name: Entity information >></br>");
+		
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.findElement(By.xpath("//td[@id='tdResponsibility']")).click(); //Navigate to business tab
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.switchTo().frame("addeditFrame1");
+		fm.fnWebEdit(driver, entityManager_ri_person_name, template.getProperty("Person_Name"), "Person_Name");
+		fm.fnWebEdit(driver, entityManager_ri_person_address, template.getProperty("Person_Addr"), "Person_Addr");
+		fm.fnWebEdit(driver, entityManager_ri_person_city, template.getProperty("Person_City"), "Person_City");
+		fm.fnWebEdit(driver, entityManager_ri_person_country, template.getProperty("Person_Country"), "Person_Country");
+		fm.fnWebEdit(driver, entityManager_ri_person_state, template.getProperty("Person_State"), "Person_State");
+		fm.fnWebEdit(driver, entityManager_ri_person_zip, template.getProperty("Person_Zip"), "Person_Zip");
+		fm.fnWebEdit(driver, entityManager_ri_person_phone, template.getProperty("Person_Phone"), "Person_Phone");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		fm.fnWebEdit(driver, entityManager_ri_corp_name, template.getProperty("Corp_Name"), "Corp_Name");
+		fm.fnWebEdit(driver, entityManager_ri_corp_address, template.getProperty("Corp_Addr"), "Corp_Addr");
+		fm.fnWebEdit(driver, entityManager_ri_corp_city, template.getProperty("Corp_City"), "Corp_City");
+		fm.fnWebEdit(driver, entityManager_ri_corp_country, template.getProperty("Corp_Country"), "Corp_Country");
+		fm.fnWebEdit(driver, entityManager_ri_corp_state, template.getProperty("Corp_State"), "Corp_State");
+		fm.fnWebEdit(driver, entityManager_ri_corp_zip, template.getProperty("Corp_Zip"), "Corp_Zip");
+		fm.fnWebEdit(driver, entityManager_ri_corp_phone, template.getProperty("Corp_Phone"), "Corp_Phone");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		fm.fnWebEdit(driver, entityManager_ri_brabch_name, template.getProperty("Branch_Name"), "Branch_Name");
+		fm.fnWebEdit(driver, entityManager_ri_brabch_address, template.getProperty("Branch_Addr"), "Branch_Addr");
+		fm.fnWebEdit(driver, entityManager_ri_brabch_city, template.getProperty("Branch_City"), "Branch_City");
+		fm.fnWebEdit(driver, entityManager_ri_brabch_country, template.getProperty("Branch_Country"), "Branch_Country");
+		fm.fnWebEdit(driver, entityManager_ri_brabch_state, template.getProperty("Branch_State"), "Branch_State");
+		fm.fnWebEdit(driver, entityManager_ri_brabch_zip, template.getProperty("Branch_Zip"), "Branch_Zip");
+		fm.fnWebEdit(driver, entityManager_ri_brabch_phone, template.getProperty("Branch_Phone"), "Branch_Phone");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		fm.fnWebButton(driver, click_save, "Save");
+		String errormsg = driver.findElement(By.xpath("//span[@id='spaErrorMessage']")).getText();
+		if(errormsg.equalsIgnoreCase("Your data was successfully saved")) {
+			childTest.info("Entered data was saved successfully");
+		}
+		fm.fnWebButton(driver, Close, "Close");
+	}
+
+	/***************************************************************************************
+	 * This function is used to perform in Edit on Responsibility Info Page
+	 ***************************************************************************************/
+	public void viewResonsblityInfo() throws InterruptedException {
+		childTest = test.createNode(
+				"Description: View Responsiblity Info Tab" + "<br>" + "<<Screen Name: Entity Information >></br>");
+		try {
+			//driver.switchTo().defaultContent();
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			driver.findElement(By.xpath("//td[@id='tdResponsibility']")).click(); //Navigate to business tab
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			driver.switchTo().frame("addeditFrame1");
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			fm.fnWebEditCompare(driver, entityManager_ri_person_name, template.getProperty("Person_Name"), "Person_Name");
+			fm.fnWebEditCompare(driver, entityManager_ri_person_address, template.getProperty("Person_Addr"), "Person_Addr");
+			fm.fnWebEditCompare(driver, entityManager_ri_person_city, template.getProperty("Person_City"), "Person_City");
+			fm.fnWebEditCompare(driver, entityManager_ri_person_country, template.getProperty("Person_Country"), "Person_Country");
+			fm.fnWebEditCompare(driver, entityManager_ri_person_state, template.getProperty("Person_State"), "Person_State");
+			fm.fnWebEditCompare(driver, entityManager_ri_person_zip, template.getProperty("Person_Zip"), "Person_Zip");
+			fm.fnWebEditCompare(driver, entityManager_ri_person_phone, template.getProperty("Person_Phone"), "Person_Phone");
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			fm.fnWebEditCompare(driver, entityManager_ri_corp_name, template.getProperty("Corp_Name"), "Corp_Name");
+			fm.fnWebEditCompare(driver, entityManager_ri_corp_address, template.getProperty("Corp_Addr"), "Corp_Addr");
+			fm.fnWebEditCompare(driver, entityManager_ri_corp_city, template.getProperty("Corp_City"), "Corp_City");
+			fm.fnWebEditCompare(driver, entityManager_ri_corp_country, template.getProperty("Corp_Country"), "Corp_Country");
+			fm.fnWebEditCompare(driver, entityManager_ri_corp_state, template.getProperty("Corp_State"), "Corp_State");
+			fm.fnWebEditCompare(driver, entityManager_ri_corp_zip, template.getProperty("Corp_Zip"), "Corp_Zip");
+			fm.fnWebEditCompare(driver, entityManager_ri_corp_phone, template.getProperty("Corp_Phone"), "Corp_Phone");
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			fm.fnWebEditCompare(driver, entityManager_ri_brabch_name, template.getProperty("Branch_Name"), "Branch_Name");
+			fm.fnWebEditCompare(driver, entityManager_ri_brabch_address, template.getProperty("Branch_Addr"), "Branch_Addr");
+			fm.fnWebEditCompare(driver, entityManager_ri_brabch_city, template.getProperty("Branch_City"), "Branch_City");
+			fm.fnWebEditCompare(driver, entityManager_ri_brabch_country, template.getProperty("Branch_Country"), "Branch_Country");
+			fm.fnWebEditCompare(driver, entityManager_ri_brabch_state, template.getProperty("Branch_State"), "Branch_State");
+			fm.fnWebEditCompare(driver, entityManager_ri_brabch_zip, template.getProperty("Branch_Zip"), "Branch_Zip");
+			fm.fnWebEditCompare(driver, entityManager_ri_brabch_phone, template.getProperty("Branch_Phone"), "Branch_Phone");
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			
+		}
+		catch(Exception e) {
+			childTest.fail(e);
+			
+		}
+		fm.fnWebButton(driver, Close, "Close");
+		
+	}
+
+
+	/***************************************************************************************
+	 * This function is used to perform in Edit Key Contacts Page
+	 ***************************************************************************************/
+	public void key_contacts() throws InterruptedException {
+		childTest = test.createNode(
+				"Description: Key Contacts" + "<br>" + "<<Screen Name: Entity information >></br>");
+		//driver.switchTo().defaultContent();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.findElement(By.xpath("//td[@id='tdKeyContacts']")).click(); //Navigate to Key Contacts tab
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.switchTo().frame("addeditFrame1");
+		fm.fnWebEdit(driver, entityManager_kc_mname, template.getProperty("Main_PersonName"), "Main_PersonName");
+		fm.fnWebEdit(driver, entityManager_kc_mtitle, template.getProperty("Main_Title"), "Main_Title");
+		fm.fnWebEdit(driver, entityManager_kc_memail, template.getProperty("Main_Email"), "Main_Email");
+		fm.fnWebEdit(driver, entityManager_kc_mwphone, template.getProperty("Main_WorkPhNumber"), "Main_WorkPhNumber");
+		fm.fnWebEdit(driver, entityManager_kc_mmphone, template.getProperty("Main_MobileNumber"), "Main_MobileNumber");
+		fm.fnWebEdit(driver, entityManager_kc_mhphone, template.getProperty("Main_HomeNumber"), "Main_HomeNumber");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		fm.fnWebEdit(driver, entityManager_kc_aname, template.getProperty("FirstAdditional_PersonName"), "FirstAdditional_PersonName");
+		fm.fnWebEdit(driver, entityManager_kc_atitle, template.getProperty("FirstAdditional_Title"), "FirstAdditional_Title");
+		fm.fnWebEdit(driver, entityManager_kc_aemail, template.getProperty("FirstAdditional_Email"), "FirstAdditional_Email");
+		fm.fnWebEdit(driver, entityManager_kc_awphone, template.getProperty("FirstAdditional_WorkPhNumber"), "FirstAdditional_Country");
+		fm.fnWebEdit(driver, entityManager_kc_amphone, template.getProperty("FirstAdditional_MobileNumber"), "FirstAdditional_MobileNumber");
+		fm.fnWebEdit(driver, entityManager_kc_ahphone, template.getProperty("FirstAdditional_HomeNumber"), "FirstAdditional_HomeNumber");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		fm.fnWebEdit(driver, entityManager_kc_cname, template.getProperty("SecondAdditional_PersonName"), "SecondAdditional_PersonName");
+		fm.fnWebEdit(driver, entityManager_kc_ctitle, template.getProperty("SecondAdditional_Title"), "SecondAdditional_Title");
+		fm.fnWebEdit(driver, entityManager_kc_cemail, template.getProperty("SecondAdditional_Email"), "SecondAdditional_Email");
+		fm.fnWebEdit(driver, entityManager_kc_cwphone, template.getProperty("SecondAdditional_WorkPhNumber"), "SecondAdditional_Country");
+		fm.fnWebEdit(driver, entityManager_kc_cmphone, template.getProperty("SecondAdditional_MobileNumber"), "SecondAdditional_MobileNumber");
+		fm.fnWebEdit(driver, entityManager_kc_chphone, template.getProperty("SecondAdditional_HomeNumber"), "SecondAdditional_HomeNumber");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		fm.fnWebButton(driver, click_save, "Save");
+		String errormsg = driver.findElement(By.xpath("//span[@id='spaErrorMessage']")).getText();
+		if(errormsg.equalsIgnoreCase("Your data was successfully saved")) {
+			childTest.info("Entered data was saved successfully");
+		}
+		fm.fnWebButton(driver, Close, "Close");
+		
+	}
+	/***************************************************************************************
+	 * This function is used to perform in Edit Key Contacts Page
+	 ***************************************************************************************/
+	
+	public void viewKeyContacts() throws InterruptedException {
+		childTest = test.createNode(
+				"Description: View Kay Contacts Tab" + "<br>" + "<<Screen Name: Entity Information >></br>");
+		try {
+			//driver.switchTo().defaultContent();
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			driver.findElement(By.xpath("//td[@id='tdKeyContacts']")).click(); //Navigate to business tab
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			driver.switchTo().frame("addeditFrame1");
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			fm.fnWebEditCompare(driver, entityManager_kc_mname, template.getProperty("Main_PersonName"), "Main_PersonName");
+			fm.fnWebEditCompare(driver, entityManager_kc_mtitle, template.getProperty("Main_Title"), "Main_Title");
+			fm.fnWebEditCompare(driver, entityManager_kc_memail, template.getProperty("Main_Email"), "Main_Email");
+			fm.fnWebEditCompare(driver, entityManager_kc_mwphone, template.getProperty("Main_WorkPhNumber"), "Main_WorkPhNumber");
+			fm.fnWebEditCompare(driver, entityManager_kc_mmphone, template.getProperty("Main_MobileNumber"), "Main_MobileNumber");
+			fm.fnWebEditCompare(driver, entityManager_kc_mhphone, template.getProperty("Main_HomeNumber"), "Main_HomeNumber");
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			fm.fnWebEditCompare(driver, entityManager_kc_aname, template.getProperty("FirstAdditional_PersonName"), "FirstAdditional_PersonName");
+			fm.fnWebEditCompare(driver, entityManager_kc_atitle, template.getProperty("FirstAdditional_Title"), "FirstAdditional_Title");
+			fm.fnWebEditCompare(driver, entityManager_kc_aemail, template.getProperty("FirstAdditional_Email"), "FirstAdditional_Email");
+			fm.fnWebEditCompare(driver, entityManager_kc_awphone, template.getProperty("FirstAdditional_WorkPhNumber"), "FirstAdditional_Country");
+			fm.fnWebEditCompare(driver, entityManager_kc_amphone, template.getProperty("FirstAdditional_MobileNumber"), "FirstAdditional_MobileNumber");
+			fm.fnWebEditCompare(driver, entityManager_kc_ahphone, template.getProperty("FirstAdditional_HomeNumber"), "FirstAdditional_HomeNumber");
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			fm.fnWebEditCompare(driver, entityManager_kc_cname, template.getProperty("SecondAdditional_PersonName"), "SecondAdditional_PersonName");
+			fm.fnWebEditCompare(driver, entityManager_kc_ctitle, template.getProperty("SecondAdditional_Title"), "SecondAdditional_Title");
+			fm.fnWebEditCompare(driver, entityManager_kc_cemail, template.getProperty("SecondAdditional_Email"), "SecondAdditional_Email");
+			fm.fnWebEditCompare(driver, entityManager_kc_cwphone, template.getProperty("SecondAdditional_WorkPhNumber"), "SecondAdditional_Country");
+			fm.fnWebEditCompare(driver, entityManager_kc_cmphone, template.getProperty("SecondAdditional_MobileNumber"), "SecondAdditional_MobileNumber");
+			fm.fnWebEditCompare(driver, entityManager_kc_chphone, template.getProperty("SecondAdditional_HomeNumber"), "SecondAdditional_HomeNumber");
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			
+		}
+		catch(Exception e) {
+			childTest.fail(e);
+			
+		}
+		fm.fnWebButton(driver, Close, "Close");
+		
+	}
+	
+	/***************************************************************************************
+	 * This function is used to perform Operations on Page Links Page
+	 ***************************************************************************************/
+	
+	public void page_Links() throws InterruptedException {
+		childTest = test.createNode(
+				"Description: Page Links" + "<br>" + "<<Screen Name: Entity information >></br>");
+		driver.switchTo().defaultContent();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.findElement(By.xpath("//td[@id='tdPageLinks']")).click(); //Navigate to Page Links
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.switchTo().frame("gridFrame1");
+		fm.fnWebEdit(driver, entityManager_pl_addtitle, template.getProperty("Add_LinkTitle"), "Add_LinkTitle");
+		fm.fnWebEdit(driver, entityManager_pl_addlink, template.getProperty("Add_WrongURL"), "Add_WrongURL");
+		fm.fnWebButton(driver, entityManager_pl_addbutton, "Add");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		String errormsgs = driver.findElement(By.xpath("//label[@id='dialog-label']")).getText();
+		if(errormsgs.contains("https")){
+			childTest.info(errormsgs);
+			}
+		fm.fnWebButton(driver, entityManager_pl_closebutton, "Close_Button");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		fm.fnWebEdit(driver, entityManager_pl_addlink, template.getProperty("Add_URL"), "Add_URL");
+		fm.fnWebButton(driver, entityManager_pl_addbutton, "Add");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		WebElement edit = driver.findElement(By.xpath("//td[@id='grdPageLinks_grdEntityManager_cell_0_7']/div/a[1]"));
+		
+		if(edit.isDisplayed()) {
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			edit.click();
+			fm.fnWebEdit(driver, entityManager_pl_addtitle, template.getProperty("Add_LinkTitleupdate"), "Add_LinkTitleupdate");
+			fm.fnWebEdit(driver, entityManager_pl_addlink, template.getProperty("Add_URLupdate"), "Add_URLupdate");
+			fm.fnWebButton(driver, entityManager_pl_addbutton, "Add");
+			childTest.pass("The Page link has been added and edited");
+		}
+		else {
+			childTest.fail("The Page link is not created, Create link to edit");
+		}
+		
+		WebElement delete = driver.findElement(By.xpath("//td[@id='grdPageLinks_grdEntityManager_cell_0_7']/div/a[2]"));
+		if(delete.isDisplayed()) {
+			childTest.pass("The delete option is displayed for the created link");
+			delete.click();
+			fm.fnWebButton(driver, entityManager_pl_delbutton, "Yes");
+			childTest.info("The link has been deleted");
+		}
+		else {
+			childTest.fail("The Page link is not created, Create link to edit");
+		}
+		fm.fnWebButton(driver, click_save, "Save");
+		String errormsg = driver.findElement(By.xpath("//span[@id='spaErrorMessage']")).getText();
+		if(errormsg.equalsIgnoreCase("Your data was successfully saved")) {
+			childTest.info("Entered data was saved successfully");
+		}
+		fm.fnWebButton(driver, Close, "Close");
+		
+		
+	}
+
+	/***************************************************************************************
+	 * This function is used to perform double click entity
+	 ***************************************************************************************/
+	public void doubleclickEntity() throws InterruptedException {
+		childTest = test.createNode(
+				"Description: Double click Entity" + "<br>" + "<<Screen Name: ONESOURCE >></br>");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.switchTo().frame("maincontent");
+		driver.switchTo().frame("app_iFrame");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.switchTo().frame("gridFrame");
+		Actions action = new Actions(driver);
+		action.moveToElement(driver.findElement(By.xpath("//tr[@id='gridEntityBrowser_grdEntityManager_row_0']"))).doubleClick().build().perform();
+		childTest.info("Navigated to edit window");
+		
+		
+	}
+	
+	/***************************************************************************************
+	 * This function is used to perform search entity
+	 ***************************************************************************************/
+	 
+	public void searchEntity() throws InterruptedException {
+		childTest = test.createNode(
+				"Description: Search for Entity" + "<br>" + "<<Screen Name: ONESOURCE >></br>");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.switchTo().frame("maincontent");
+		driver.switchTo().frame("app_iFrame");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.switchTo().frame("gridFrame");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.findElement(By.xpath("//img[@id='imgSplitter']")).click();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		fm.fnWebEdit(driver, entityManager_search_withName, template.getProperty("Search_Name"), "Search_Name");
+		fm.fnWebEdit(driver, entityManager_search_withID, template.getProperty("Search_ID"), "Search_ID");
+		fm.fnWebButton(driver, entityManager_search, "Search");
+		WebElement entity = driver.findElement(By.xpath(("//tr[@id='gridEntityBrowser_grdEntityManager_row_0']")));
+		if(entity.isDisplayed()) {
+			childTest.pass("Entity Search Passed");
+			entity.click();
+		}
+		else {
+			childTest.fail("Entity Search Failed");
+		}
+		
+	}
+	
+	public void navtoEditview() throws InterruptedException {
+		childTest = test.createNode(
+				"Description: Edit or view the details of basic info tab" + "<br>" + "<<Screen Name: Entity Information >></br>");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		fm.fnWebButton(driver, actions_Entity, "Actions");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Actions actions = new Actions(driver);
+		WebElement edit = driver.findElement(By.xpath("//td[@id='mnuEntityBrowser_2']"));
+		if(edit.isDisplayed()) {
+			childTest.pass("Entity has been selected and editview option enabled");
+			actions.moveToElement(edit).click().build().perform();
+		}
+		else {
+			childTest.fail("Entity not selected and editview option disabled");
+		}
+}
 
 
 
