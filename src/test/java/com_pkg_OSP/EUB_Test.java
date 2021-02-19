@@ -18,7 +18,7 @@ import com_lib_FunctionLibrary.FrameWork;
 import com_obj_ObjectRepository.LS1.LS1;
 import com_obj_ObjectRepository.LS1.EntityUnitBrowser;
 
-public class EUB extends BrowserInvoke {
+public class EUB_Test extends BrowserInvoke {
 
 	@BeforeSuite
 	public void beforeStart() {
