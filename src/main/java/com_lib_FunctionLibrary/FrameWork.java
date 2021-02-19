@@ -105,4 +105,35 @@ public class FrameWork extends ExtentManager{
 			break;
 		}
 	}
+	public void fnWebEditCompare(WebDriver driver,By element,String text,String label) {
+		WebElement wait = new WebDriverWait(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(element));
+		if (wait.isDisplayed()) {
+			String enteredText = driver.findElement(element).getAttribute("value");
+			if (enteredText.equalsIgnoreCase(text)) {
+				childTest.log(Status.PASS, label + " = '" + text + "' is matched.");
+			} else {
+				childTest.log(Status.FAIL, label + " = '" + text + "' is not matched.");
+			}
+
+		} else {
+			childTest.log(Status.FAIL, "Element is either notvisible or displayed.");
+		}
+
+	}
+	
+	public void fnWebListCompare(WebDriver driver, By element, String text, String label) throws InterruptedException {
+		WebElement wait = new WebDriverWait(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(element));
+		if (wait.isDisplayed()) {
+			Select listelement = new Select(driver.findElement(element));
+			String enteredText = listelement.getFirstSelectedOption().getText();
+			if (enteredText.equalsIgnoreCase(text)) {
+				childTest.log(Status.PASS, label + " = '" + text + "' is matched.");
+			} else {
+				childTest.log(Status.FAIL, label + " = '" + text + "' is not matched.");
+			}
+		}else {
+			childTest.log(Status.FAIL, "Element is either notvisible or displayed.");
+		}
+
+	}
 }
