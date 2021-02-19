@@ -91,12 +91,7 @@ public class FrameWork extends ExtentManager {
 			}
 		}
 		
-		
-	}
-<<<<<<< HEAD
 
-
-=======
 	public void fnWebEditCompare(WebDriver driver,By element,String text,String label) {
 		WebElement wait = new WebDriverWait(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(element));
 		if (wait.isDisplayed()) {
@@ -129,4 +124,4 @@ public class FrameWork extends ExtentManager {
 
 	}
 }
->>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
+
