@@ -52,8 +52,8 @@ public class EUB_Test extends BrowserInvoke {
 
 		// Step-4:------------Verify Action Menu items---------------------------//
 		Eub.fnClickActions();
-		Eub.fnOWMActionsMenuEnabled();
-		Eub.fnOWMActionsMenuDisabled();
+		Eub.fnActionsMenuEnabled();
+		Eub.fnActionsMenuDisabled();
 
 		// Step-5----------------------CLick Actions & Add New Entity---------------------------------------//
 		Eub.fnOWMActionsMenu(driver, "Add New", "");

@@ -355,7 +355,8 @@ public class EntityUnitBrowser extends ExtentManager {
 	 * This function is used to Click Menu Items in Actions menu
 	 ***************************************************************************************/
 	public static void fnOWMActionsMenu(WebDriver driver, String item, String subItem) throws InterruptedException {
-		if (driver.getTitle().equalsIgnoreCase("ONESOURCE")) {
+		if (driver.getTitle().equalsIgnoreCase("ONESOURCE")
+				|| driver.getTitle().equalsIgnoreCase("Entity Information")) {
 			// WorkFlowBrowser actionsMenu = new WorkFlowBrowser(driver);
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			java.util.List<WebElement> menuitems = driver.findElements(By.className("MenuItem"));
@@ -386,7 +387,7 @@ public class EntityUnitBrowser extends ExtentManager {
 	 * This function is used to find the enabled action menu items
 	 ***************************************************************************************/
 
-	public void fnOWMActionsMenuEnabled() throws InterruptedException {
+	public void fnActionsMenuEnabled() throws InterruptedException {
 		childTest = test
 				.createNode("Description: Action menu items Enabled" + "<br>" + "<< Screen Name : LS1 Page >></br>");
 		if (driver.getTitle().equalsIgnoreCase("ONESOURCE")) {
@@ -402,7 +403,7 @@ public class EntityUnitBrowser extends ExtentManager {
 	/***************************************************************************************
 	 * This function is used to find the disabled action menu items
 	 ***************************************************************************************/
-	public void fnOWMActionsMenuDisabled() throws InterruptedException {
+	public void fnActionsMenuDisabled() throws InterruptedException {
 		childTest = test
 				.createNode("Description: Action menu items Disabled" + "<br>" + "<< Screen Name : LS1 Page >></br>");
 		if (driver.getTitle().equalsIgnoreCase("ONESOURCE")) {
@@ -716,7 +717,9 @@ public class EntityUnitBrowser extends ExtentManager {
 		} else if (menuitem.equals("Save Preferences")) {
 			//System.out.println(driver.findElement(By.xpath("//*[@id='dialog-label-container']")).getText());
 			if (driver.findElement(By.xpath("//*[@id='dialog-label-container']")).getText().contains("Saved successfully.")) {
-				Thread.sleep(500);
+				System.out.println(driver.findElement(By.xpath("//*[@id='dialog-label-container']")).getText());
+				Thread.sleep(1500);
+				driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 				fm.fnWebButton(driver, SavePre_save, "Save");
 				childTest.log(Status.PASS, "Clicked on OK in the Alert Popup");
 			} else {
