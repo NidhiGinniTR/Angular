@@ -6,7 +6,7 @@
 	</listeners>
 	<test thread-count="5" name="Test">
 		<classes>
-			<class name="com_pkg_OSP.EUB_Test" />
+			<class name="com_pkg_OSP.EUB_TaxIds_Registrations_Test" />
 			
 		</classes>
 	</test> <!-- Test -->

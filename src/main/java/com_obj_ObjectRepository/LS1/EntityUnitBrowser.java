@@ -323,7 +323,7 @@ public class EntityUnitBrowser extends ExtentManager {
 	 ***************************************************************************************/
 
 	public void fnVerifySearchElements(String[] array) throws InterruptedException {
-		childTest = test.createNode("Description: Verifying weather the elements are present" + "<br>"
+		childTest = test.createNode("Description: Verifying Search Fields" + "<br>"
 				+ "<< Screen Name : LS1 Page >></br>");
 		if (driver.getTitle().equalsIgnoreCase("ONESOURCE") || driver.getTitle().equalsIgnoreCase("Entity Information")){
 			fm.fnWebButton(driver, Splitter, "Splitter");
@@ -509,6 +509,7 @@ public class EntityUnitBrowser extends ExtentManager {
 			// "Group_codes");
 			// fm.fnWebButton(driver, add_gcodes, "Add");
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			Thread.sleep(1000);
 			fm.fnWebButton(driver, click_save, "Save");
 			String SaveMsg = driver.findElement(By.xpath("//span[@id='spaErrorMessage']")).getText();
 			// System.out.println(driver.findElement(By.xpath("//span[@id='spaErrorMessage']")).getText());
@@ -648,7 +649,8 @@ public class EntityUnitBrowser extends ExtentManager {
 			Lp.fnSwitchtoWindow(2, "Create Entity Page");
 			System.out.println(driver.getTitle());
 			driver.switchTo().frame("addeditFrame1");
-			Thread.sleep(500);
+			Thread.sleep(1500);
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			fm.fnWebButton(driver, Close, "Close");
 		}catch(Exception e) {
 			childTest.fail(e);
