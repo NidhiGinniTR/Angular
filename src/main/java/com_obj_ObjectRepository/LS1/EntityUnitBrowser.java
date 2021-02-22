@@ -421,7 +421,8 @@ public class EntityUnitBrowser extends ExtentManager {
 	public void fnSearchEntity() throws InterruptedException {
 		childTest = test.createNode("Description: Search the Entity" + "<br>" + "<< Screen Name : LS1 Page >></br>");
 		if (driver.getTitle().equalsIgnoreCase("ONESOURCE")) {
-			fm.fnWebButton(driver, Splitter, "Splitter");
+			driver.findElement(By.xpath("//img[@id='imgSplitter']")).click();
+			//fm.fnWebButton(driver, Splitter, "Splitter");
 			fm.fnWebButton(driver, EUB_Clear, "Clear");
 			Thread.sleep(5500);
 			//WebElement ClientName = driver.findElement(By.xpath("//input[@id='SearchControl9_Input']"));
