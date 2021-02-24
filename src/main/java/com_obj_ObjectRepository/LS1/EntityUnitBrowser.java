@@ -421,7 +421,7 @@ public class EntityUnitBrowser extends ExtentManager {
 	 ***************************************************************************************/
 	public void fnSearchEntity() throws InterruptedException {
 		childTest = test.createNode("Description: Search the Entity" + "<br>" + "<< Screen Name : LS1 Page >></br>");
-		if (driver.getTitle().equalsIgnoreCase("ONESOURCE")) {
+		
 			driver.findElement(By.xpath("//img[@id='imgSplitter']")).click();
 			//fm.fnWebButton(driver, Splitter, "Splitter");
 			fm.fnWebButton(driver, EUB_Clear, "Clear");
@@ -457,7 +457,7 @@ public class EntityUnitBrowser extends ExtentManager {
 			 * template.getProperty(""), "PPOB State/Province"); fm.fnWebList(driver,
 			 * EUB_PPOBCountryRegion, template.getProperty(""), "PPOB Country/Region");
 			 */
-		}
+		
 
 	}
 
