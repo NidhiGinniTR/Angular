@@ -6,8 +6,13 @@
 	</listeners>
 	<test thread-count="5" name="Test">
 		<classes>
+<<<<<<< HEAD
 			<class name="com_pkg_OSP.EUB_Test" />
 			<class name="com_pkg_OSP.EUB_TaxIds_Registrations_Test" />
+=======
+			<class name="com_pkg_OSP.EntityUnitBrowser_DBA_Test" />
+			
+>>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
