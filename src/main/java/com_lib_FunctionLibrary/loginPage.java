@@ -106,7 +106,7 @@ public class loginPage extends ExtentManager {
 	 */
 	public  void fnOWMActionsMenu(String item, String subItem) throws InterruptedException {
 		if (driver.getTitle().equalsIgnoreCase("WorkFlow Manager")
-				|| driver.getTitle().equalsIgnoreCase("Folder WorkFlows")) {
+				|| driver.getTitle().equalsIgnoreCase("Folder WorkFlows") || driver.getTitle().equalsIgnoreCase("Entity Information")) {
 			// WorkFlowBrowser actionsMenu = new WorkFlowBrowser(driver);
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			java.util.List<WebElement> menuitems = driver.findElements(By.xpath("//table[@class='MenuGroup']//td[ @class='MenuItem']"));
