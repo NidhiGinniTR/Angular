@@ -646,7 +646,7 @@ public class EntityUnitBrowser extends ExtentManager {
 			fm.fnWebEdit(driver, entity_id, template.getProperty("EntityIDCopy"), "ID");
 			fm.fnWebButton(driver, save_entity, "Save");
 
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 			Lp.fnSwitchtoWindow(2, "Create Entity Page");
 			System.out.println(driver.getTitle());
 			driver.switchTo().frame("addeditFrame1");
