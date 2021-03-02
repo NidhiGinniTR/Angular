@@ -6,15 +6,24 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test">
+      <class name="com_pkg_OSP.EUB_Test">
         <methods>
-          <include name="EventActions"/>
-          <include name="beforesuit"/>
+          <include name="EntityUnitBrowser"/>
           <include name="Initialize"/>
           <include name="closeBrowser"/>
+          <include name="beforeStart"/>
           <include name="aftersuite"/>
         </methods>
-      </class> <!-- com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test -->
+      </class> <!-- com_pkg_OSP.EUB_Test -->
+      <class name="com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test">
+        <methods>
+          <include name="closeBrowser"/>
+          <include name="beforeStart"/>
+          <include name="BusinessTaxInfo"/>
+          <include name="Initialize"/>
+          <include name="aftersuite"/>
+        </methods>
+      </class> <!-- com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

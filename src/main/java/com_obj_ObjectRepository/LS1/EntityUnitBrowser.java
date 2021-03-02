@@ -354,7 +354,7 @@ public class EntityUnitBrowser extends ExtentManager {
 	/***************************************************************************************
 	 * This function is used to Click Menu Items in Actions menu
 	 ***************************************************************************************/
-	public static void fnOWMActionsMenu(WebDriver driver, String item, String subItem) throws InterruptedException {
+	public void fnOWMActionsMenu(String item, String subItem) throws InterruptedException {
 		if (driver.getTitle().equalsIgnoreCase("ONESOURCE")
 				|| driver.getTitle().equalsIgnoreCase("Entity Information")) {
 			// WorkFlowBrowser actionsMenu = new WorkFlowBrowser(driver);
@@ -1131,7 +1131,7 @@ public class EntityUnitBrowser extends ExtentManager {
 		fm.fnWebButton(driver, Splitter, "Splitter");
 		fm.fnWebTable(driver, driver.findElement(By.xpath("//tr[@id='gridTaxIds_grdEntityManager_row_0']")), "Click");
 		fnClickActionsTaxID();
-		fnOWMActionsMenu(driver, "Unarchive", "");
+		fnOWMActionsMenu("Unarchive", "");
 		String SaveMsg1 = driver.findElement(By.xpath("//label[@id='dialog-label']")).getText();
 		if (SaveMsg1.contains("Are you sure you want to Unarchive?")) {
 			fm.fnWebButton(driver, Archive_Yes, "Yes");
@@ -1559,11 +1559,8 @@ public class EntityUnitBrowser extends ExtentManager {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.switchTo().frame("maincontent");
 		driver.switchTo().frame("app_iFrame");
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.switchTo().frame("gridFrame");
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.findElement(By.xpath("//img[@id='imgSplitter']")).click();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		fm.fnWebEdit(driver, entityManager_search_withName, template.getProperty("Search_Name"), "Search_Name");
 		fm.fnWebEdit(driver, entityManager_search_withID, template.getProperty("Search_ID"), "Search_ID");
 		fm.fnWebButton(driver, entityManager_search, "Search");

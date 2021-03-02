@@ -79,7 +79,7 @@ public class FrameWork extends ExtentManager {
 			}
 		}
 		
-		public static void fnWebTable(WebDriver driver,WebElement oParent, String operation) {
+		public void fnWebTable(WebDriver driver,WebElement oParent, String operation) {
 			Actions action = new Actions(driver);
 			switch (operation) {
 			case "Click":

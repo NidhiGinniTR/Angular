@@ -47,6 +47,7 @@ public class FWF_Documents_Test extends BrowserInvoke {
 		// Step-1:-----Login---------------------------------------------//
 		loginPage lp = new loginPage(driver,propEnv,propSerialData);
 		OWM owm = new com_obj_ObjectRepository.OWM.OWM(driver,propSerialData);
+		FrameWork fm = new FrameWork();
 		lp.fnLogin();
 		
 		// Step-2:-----Launch WorkFlow Manager---------------------------//
@@ -64,7 +65,7 @@ public class FWF_Documents_Test extends BrowserInvoke {
 
 		// Step-5:-----Double click on the workflow to Folder Workflows---//
 		driver.switchTo().frame("viewIFrame");
-		FrameWork.fnWebTable(driver, driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td")),"DoubleClick");
+		fm.fnWebTable(driver, driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td")),"DoubleClick");
 		Thread.sleep(5000);
 
 		// Step-6:------Navigate to Documents Tab----------------------------//

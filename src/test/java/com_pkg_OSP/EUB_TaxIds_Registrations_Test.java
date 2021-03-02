@@ -55,7 +55,7 @@ public class EUB_TaxIds_Registrations_Test extends BrowserInvoke {
 
 		//Step-5--------------------------------------Edit/View Details-------------------------------------------------------//
 		Eub.fnClickActions();
-		Eub.fnOWMActionsMenu(driver, "Edit/View Details", "");
+		Eub.fnOWMActionsMenu("Edit/View Details", "");
 		Thread.sleep(500);
 		lp.fnSwitchtoWindow(2, "Entity Information");
 		Eub.fnClickTaxIds();
@@ -70,7 +70,7 @@ public class EUB_TaxIds_Registrations_Test extends BrowserInvoke {
 		//Step-7---------------------------------------------Add New TaxID--------------------------------------------------------//
 		Eub.fnClickActionsTaxID();
 		Thread.sleep(500);
-		Eub.fnOWMActionsMenu(driver, "Add New", "");
+		Eub.fnOWMActionsMenu("Add New", "");
 		lp.fnSwitchtoWindow(3, "Entity Manager");
 		Eub.fnAddNewTaxId();
 
@@ -84,14 +84,14 @@ public class EUB_TaxIds_Registrations_Test extends BrowserInvoke {
 
 		//Step-9-----------------------------------------Archive------------------------------------------//
 		Eub.fnClickActionsTaxID();
-		Eub.fnOWMActionsMenu(driver, "Archive", "");
+		Eub.fnOWMActionsMenu("Archive", "");
 		Eub.fnArchive();
 		Thread.sleep(1000);
 		
 		//Step-10---------------------------------------Edit/View details of TaxId---------------------------------------------//
 		fm.fnWebTable(driver, driver.findElement(By.xpath("//tr[@id='gridTaxIds_grdEntityManager_row_0']")), "Click");
 		Eub.fnClickActionsTaxID();
-		Eub.fnOWMActionsMenu(driver, "Edit/View Details", "");
+		Eub.fnOWMActionsMenu("Edit/View Details", "");
 		lp.fnSwitchtoWindow(3, "Edit/View Details Page");
 		Eub.fnEditTaxIds();
 
@@ -102,7 +102,7 @@ public class EUB_TaxIds_Registrations_Test extends BrowserInvoke {
 		driver.switchTo().frame("gridFrame1");
 		
 		Eub.fnClickActionsTaxID();
-		Eub.fnOWMActionsMenu(driver, "Customize View", "");
+		Eub.fnOWMActionsMenu("Customize View", "");
 		lp.fnSwitchtoWindow(3, "Customize View");
 		String[] array3 = new String[] { "Authority Name", "Jurisdiction", "Form Tax Type", "DBA", "Notes",
 				"Renewal Date", "Authority Name2" };
@@ -114,12 +114,12 @@ public class EUB_TaxIds_Registrations_Test extends BrowserInvoke {
 		driver.switchTo().frame("gridFrame1");
 
 		Eub.fnClickActionsTaxID();
-		Eub.fnOWMActionsMenu(driver, "Save Preferences", "");
+		Eub.fnOWMActionsMenu("Save Preferences", "");
 		Eub.fnSavePreferences("Save Preferences");
 
 		//Step-13:----------------Save Preferences for All-----------------------------------//
 		Eub.fnClickActionsTaxID();
-		Eub.fnOWMActionsMenu(driver, "Save Preferences for All", "");
+		Eub.fnOWMActionsMenu("Save Preferences for All", "");
 		Eub.fnSavePreferences("Save Preferences for All");
 
 	}

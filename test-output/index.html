@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
-                    <span>C:\Users\X017406\eclipse-workspace\Nidhi\AngularProject\report.xml</span>
+                    <span>C:\Users\X017401\git\Angular\EntityManager.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
+                    <span class="method-stats">4 methods, 2 failed,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title failed">Failed methods</span>
@@ -104,7 +104,12 @@
                     <div class="method-list-content failed suite-Suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test" class="method navigator-link" hash-for-method="EventActions">EventActions</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test" class="method navigator-link" hash-for-method="BusinessTaxInfo">BusinessTaxInfo</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com_pkg_OSP.EUB_Test" class="method navigator-link" hash-for-method="EntityUnitBrowser">EntityUnitBrowser</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Suite -->
@@ -118,7 +123,12 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test" class="method navigator-link" hash-for-method="Initialize">Initialize</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com_pkg_OSP.EUB_Test" class="method navigator-link" hash-for-method="Initialize">Initialize</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test" class="method navigator-link" hash-for-method="Initialize">Initialize</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -136,25 +146,73 @@
           <div class="suite-Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test</span>
+              <span class="class-name">com_pkg_OSP.EUB_Test</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="EventActions">
-                  </a> <!-- EventActions -->
-                  <span class="method-name">EventActions</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for number of open windows to be 3 (tried for 30 second(s) with 500 milliseconds interval)
+                  <a name="EntityUnitBrowser">
+                  </a> <!-- EntityUnitBrowser -->
+                  <span class="method-name">EntityUnitBrowser</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Unable to find element with xpath == //tr[@id=&apos;gridEntityBrowser_grdEntityManager_row_0&apos;]
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;USE2DEVP0672&apos;, ip: &apos;10.178.164.5&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.1&apos;
+System info: host: &apos;USE2DEVP0289&apos;, ip: &apos;10.178.161.24&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;14.0.2&apos;
 Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:10979/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: e7b49cea-7e9e-408b-aac7-1f2989b890c8
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test.EventActions(FWF_Events_Test.java:58)
+Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:27350/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: cd073972-6a69-425f-890a-e3443ac16561
+*** Element info: {Using=xpath, value=//tr[@id=&apos;gridEntityBrowser_grdEntityManager_row_0&apos;]}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at com_pkg_OSP.EUB_Test.EntityUnitBrowser(EUB_Test.java:78)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 27 stack frames
+... Removed 32 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
+          <div class="suite-Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="BusinessTaxInfo">
+                  </a> <!-- BusinessTaxInfo -->
+                  <span class="method-name">BusinessTaxInfo</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Unable to find element with xpath == //img[@id=&apos;imgSplitter&apos;]
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;USE2DEVP0289&apos;, ip: &apos;10.178.161.24&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;14.0.2&apos;
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:21450/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 05e8b695-7384-474f-80e7-117472dd2479
+*** Element info: {Using=xpath, value=//img[@id=&apos;imgSplitter&apos;]}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at com_obj_ObjectRepository.LS1.EntityUnitBrowser.fnSearchEntity(EntityUnitBrowser.java:425)
+	at com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test.BusinessTaxInfo(Entity_Manager_BusinessTaxInfo_Test.java:49)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 32 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -163,7 +221,22 @@ Session ID: e7b49cea-7e9e-408b-aac7-1f2989b890c8
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test</span>
+              <span class="class-name">com_pkg_OSP.EUB_Test</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="Initialize">
+                  </a> <!-- Initialize -->
+                  <span class="method-name">Initialize</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -178,7 +251,7 @@ Session ID: e7b49cea-7e9e-408b-aac7-1f2989b890c8
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\X017406\eclipse-workspace\Nidhi\AngularProject\report.xml</span>
+            <span class="header-content">C:\Users\X017401\git\Angular\EntityManager.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -190,7 +263,8 @@ Session ID: e7b49cea-7e9e-408b-aac7-1f2989b890c8
   &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test&quot;/&gt;
+      &lt;class name=&quot;com_pkg_OSP.EUB_Test&quot;/&gt;
+      &lt;class name=&quot;com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -204,7 +278,7 @@ Session ID: e7b49cea-7e9e-408b-aac7-1f2989b890c8
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Test (1 class)</span>
+                <span class="test-name">Test (2 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -230,20 +304,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(4);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'EventActions')
-data.setCell(0, 2, 'com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test')
-data.setCell(0, 3, 79835);
+data.setCell(0, 1, 'EntityUnitBrowser')
+data.setCell(0, 2, 'com_pkg_OSP.EUB_Test')
+data.setCell(0, 3, 419625);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'Initialize')
-data.setCell(1, 2, 'com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test')
-data.setCell(1, 3, 5781);
+data.setCell(1, 1, 'BusinessTaxInfo')
+data.setCell(1, 2, 'com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test')
+data.setCell(1, 3, 31036);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'Initialize')
+data.setCell(2, 2, 'com_pkg_OSP.EUB_Test')
+data.setCell(2, 3, 4292);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'Initialize')
+data.setCell(3, 2, 'com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test')
+data.setCell(3, 3, 4078);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 7 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -269,28 +351,65 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com_pkg_OSP.EUB_Test</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
-                <span class="method-name">beforesuit</span>
+                <span class="method-name">beforeStart</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test</div> <!-- chronological-class-name -->
+              <div class="configuration-suite before">
+                <span class="method-name">beforeStart</span>
+                <span class="method-start">361 ms</span>
+              </div> <!-- configuration-suite before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com_pkg_OSP.EUB_Test</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">Initialize</span>
-                <span class="method-start">319 ms</span>
+                <span class="method-start">404 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">EventActions</span>
-                <span class="method-start">6116 ms</span>
+                <span class="method-name">EntityUnitBrowser</span>
+                <span class="method-start">4714 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">85957 ms</span>
+                <span class="method-start">424349 ms</span>
               </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">Initialize</span>
+                <span class="method-start">425002 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">BusinessTaxInfo</span>
+                <span class="method-start">429083 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">460122 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com_pkg_OSP.EUB_Test</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">aftersuite</span>
-                <span class="method-start">93271 ms</span>
+                <span class="method-start">460891 ms</span>
+              </div> <!-- configuration-suite after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test</div> <!-- chronological-class-name -->
+              <div class="configuration-suite after">
+                <span class="method-name">aftersuite</span>
+                <span class="method-start">461763 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -32,6 +32,7 @@ public class OWM_Actions_Test extends BrowserInvoke {
 
 	@Test(dependsOnMethods = "Initialize")
 	public void Tasks() throws InterruptedException {
+		FrameWork fm = new FrameWork();
 		// Step-1:-----Login---------------------------------------------//
 		FunctionLibrary.fnLogin(driver, propEnv);
 
@@ -56,7 +57,7 @@ public class OWM_Actions_Test extends BrowserInvoke {
 
 		// Step-6:-----Double click on the workflow to Folder Workflows---//
 		driver.switchTo().frame("viewIFrame");
-		FrameWork.fnWebTable(driver, driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td")),
+		fm.fnWebTable(driver, driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td")),
 				"DoubleClick");
 		Thread.sleep(500);
 
@@ -67,7 +68,7 @@ public class OWM_Actions_Test extends BrowserInvoke {
 
 		// Step-8:-----Double click on the workflow to Folder Workflows---//
 		driver.switchTo().frame("viewIFrame");
-		FrameWork.fnWebTable(driver, driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td")),
+		fm.fnWebTable(driver, driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td")),
 				"Click");
 		Thread.sleep(500);
 
@@ -78,7 +79,7 @@ public class OWM_Actions_Test extends BrowserInvoke {
 
 		// Step-10:-----Double click on the workflow to Folder Workflows---//
 		driver.switchTo().frame("viewIFrame");
-		FrameWork.fnWebTable(driver, driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td")),
+		fm.fnWebTable(driver, driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td")),
 				"Click");
 		Thread.sleep(500);
 
@@ -94,7 +95,7 @@ public class OWM_Actions_Test extends BrowserInvoke {
 
 		// Step-12:-----Double click on the workflow to Folder Workflows---//
 		driver.switchTo().frame("viewIFrame");
-		FrameWork.fnWebTable(driver, driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td")),
+		fm.fnWebTable(driver, driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td")),
 				"Click");
 		Thread.sleep(500);
 
@@ -103,7 +104,7 @@ public class OWM_Actions_Test extends BrowserInvoke {
 
 		// Step-14:-----Double click on the workflow to Folder Workflows---//
 		driver.switchTo().frame("viewIFrame");
-		FrameWork.fnWebTable(driver, driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td")),
+		fm.fnWebTable(driver, driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td")),
 				"Click");
 		Thread.sleep(500);
 
@@ -119,7 +120,7 @@ public class OWM_Actions_Test extends BrowserInvoke {
 
 		// Step-16:-----Double click on the workflow to Folder Workflows---//
 		driver.switchTo().frame("viewIFrame");
-		FrameWork.fnWebTable(driver, driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td")),
+		fm.fnWebTable(driver, driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td")),
 				"Click");
 		Thread.sleep(500);
 
@@ -128,7 +129,7 @@ public class OWM_Actions_Test extends BrowserInvoke {
 
 		// Step-18:-----Double click on the workflow to Folder Workflows---//
 		driver.switchTo().frame("viewIFrame");
-		FrameWork.fnWebTable(driver, driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td")),
+		fm.fnWebTable(driver, driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td")),
 				"Click");
 		Thread.sleep(500);
 
