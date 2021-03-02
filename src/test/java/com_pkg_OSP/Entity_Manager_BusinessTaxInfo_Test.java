@@ -40,13 +40,13 @@ public class Entity_Manager_BusinessTaxInfo_Test extends BrowserInvoke{
 		//Step-2:-----Launch WorkFlow Manager---------------------------//
 		
 		lp.LaunchApplication("Entity Manager");
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.switchTo().parentFrame();
 		
 
 		// Step---3: Search and Navigate to Entity-------------//
 	
-		Eub.searchEntity();
+		//Eub.searchEntity();
+		Eub.fnSearchEntity();
 		Eub.navtoEditview();
 		
 		//Step-4: -------Navigate and edit Business tax info----------------//

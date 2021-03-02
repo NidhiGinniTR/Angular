@@ -81,7 +81,6 @@ public class EUB_Test extends BrowserInvoke {
 		
 		// Step-9:--------------------Verify Edit/View Details--------------------------------//
 		lp.fnSwitchtoWindow(2, "Entity Information");
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.switchTo().frame("addeditFrame1");
 		Eub.fnEditDeatils_Entity();
 
@@ -99,7 +98,6 @@ public class EUB_Test extends BrowserInvoke {
 		// Step-11:--------------------Copy Entity--------------------------------//
 		Eub.fnClickActions();
 		Eub.fnOWMActionsMenu("Copy to New", "");
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		lp.fnSwitchtoWindow(2, "Copy");
 		Eub.copyentity();
 		
