@@ -37,6 +37,7 @@ public class FWF_Events_Test extends BrowserInvoke {
 	
 	@Test(dependsOnMethods =  "Initialize" )
 	public void EventActions() throws InterruptedException {
+		FrameWork fm = new FrameWork();
 	//Step-1:-----Login---------------------------------------------//
 		FunctionLibrary.fnLogin(driver, propEnv);
 		
@@ -64,7 +65,7 @@ public class FWF_Events_Test extends BrowserInvoke {
 		
 	//Step-6:-----Double click on the workflow to Folder Workflows---//
 		driver.switchTo().frame("viewIFrame");
-		FrameWork.fnWebTable(driver, driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td")),
+		fm.fnWebTable(driver, driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td")),
 				"DoubleClick");
 		Thread.sleep(500);
 		

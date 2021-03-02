@@ -56,14 +56,11 @@ public class EUB_Test extends BrowserInvoke {
 		Eub.fnActionsMenuDisabled();
 
 		// Step-5----------------------CLick Actions & Add New Entity---------------------------------------//
-		Eub.fnOWMActionsMenu(driver, "Add New", "");
+		Eub.fnOWMActionsMenu("Add New", "");
 
 		// Step-6------------------------Create a New Entity-------------------------------------//
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		lp.fnSwitchtoWindow(2, "Create Entity Page");
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.switchTo().frame("addeditFrame1");
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		Eub.fnCreateEntity();
 
 		// Step-7:--------------------Search created Entity--------------------------------//
@@ -80,7 +77,7 @@ public class EUB_Test extends BrowserInvoke {
 		FrameWork fm = new FrameWork();
 		fm.fnWebTable(driver, driver.findElement(By.xpath("//tr[@id='gridEntityBrowser_grdEntityManager_row_0']")),"Click");
 		Eub.fnClickActions();
-		Eub.fnOWMActionsMenu(driver, "Edit/View Details", "");
+		Eub.fnOWMActionsMenu("Edit/View Details", "");
 		
 		// Step-9:--------------------Verify Edit/View Details--------------------------------//
 		lp.fnSwitchtoWindow(2, "Entity Information");
@@ -101,7 +98,7 @@ public class EUB_Test extends BrowserInvoke {
 		
 		// Step-11:--------------------Copy Entity--------------------------------//
 		Eub.fnClickActions();
-		Eub.fnOWMActionsMenu(driver, "Copy to New", "");
+		Eub.fnOWMActionsMenu("Copy to New", "");
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		lp.fnSwitchtoWindow(2, "Copy");
 		Eub.copyentity();
@@ -119,7 +116,7 @@ public class EUB_Test extends BrowserInvoke {
 
 		// Step-14:----------------Customize View-----------------------------------//
 		Eub.fnClickActions();
-		Eub.fnOWMActionsMenu(driver, "Customize View", "");
+		Eub.fnOWMActionsMenu("Customize View", "");
 		lp.fnSwitchtoWindow(2, "Customize View");
 		String[] array1 = new String[] { "Entity Name", "Status", "Entity Id", "State of Inc", "Group Code",
 				"Entity Type", "Entity Group Name" };
@@ -133,12 +130,12 @@ public class EUB_Test extends BrowserInvoke {
 		driver.switchTo().frame("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad");
 		driver.switchTo().frame("gridFrame");
 		Eub.fnClickActions();
-		Eub.fnOWMActionsMenu(driver, "Save Preferences", "");
+		Eub.fnOWMActionsMenu("Save Preferences", "");
 		Eub.fnSavePreferences("Save Preferences");
 
 		// Step-16:----------------Save Preferences for All-----------------------------------//
 		Eub.fnClickActions();
-		Eub.fnOWMActionsMenu(driver, "Save Preferences for All", "");
+		Eub.fnOWMActionsMenu("Save Preferences for All", "");
 		Eub.fnSavePreferences("Save Preferences for All");
 		
 	}

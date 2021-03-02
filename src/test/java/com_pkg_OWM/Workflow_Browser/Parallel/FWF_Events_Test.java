@@ -35,6 +35,7 @@ public class FWF_Events_Test extends BrowserInvoke {
 		public void Tasks() throws InterruptedException {
 			// Step-1:-----Login---------------------------------------------//
 			LS1 lp = new LS1(driver, propEnv, propSerialData);
+			FrameWork fm = new FrameWork();
 			lp.fnLogin();
 
 			// Step-2:-----Launch WorkFlow Manager---------------------------//
@@ -49,7 +50,7 @@ public class FWF_Events_Test extends BrowserInvoke {
 
 			// Step-5:-----Double click on the workflow to Folder Workflows---//
 			driver.switchTo().frame("viewIFrame");
-			FrameWork.fnWebTable(driver, driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td")),
+			fm.fnWebTable(driver, driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td")),
 					"DoubleClick");
 
 			// Step-6:------Navigate to Events Tab----------------------------//

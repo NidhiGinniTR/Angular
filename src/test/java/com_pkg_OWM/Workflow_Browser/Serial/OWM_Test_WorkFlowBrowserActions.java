@@ -35,6 +35,7 @@ public class OWM_Test_WorkFlowBrowserActions extends BrowserInvoke {
 	public void NewFolderCreation() throws InterruptedException {
 		loginPage lp = new loginPage(driver,propEnv,propSerialData);
 		OWM owm = new com_obj_ObjectRepository.OWM.OWM(driver,propSerialData);
+		FrameWork fm= new FrameWork();
 		//OWM owm = new OWM(driver,propSerialData);
 		// Step-1:-----Login---------------------------------------------//
 		lp.fnLogin();
@@ -64,7 +65,7 @@ public class OWM_Test_WorkFlowBrowserActions extends BrowserInvoke {
 		
 		// Step-6:-----Select the workflow created-------------------//
 		driver.switchTo().frame("viewIFrame");
-		FrameWork.fnWebTable(driver, driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td")),"Click");
+		fm.fnWebTable(driver, driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td")),"Click");
 		driver.switchTo().parentFrame();
 		
 		// Step-7------New WorkFlow------------------------------------//
@@ -83,7 +84,7 @@ public class OWM_Test_WorkFlowBrowserActions extends BrowserInvoke {
 		driver.switchTo().frame("content");
 		driver.switchTo().frame("bottomFrame");
 		driver.switchTo().frame("viewIFrame");
-		FrameWork.fnWebTable(driver, driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td")),"Click");
+		fm.fnWebTable(driver, driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td")),"Click");
 		driver.switchTo().parentFrame();
 		
 		// Step-9------Delete Newly Created workflow-------------------//
@@ -95,7 +96,7 @@ public class OWM_Test_WorkFlowBrowserActions extends BrowserInvoke {
 		driver.switchTo().parentFrame();
 		// Step-10:-----Select the workflow---//
 		driver.switchTo().frame("viewIFrame");
-		FrameWork.fnWebTable(driver, driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td")),"Click");
+		fm.fnWebTable(driver, driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td")),"Click");
 		driver.switchTo().parentFrame();
 		
 		// Step-11-----------------Lock WorkFlow--------------------------//
@@ -107,7 +108,7 @@ public class OWM_Test_WorkFlowBrowserActions extends BrowserInvoke {
 		driver.switchTo().parentFrame();
 		// Step-12:-----Unlock Workflow---//
 		driver.switchTo().frame("viewIFrame");
-		FrameWork.fnWebTable(driver, driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td")),"Click");
+		fm.fnWebTable(driver, driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td")),"Click");
 		driver.switchTo().parentFrame();
 		owm.Actions();
 		driver.switchTo().frame("viewIFrame");
@@ -116,7 +117,7 @@ public class OWM_Test_WorkFlowBrowserActions extends BrowserInvoke {
 
 		// Step-13-------------Verify WorkFlow Properties----------------//
 		// Step-14:-----Select the workflow---//
-		FrameWork.fnWebTable(driver, driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td")),"Click");
+		fm.fnWebTable(driver, driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td")),"Click");
 		driver.switchTo().parentFrame();
 		// Step-17--------WorkFlow History-------------------------------//
 		// Step-18:-----Select the workflow---//
@@ -138,7 +139,7 @@ public class OWM_Test_WorkFlowBrowserActions extends BrowserInvoke {
 		driver.switchTo().frame("content");
 		driver.switchTo().frame("bottomFrame");
 		driver.switchTo().frame("viewIFrame");
-		FrameWork.fnWebTable(driver, driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td")),"Click");
+		fm.fnWebTable(driver, driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td")),"Click");
 		driver.switchTo().parentFrame();
 		
 		// Step-21:----Save Preferences-----------------------------------//
@@ -159,7 +160,7 @@ public class OWM_Test_WorkFlowBrowserActions extends BrowserInvoke {
 		driver.switchTo().frame("content");
 		driver.switchTo().frame("bottomFrame");
 		driver.switchTo().frame("viewIFrame");
-		FrameWork.fnWebTable(driver, driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td")),"Click");
+		fm.fnWebTable(driver, driver.findElement(By.xpath("//*[@id='grdWFfolders_dom']/table/tbody/tr[3]/td")),"Click");
 		driver.switchTo().parentFrame();
 		owm.Actions();
 		driver.switchTo().frame("viewIFrame");
