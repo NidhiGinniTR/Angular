@@ -118,6 +118,7 @@ public class EntityUnitBrowser_DBA_Test extends BrowserInvoke {
 					"Actions");
 			lp.fnOWMActionsMenu("Customize View", "");
 			lp.fnSwitchtoWindow(3, "Customize View");
+			Thread.sleep(1000);
 			String[] array = new String[] { "DBA Name", "Description", "From Date", "Status", "County",
 			"To Date" };
 			em.fnCustomizeView(array);
@@ -161,7 +162,7 @@ public class EntityUnitBrowser_DBA_Test extends BrowserInvoke {
 	@AfterClass
 	void closeBrowser() throws InterruptedException {
 		// FunctionLibrary.fnLogOff(driver);
-		// driver.quit();
+		driver.quit();
 	}
 
 	@AfterSuite
