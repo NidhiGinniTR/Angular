@@ -6,15 +6,42 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test">
+      <class name="com_pkg_OSP.EntityUnitBrowser_DBA_Test">
         <methods>
-          <include name="EventActions"/>
-          <include name="beforesuit"/>
-          <include name="Initialize"/>
+          <include name="EntityUnitBrowserDBA"/>
           <include name="closeBrowser"/>
+          <include name="Initialize"/>
+          <include name="aftersuite"/>
+          <include name="beforeStart"/>
+        </methods>
+      </class> <!-- com_pkg_OSP.EntityUnitBrowser_DBA_Test -->
+      <class name="com_pkg_OSP.Entity_Manager_KeyContacts_Test">
+        <methods>
+          <include name="closeBrowser"/>
+          <include name="beforeStart"/>
+          <include name="aftersuite"/>
+          <include name="KeyContacts"/>
+          <include name="Initialize"/>
+        </methods>
+      </class> <!-- com_pkg_OSP.Entity_Manager_KeyContacts_Test -->
+      <class name="com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test">
+        <methods>
+          <include name="closeBrowser"/>
+          <include name="beforeStart"/>
+          <include name="BusinessTaxInfo"/>
+          <include name="Initialize"/>
           <include name="aftersuite"/>
         </methods>
-      </class> <!-- com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test -->
+      </class> <!-- com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test -->
+      <class name="com_pkg_OSP.Entity_Manager_ResponsibilityInfo_Test">
+        <methods>
+          <include name="beforeStart"/>
+          <include name="aftersuite"/>
+          <include name="ResponsbilityInfo"/>
+          <include name="closeBrowser"/>
+          <include name="Initialize"/>
+        </methods>
+      </class> <!-- com_pkg_OSP.Entity_Manager_ResponsibilityInfo_Test -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

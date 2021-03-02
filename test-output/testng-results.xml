@@ -1,42 +1,352 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
+<testng-results ignored="0" total="12" passed="8" failed="4" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-01-19T20:04:01 IST" name="Suite" finished-at="2021-01-19T20:05:34 IST" duration-ms="92927">
+  <suite started-at="2021-03-02T18:14:36 IST" name="Suite" finished-at="2021-03-02T18:36:55 IST" duration-ms="1338454">
     <groups>
     </groups>
-    <test started-at="2021-01-19T20:04:01 IST" name="Test" finished-at="2021-01-19T20:05:34 IST" duration-ms="92927">
-      <class name="com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test">
-        <test-method is-config="true" signature="beforesuit()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test@78aab498]" started-at="2021-01-19T20:04:01 IST" name="beforesuit" finished-at="2021-01-19T20:04:01 IST" duration-ms="283" status="PASS">
+    <test started-at="2021-03-02T18:14:36 IST" name="Test" finished-at="2021-03-02T18:36:55 IST" duration-ms="1338454">
+      <class name="com_pkg_OSP.Entity_Manager_KeyContacts_Test">
+        <test-method is-config="true" signature="beforeStart()[pri:0, instance:com_pkg_OSP.Entity_Manager_KeyContacts_Test@53aad5d5]" started-at="2021-03-02T18:14:36 IST" name="beforeStart" finished-at="2021-03-02T18:14:36 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- beforesuit -->
-        <test-method signature="Initialize()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test@78aab498]" started-at="2021-01-19T20:04:01 IST" name="Initialize" finished-at="2021-01-19T20:04:07 IST" duration-ms="5781" status="PASS">
+        </test-method> <!-- beforeStart -->
+        <test-method signature="Initialize()[pri:0, instance:com_pkg_OSP.Entity_Manager_KeyContacts_Test@53aad5d5]" started-at="2021-03-02T18:27:55 IST" name="Initialize" finished-at="2021-03-02T18:28:00 IST" duration-ms="4704" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Initialize -->
-        <test-method signature="EventActions()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test@78aab498]" started-at="2021-01-19T20:04:07 IST" name="EventActions" finished-at="2021-01-19T20:05:27 IST" depends-on-methods="com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test.Initialize" duration-ms="79835" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
+        <test-method signature="KeyContacts()[pri:0, instance:com_pkg_OSP.Entity_Manager_KeyContacts_Test@53aad5d5]" started-at="2021-03-02T18:28:00 IST" name="KeyContacts" finished-at="2021-03-02T18:29:37 IST" depends-on-methods="com_pkg_OSP.Entity_Manager_KeyContacts_Test.Initialize" duration-ms="96629" status="FAIL">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
             <message>
-              <![CDATA[Expected condition failed: waiting for number of open windows to be 3 (tried for 30 second(s) with 500 milliseconds interval)
+              <![CDATA[Element not clickable at point (96,495). Other element would receive the click: <div class="modal-backdrop fade in"> (elementsFromPoint index 0)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'USE2DEVP0672', ip: '10.178.164.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'
+System info: host: 'USE2DEVP0289', ip: '10.178.161.24', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
 Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:10979/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: e7b49cea-7e9e-408b-aac7-1f2989b890c8]]>
+Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:43680/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 889671f8-5910-4ec2-8d68-6fbf62e97f39]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for number of open windows to be 3 (tried for 30 second(s) with 500 milliseconds interval)
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: Element not clickable at point (96,495). Other element would receive the click: <div class="modal-backdrop fade in"> (elementsFromPoint index 0)
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'USE2DEVP0672', ip: '10.178.164.5', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'
+System info: host: 'USE2DEVP0289', ip: '10.178.161.24', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
 Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:10979/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: e7b49cea-7e9e-408b-aac7-1f2989b890c8
+Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:43680/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 889671f8-5910-4ec2-8d68-6fbf62e97f39
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+at com_lib_FunctionLibrary.FrameWork.fnWebButton(FrameWork.java:59)
+at com_obj_ObjectRepository.LS1.EntityUnitBrowser.key_contacts(EntityUnitBrowser.java:1426)
+at com_pkg_OSP.Entity_Manager_KeyContacts_Test.KeyContacts(Entity_Manager_KeyContacts_Test.java:55)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- KeyContacts -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com_pkg_OSP.Entity_Manager_KeyContacts_Test@53aad5d5]" started-at="2021-03-02T18:29:37 IST" name="closeBrowser" finished-at="2021-03-02T18:29:37 IST" duration-ms="746" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="aftersuite()[pri:0, instance:com_pkg_OSP.Entity_Manager_KeyContacts_Test@53aad5d5]" started-at="2021-03-02T18:36:56 IST" name="aftersuite" finished-at="2021-03-02T18:36:57 IST" duration-ms="213" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aftersuite -->
+      </class> <!-- com_pkg_OSP.Entity_Manager_KeyContacts_Test -->
+      <class name="com_pkg_OSP.Entity_Manager_ResponsibilityInfo_Test">
+        <test-method is-config="true" signature="beforeStart()[pri:0, instance:com_pkg_OSP.Entity_Manager_ResponsibilityInfo_Test@6497b078]" started-at="2021-03-02T18:14:36 IST" name="beforeStart" finished-at="2021-03-02T18:14:36 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeStart -->
+        <test-method signature="Initialize()[pri:0, instance:com_pkg_OSP.Entity_Manager_ResponsibilityInfo_Test@6497b078]" started-at="2021-03-02T18:25:19 IST" name="Initialize" finished-at="2021-03-02T18:25:24 IST" duration-ms="4755" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Initialize -->
+        <test-method signature="ResponsbilityInfo()[pri:0, instance:com_pkg_OSP.Entity_Manager_ResponsibilityInfo_Test@6497b078]" started-at="2021-03-02T18:25:24 IST" name="ResponsbilityInfo" finished-at="2021-03-02T18:26:25 IST" depends-on-methods="com_pkg_OSP.Entity_Manager_ResponsibilityInfo_Test.Initialize" duration-ms="61543" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[Unable to find element with xpath == //td[@id='tdResponsibility']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'USE2DEVP0289', ip: '10.178.161.24', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:19856/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: eecaf9d1-bbf0-4be7-b385-4b5f9fe706b3
+*** Element info: {Using=xpath, value=//td[@id='tdResponsibility']}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to find element with xpath == //td[@id='tdResponsibility']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'USE2DEVP0289', ip: '10.178.161.24', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:19856/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: eecaf9d1-bbf0-4be7-b385-4b5f9fe706b3
+*** Element info: {Using=xpath, value=//td[@id='tdResponsibility']}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at com_obj_ObjectRepository.LS1.EntityUnitBrowser.responsibility_info(EntityUnitBrowser.java:1306)
+at com_pkg_OSP.Entity_Manager_ResponsibilityInfo_Test.ResponsbilityInfo(Entity_Manager_ResponsibilityInfo_Test.java:55)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ResponsbilityInfo -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com_pkg_OSP.Entity_Manager_ResponsibilityInfo_Test@6497b078]" started-at="2021-03-02T18:26:25 IST" name="closeBrowser" finished-at="2021-03-02T18:26:26 IST" duration-ms="755" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="aftersuite()[pri:0, instance:com_pkg_OSP.Entity_Manager_ResponsibilityInfo_Test@6497b078]" started-at="2021-03-02T18:36:57 IST" name="aftersuite" finished-at="2021-03-02T18:36:57 IST" duration-ms="125" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aftersuite -->
+      </class> <!-- com_pkg_OSP.Entity_Manager_ResponsibilityInfo_Test -->
+      <class name="com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test">
+        <test-method is-config="true" signature="beforeStart()[pri:0, instance:com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test@46fa7c39]" started-at="2021-03-02T18:14:36 IST" name="beforeStart" finished-at="2021-03-02T18:14:36 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeStart -->
+        <test-method signature="Initialize()[pri:0, instance:com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test@46fa7c39]" started-at="2021-03-02T18:29:37 IST" name="Initialize" finished-at="2021-03-02T18:29:44 IST" duration-ms="6211" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Initialize -->
+        <test-method signature="BusinessTaxInfo()[pri:0, instance:com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test@46fa7c39]" started-at="2021-03-02T18:29:44 IST" name="BusinessTaxInfo" finished-at="2021-03-02T18:30:41 IST" depends-on-methods="com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test.Initialize" duration-ms="57850" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[Unable to find element with xpath == //td[@id='tdBusiness']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'USE2DEVP0289', ip: '10.178.161.24', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:21173/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: b906740a-8963-456a-a2b1-d1a90b2e58a4
+*** Element info: {Using=xpath, value=//td[@id='tdBusiness']}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to find element with xpath == //td[@id='tdBusiness']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'USE2DEVP0289', ip: '10.178.161.24', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:21173/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: b906740a-8963-456a-a2b1-d1a90b2e58a4
+*** Element info: {Using=xpath, value=//td[@id='tdBusiness']}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at com_obj_ObjectRepository.LS1.EntityUnitBrowser.business_Taxinfo(EntityUnitBrowser.java:1233)
+at com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test.BusinessTaxInfo(Entity_Manager_BusinessTaxInfo_Test.java:55)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:764)
+at org.testng.TestRunner.run(TestRunner.java:585)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BusinessTaxInfo -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test@46fa7c39]" started-at="2021-03-02T18:30:41 IST" name="closeBrowser" finished-at="2021-03-02T18:30:42 IST" duration-ms="752" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="aftersuite()[pri:0, instance:com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test@46fa7c39]" started-at="2021-03-02T18:36:56 IST" name="aftersuite" finished-at="2021-03-02T18:36:56 IST" duration-ms="342" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aftersuite -->
+      </class> <!-- com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test -->
+      <class name="com_pkg_OSP.Entity_Manager_PageLinks_Test">
+        <test-method is-config="true" signature="beforeStart()[pri:0, instance:com_pkg_OSP.Entity_Manager_PageLinks_Test@41c2284a]" started-at="2021-03-02T18:14:36 IST" name="beforeStart" finished-at="2021-03-02T18:14:36 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeStart -->
+        <test-method signature="Initialize()[pri:0, instance:com_pkg_OSP.Entity_Manager_PageLinks_Test@41c2284a]" started-at="2021-03-02T18:26:26 IST" name="Initialize" finished-at="2021-03-02T18:26:33 IST" duration-ms="7073" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Initialize -->
+        <test-method signature="PageLinks()[pri:0, instance:com_pkg_OSP.Entity_Manager_PageLinks_Test@41c2284a]" started-at="2021-03-02T18:26:33 IST" name="PageLinks" finished-at="2021-03-02T18:27:55 IST" depends-on-methods="com_pkg_OSP.Entity_Manager_PageLinks_Test.Initialize" duration-ms="81656" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PageLinks -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com_pkg_OSP.Entity_Manager_PageLinks_Test@41c2284a]" started-at="2021-03-02T18:27:55 IST" name="closeBrowser" finished-at="2021-03-02T18:27:55 IST" duration-ms="534" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="aftersuite()[pri:0, instance:com_pkg_OSP.Entity_Manager_PageLinks_Test@41c2284a]" started-at="2021-03-02T18:36:57 IST" name="aftersuite" finished-at="2021-03-02T18:36:57 IST" duration-ms="167" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aftersuite -->
+      </class> <!-- com_pkg_OSP.Entity_Manager_PageLinks_Test -->
+      <class name="com_pkg_OSP.EUB_Test">
+        <test-method is-config="true" signature="beforeStart()[pri:0, instance:com_pkg_OSP.EUB_Test@1329eff]" started-at="2021-03-02T18:14:36 IST" name="beforeStart" finished-at="2021-03-02T18:14:36 IST" duration-ms="241" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeStart -->
+        <test-method signature="Initialize()[pri:0, instance:com_pkg_OSP.EUB_Test@1329eff]" started-at="2021-03-02T18:14:37 IST" name="Initialize" finished-at="2021-03-02T18:14:42 IST" duration-ms="5564" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Initialize -->
+        <test-method signature="EntityUnitBrowser()[pri:0, instance:com_pkg_OSP.EUB_Test@1329eff]" started-at="2021-03-02T18:14:42 IST" name="EntityUnitBrowser" finished-at="2021-03-02T18:25:18 IST" depends-on-methods="com_pkg_OSP.EUB_Test.Initialize" duration-ms="636296" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EntityUnitBrowser -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com_pkg_OSP.EUB_Test@1329eff]" started-at="2021-03-02T18:25:18 IST" name="closeBrowser" finished-at="2021-03-02T18:25:19 IST" duration-ms="534" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="aftersuite()[pri:0, instance:com_pkg_OSP.EUB_Test@1329eff]" started-at="2021-03-02T18:36:55 IST" name="aftersuite" finished-at="2021-03-02T18:36:56 IST" duration-ms="807" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aftersuite -->
+      </class> <!-- com_pkg_OSP.EUB_Test -->
+      <class name="com_pkg_OSP.EntityUnitBrowser_DBA_Test">
+        <test-method is-config="true" signature="beforeStart()[pri:0, instance:com_pkg_OSP.EntityUnitBrowser_DBA_Test@1fb700ee]" started-at="2021-03-02T18:14:36 IST" name="beforeStart" finished-at="2021-03-02T18:14:36 IST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeStart -->
+        <test-method signature="Initialize()[pri:0, instance:com_pkg_OSP.EntityUnitBrowser_DBA_Test@1fb700ee]" started-at="2021-03-02T18:30:42 IST" name="Initialize" finished-at="2021-03-02T18:30:45 IST" duration-ms="3140" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Initialize -->
+        <test-method signature="EntityUnitBrowserDBA()[pri:0, instance:com_pkg_OSP.EntityUnitBrowser_DBA_Test@1fb700ee]" started-at="2021-03-02T18:30:45 IST" name="EntityUnitBrowserDBA" finished-at="2021-03-02T18:36:54 IST" depends-on-methods="com_pkg_OSP.EntityUnitBrowser_DBA_Test.Initialize" duration-ms="368402" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for number of open windows to be 2 (tried for 50 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'USE2DEVP0289', ip: '10.178.161.24', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:40736/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 7a889eda-eefb-4392-b16d-3332ec208f0a]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for number of open windows to be 2 (tried for 50 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'USE2DEVP0289', ip: '10.178.161.24', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:40736/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 7a889eda-eefb-4392-b16d-3332ec208f0a
 at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-at com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test.EventActions(FWF_Events_Test.java:58)
+at com_lib_FunctionLibrary.loginPage.fnSwitchtoWindow(loginPage.java:81)
+at com_pkg_OSP.EntityUnitBrowser_DBA_Test.EntityUnitBrowserDBA(EntityUnitBrowser_DBA_Test.java:111)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 at java.base/java.lang.reflect.Method.invoke(Method.java:564)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
@@ -68,16 +378,16 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EventActions -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test@78aab498]" started-at="2021-01-19T20:05:27 IST" name="closeBrowser" finished-at="2021-01-19T20:05:34 IST" duration-ms="7254" status="PASS">
+        </test-method> <!-- EntityUnitBrowserDBA -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com_pkg_OSP.EntityUnitBrowser_DBA_Test@1fb700ee]" started-at="2021-03-02T18:36:54 IST" name="closeBrowser" finished-at="2021-03-02T18:36:55 IST" duration-ms="1226" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="aftersuite()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test@78aab498]" started-at="2021-01-19T20:05:34 IST" name="aftersuite" finished-at="2021-01-19T20:05:35 IST" duration-ms="1046" status="PASS">
+        <test-method is-config="true" signature="aftersuite()[pri:0, instance:com_pkg_OSP.EntityUnitBrowser_DBA_Test@1fb700ee]" started-at="2021-03-02T18:36:56 IST" name="aftersuite" finished-at="2021-03-02T18:36:56 IST" duration-ms="209" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- aftersuite -->
-      </class> <!-- com_pkg_OWM.Workflow_Browser.Serial.FWF_Events_Test -->
+      </class> <!-- com_pkg_OSP.EntityUnitBrowser_DBA_Test -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

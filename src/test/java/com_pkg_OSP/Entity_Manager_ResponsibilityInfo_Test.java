@@ -14,7 +14,7 @@ import com_lib_FunctionLibrary.loginPage;
 
 import com_obj_ObjectRepository.LS1.EntityUnitBrowser;
 
-public class Entity_Manager_ResponsbilityInfo_Test extends BrowserInvoke {
+public class Entity_Manager_ResponsibilityInfo_Test extends BrowserInvoke {
 	
 		@BeforeSuite
 		public void beforeStart() {
