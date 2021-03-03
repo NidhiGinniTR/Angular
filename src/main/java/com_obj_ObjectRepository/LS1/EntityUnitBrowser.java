@@ -200,20 +200,23 @@ public class EntityUnitBrowser extends ExtentManager {
 	 * Manager
 	 ***************************************************************************************/
 	By EM_Owners_OwnerType = By.xpath("//select[@id='ownertype']");
+	By EM_Owners_OwnerName = By.xpath("//input[@id='owner_Input']");
 	By EM_Owners_OwnerName1 = By.xpath("//input[@id='owner1_Input']");
 	By EM_Owners_OwnerName2 = By.xpath("//input[@id='owner2_Input']");
-	By EM_Owners_Labelpercentage = By.xpath("//label[@id='lbl1']");
+	By EM_Owners_Labelpercentagetext = By.xpath("//label[@id='lbl1']");
+	By EM_Owners_Labelpercentage = By.xpath("//label[@id='lblPrior']");
 	By EM_Owners_OwnerID1 = By.xpath("//input[@id='ownerId1_Input']");
 	By EM_Owners_OwnerID2 = By.xpath("//input[@id='ownerId2_Input']");
+	By EM_Owners_PercentageOwned = By.xpath("//input[@id='percentage']");
 	By EM_Owners_PercentageOwned1 = By.xpath("//input[@id='percentage1']");
 	By EM_Owners_PercentageOwned2 = By.xpath("//input[@id='percentage2']");
+	By EM_Owners_AsofDate = By.xpath("//input[@id='asofdate']");
 	By EM_Owners_AsofDate1 = By.xpath("//input[@id='AsOfDate1']");
-	By EM_Owners_AsofDate2 = By.xpath("//input[@id='AsOfDate1']");
+	By EM_Owners_AsofDate2 = By.xpath("//input[@id='AsOfDate2']");
 	By EM_Owners_AddOwner = By.xpath("//input[@id='btnAddOwner']");
 	By EM_Owners_Save = By.xpath("//input[@id='btnSave']");
 	By EM_Owners_Close = By.xpath("//input[@id='btnClose']");
 	By EM_Owners_errMessage = By.xpath("//span[@id='spaErrorMessage']");
-	By EM_Owners_totoalPercentage = By.xpath("//div[@id='divRunningTotal']");
 	
 
 	/***************************************************************************************
@@ -310,6 +313,8 @@ public class EntityUnitBrowser extends ExtentManager {
 		By entityManager_search_withName = By.xpath("//input[@id='SearchControl1_Input']");
 		By entityManager_search_withID = By.xpath("//input[@id='SearchControl2_Input']");
 		By entityManager_search = By.xpath("//input[@id='imgbtnSearch']");
+		
+	
 
 	
 	public EntityUnitBrowser(WebDriver driver, Properties data2, Properties data) {
@@ -1597,5 +1602,121 @@ public class EntityUnitBrowser extends ExtentManager {
 }
 
 
+	public void fnEntityManagerOwnersAddNew(String textData) {
+		childTest = test.createNode("Description: Add New ~ Owners" + "<br>"
+				+ "<< Screen Name : Entity Manager->Ownership->Owners >></br>");
+		if (textData.contains("0%")) {
+			childTest.log(Status.PASS, "Total percentage before adding owner is 0%.");
+		} else {
+			childTest.log(Status.FAIL, "Total percentage before adding owner is not 0%.");
+		}
+		try {
+
+			driver.switchTo().frame("Iframe1");
+			fm.fnWebButton(driver, EM_Owners_Save, "Save");
+			/*
+			 * new WebDriverWait(driver, 50)
+			 * .until(ExpectedConditions.visibilityOfElementLocated(EM_Owners_errMessage));
+			 * String ownerErrtext = driver.findElement(EM_Owners_errMessage).getText(); if
+			 * (ownerErrtext.equals("Owner is required")) { childTest.log(Status.PASS,
+			 * "Verification: Click on Save without entering any details, click on Save '" +
+			 * ownerErrtext + "' alert/Message exists"); } else {
+			 * childTest.log(Status.ERROR,
+			 * "Verification:Click on Save without entering any details, click on Save alert/Message does not exists"
+			 * ); }
+			 */
+			String perText = driver.findElement(EM_Owners_Labelpercentage).getText();
+			if (perText.equals("0")) {
+				childTest.log(Status.PASS,
+						"Verification: Total Ownership prior to adding this owner is '" + perText + "'% .");
+			} else {
+				childTest.log(Status.ERROR, "Verification: Total Ownership prior to adding this owner is must be 0% .");
+			}
+			fm.fnWebList(driver, EM_Owners_OwnerType, data.getProperty("Owners_OwnerType"), "Owner Type");
+			fm.fnWebEdit(driver, EM_Owners_OwnerName1, data.getProperty("Owners_OwnerName1"), "Owner Name");
+			fm.fnWebEdit(driver, EM_Owners_PercentageOwned1, data.getProperty("Owners_PercentageOwned1"),
+					"Percentage Owned");
+			fm.fnWebEdit(driver, EM_Owners_AsofDate1, data.getProperty("Owners_AsOfDate1"), "As Of Date");
+			fm.fnWebButton(driver, EM_Owners_AddOwner, "Add Owner");
+			Thread.sleep(2000);
+			fm.fnWebEdit(driver, EM_Owners_OwnerName2, data.getProperty("Owners_OwnerName2"), "Owner Name");
+			fm.fnWebEdit(driver, EM_Owners_PercentageOwned2, data.getProperty("Owners_PercentageOwned2"),
+					"Percentage Owned");
+			fm.fnWebEdit(driver, EM_Owners_AsofDate2, data.getProperty("Owners_AsOfDate2"), "As Of Date");
+			fm.fnWebButton(driver, EM_Owners_Save, "Save");
+			Thread.sleep(5000);
+			String perText1 = driver.findElement(EM_Owners_Labelpercentage).getText();
+			if (perText.equals("100.00")) {
+				childTest.log(Status.PASS,
+						"Verification: Total Ownership prior to adding this owner is '" + perText1 + "'% .");
+			} else {
+				childTest.log(Status.ERROR,
+						"Verification: Total Ownership prior to adding this owner is must be 100.00% .");
+			}
+			/*
+			 * new WebDriverWait(driver, 50)
+			 * .until(ExpectedConditions.visibilityOfElementLocated(EM_Owners_errMessage));
+			 * String ownerErrtext1 = driver.findElement(EM_Owners_errMessage).getText(); if
+			 * (ownerErrtext.equals("Your data was successfully saved")) {
+			 * childTest.log(Status.PASS,
+			 * "Verification: Click on Save after entering any details, click on Save '" +
+			 * ownerErrtext1 + "' alert/Message exists"); } else {
+			 * childTest.log(Status.ERROR,
+			 * "Verification:Click on Save after entering any details, click on Save alert/Message does not exists"
+			 * ); }
+			 */
+			fm.fnWebButton(driver, EM_Owners_Close, "Close");
+
+		} catch (Exception e) {
+			childTest.fail(e);
+		}
+	}
+
+	public void fnEntityManagerOwnersEditViewDetails(int i) {
+		childTest = test.createNode("Description: Edit/View Details~ Owners" + "<br>"
+				+ "<< Screen Name : Entity Manager->Ownership->Owners >></br>");
+		try {
+			driver.switchTo().frame("Iframe1");
+			System.out.println("this is in Edit");
+			if (i == 2) {
+				System.out.println("in row 2");
+				fm.fnWebEditCompare(driver, EM_Owners_OwnerName, data.getProperty("Owners_OwnerName2"), "Owner Name");
+				fm.fnWebEditCompare(driver, EM_Owners_PercentageOwned, data.getProperty("Owners_PercentageOwned2"),
+						"Percentage Owned");
+				fm.fnWebEditCompare(driver, EM_Owners_AsofDate, data.getProperty("Owners_AsOfDate2"), "As Of Date");
+			} else {
+				System.out.println("in row 3");
+				fm.fnWebEditCompare(driver, EM_Owners_OwnerName, data.getProperty("Owners_OwnerName1"), "Owner Name");
+				fm.fnWebEditCompare(driver, EM_Owners_PercentageOwned, data.getProperty("Owners_PercentageOwned1"),
+						"Percentage Owned");
+				fm.fnWebEditCompare(driver, EM_Owners_AsofDate, data.getProperty("Owners_AsOfDate1"), "As Of Date");
+			}
+			fm.fnWebButton(driver, EM_Owners_Close, "Close");
+		} catch (Exception e) {
+			childTest.fail(e);
+		}
+	}
+
+	public void fnLogOff() throws InterruptedException {
+		childTest = test.createNode("Description:LogOut of the Tool " + "<br>" + "<< Screen Name:  >></br>");
+		Set<String> s = driver.getWindowHandles();
+		Iterator<String> ite = s.iterator();
+		int i = 1;
+		driver.switchTo().defaultContent();
+		while (ite.hasNext() && i <= s.size()) {
+			String popHandle = ite.next().toString();
+			driver.switchTo().window(popHandle);
+			if (driver.getTitle().equalsIgnoreCase("WorkFlow Manager")) {
+				driver.switchTo().frame("bottom");// Switch to respective window
+				driver.switchTo().frame("content");
+				driver.switchTo().frame("bottomFrame");
+				fm.fnWebButton(driver, By.xpath("//*[@id='divLogoutLink']"), "OWM Logout");
+			} else if (driver.getTitle().equalsIgnoreCase("Onesource")) {
+				driver.switchTo().frame("header");
+				fm.fnWebButton(driver, By.xpath("//*[@id='btnLogOff']"), "LS1 Logout");
+			}
+		}
+		driver.quit();
+	}
 
 }
