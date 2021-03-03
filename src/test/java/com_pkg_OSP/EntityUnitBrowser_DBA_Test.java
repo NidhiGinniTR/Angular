@@ -32,7 +32,7 @@ public class EntityUnitBrowser_DBA_Test extends BrowserInvoke {
 	public void Initialize() throws IOException {
 		driver = InvokeDriver();
 		driver.get(propEnv.getProperty("URL"));
-		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 	}
 
 	@Test(dependsOnMethods = "Initialize")
@@ -117,6 +117,7 @@ public class EntityUnitBrowser_DBA_Test extends BrowserInvoke {
 			fm.fnWebButton(driver, By.xpath("//div[@class='btn-group']//*[@class='btn btn-primary dropdown-toggle']"),
 					"Actions");
 			lp.fnOWMActionsMenu("Customize View", "");
+			Thread.sleep(1000);
 			lp.fnSwitchtoWindow(3, "Customize View");
 			Thread.sleep(1000);
 			String[] array = new String[] { "DBA Name", "Description", "From Date", "Status", "County",

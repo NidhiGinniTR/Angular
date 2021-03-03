@@ -421,7 +421,7 @@ public class EntityUnitBrowser extends ExtentManager {
 	 ***************************************************************************************/
 	public void fnSearchEntity() throws InterruptedException {
 		childTest = test.createNode("Description: Search the Entity" + "<br>" + "<< Screen Name : LS1 Page >></br>");
-		
+		try {
 			driver.findElement(By.xpath("//img[@id='imgSplitter']")).click();
 			//fm.fnWebButton(driver, Splitter, "Splitter");
 			fm.fnWebButton(driver, EUB_Clear, "Clear");
@@ -434,7 +434,7 @@ public class EntityUnitBrowser extends ExtentManager {
 			//childTest.log(Status.PASS, "Entered Client Name successfully.");
 			//Thread.sleep(500);
 			WebElement EntityName = driver.findElement(By.xpath("//input[@id='SearchControl1_Input']"));
-			EntityName.sendKeys(template.getProperty("Eub_EntityName"));
+			EntityName.sendKeys(template.getProperty("EnitytName"));
 			EntityName.sendKeys(Keys.ARROW_DOWN);
 			EntityName.sendKeys(Keys.ENTER);
 			childTest.log(Status.PASS, "Entered Entity Name successfully.");
@@ -457,6 +457,10 @@ public class EntityUnitBrowser extends ExtentManager {
 			 * template.getProperty(""), "PPOB State/Province"); fm.fnWebList(driver,
 			 * EUB_PPOBCountryRegion, template.getProperty(""), "PPOB Country/Region");
 			 */
+		}catch(Exception e) {
+			childTest.fail(e);
+		}
+			
 		
 
 	}
@@ -1112,7 +1116,7 @@ public class EntityUnitBrowser extends ExtentManager {
 	 ***************************************************************************************/
 	public void fnArchive() throws InterruptedException {
 		childTest = test.createNode("Description: Archive in Tax Id's/Registration" + "<br>"
-				+ "<<Screen Name: Entity Information >></br>");
+				+ "<< Screen Name: Entity Information >></br>");
 		String SaveMsg = driver.findElement(By.xpath("//label[@id='dialog-label']")).getText();
 		try {
 			if (SaveMsg.contains("Are you sure you want to archive?")) {
@@ -1150,7 +1154,7 @@ public class EntityUnitBrowser extends ExtentManager {
 	 ***************************************************************************************/
 	public void fnEditTaxIds() throws InterruptedException {
 		childTest = test.createNode("Description: Edit/View Details in Tax Id's/Registration" + "<br>"
-				+ "<<Screen Name: Entity Manager >></br>");
+				+ "<< Screen Name: Entity Manager >></br>");
 		try {
 			if (driver.getTitle().equalsIgnoreCase("Entity Manager")) {
 				driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -1226,8 +1230,8 @@ public class EntityUnitBrowser extends ExtentManager {
 	 ***************************************************************************************/
 
 	public void business_Taxinfo() throws InterruptedException {
-		childTest = test.createNode(
-				"Description: Giving business/Tax info details" + "<br>" + "<<Screen Name: Entity information >></br>");
+		childTest = test.createNode("Description: Giving business/Tax info details" + "<br>" + "<< Screen Name: Entity information >></br>");
+		
 		//driver.switchTo().defaultContent();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.findElement(By.xpath("//td[@id='tdBusiness']")).click(); //Navigate to business tab
@@ -1261,8 +1265,8 @@ public class EntityUnitBrowser extends ExtentManager {
 	 * This function is used to perform in Edit and view on Business Tax Page
 	 ***************************************************************************************/
 	public void viewBusinessTax() throws InterruptedException {
-		childTest = test.createNode(
-				"Description: View Business Info Tab " + "<br>" + "<<Screen Name: Entity Information >></br>");
+		childTest = test.createNode("Description: View Business Info Tab " + "<br>" + "<< Screen Name: Entity Information >></br>");
+		
 		try {
 			//driver.switchTo().defaultContent();
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -1300,7 +1304,7 @@ public class EntityUnitBrowser extends ExtentManager {
 	 ***************************************************************************************/
 	public void responsibility_info() throws InterruptedException {
 		childTest = test.createNode(
-				"Description: Responsibility Information" + "<br>" + "<<Screen Name: Entity information >></br>");
+				"Description: Responsibility Information" + "<br>" + "<< Screen Name: Entity information >></br>");
 		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.findElement(By.xpath("//td[@id='tdResponsibility']")).click(); //Navigate to business tab
@@ -1343,7 +1347,7 @@ public class EntityUnitBrowser extends ExtentManager {
 	 ***************************************************************************************/
 	public void viewResonsblityInfo() throws InterruptedException {
 		childTest = test.createNode(
-				"Description: View Responsiblity Info Tab" + "<br>" + "<<Screen Name: Entity Information >></br>");
+				"Description: View Responsiblity Info Tab" + "<br>" + "<< Screen Name: Entity Information >></br>");
 		try {
 			//driver.switchTo().defaultContent();
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -1391,7 +1395,7 @@ public class EntityUnitBrowser extends ExtentManager {
 	 ***************************************************************************************/
 	public void key_contacts() throws InterruptedException {
 		childTest = test.createNode(
-				"Description: Key Contacts" + "<br>" + "<<Screen Name: Entity information >></br>");
+				"Description: Key Contacts" + "<br>" + "<< Screen Name: Entity information >></br>");
 		//driver.switchTo().defaultContent();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.findElement(By.xpath("//td[@id='tdKeyContacts']")).click(); //Navigate to Key Contacts tab
@@ -1432,7 +1436,7 @@ public class EntityUnitBrowser extends ExtentManager {
 	
 	public void viewKeyContacts() throws InterruptedException {
 		childTest = test.createNode(
-				"Description: View Kay Contacts Tab" + "<br>" + "<<Screen Name: Entity Information >></br>");
+				"Description: View Kay Contacts Tab" + "<br>" + "<< Screen Name: Entity Information >></br>");
 		try {
 			//driver.switchTo().defaultContent();
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -1478,7 +1482,7 @@ public class EntityUnitBrowser extends ExtentManager {
 	
 	public void page_Links() throws InterruptedException {
 		childTest = test.createNode(
-				"Description: Page Links" + "<br>" + "<<Screen Name: Entity information >></br>");
+				"Description: Page Links" + "<br>" + "<< Screen Name: Entity information >></br>");
 		driver.switchTo().defaultContent();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.findElement(By.xpath("//td[@id='tdPageLinks']")).click(); //Navigate to Page Links
@@ -1535,8 +1539,8 @@ public class EntityUnitBrowser extends ExtentManager {
 	 * This function is used to perform double click entity
 	 ***************************************************************************************/
 	public void doubleclickEntity() throws InterruptedException {
-		childTest = test.createNode(
-				"Description: Double click Entity" + "<br>" + "<<Screen Name: ONESOURCE >></br>");
+		childTest = test.createNode("Description: Double click Entity" + "<br>" + "<< Screen Name: ONESOURCE >></br>");
+		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.switchTo().frame("maincontent");
 		driver.switchTo().frame("app_iFrame");
@@ -1576,8 +1580,8 @@ public class EntityUnitBrowser extends ExtentManager {
 	}
 	
 	public void navtoEditview() throws InterruptedException {
-		childTest = test.createNode(
-				"Description: Edit or view the details of basic info tab" + "<br>" + "<<Screen Name: Entity Information >></br>");
+		childTest = test.createNode("Description: Edit or view the details of basic info tab" + "<br>" + "<< Screen Name: Entity Information >></br>");
+		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		fm.fnWebButton(driver, actions_Entity, "Actions");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

@@ -29,7 +29,7 @@ public class EUB_Test extends BrowserInvoke {
 	public void Initialize() throws IOException {
 		driver = InvokeDriver();
 		driver.get(propEnv.getProperty("URL"));
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(80, TimeUnit.SECONDS);
 	}
 
 	@Test(dependsOnMethods = "Initialize")
@@ -59,6 +59,7 @@ public class EUB_Test extends BrowserInvoke {
 		Eub.fnOWMActionsMenu("Add New", "");
 
 		// Step-6------------------------Create a New Entity-------------------------------------//
+		Thread.sleep(1000);
 		lp.fnSwitchtoWindow(2, "Create Entity Page");
 		driver.switchTo().frame("addeditFrame1");
 		Eub.fnCreateEntity();

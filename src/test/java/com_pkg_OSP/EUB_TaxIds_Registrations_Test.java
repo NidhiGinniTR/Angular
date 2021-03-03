@@ -103,6 +103,7 @@ public class EUB_TaxIds_Registrations_Test extends BrowserInvoke {
 		
 		Eub.fnClickActionsTaxID();
 		Eub.fnOWMActionsMenu("Customize View", "");
+		Thread.sleep(1500);
 		lp.fnSwitchtoWindow(3, "Customize View");
 		String[] array3 = new String[] { "Authority Name", "Jurisdiction", "Form Tax Type", "DBA", "Notes",
 				"Renewal Date", "Authority Name2" };
@@ -115,6 +116,7 @@ public class EUB_TaxIds_Registrations_Test extends BrowserInvoke {
 
 		Eub.fnClickActionsTaxID();
 		Eub.fnOWMActionsMenu("Save Preferences", "");
+		Thread.sleep(1000);
 		Eub.fnSavePreferences("Save Preferences");
 
 		//Step-13:----------------Save Preferences for All-----------------------------------//
@@ -127,6 +129,7 @@ public class EUB_TaxIds_Registrations_Test extends BrowserInvoke {
 	@AfterClass
 	void closeBrowser() throws InterruptedException {
 		// FunctionLibrary.fnLogOff(driver);
+		driver.quit();
 	}
 
 	@AfterSuite
