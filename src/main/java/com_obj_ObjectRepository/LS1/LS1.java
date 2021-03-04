@@ -101,7 +101,8 @@ public class LS1 extends ExtentManager {
 		if (winName != null || driver.getTitle().equals(winName)) {
 			childTest.info("Switched to " + winName + " window.");
 		} else {
-			childTest.fail("Failed to Switch to " + winName + " window.");
+			childTest.info("Failed to Switch to " + winName + " window. Trying to switch again");
+			fnSwitchtoWindow(winNum,winName);
 		}
 	}
 
