@@ -59,7 +59,7 @@ public class EUB_Test extends BrowserInvoke {
 		Eub.fnOWMActionsMenu("Add New", "");
 
 		// Step-6------------------------Create a New Entity-------------------------------------//
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		lp.fnSwitchtoWindow(2, "Entity Information");
 		driver.switchTo().frame("addeditFrame1");
 		Eub.fnCreateEntity();
