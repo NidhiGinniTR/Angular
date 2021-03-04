@@ -92,7 +92,7 @@ public class EUB_TaxIds_Registrations_Test extends BrowserInvoke {
 		fm.fnWebTable(driver, driver.findElement(By.xpath("//tr[@id='gridTaxIds_grdEntityManager_row_0']")), "Click");
 		Eub.fnClickActionsTaxID();
 		Eub.fnOWMActionsMenu("Edit/View Details", "");
-		lp.fnSwitchtoWindow(3, "Edit/View Details Page");
+		lp.fnSwitchtoWindow(3, "Entity Manager");
 		Eub.fnEditTaxIds();
 
 		//Step-11:----------------Customize View-----------------------------------//

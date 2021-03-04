@@ -1064,7 +1064,7 @@ public class EntityUnitBrowser extends ExtentManager {
 
 			fm.fnWebButton(driver, JurisdictionName_LookUp, "Jurisdiction Name Lookup");
 			LS1 lp = new LS1(driver, data, template);
-			lp.fnSwitchtoWindow(4, "Entity Manager");
+			lp.fnSwitchtoWindow(4, "Jurisdiction Lookup");
 			Thread.sleep(2500);
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			fm.fnWebEdit(driver, JurisdictionName, template.getProperty("TaxId_Jurisdiction"), "Jurisdiction Name");
@@ -1079,7 +1079,7 @@ public class EntityUnitBrowser extends ExtentManager {
 
 			fm.fnWebButton(driver, AuthorityName_LookUp, "Authority Name Lookup");
 			Thread.sleep(2500);
-			lp.fnSwitchtoWindow(4, "Entity Manager");
+			lp.fnSwitchtoWindow(4, "Authority Name Lookup");
 			// fm.fnWebEdit(driver, AuthorityName_2,
 			// template.getProperty("TaxId_AuthorityName"), "Authority Name");
 			// fm.fnWebButton(driver, Search, "Search");

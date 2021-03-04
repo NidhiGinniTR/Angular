@@ -60,12 +60,12 @@ public class EUB_Test extends BrowserInvoke {
 
 		// Step-6------------------------Create a New Entity-------------------------------------//
 		Thread.sleep(1000);
-		lp.fnSwitchtoWindow(2, "Create Entity Page");
+		lp.fnSwitchtoWindow(2, "Entity Information");
 		driver.switchTo().frame("addeditFrame1");
 		Eub.fnCreateEntity();
 
 		// Step-7:--------------------Search created Entity--------------------------------//
-		lp.fnSwitchtoWindow(1, "LS1");
+		lp.fnSwitchtoWindow(1, "Onesource");
 
 		driver.switchTo().defaultContent();
 		driver.switchTo().frame("maincontent");
@@ -86,7 +86,7 @@ public class EUB_Test extends BrowserInvoke {
 		Eub.fnEditDeatils_Entity();
 
 		// Step-10:----------------------Search Entity------------------------------//
-		lp.fnSwitchtoWindow(1, "LS1");
+		lp.fnSwitchtoWindow(1, "Onesource");
 
 		driver.switchTo().defaultContent();
 		driver.switchTo().frame("maincontent");
@@ -99,14 +99,14 @@ public class EUB_Test extends BrowserInvoke {
 		// Step-11:--------------------Copy Entity--------------------------------//
 		Eub.fnClickActions();
 		Eub.fnOWMActionsMenu("Copy to New", "");
-		lp.fnSwitchtoWindow(2, "Copy");
+		lp.fnSwitchtoWindow(2, "Copy Entity");
 		Eub.copyentity();
 		
 		// Step-12:---------------------Import Entity-------------------------------// //
 		// Eub.fnEntityManagerImport();
 		
 		// Step-13:----------------------------------------------------//
-		lp.fnSwitchtoWindow(1, "LS1");
+		lp.fnSwitchtoWindow(1, "Onesource");
 
 		driver.switchTo().defaultContent();
 		driver.switchTo().frame("maincontent");
@@ -123,7 +123,7 @@ public class EUB_Test extends BrowserInvoke {
 
 		// Step-15:----------------Save Preferences-----------------------------------//
 
-		lp.fnSwitchtoWindow(1, "LS1");
+		lp.fnSwitchtoWindow(1, "Onesource");
 		driver.switchTo().defaultContent();
 		driver.switchTo().frame("maincontent");
 		driver.switchTo().frame("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad");
