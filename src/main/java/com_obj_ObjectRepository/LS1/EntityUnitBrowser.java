@@ -524,8 +524,9 @@ public class EntityUnitBrowser extends ExtentManager {
 			String SaveMsg = driver.findElement(By.xpath("//span[@id='spaErrorMessage']")).getText();
 			// System.out.println(driver.findElement(By.xpath("//span[@id='spaErrorMessage']")).getText());
 			if (SaveMsg.equalsIgnoreCase("Your data was successfully saved")) {
-				childTest.info("Required feilds to be filled before saving");
+				childTest.info("Successfully data is saved in Add New Entity Page");
 			}
+			Thread.sleep(1000);
 			fm.fnWebButton(driver, Close, "Close");
 		} catch (Exception e) {
 			childTest.fail(e);
@@ -1051,7 +1052,7 @@ public class EntityUnitBrowser extends ExtentManager {
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		if (driver.getTitle().equalsIgnoreCase("Entity Manager")) {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			Thread.sleep(1000);
+			Thread.sleep(1500);
 			driver.switchTo().frame("Iframe1");
 			fm.fnWebButton(driver, click_save, "Save");
 			String errormsg = driver.findElement(By.xpath("//span[@id='spaErrorMessage']")).getText();
@@ -1064,7 +1065,7 @@ public class EntityUnitBrowser extends ExtentManager {
 			fm.fnWebButton(driver, JurisdictionName_LookUp, "Jurisdiction Name Lookup");
 			LS1 lp = new LS1(driver, data, template);
 			lp.fnSwitchtoWindow(4, "Entity Manager");
-			Thread.sleep(1500);
+			Thread.sleep(2500);
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			fm.fnWebEdit(driver, JurisdictionName, template.getProperty("TaxId_Jurisdiction"), "Jurisdiction Name");
 			fm.fnWebButton(driver, Jurisdiction_Search, "Search");
@@ -1074,10 +1075,10 @@ public class EntityUnitBrowser extends ExtentManager {
 
 			lp.fnSwitchtoWindow(3, "Entity Manager");
 			driver.switchTo().frame("Iframe1");
-			Thread.sleep(1500);
+			Thread.sleep(2500);
 
 			fm.fnWebButton(driver, AuthorityName_LookUp, "Authority Name Lookup");
-			Thread.sleep(1500);
+			Thread.sleep(2500);
 			lp.fnSwitchtoWindow(4, "Entity Manager");
 			// fm.fnWebEdit(driver, AuthorityName_2,
 			// template.getProperty("TaxId_AuthorityName"), "Authority Name");
@@ -1092,7 +1093,7 @@ public class EntityUnitBrowser extends ExtentManager {
 			// template.getProperty("TaxId_AuthorityName2"), "Authority Name2");
 			lp.fnSwitchtoWindow(3, "Entity Manager");
 			driver.switchTo().frame("Iframe1");
-			Thread.sleep(1500);
+			Thread.sleep(2500);
 			fm.fnWebList(driver, Address_Name, template.getProperty("TaxId_AddressName"), "Address Name");
 
 			fm.fnWebEdit(driver, TaxId_Registration, template.getProperty("TaxId_Registration"), "Tax Id/Registration");

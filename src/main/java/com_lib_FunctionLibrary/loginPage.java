@@ -105,8 +105,8 @@ public class loginPage extends ExtentManager {
 	 * This function is used to select menu item from Actions
 	 */
 	public  void fnOWMActionsMenu(String item, String subItem) throws InterruptedException {
-		if (driver.getTitle().equalsIgnoreCase("WorkFlow Manager")
-				|| driver.getTitle().equalsIgnoreCase("Folder WorkFlows") || driver.getTitle().equalsIgnoreCase("Entity Information")) {
+		//if (driver.getTitle().equalsIgnoreCase("WorkFlow Manager")
+				//|| driver.getTitle().equalsIgnoreCase("Folder WorkFlows") || driver.getTitle().equalsIgnoreCase("Entity Information")) {
 			// WorkFlowBrowser actionsMenu = new WorkFlowBrowser(driver);
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			java.util.List<WebElement> menuitems = driver.findElements(By.xpath("//table[@class='MenuGroup']//td[ @class='MenuItem']"));
@@ -130,7 +130,7 @@ public class loginPage extends ExtentManager {
 					break;
 				}
 			}
-		}
+		//}
 	}
 	
 }

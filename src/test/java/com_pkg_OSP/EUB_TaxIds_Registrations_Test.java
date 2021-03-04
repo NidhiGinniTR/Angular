@@ -29,7 +29,7 @@ public class EUB_TaxIds_Registrations_Test extends BrowserInvoke {
 	public void Initialize() throws IOException {
 		driver = InvokeDriver();
 		driver.get(propEnv.getProperty("URL"));
-		driver.manage().timeouts().implicitlyWait(80, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 	}
 
 	@Test(dependsOnMethods = "Initialize")
