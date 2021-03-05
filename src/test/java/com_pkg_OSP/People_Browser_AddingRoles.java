@@ -61,7 +61,7 @@ public class People_Browser_AddingRoles  extends BrowserInvoke {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
 		ppl_browser.actions();
-		ppl_browser.fnOWMActionsMenu(driver, "Edit/View Details", "");
+		ppl_browser.fnOWMActionsMenu("Edit/View Details", "");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		lp.fnSwitchtoWindow(2, "Individual Profile");
 		
@@ -87,7 +87,7 @@ public class People_Browser_AddingRoles  extends BrowserInvoke {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.switchTo().frame("gridFrame");
 		ppl_browser.actions();
-		ppl_browser.fnOWMActionsMenu(driver, "Edit/View Details", "");
+		ppl_browser.fnOWMActionsMenu("Edit/View Details", "");
 		lp.fnSwitchtoWindow(2, "Individual Profile");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.findElement(By.xpath("//tr[@id='gridIndividualEntitiesRole_grdEntityManager_row_0']")).click();

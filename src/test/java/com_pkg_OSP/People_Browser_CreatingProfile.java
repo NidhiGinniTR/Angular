@@ -52,7 +52,7 @@ public class People_Browser_CreatingProfile extends BrowserInvoke {
 		driver.switchTo().frame("gridFrame");
 		ppl_browser.actions();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		ppl_browser.fnOWMActionsMenu(driver, "Add New", "");
+		ppl_browser.fnOWMActionsMenu("Add New", "");
 		
 		//Step-4:--------Creating New Individual Profile------------//
 		

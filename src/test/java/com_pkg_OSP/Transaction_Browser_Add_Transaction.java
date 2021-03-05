@@ -54,7 +54,7 @@ public class Transaction_Browser_Add_Transaction extends BrowserInvoke {
 		driver.switchTo().frame("gridFrame");
 		ppl_browser.actions();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		ppl_browser.fnOWMActionsMenu(driver, "Add New", "");
+		ppl_browser.fnOWMActionsMenu("Add New", "");
 		lp.fnSwitchtoWindow(2, "Entity Manager");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.switchTo().frame("Iframe1");

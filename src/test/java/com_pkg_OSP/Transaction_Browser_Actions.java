@@ -60,7 +60,7 @@ public class Transaction_Browser_Actions  extends BrowserInvoke{
 				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 				
 				ppl_browser.actions();
-				ppl_browser.fnOWMActionsMenu(driver, "Edit/View Details", "");
+				ppl_browser.fnOWMActionsMenu("Edit/View Details", "");
 				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 				lp.fnSwitchtoWindow(2, "Entity Manager");
 				driver.switchTo().frame("Iframe1");
@@ -93,7 +93,7 @@ public class Transaction_Browser_Actions  extends BrowserInvoke{
 				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 				driver.switchTo().frame("gridFrame");
 				ppl_browser.actions();
-				ppl_browser.fnOWMActionsMenu(driver, "Archive", "");
+				ppl_browser.fnOWMActionsMenu("Archive", "");
 				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 				driver.findElement(By.xpath("//button[@id='dialog-button-action']")).click();
 				
@@ -101,7 +101,7 @@ public class Transaction_Browser_Actions  extends BrowserInvoke{
 		// Step-8:----------------Purge Entity-----------------------------------//
 				
 				ppl_browser.actions();
-				ppl_browser.fnOWMActionsMenu(driver, "Purge", "");
+				ppl_browser.fnOWMActionsMenu("Purge", "");
 				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 				lp.fnSwitchtoWindow(2, "Delete Entity");
 				ppl_browser.deleteEntity("Delete Entity");
@@ -116,7 +116,7 @@ public class Transaction_Browser_Actions  extends BrowserInvoke{
 				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 				driver.switchTo().frame("gridFrame");
 				ppl_browser.actions();
-				ppl_browser.fnOWMActionsMenu(driver, "Customize View", "");
+				ppl_browser.fnOWMActionsMenu("Customize View", "");
 				lp.fnSwitchtoWindow(2, "Customize View");
 				String[] array1 = new String[] { "From Entity Name", "From Entity ID" };
 				ppl_browser.fnCustomizeView(array1);
@@ -129,14 +129,14 @@ public class Transaction_Browser_Actions  extends BrowserInvoke{
 				driver.switchTo().frame("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad");
 				driver.switchTo().frame("gridFrame");
 				ppl_browser.actions();
-				ppl_browser.fnOWMActionsMenu(driver, "Save Preferences", "");
+				ppl_browser.fnOWMActionsMenu("Save Preferences", "");
 				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 				ppl_browser.fnSavePreferences("Save Preferences");
 
 		// Step-11:----------------Save Preferences for All-----------------------------------//
 					
 				ppl_browser.actions();
-				ppl_browser.fnOWMActionsMenu(driver, "Save Preferences for All", "");
+				ppl_browser.fnOWMActionsMenu("Save Preferences for All", "");
 				driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 				ppl_browser.fnSavePreferences("Save Preferences for All");
 						

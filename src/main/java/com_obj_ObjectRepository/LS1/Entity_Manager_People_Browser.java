@@ -398,7 +398,7 @@ public class Entity_Manager_People_Browser extends ExtentManager{
 	/************************************************************************/
 	
 	
-	public static void fnOWMActionsMenu(WebDriver driver, String item, String subItem) throws InterruptedException {
+	public  void fnOWMActionsMenu( String item, String subItem) throws InterruptedException {
 		if (driver.getTitle().equalsIgnoreCase("ONESOURCE")) {
 			// WorkFlowBrowser actionsMenu = new WorkFlowBrowser(driver);
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
