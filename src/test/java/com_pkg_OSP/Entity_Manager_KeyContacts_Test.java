@@ -65,7 +65,7 @@ public class Entity_Manager_KeyContacts_Test extends BrowserInvoke {
 						
 			//Step-5:---------View Responsibility Info Tab------------//
 						
-				lp.fnSwitchtoWindow(1, "LS1");
+				lp.fnSwitchtoWindow(1, "Onesource");
 				driver.switchTo().defaultContent();
 				Eub.doubleclickEntity();
 				lp.fnSwitchtoWindow(2, "Entity Information");

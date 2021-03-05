@@ -14,6 +14,7 @@
 			<class name="com_pkg_OSP.EUB_TaxIds_Registrations_Test" />
 			<class name="com_pkg_OSP.Entity_Manager_PageLinks_Test" />
 			<class name="com_pkg_OSP.EntityUnitBrowser_Ownership_Owners_Test" />
+
 	</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
