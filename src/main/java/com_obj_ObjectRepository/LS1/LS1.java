@@ -51,6 +51,7 @@ public class LS1 extends ExtentManager {
 		childTest = test.createNode("Description: Entering UniversalID and Password." + "<br>"
 				+ "<< Screen Name : OneSource Login Page >></br>");
 		if (driver.getTitle().equalsIgnoreCase("ONESOURCE") || driver.getTitle().equalsIgnoreCase("THOMSON REUTERS")) {
+			driver.manage().window().maximize();
 			fm.fnWebButton(driver, EngUS, "English-US");
 			fm.fnWebEdit(driver, UserName, loginData.getProperty("UserName"), "UniversalID");
 			fm.fnWebEdit(driver, Password, loginData.getProperty("Password"), "Password");
