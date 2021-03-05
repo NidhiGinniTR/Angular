@@ -7,6 +7,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+
 //import org.testng.Assert;
 import com.aventstack.extentreports.Status;
 import com_helper_Reporting.ExtentManager;
@@ -88,5 +90,42 @@ public class FrameWork2 extends ExtentManager {
 			action.moveToElement(oParent).doubleClick().build().perform();
 			break;
 		}
+	}
+	
+	public void fnWebEditCompare(WebDriver driver,By element,String text,String label) {
+        WebElement wait = new WebDriverWait(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(element));
+        if (wait.isDisplayed()) {
+            String enteredText = driver.findElement(element).getAttribute("value");
+            if (enteredText.equalsIgnoreCase(text)) {
+                childTest.log(Status.PASS, label + " = '" + text + "' is matched.");
+            } else {
+                childTest.log(Status.FAIL, label + " = '" + text + "' is not matched.");
+            }
+
+ 
+
+        } else {
+            childTest.log(Status.FAIL, "Element is either notvisible or displayed.");
+        }
+
+ 
+
+    }
+	
+	public void fnWebListCompare(WebDriver driver, By element, String text, String label) throws InterruptedException {
+		WebElement wait = new WebDriverWait(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(element));
+		if (wait.isDisplayed()) {
+		Select listelement = new Select(driver.findElement(element));
+		String enteredText = listelement.getFirstSelectedOption().getText();
+		if (enteredText.equalsIgnoreCase(text)) {
+		childTest.log(Status.PASS, label + " = '" + text + "' is matched.");
+		} else {
+		Assert.assertTrue(false);
+		childTest.log(Status.FAIL, label + " = '" + text + "' is not matched.");
+		}
+		}
+
+		 
+
 	}
 }
