@@ -1048,9 +1048,9 @@ public class EntityUnitBrowser extends ExtentManager {
 	 ***************************************************************************************/
 	public void fnAddNewTaxId() throws InterruptedException {
 		childTest = test.createNode("Description: Entering all the fields to create new Tax Id's/Registration" + "<br>"
-				+ "<<Screen Name: Entity Manager >></br>");
+				+ "<< Screen Name: Entity Manager >></br>");
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		if (driver.getTitle().equalsIgnoreCase("Entity Manager")) {
+		if (driver.getTitle() .contains("Entity Manager")) {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			Thread.sleep(1500);
 			driver.switchTo().frame("Iframe1");
@@ -1078,7 +1078,7 @@ public class EntityUnitBrowser extends ExtentManager {
 			Thread.sleep(2500);
 
 			fm.fnWebButton(driver, AuthorityName_LookUp, "Authority Name Lookup");
-			Thread.sleep(2500);
+			Thread.sleep(5500);
 			lp.fnSwitchtoWindow(4, "Authority Name Lookup");
 			// fm.fnWebEdit(driver, AuthorityName_2,
 			// template.getProperty("TaxId_AuthorityName"), "Authority Name");
@@ -1433,6 +1433,7 @@ public class EntityUnitBrowser extends ExtentManager {
 		if(errormsg.equalsIgnoreCase("Your data was successfully saved")) {
 			childTest.info("Entered data was saved successfully");
 		}
+		Thread.sleep(1000);
 		fm.fnWebButton(driver, Close, "Close");
 		
 	}
@@ -1445,7 +1446,8 @@ public class EntityUnitBrowser extends ExtentManager {
 				"Description: View Kay Contacts Tab" + "<br>" + "<< Screen Name: Entity Information >></br>");
 		try {
 			//driver.switchTo().defaultContent();
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			Thread.sleep(1000);
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			driver.findElement(By.xpath("//td[@id='tdKeyContacts']")).click(); //Navigate to business tab
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			driver.switchTo().frame("addeditFrame1");

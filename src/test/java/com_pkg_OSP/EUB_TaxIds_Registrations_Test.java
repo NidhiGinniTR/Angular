@@ -48,6 +48,7 @@ public class EUB_TaxIds_Registrations_Test extends BrowserInvoke {
 		driver.switchTo().frame("gridFrame");
 		EntityUnitBrowser Eub = new EntityUnitBrowser(driver, propEnv, propSerialData);
 		Eub.fnSearchEntity();
+		Thread.sleep(1000);
 
 		// Step-4:-------------------Select Entity---------------------------------//
 		FrameWork fm = new FrameWork();
