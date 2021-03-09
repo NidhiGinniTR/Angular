@@ -75,13 +75,14 @@ public class Entity_Manager_BusinessTaxInfo_Test extends BrowserInvoke{
 		Eub.viewBusinessTax();
 		
 		//Step--------LogOFF-------------------------------//
-		//em.fnLogOff();
+		//Eub.fnLogOff();
 	}
 	
 	
 	@AfterClass
 	void closeBrowser() throws InterruptedException {
-		//FunctionLibrary.fnLogOff(driver);
+		//EntityUnitBrowser Eub = new EntityUnitBrowser(driver, propEnv, propSerialData);
+		//Eub.fnLogOff();
 		driver.quit();
 	}
 

@@ -24,15 +24,15 @@
           <include name="beforeStart"/>
         </methods>
       </class> <!-- com_pkg_OSP.EntityUnitBrowser_DBA_Test -->
-      <class name="com_pkg_OSP.EntityUnitBrowser_Ownership_Owners_Test">
+      <class name="com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test">
         <methods>
-          <include name="aftersuite"/>
-          <include name="beforeStart"/>
-          <include name="Ownership_Owners"/>
           <include name="closeBrowser"/>
+          <include name="beforeStart"/>
+          <include name="BusinessTaxInfo"/>
           <include name="Initialize"/>
+          <include name="aftersuite"/>
         </methods>
-      </class> <!-- com_pkg_OSP.EntityUnitBrowser_Ownership_Owners_Test -->
+      </class> <!-- com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test -->
       <class name="com_pkg_OSP.Entity_Manager_ResponsibilityInfo_Test">
         <methods>
           <include name="beforeStart"/>
@@ -42,15 +42,6 @@
           <include name="Initialize"/>
         </methods>
       </class> <!-- com_pkg_OSP.Entity_Manager_ResponsibilityInfo_Test -->
-      <class name="com_pkg_OSP.EUB_TaxIds_Registrations_Test">
-        <methods>
-          <include name="closeBrowser"/>
-          <include name="beforeStart"/>
-          <include name="aftersuite"/>
-          <include name="EUB_TaxIds"/>
-          <include name="Initialize"/>
-        </methods>
-      </class> <!-- com_pkg_OSP.EUB_TaxIds_Registrations_Test -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

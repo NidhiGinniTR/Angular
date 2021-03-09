@@ -8,8 +8,11 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -64,7 +67,8 @@ public class EntityUnitBrowser_DBA_Test extends BrowserInvoke {
 		//Step----------NavigatetoDBA--------------------------//
 			fm.fnWebButton(driver, By.xpath("//label[@id='lblDBA']"),"DBA");
 			Thread.sleep(1000);
-			driver.switchTo().frame("gridFrame1");
+			WebDriverWait wait = new WebDriverWait(driver, 60);
+			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame1"));
 			List<WebElement> rows = driver.findElements(By.xpath("//DIV[@id='gridDBA_grdEntityManager_dom']/TABLE[1]/TBODY[1]/TR"));
 			Actions action = new Actions(driver);
 			if(rows.size()>1) {
@@ -96,7 +100,7 @@ public class EntityUnitBrowser_DBA_Test extends BrowserInvoke {
 			Thread.sleep(1000);
 			fm.fnWebButton(driver, By.xpath("//label[@id='lblDBA']"),"DBA");
 			Thread.sleep(1000);
-			driver.switchTo().frame("gridFrame1");
+			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame1"));
 			fm.fnWebTable(driver,
 					driver.findElement(By.xpath("//DIV[@id='gridDBA_grdEntityManager_dom']/TABLE[1]/TBODY[1]/TR[2]")),
 					"Click");
@@ -113,7 +117,7 @@ public class EntityUnitBrowser_DBA_Test extends BrowserInvoke {
 			Thread.sleep(1500);
 			fm.fnWebButton(driver, By.xpath("//label[@id='lblDBA']"),"DBA");
 			Thread.sleep(1000);
-			driver.switchTo().frame("gridFrame1");
+			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame1"));
 			fm.fnWebButton(driver, By.xpath("//div[@class='btn-group']//*[@class='btn btn-primary dropdown-toggle']"),
 					"Actions");
 			lp.fnOWMActionsMenu("Customize View", "");
@@ -130,7 +134,7 @@ public class EntityUnitBrowser_DBA_Test extends BrowserInvoke {
 			Thread.sleep(1500);
 			fm.fnWebButton(driver, By.xpath("//label[@id='lblDBA']"),"DBA");
 			Thread.sleep(1000);
-			driver.switchTo().frame("gridFrame1");
+			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame1"));
 			fm.fnWebButton(driver, By.xpath("//div[@class='btn-group']//*[@class='btn btn-primary dropdown-toggle']"),
 					"Actions");
 			lp.fnOWMActionsMenu("Save Preferences", "");
@@ -162,7 +166,8 @@ public class EntityUnitBrowser_DBA_Test extends BrowserInvoke {
 
 	@AfterClass
 	void closeBrowser() throws InterruptedException {
-		// FunctionLibrary.fnLogOff(driver);
+		//EntityUnitBrowser Eub = new EntityUnitBrowser(driver, propEnv, propSerialData);
+		//Eub.fnLogOff();
 		driver.quit();
 	}
 

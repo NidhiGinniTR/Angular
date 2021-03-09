@@ -61,12 +61,10 @@ public class EUB_Test extends BrowserInvoke {
 		// Step-6------------------------Create a New Entity-------------------------------------//
 		Thread.sleep(3000);
 		lp.fnSwitchtoWindow(2, "Entity Information");
-		driver.switchTo().frame("addeditFrame1");
 		Eub.fnCreateEntity();
 
 		// Step-7:--------------------Search created Entity--------------------------------//
 		lp.fnSwitchtoWindow(1, "Onesource");
-
 		driver.switchTo().defaultContent();
 		driver.switchTo().frame("maincontent");
 		driver.switchTo().frame("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad");
@@ -82,7 +80,6 @@ public class EUB_Test extends BrowserInvoke {
 		
 		// Step-9:--------------------Verify Edit/View Details--------------------------------//
 		lp.fnSwitchtoWindow(2, "Entity Information");
-		driver.switchTo().frame("addeditFrame1");
 		Eub.fnEditDeatils_Entity();
 
 		// Step-10:----------------------Search Entity------------------------------//
@@ -137,12 +134,16 @@ public class EUB_Test extends BrowserInvoke {
 		Eub.fnOWMActionsMenu("Save Preferences for All", "");
 		Eub.fnSavePreferences("Save Preferences for All");
 		
+		//Step-16-----------------LogOff--------------------------------------------------------//
+			Eub.fnLogOff();
+		
 	}
 
 	@AfterClass
 	void closeBrowser() throws InterruptedException {
+		//EntityUnitBrowser Eub = new EntityUnitBrowser(driver, propEnv, propSerialData);
+		//Eub.fnLogOff();
 		driver.quit();
-		// FunctionLibrary.fnLogOff(driver);
 	}
 
 	@AfterSuite
