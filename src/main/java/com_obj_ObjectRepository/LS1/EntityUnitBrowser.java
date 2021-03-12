@@ -304,11 +304,129 @@ public class EntityUnitBrowser extends ExtentManager {
 	 * These element locators belongs to Search Entity
 	 * 
 	 ***************************************************************************************/
-
 	By entityManager_search_withName = By.xpath("//input[@id='SearchControl1_Input']");
 	By entityManager_search_withID = By.xpath("//input[@id='SearchControl2_Input']");
 	By entityManager_search = By.xpath("//input[@id='imgbtnSearch']");
 
+	/***************************************************************************************
+	 * These element locators belongs to action button in Documents
+	 ***************************************************************************************/
+	By EM_Doc_Actions = By.xpath("//img[@id='Img3']");
+	By EM_Doc_EntityName = By.xpath("//input[@id='idx_000000000B']");
+	By EM_Doc_EntityId = By.xpath("//input[@id='idx_000000000C']");
+	By EM_Doc_TaxType = By.xpath("//select[@id='idx_000000000D']");
+	By EM_Doc_Year = By.xpath("//select[@id='idx_000000000E']");
+	By EM_Doc_Period = By.xpath("//select[@id='idx_000000000F']");
+	By EM_Doc_Jurisdiction = By.xpath("//input[@id='idx_000000000G']");
+	By EM_Doc_Description = By.xpath("//input[@id='idx_000000000H']");
+	By EM_Doc_FileSection = By.xpath("//select[@id='idx_000000000I']");
+	By EM_Doc_DocumentType = By.xpath("//select[@id='idx_000000000J']");
+	By EM_Doc_DocumentDate = By.xpath("//input[@id='idx_000000000K']");
+	By EM_Doc_WorkflowAssociation = By.xpath("//select[@id='idx_000000000L']");
+	By EM_Doc_AssignedTo = By.xpath("//select[@id='assignedto']");
+	By EM_Doc_Status = By.xpath("//select[@id='docstatus']");
+	By EM_Doc_DueDate = By.xpath("//input[@id='duedate']");
+	By EM_Doc_Notify = By.xpath("//select[@id='emailAdr']");
+	By EM_Doc_Browse = By.xpath("//img[@id='Upload1_FileInputImage0']");
+	By EM_Doc_Save = By.xpath("//img[@id='btn-upload']");
+	By EM_Doc_Close = By.xpath("//img[@id='btnClose']");
+	
+	/***************************************************************************************
+	 * These element locators belongs to Search fields in Documents
+	 ***************************************************************************************/
+	By EM_Doc_Search_WFTemplate = By.xpath("//select[@id='wt_name']");
+	By EM_Doc_Search_Year = By.xpath("//select[@id='fldr_4']");
+	By EM_Doc_Search_EntityName = By.xpath("//input[@id='wf_14']");
+	By EM_Doc_Search_EntityId = By.xpath("//input[@id='wf_15']");
+	By EM_Doc_Search_Period = By.xpath("//select[@id='fldr_5']");
+	By EM_Doc_Search_TaxType = By.xpath("//select[@id='fldr_6']");
+	By EM_Doc_Search_Jurisdiction = By.xpath("//input[@id='wf_17']");
+	By EM_Doc_Search_WorkflowAssociation = By.xpath("//select[@id='wf_18']");
+	By EM_Doc_Search_Description = By.xpath("//input[@id='idx_000000000H']");
+	By EM_Doc_Search_FileSection = By.xpath("//select[@id='idx_000000000I']");
+	By EM_Doc_Search_DocumentType = By.xpath("//select[@id='idx_000000000J']");
+	By EM_Doc_Search_WorkflowType = By.xpath("//Select[@id='fw_workflow_type']");
+	By EM_Doc_Search= By.xpath("//img[@id='imgSearch']");
+	By EM_Doc_Clear = By.xpath("//img[@id='imgClear']");
+	
+	
+	/***************************************************************************************
+	 * These element locators belongs to New Folder in Workflow Browser
+	 ***************************************************************************************/
+	By EM_Wf_Year = By.xpath("//select[@id='fldr_4']");
+	By EM_Wf_Period = By.xpath("//select[@id='fldr_5']");
+	By EM_Wf_TaxType = By.xpath("//select[@id='fldr_6']");
+	By EM_Wf_WFTemplate = By.xpath("//select[@id='fw_workflow_template_id']");
+	By EM_Wf_EntityName = By.xpath("//input[@id='wf_14']");
+	By EM_Wf_EntityID = By.xpath("//input[@id='wf_15']");
+	By EM_Wf_Jurisdiction = By.xpath("//input[@id='wf_17']");
+	By EM_Wf_WorkflowAssociation = By.xpath("//select[@id='wf_18']");
+	By EM_Wf_DueDate = By.xpath("//input[@id='fw_due_date']");
+	By EM_Wf_WorkflowDescription = By.xpath("//input[@id='fw_workflow_name']");
+	By EM_Wf_RouteTo = By.xpath("//select[@id='route_to']");
+	By EM_Wf_NotifyCheck = By.xpath("//input[@id='notify_by_email']");
+	By EM_Wf_RoutingDueDate = By.xpath("//input[@id='routing_due_date']");
+	By EM_Wf_Save = By.xpath("//img[@id='btnSave']");
+	By EM_Wf_Close = By.xpath("//img[@id='btnClose']");
+	
+	/***************************************************************************************
+	 * These element locators belongs to Add New Bussiness in Entity Manager
+	 ***************************************************************************************/
+	By EM_BS_BussinessName =  By.xpath("//input[@id='businessname']");
+	By EM_BS_BussinessId =  By.xpath("//input[@id='businessid']");
+	By EM_BS_Description =  By.xpath("//input[@id='description']");
+	By EM_BS_Status =  By.xpath("//Select[@id='status']");
+	By EM_BS_Address1 =  By.xpath("//input[@id='address1']");
+	By EM_BS_Address2 =  By.xpath("//input[@id='address2']");
+	By EM_BS_City =  By.xpath("//input[@id='city']");
+	By EM_BS_Country =  By.xpath("//input[@id='county']");
+	By EM_BS_Country1 =  By.xpath("//input[@id='country_Input']");
+	By EM_BS_ZipCode =  By.xpath("//input[@id='zip']");
+	By EM_BS_State =  By.xpath("//input[@id='state_Input']");
+	By EM_BS_ContactName =  By.xpath("//input[@id='contactname']");
+	By EM_BS_MainTelephone =  By.xpath("//input[@id='maintelephone']");
+	By EM_BS_AlternateTelephone =  By.xpath("//input[@id='alternatetelephone']");
+	By EM_BS_Email =  By.xpath("//input[@id='email']");
+	By EM_BS_Fax =  By.xpath("//input[@id='fax']");
+	By EM_BS_OccupancyCertificate =  By.xpath("//input[@id='certificatenumber']");
+	By EM_BS_ExpiryDate =  By.xpath("//input[@id='certexpdate']");
+	By EM_BS_FromDate =  By.xpath("//input[@id='fromdate']");
+	By EM_BS_ToDate =  By.xpath("//input[@id='todate']");
+	By EM_BS_TaxID =  By.xpath("//Select[@id='multiplesource']");
+	By EM_BS_TaxIdPlus =  By.xpath("//img[@id='addMultiple']");
+	By EM_BS_Notes =  By.xpath("//textarea[@id='notes']");
+	By EM_BS_Ok = By.xpath("//button[@id='dialog-button-close']");
+	By EM_NameOfInstitue = By.xpath("//input[@id='nameofinstitution']");
+	By EM_BankId = By.xpath("//input[@id='bankid']");
+	By EM_AternateContact =  By.xpath("//input[@id='alternatecontact']");
+	
+	/***************************************************************************************
+	 * These element locators belongs to Account Details in Entity Manager
+	 ***************************************************************************************/
+	By EM_AccountNumber = By.xpath("//input[@id='accountnumber']");
+	By EM_Category =  By.xpath("//Select[@id='category']");
+	By EM_InceptionDate = By.xpath("//input[@id='inceptiondate']");
+	By EM_ExpirationDate = By.xpath("//input[@id='expirationdate']");
+	By EM_Status =  By.xpath("//Select[@id='status']");
+	By EM_Type =  By.xpath("//Select[@id='type']");
+	By EM_Signature1 = By.xpath("//input[@id='signature1']");
+	By EM_Signature2 = By.xpath("//input[@id='signature2']");
+	By EM_Signature3 = By.xpath("//input[@id='signature3']");
+	By EM_Signature4 = By.xpath("//input[@id='signature4']");
+	By EM_Notes = By.xpath("//input[@id='notes']");
+	By EM_Save = By.xpath("//img[@id='btnSave']");
+	By EM_Contact = By.xpath("//input[@id='maincontact']");
+	By EM_Email = By.xpath("//input[@id='mainemail']");
+	
+	/***************************************************************************************
+	 * These element locators belongs to Intercompany Payments in Entity Manager
+	 ***************************************************************************************/
+	By EM_FromEntity = By.xpath("//input[@id='fromentity1_Input']");
+	By EM_ToEntity = By.xpath("//input[@id='toentity_00001_Input']");
+	By EM_Date = By.xpath("//input[@id='trandate_00001']");
+	By EM_Stream = By.xpath("//Select[@id='streamid_00001']");
+	By EM_Amount = By.xpath("//input[@id='payment_00001']");
+	
 	public EntityUnitBrowser(WebDriver driver, Properties data2, Properties data) {
 		this.driver = driver;
 		this.template = data;
@@ -353,8 +471,8 @@ public class EntityUnitBrowser extends ExtentManager {
 	 * This function is used to Click Menu Items in Actions menu
 	 ***************************************************************************************/
 	public void fnOWMActionsMenu(String item, String subItem) throws InterruptedException {
-		if (driver.getTitle().equalsIgnoreCase("ONESOURCE")
-				|| driver.getTitle().equalsIgnoreCase("Entity Information")) {
+		//if (driver.getTitle().equalsIgnoreCase("ONESOURCE")
+			//	|| driver.getTitle().equalsIgnoreCase("Entity Information")) {
 			// WorkFlowBrowser actionsMenu = new WorkFlowBrowser(driver);
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			java.util.List<WebElement> menuitems = driver.findElements(By.className("MenuItem"));
@@ -378,7 +496,7 @@ public class EntityUnitBrowser extends ExtentManager {
 					break;
 				}
 			}
-		}
+		//}
 	}
 
 	/***************************************************************************************
@@ -1803,4 +1921,629 @@ public class EntityUnitBrowser extends ExtentManager {
 
 		return result;
 	}
+
+	/***************************************************************************************
+	 * This function is used to Add Document
+	 ***************************************************************************************/
+	public void fnEM_AddDocument() {
+		childTest = test.createNode("Description: Add Document in Entity Manager " + "<br>"
+				+ "<< Screen Name: Add Document >></br>");
+		try {
+			Thread.sleep(1000);
+			//if(driver.getTitle().contains("Add document")) {
+				System.out.println(driver.getTitle());
+				driver.switchTo().frame("frame1");
+				fm.fnWebButton(driver, EM_Doc_Save, "Save");
+				
+				String errormsg = driver.findElement(By.xpath("//span[@id='spaErrorMessage']")).getText();
+				if (errormsg.equalsIgnoreCase("Select a physical document to upload.")) {
+					childTest.info("Required feilds to be filled before saving");
+				} else {
+					childTest.fail("Alert didn't popup");
+				}
+				
+				
+				fm.fnWebEdit(driver, EM_Doc_EntityName, template.getProperty("Entity_Name"), "Entity Name");
+				fm.fnWebEdit(driver, EM_Doc_EntityId, template.getProperty("Entity_Id"), "Entity Id");
+				fm.fnWebList(driver, EM_Doc_TaxType, template.getProperty("TaxType"), "Tax Type");
+				fm.fnWebList(driver, EM_Doc_Year, template.getProperty("Year"), "Year");
+				fm.fnWebList(driver, EM_Doc_Period, template.getProperty("Period"), "Period");
+				fm.fnWebEdit(driver, EM_Doc_Jurisdiction, template.getProperty("Jurisdiction"), "Jurisdiction");
+				fm.fnWebEdit(driver, EM_Doc_Description, template.getProperty("doc_Description"), "Description");
+				//fm.fnWebList(driver, EM_Doc_FileSection, template.getProperty("doc_FileSection"), "File Section");
+				//fm.fnWebList(driver, EM_Doc_DocumentType, template.getProperty("doc_DocumentType"), "Document Type");
+				fm.fnWebEdit(driver, EM_Doc_DocumentDate, template.getProperty("doc_DocumentDate"), "Document Date");
+				fm.fnWebList(driver, EM_Doc_WorkflowAssociation, template.getProperty("Workflow_Association"), "Workflow Association");
+				fm.fnWebList(driver, EM_Doc_AssignedTo, template.getProperty("AssignedTo"), "Assigned To");
+				fm.fnWebList(driver, EM_Doc_Status, template.getProperty("Status"), "Status");
+				fm.fnWebEdit(driver, EM_Doc_DueDate, template.getProperty("doc_DueDate"), "Due Date");
+				fm.fnWebList(driver, EM_Doc_Notify, template.getProperty("AssignedTo"), "Notify");
+				fm.fnWebButton(driver, EM_Doc_Browse, "Browse");
+				
+				String path = "C:\\RapidScripts\\Documents\\Doc";
+				setClipboardData(path);
+				//driver.findElement(By.xpath("//TD[@id='tdSelectDocument']/TABLE[1]/tbody/tr[2]/td[2]")).click();
+				Robot robot = new Robot();
+				robot.keyPress(KeyEvent.VK_CONTROL);
+				robot.keyPress(KeyEvent.VK_V);
+				robot.keyRelease(KeyEvent.VK_V);
+				robot.keyRelease(KeyEvent.VK_CONTROL);
+				robot.keyPress(KeyEvent.VK_ENTER);
+				robot.keyRelease(KeyEvent.VK_ENTER);
+				Thread.sleep(1000);
+				fm.fnWebButton(driver, EM_Doc_Save, "Save");
+				Thread.sleep(10000);
+				if(driver.switchTo().alert().getText().contains("Saved Successfully")){
+					driver.switchTo().alert().accept();
+					childTest.pass("Document Created successfully");
+				}else {
+					childTest.fail("Document not creatred");
+				}
+				//}else {
+					//childTest.fail("Add Document Page not found");
+				//}
+		}catch(Exception e) {
+			childTest.fail(e);
+		}
+	}
+	
+	/***************************************************************************************
+	 * This function is used to Search Document
+	 ***************************************************************************************/
+	public void fnEM_SearchDocument() {
+		childTest = test.createNode("Description: Search Document" + "<br>" + "<< Screen Name: Documents >></br>");
+		try {
+			if (driver.getTitle().equalsIgnoreCase("ONESOURCE")) {
+				fm.fnWebButton(driver, Splitter, "Splitter");
+				fm.fnWebButton(driver, EM_Doc_Clear, "Clear");
+				driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+				//fm.fnWebList(driver, EM_Doc_Search_WFTemplate, template.getProperty(""), "W/F Template");
+				fm.fnWebList(driver, EM_Doc_Search_Year, template.getProperty("Year"), "Year");
+				fm.fnWebEdit(driver, EM_Doc_Search_EntityName, template.getProperty("Entity_Name"), "Entity Name");
+				fm.fnWebEdit(driver, EM_Doc_Search_EntityId, template.getProperty("Entity_Id"), "Entity Id");
+				fm.fnWebList(driver, EM_Doc_Search_Period, template.getProperty("Period"), "Period");
+				fm.fnWebList(driver, EM_Doc_Search_TaxType, template.getProperty("TaxType"), "Tax Type");
+				fm.fnWebList(driver, EM_Doc_Search_WorkflowAssociation, template.getProperty("Workflow_Association"),
+						"Workflow Association");
+				fm.fnWebEdit(driver, EM_Doc_Search_Jurisdiction, template.getProperty("Jurisdiction"), "Jurisdiction");
+				fm.fnWebEdit(driver, EM_Doc_Search_Description, template.getProperty("doc_Description"), "Description");
+				// fm.fnWebList(driver, EM_Doc_Search_FileSection, template.getProperty(""),
+				// "File Section");
+				// fm.fnWebList(driver, EM_Doc_Search_DocumentType, template.getProperty(""),
+				// "Document Type");
+				// fm.fnWebList(driver, EM_Doc_Search_WorkflowType, template.getProperty(""),
+				// "Workflow Type");
+				fm.fnWebButton(driver, EM_Doc_Search, "Search");
+				fm.fnWebButton(driver, Splitter, "Splitter");
+			}
+		} catch (Exception e) {
+			childTest.fail(e);
+		}
+	}
+
+	/***************************************************************************************
+	 * This function is used to Document Properties
+	 ***************************************************************************************/
+	public void fnDocumentProperties() {
+		childTest = test.createNode("Description: Document Properties" + "<br>" + "<< Screen Name: Document Properties >></br>");
+		try {
+			if (driver.getTitle().equalsIgnoreCase("Document Properties")) {
+				fm.fnWebEditCompare(driver, EM_Doc_EntityName, template.getProperty("Entity_Name"), "Entity Name");
+				fm.fnWebEditCompare(driver, EM_Doc_EntityId, template.getProperty("Entity_Id"), "Entity Id");
+				fm.fnWebListCompare(driver, EM_Doc_TaxType, template.getProperty("TaxType"), "Tax Type");
+				fm.fnWebListCompare(driver, EM_Doc_Year, template.getProperty("Year"), "Year");
+				fm.fnWebListCompare(driver, EM_Doc_Period, template.getProperty("Period"), "Period");
+				fm.fnWebEditCompare(driver, EM_Doc_Jurisdiction, template.getProperty("Jurisdiction"), "Jurisdiction");
+				fm.fnWebEditCompare(driver, EM_Doc_Description, template.getProperty("doc_Description"), "Description");
+				fm.fnWebEditCompare(driver, EM_Doc_DocumentDate, template.getProperty("doc_DocumentDate"), "Document Date");
+				fm.fnWebListCompare(driver, EM_Doc_WorkflowAssociation, template.getProperty("Workflow_Association"), "Workflow Association");
+				fm.fnWebButton(driver, EM_Doc_Save, "Save");
+				Thread.sleep(1000);
+				if(driver.switchTo().alert().getText().contains("Saved Successfully")){
+					driver.switchTo().alert().accept();
+					childTest.pass("Document Verified successfully");
+				}else {
+					childTest.fail("Document not Verified");
+				}
+			}
+		}catch(Exception e) {
+			childTest.fail(e);
+		}
+			
+	}
+	
+	/***************************************************************************************
+	 * This function is used to Change Status
+	 ***************************************************************************************/
+	public void fnChangeStatus() {
+		childTest = test.createNode("Description: Change Status" + "<br>" + "<< Screen Name: LS1  >></br>");
+		try {
+			System.out.println(driver.switchTo().alert().getText());
+			if(driver.switchTo().alert().getText().contains("Document(s) updated successfully")){
+				driver.switchTo().alert().accept();
+				childTest.pass("Changed Status Successfully");
+			}else {
+				childTest.fail("Status not changed");
+			}
+		}catch(Exception e) {
+			childTest.fail(e);
+		}
+	}
+	
+	/***************************************************************************************
+	 * This function is used to Delet Document in Entity Manager
+	 ***************************************************************************************/
+	public void fnDeleteDocument() {
+		childTest = test.createNode("Description: Delete Document " + "<br>" + "<< Screen Name: LS1  >></br>");
+		try {
+			if(driver.switchTo().alert().getText().contains("Are you sure you want to delete?")) {
+				driver.switchTo().alert().accept();
+				Thread.sleep(5500);
+				if(driver.switchTo().alert().getText().contains("Document(s) deleted successfully")) {
+					driver.switchTo().alert().accept();
+				}
+				childTest.pass("Document Deleted successfully");
+			}else {
+				childTest.fail("Document not deleted");
+			}
+		}catch(Exception e) {
+			childTest.fail(e);
+		}
+	}
+	
+	/***************************************************************************************
+	 * This function is used to create a New Folder in Entity Manager
+	 ***************************************************************************************/
+	public void fnEM_NewFolder() {
+		childTest = test.createNode("Description: Create New Folder " + "<br>" + "<< Screen Name: New Folder  >></br>");
+		try {
+			if(driver.getTitle().equalsIgnoreCase("New Folder")) {
+				fm.fnWebList(driver, EM_Wf_Year, template.getProperty("Year"), "Year");
+				fm.fnWebList(driver, EM_Wf_Period, template.getProperty("Period"), "Period");
+				fm.fnWebList(driver, EM_Wf_TaxType, template.getProperty("TaxType"), "Tax Type");
+				//fm.fnWebList(driver, EM_Wf_WFTemplate, template.getProperty(""), "W/F Template");
+				fm.fnWebEdit(driver, EM_Wf_EntityName, template.getProperty("Entity_Name"), "Entity Name");
+				fm.fnWebEdit(driver, EM_Wf_EntityID, template.getProperty("Entity_Id"), "Entity Id");
+				fm.fnWebEdit(driver, EM_Wf_Jurisdiction, template.getProperty("Jurisdiction"), "Jurisdiction");
+				fm.fnWebList(driver, EM_Wf_WorkflowAssociation, template.getProperty("Workflow_Association"), "Workflow Association");
+				fm.fnWebEdit(driver, EM_Wf_DueDate, template.getProperty("DueDate"), "Due Date");
+				fm.fnWebEdit(driver, EM_Wf_WorkflowDescription, template.getProperty("doc_Description"), "Workflow Description");
+				fm.fnWebList(driver, EM_Wf_RouteTo, template.getProperty("AssignedTo"), "RouteTo");
+				fm.fnWebCheckBox(driver, EM_Wf_NotifyCheck, "Notify"); 
+				fm.fnWebEdit(driver, EM_Wf_RoutingDueDate, template.getProperty("doc_DueDate"), "Routing Due Date");
+				fm.fnWebButton(driver, EM_Wf_Save, "Save");
+				Thread.sleep(3500);
+				driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+				if(driver.switchTo().alert().getText().contains("Folder saved successfully")){
+					driver.switchTo().alert().accept();
+					childTest.pass("New Folder created successfully");
+				}else {
+					childTest.fail("New Folder not created");
+				}
+			}else {
+				childTest.fail("New Folder Page is not opened");
+			}
+		}catch(Exception e) {
+			childTest.fail(e);
+		}
+	}
+	
+	/***************************************************************************************
+	 * This function is used to Search New Folder in Entity Manager
+	 ***************************************************************************************/
+	public void fnEM_SearchWorkflow() {
+		childTest = test.createNode("Description: Search Workflow " + "<br>" + "<< Screen Name: ONESOURCE  >></br>");
+		try {
+			if (driver.getTitle().contains("ONESOURCE")) {
+				fm.fnWebButton(driver, Splitter, "Splitter");
+				fm.fnWebButton(driver, EM_Doc_Clear, "Clear");
+				driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+				//fm.fnWebList(driver, EM_Doc_Search_WFTemplate, template.getProperty("WF_Template"), "W/F Template");
+				fm.fnWebList(driver, EM_Doc_Search_Year, template.getProperty("Year"), "Year");
+				fm.fnWebEdit(driver, EM_Doc_Search_EntityName, template.getProperty("Entity_Name"), "Entity Name");
+				fm.fnWebEdit(driver, EM_Doc_Search_EntityId, template.getProperty("Entity_Id"), "Entity Id");
+				fm.fnWebList(driver, EM_Doc_Search_Period, template.getProperty("Period"), "Period");
+				fm.fnWebList(driver, EM_Doc_Search_TaxType, template.getProperty("TaxType"), "Tax Type");
+				fm.fnWebList(driver, EM_Doc_Search_WorkflowAssociation, template.getProperty("Workflow_Association"),
+						"Workflow Association");
+				fm.fnWebEdit(driver, EM_Doc_Search_Jurisdiction, template.getProperty("Jurisdiction"), "Jurisdiction");
+				//fm.fnWebList(driver, EM_Doc_Search_WorkflowType, template.getProperty(""),"Workflow Type");
+				fm.fnWebButton(driver, EM_Doc_Search, "Search");
+				fm.fnWebButton(driver, Splitter, "Splitter");
+			} else {
+				childTest.fail("Search Fields not Found");
+			}
+		} catch (Exception e) {
+			childTest.fail(e);
+		}
+	}
+
+	/***************************************************************************************
+	 * This function is used to Search New Workflow in Entity Manager
+	 ***************************************************************************************/
+	public void fnEM_NewWorkflow() {
+		childTest = test.createNode("Description: Create New Workflow " + "<br>" + "<< Screen Name: New Workflow  >></br>");
+		try {
+			Thread.sleep(1000);
+			if(driver.getTitle().contains("New WorkFlow")) {
+				
+				//fm.fnWebList(driver, EM_Wf_WFTemplate, template.getProperty(""), "W/F Template");
+				fm.fnWebEdit(driver, EM_Wf_EntityName, template.getProperty("Entity_Name"), "Entity Name");
+				fm.fnWebEdit(driver, EM_Wf_EntityID, template.getProperty("Entity_Id"), "Entity Id");
+				fm.fnWebEdit(driver, EM_Wf_Jurisdiction, template.getProperty("Jurisdiction"), "Jurisdiction");
+				fm.fnWebList(driver, EM_Wf_WorkflowAssociation, template.getProperty("Workflow_Association"), "Workflow Association");
+				fm.fnWebEdit(driver, EM_Wf_DueDate, template.getProperty("DueDate"), "Due Date");
+				fm.fnWebEdit(driver, EM_Wf_WorkflowDescription, template.getProperty("doc_Description"), "Workflow Description");
+				fm.fnWebList(driver, EM_Wf_RouteTo, template.getProperty("AssignedTo"), "RouteTo");
+				fm.fnWebCheckBox(driver, EM_Wf_NotifyCheck, "Notify"); 
+				fm.fnWebEdit(driver, EM_Wf_RoutingDueDate, template.getProperty("doc_DueDate"), "Routing Due Date");
+				fm.fnWebButton(driver, EM_Wf_Save, "Save");
+				Thread.sleep(4500);
+				driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+				if(driver.switchTo().alert().getText().contains("Saved Successfully")){
+					driver.switchTo().alert().accept();
+					childTest.pass("New Workflow created successfully");
+				}else {
+					childTest.fail("New Workflow not created");
+				}
+			}else {
+				childTest.fail("New Workflow Page is not opened");
+			}
+		}catch(Exception e) {
+			childTest.fail(e);
+		}
+	}
+
+	/***************************************************************************************
+	 * This function is used to Delet Workflow in Entity Manager
+	 ***************************************************************************************/
+	public void fnDeleteWorkflow() {
+		childTest = test.createNode("Description: Delete Workflow " + "<br>" + "<< Screen Name: ONESOURCE  >></br>");
+		try {
+			if(driver.switchTo().alert().getText().contains("Are you sure you want to delete?")) {
+				driver.switchTo().alert().accept();
+				Thread.sleep(2500);
+				if(driver.switchTo().alert().getText().contains("Workflow deleted successfully")) {
+					driver.switchTo().alert().accept();
+					childTest.pass("Deleted Workflow successfully");
+				}else {
+					childTest.fail("Workflow not deleted/Alert is missing");
+				}
+			}else {
+				childTest.fail("Workflow not deleted");
+			}
+		}catch(Exception e) {
+			childTest.fail(e);
+		}
+	}
+
+	/***************************************************************************************
+	 * This function is used to verify WorkFlow Properties
+	 ***************************************************************************************/
+	public void fnWorkflowProperties() {
+		childTest = test.createNode("Description: Verifying WorkFlow Properties" + "<br>" + "<< Screen Name: WorkFlow Properties >></br>");
+		try {
+			Thread.sleep(1000);
+			if (driver.getTitle().contains("WorkFlow Properties")) {
+				fm.fnWebEditCompare(driver, EM_Wf_EntityName, template.getProperty("Entity_Name"), "Entity Name");
+				fm.fnWebEditCompare(driver, EM_Wf_EntityID, template.getProperty("Entity_Id"), "Entity Id");
+				
+				fm.fnWebEditCompare(driver, EM_Wf_Jurisdiction, template.getProperty("Jurisdiction"), "Jurisdiction");
+				fm.fnWebEditCompare(driver, EM_Wf_WorkflowDescription, template.getProperty("doc_Description"), "Description");
+				fm.fnWebEditCompare(driver, EM_Wf_DueDate, template.getProperty("DueDate"), "Due Date");
+				fm.fnWebListCompare(driver, EM_Wf_WorkflowAssociation, template.getProperty("Workflow_Association"), "Workflow Association");
+				fm.fnWebButton(driver, EM_Wf_Save, "Save");
+				Thread.sleep(2500);
+				if(driver.switchTo().alert().getText().contains("Saved Successfully")){
+					driver.switchTo().alert().accept();
+					childTest.pass("Workflow Verified successfully");
+				}else {
+					childTest.fail("Workflow not Verified");
+				}
+			}else {
+				childTest.fail("Workflow Properties Page is not displayed");
+			}
+		}catch(Exception e) {
+			childTest.fail(e);
+		}
+			
+	}
+
+	/***************************************************************************************
+	 * This function is used to Reset Checklist
+	 ***************************************************************************************/
+	public void fnResetChecklist() {
+		childTest = test.createNode("Description: Reset Checklist" + "<br>" + "<< Screen Name: ONESOURCE >></br>");
+		try {
+			if (driver.switchTo().alert().getText().contains("You are about to reset checklists. Do you wish to continue?")) {
+				driver.switchTo().alert().accept();
+				Thread.sleep(6500);
+				if(driver.switchTo().alert().getText().contains("Checklist(s) have been reset for Workflow(s).")) {
+					Thread.sleep(1500);
+					driver.switchTo().alert().accept();
+				}else {
+					childTest.fail("Checklist(s) have been reset Alert is missing");
+				}
+			}else {
+				childTest.fail("You are about to reset checklists alert is missing");
+			}
+		}catch(Exception e) {
+			childTest.fail(e);
+		}
+	}
+	
+	/***************************************************************************************
+	 * This function is used to Create a new Bussiness
+	 ***************************************************************************************/
+	public void fnEM_AddBussiness() {
+		childTest = test.createNode(
+				"Description: Add Bussiness in Entity Manager " + "<br>" + "<< Screen Name: Add Bussiness >></br>");
+		try {
+			Thread.sleep(5500);
+			driver.switchTo().frame("Iframe1");
+			fm.fnWebButton(driver, EM_Wf_Save, "Save");
+			String errormsg = driver.findElement(By.xpath("//span[@id='spaErrorMessage']")).getText();
+			if (errormsg.equalsIgnoreCase("Business Name is required")) {
+				childTest.info("Popup is displayed");
+			} else {
+				childTest.fail("Alert didn't popup");
+			}
+			fm.fnWebEdit(driver, EM_BS_BussinessName, template.getProperty("BussinessName"), "Bussiness Name");
+			fm.fnWebEdit(driver, EM_BS_BussinessId, template.getProperty("BussinessId"), "Bussiness ID");
+			fm.fnWebEdit(driver, EM_BS_Description, template.getProperty("Buss_Description"), "Description");
+			fm.fnWebList(driver, EM_BS_Status, template.getProperty("Buss_Status"), "Status");
+			fm.fnWebEdit(driver, EM_BS_Address1, template.getProperty("Buss_Address"), "Address1");
+			fm.fnWebEdit(driver, EM_BS_Address2, template.getProperty("Buss_Address1"), "Address2");
+			fm.fnWebEdit(driver, EM_BS_City, template.getProperty("Buss_City"), "City");
+			fm.fnWebEdit(driver, EM_BS_Country, template.getProperty("Buss_Country"), "Country");
+			fm.fnWebEdit(driver, EM_BS_Country1, template.getProperty("Buss_Country"), "Country1");
+			fm.fnWebEdit(driver, EM_BS_ZipCode, template.getProperty("Buss_Zipcode"), "Zip Code");
+			fm.fnWebEdit(driver, EM_BS_State, template.getProperty("Buss_State"), "State");
+			fm.fnWebEdit(driver, EM_BS_ContactName, template.getProperty("Buss_ContactName"), "Contact Name");
+			fm.fnWebEdit(driver, EM_BS_MainTelephone, template.getProperty("Buss_Telephone"), "Telephone");
+			fm.fnWebEdit(driver, EM_BS_AlternateTelephone, template.getProperty("Buss_AlternateTelephone"),
+					"Alternate Telephone");
+			fm.fnWebEdit(driver, EM_BS_Email, template.getProperty("Buss_Email"), "Email");
+			fm.fnWebEdit(driver, EM_BS_Fax, template.getProperty("Buss_Fax"), "Fax");
+			fm.fnWebEdit(driver, EM_BS_OccupancyCertificate, template.getProperty("Buss_OccupancyCertificate"),
+					"Occupancy Certificate");
+			fm.fnWebEdit(driver, EM_BS_ExpiryDate, template.getProperty("Buss_ExpiryDate"), "Expiry Date");
+			fm.fnWebEdit(driver, EM_BS_FromDate, template.getProperty("Buss_FromDate"), "From Date");
+			fm.fnWebEdit(driver, EM_BS_ToDate, template.getProperty("Buss_ToDate"), "To Date");
+			fm.fnWebEdit(driver, EM_BS_Notes, template.getProperty("Buss_Notes"), "Notes");
+
+			fm.fnWebButton(driver, EM_Wf_Save, "Save");
+			String errormsg1 = driver.findElement(By.xpath("//span[@id='spaErrorMessage']")).getText();
+			if (errormsg1.equalsIgnoreCase("Your data was successfully saved")) {
+				childTest.info("Popup is displayed");
+			} else {
+				childTest.fail("Alert didn't popup");
+			}
+			Thread.sleep(2500);
+			fm.fnWebButton(driver, EM_Wf_Close, "Close");
+
+		} catch (Exception e) {
+			childTest.fail(e);
+		}
+	}
+	
+	/***************************************************************************************
+	 * This function is used to Create a new Bussiness
+	 ***************************************************************************************/
+	public void fnEM_EditBussiness() {
+		childTest = test.createNode(
+				"Description: Edit/View Details page in Entity Manager " + "<br>" + "<< Screen Name: Edit/View Details >></br>");
+		try {
+			Thread.sleep(5500);
+			driver.switchTo().frame("Iframe1");
+			fm.fnWebEditCompare(driver, EM_BS_BussinessName, template.getProperty("BussinessName"), "Bussiness Name");
+			fm.fnWebEditCompare(driver, EM_BS_BussinessId, template.getProperty("BussinessId"), "Bussiness ID");
+			fm.fnWebEditCompare(driver, EM_BS_Description, template.getProperty("Buss_Description"), "Description");
+			fm.fnWebListCompare(driver, EM_BS_Status, template.getProperty("Buss_Status"), "Status");
+			fm.fnWebEditCompare(driver, EM_BS_Address1, template.getProperty("Buss_Address"), "Address1");
+			fm.fnWebEditCompare(driver, EM_BS_Address2, template.getProperty("Buss_Address1"), "Address2");
+			fm.fnWebEditCompare(driver, EM_BS_City, template.getProperty("Buss_City"), "City");
+			fm.fnWebEditCompare(driver, EM_BS_Country, template.getProperty("Buss_Country"), "Country");
+			fm.fnWebEditCompare(driver, EM_BS_Country1, template.getProperty("Buss_Country"), "Country1");
+			fm.fnWebEditCompare(driver, EM_BS_ZipCode, template.getProperty("Buss_Zipcode"), "Zip Code");
+			fm.fnWebEditCompare(driver, EM_BS_State, template.getProperty("Buss_State"), "State");
+			fm.fnWebEditCompare(driver, EM_BS_ContactName, template.getProperty("Buss_ContactName"), "Contact Name");
+			fm.fnWebEditCompare(driver, EM_BS_MainTelephone, template.getProperty("Buss_Telephone"), "Telephone");
+			fm.fnWebEditCompare(driver, EM_BS_AlternateTelephone, template.getProperty("Buss_AlternateTelephone"),
+					"Alternate Telephone");
+			fm.fnWebEditCompare(driver, EM_BS_Email, template.getProperty("Buss_Email"), "Email");
+			fm.fnWebEditCompare(driver, EM_BS_Fax, template.getProperty("Buss_Fax"), "Fax");
+			fm.fnWebEditCompare(driver, EM_BS_OccupancyCertificate, template.getProperty("Buss_OccupancyCertificate"),
+					"Occupancy Certificate");
+			fm.fnWebEditCompare(driver, EM_BS_ExpiryDate, template.getProperty("Buss_ExpiryDate"), "Expiry Date");
+			fm.fnWebEditCompare(driver, EM_BS_FromDate, template.getProperty("Buss_FromDate"), "From Date");
+			fm.fnWebEditCompare(driver, EM_BS_ToDate, template.getProperty("Buss_ToDate"), "To Date");
+			fm.fnWebEditCompare(driver, EM_BS_Notes, template.getProperty("Buss_Notes"), "Notes");
+
+			fm.fnWebButton(driver, EM_Wf_Save, "Save");
+			Thread.sleep(1000);
+			fm.fnWebButton(driver, EM_BS_Ok, "Ok");
+			Thread.sleep(1000);
+			fm.fnWebButton(driver, EM_Wf_Close, "Close");
+
+		} catch (Exception e) {
+			childTest.fail(e);
+		}
+	}
+
+	/***************************************************************************************
+	 * This function is used to Create a Bank Profile
+	 ***************************************************************************************/
+	public void fnEM_BankProfile() {
+		childTest = test.createNode(
+				"Description: Bank Profile in Entity Manager " + "<br>" + "<< Screen Name: Bank Profile >></br>");
+		try {
+			Thread.sleep(1500);
+			fm.fnWebButton(driver, EM_Wf_Save, "Save");
+			String errormsg = driver.findElement(By.xpath("//span[@id='spaErrorMessage']")).getText();
+			if (errormsg.equalsIgnoreCase("Name of Institution is required")) {
+				childTest.info("Popup is displayed");
+			} else {
+				childTest.fail("Alert didn't popup");
+			}
+			
+			fm.fnWebEdit(driver, EM_NameOfInstitue, template.getProperty("NameOfInstitue"), "Name Of institute");
+			fm.fnWebEdit(driver, EM_BankId, template.getProperty("BankId"), "Bank ID");
+			fm.fnWebEdit(driver, EM_BS_Address1, template.getProperty("Buss_Address"), "Address1");
+			fm.fnWebEdit(driver, EM_BS_Address2, template.getProperty("Buss_Address1"), "Address2");
+			fm.fnWebEdit(driver, EM_BS_City, template.getProperty("Buss_City"), "City");
+			fm.fnWebEdit(driver, EM_BS_Country, template.getProperty("Buss_Country"), "Country");
+			fm.fnWebEdit(driver, EM_BS_Country1, template.getProperty("Buss_Country"), "Country1");
+			fm.fnWebEdit(driver, EM_BS_ZipCode, template.getProperty("Buss_Zipcode"), "Zip Code");
+			//fm.fnWebEdit(driver, EM_BS_State, template.getProperty("EM_State"), "State");
+			//fm.fnWebEdit(driver, EM_Contact, template.getProperty("Buss_ContactName"), "Contact Name");
+			fm.fnWebEdit(driver, EM_BS_MainTelephone, template.getProperty("Buss_Telephone"), "Telephone");
+			fm.fnWebEdit(driver, EM_BS_AlternateTelephone, template.getProperty("Buss_AlternateTelephone"),
+					"Alternate Telephone");
+			fm.fnWebEdit(driver, EM_Email, template.getProperty("Buss_Email"), "Email");
+			fm.fnWebEdit(driver, EM_BS_Notes, template.getProperty("Buss_Notes"), "Notes");
+			fm.fnWebEdit(driver, EM_AternateContact, template.getProperty("AlternateContact"), "Alternate Contact");
+			
+			
+			fm.fnWebButton(driver, EM_Wf_Save, "Save");
+			String errormsg1 = driver.findElement(By.xpath("//span[@id='spaErrorMessage']")).getText();
+			if (errormsg1.equalsIgnoreCase("Your data was successfully saved")) {
+				childTest.info("Popup is displayed");
+			} else {
+				childTest.fail("Alert didn't popup");
+			}
+			Thread.sleep(2500);
+		/*	fm.fnWebButton(driver, By.xpath("//img[@id='btnActionsMenu']"),"Actions");
+			fnOWMActionsMenu("Add New", "");
+			Thread.sleep(1500);
+			lp.fnSwitchtoWindow(4, "Entity Manager");
+			driver.switchTo().frame("Iframe1");
+			fm.fnWebEdit(driver, EM_AccountNumber, template.getProperty(""), "Account Number");
+			fm.fnWebList(driver, EM_Category, template.getProperty(""), "Category");
+			fm.fnWebEdit(driver, EM_InceptionDate, template.getProperty(""), "Inception Date");
+			fm.fnWebEdit(driver, EM_ExpirationDate, template.getProperty(""), "Expiration Date");
+			fm.fnWebList(driver, EM_Status, template.getProperty(""), "Status");
+			fm.fnWebList(driver, EM_Type, template.getProperty(""), "Type");
+			fm.fnWebEdit(driver, EM_Signature1, template.getProperty(""), "Signature1");
+			fm.fnWebEdit(driver, EM_Notes, template.getProperty(""), "Notes");
+			
+			fm.fnWebButton(driver, EM_Save,"Save");*/
+					
+			fm.fnWebButton(driver, EM_Wf_Close, "Close");
+			
+		} catch (Exception e) {
+			childTest.fail(e);
+		}
+	}
+	
+	/***************************************************************************************
+	 * This function is used to Edit a Bank Profile
+	 ***************************************************************************************/
+	public void fnEM_EditBankProfile() {
+		childTest = test.createNode(
+				"Description: Edit Bank Profile in Entity Manager " + "<br>" + "<< Screen Name:Bank Profile >></br>");
+		try {
+			Thread.sleep(1500);
+			fm.fnWebEditCompare(driver, EM_NameOfInstitue, template.getProperty("NameOfInstitue"), "Name Of institute");
+			fm.fnWebEditCompare(driver, EM_BankId, template.getProperty("BankId"), "Bank ID");
+			fm.fnWebEditCompare(driver, EM_BS_Address1, template.getProperty("Buss_Address"), "Address1");
+			fm.fnWebEditCompare(driver, EM_BS_Address2, template.getProperty("Buss_Address1"), "Address2");
+			fm.fnWebEditCompare(driver, EM_BS_City, template.getProperty("Buss_City"), "City");
+			fm.fnWebEditCompare(driver, EM_BS_Country, template.getProperty("Buss_Country"), "Country");
+			fm.fnWebEditCompare(driver, EM_BS_Country1, template.getProperty("Buss_Country"), "Country1");
+			fm.fnWebEditCompare(driver, EM_BS_ZipCode, template.getProperty("Buss_Zipcode"), "Zip Code");
+			fm.fnWebEditCompare(driver, EM_BS_MainTelephone, template.getProperty("Buss_Telephone"), "Telephone");
+			fm.fnWebEditCompare(driver, EM_BS_AlternateTelephone, template.getProperty("Buss_AlternateTelephone"),
+					"Alternate Telephone");
+			fm.fnWebEditCompare(driver, EM_Email, template.getProperty("Buss_Email"), "Email");
+			fm.fnWebEditCompare(driver, EM_BS_Notes, template.getProperty("Buss_Notes"), "Notes");
+			fm.fnWebEditCompare(driver, EM_AternateContact, template.getProperty("AlternateContact"), "Alternate Contact");
+			
+			fm.fnWebButton(driver, EM_Wf_Save, "Save");
+			Thread.sleep(1000);
+			fm.fnWebButton(driver, EM_BS_Ok, "Ok");
+			Thread.sleep(1500);
+			fm.fnWebButton(driver, EM_Wf_Close, "Close");
+			
+		} catch (Exception e) {
+			
+			childTest.fail(e);
+		}	
+			
+	}
+	
+	/***************************************************************************************
+	 * This function is used to Craete a new I/O Transaction
+	 ***************************************************************************************/
+	public void fnEM_IOTransaction() {
+		childTest = test.createNode(
+				"Description: Add New I/O Transaction in Entity Manager " + "<br>" + "<< Screen Name: Entity Manager >></br>");
+		try {
+			Thread.sleep(1500);
+			
+			fm.fnWebButton(driver, EM_Save, "Save");
+			String errormsg = driver.findElement(By.xpath("//span[@id='spaErrorMessage']")).getText();
+			if (errormsg.equalsIgnoreCase("Enter To Entity Name.")) {
+				childTest.info("Popup is displayed");
+			} else {
+				childTest.fail("Alert didn't popup");
+			}
+			//fm.fnWebEdit(driver, EM_FromEntity, template.getProperty(""), "From Entity");
+			//fm.fnWebEdit(driver, EM_ToEntity, template.getProperty("EM_ToEntity"), "To Entity");
+			WebElement ToEntity = driver.findElement(By.xpath("//input[@id='toentity_00001_Input']"));
+			ToEntity.sendKeys(template.getProperty("EM_ToEntity"));
+			ToEntity.sendKeys(Keys.ENTER);
+			
+			fm.fnWebEdit(driver, EM_Date, template.getProperty("EM_Date"), "Date");
+			fm.fnWebList(driver, EM_Stream, template.getProperty("EM_Stream"), "Stream");
+			//fm.fnWebEdit(driver, EM_Amount, template.getProperty(""), "amont");
+			fm.fnWebButton(driver, EM_Save, "Save");
+			String errormsg1 = driver.findElement(By.xpath("//span[@id='spaErrorMessage']")).getText();
+			if (errormsg1.equalsIgnoreCase("Your data was successfully saved")) {
+				childTest.info("Popup is displayed");
+			} else {
+				childTest.fail("Alert didn't popup");
+			}
+			Thread.sleep(2500);
+			fm.fnWebButton(driver, EM_Wf_Close, "Close");
+			
+			
+		} catch (Exception e) {
+			childTest.fail(e);
+		}	
+	}
+
+	/***************************************************************************************
+	 * This function is used to Edit a I/O Transaction
+	 ***************************************************************************************/
+	public void fnEM_EditIOTransaction() {
+		childTest = test.createNode(
+				"Description: Edit I/O Transaction in Entity Manager " + "<br>" + "<< Screen Name: Entity Manager >></br>");
+		try {
+			Thread.sleep(2500);
+			//fm.fnWebEditCompare(driver, EM_FromEntity, template.getProperty("FromEntity"), "From Entity");
+			//fm.fnWebEditCompare(driver, EM_ToEntity, template.getProperty("ToEntity"), "To Entity");
+			//fm.fnWebEditCompare(driver, EM_Date, template.getProperty("EM_Date"), "Date");
+			//fm.fnWebListCompare(driver, EM_Stream, template.getProperty("EM_Stream"), "Stream");
+			//WebElement ToEntity = driver.findElement(By.xpath("//input[@id='toentity_00001_Input']"));
+			//System.out.println(ToEntity.getText());
+			
+			//WebElement Stream = driver.findElement(By.xpath("//Select[@id='streamid_00001']"));
+			//System.out.println(Stream.getText());
+			
+			fm.fnWebButton(driver, EM_Save, "Save");
+			String errormsg1 = driver.findElement(By.xpath("//span[@id='spaErrorMessage']")).getText();
+			if (errormsg1.equalsIgnoreCase("Your data was successfully saved")) {
+				childTest.info("Popup is displayed");
+			} else {
+				childTest.fail("Alert didn't popup");
+			}
+			Thread.sleep(2500);
+			fm.fnWebButton(driver, EM_Wf_Close, "Close");
+			
+		} catch (Exception e) {
+			childTest.fail(e);
+		}
+	}
+
 }
