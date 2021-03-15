@@ -102,7 +102,7 @@ public class FWF_Tasks_Test extends BrowserInvoke {
 		Ev.fnFWFClickActions();
 		Wb.fnOWMActionsMenu(driver, "Add Document", "");
 		lp.fnSwitchtoWindow(4, "Add document");
-		
+		Thread.sleep(1000);
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("frame1"));
 		Tasks Tk = new Tasks(driver,propSerialData);
 		Tk.fnFWFAddDocument();
