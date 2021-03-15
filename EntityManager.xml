@@ -6,8 +6,8 @@
 	</listeners>
 	<test thread-count="5" name="Test">
 		<classes>
-			<class name="com_pkg_OSP.Entity_Manager_Documents_Test" />
-			<class name="com_pkg_OSP.Entity_Manager_WorkflowBrowser_Test" />
+			<class name="com_pkg_OWM.Workflow_Browser.Parallel.OWM_Actions_Test" />
+			
 			
 	</classes>
 	</test> <!-- Test -->

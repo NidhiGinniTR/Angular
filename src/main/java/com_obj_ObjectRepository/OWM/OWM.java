@@ -180,7 +180,7 @@ public class OWM extends ExtentManager{
 		String childid1 = it1.next();
 		Thread.sleep(2000);
 		loginPage lp = new loginPage(driver, template, template);
-		if (driver.getTitle().equals("New Folder")) {
+		if (driver.getTitle().contains("New Folder")) {
 			fm.fnWebList(driver, nf_Year, template.getProperty("Year"), "Year");
 			fm.fnWebList(driver, nf_Period, template.getProperty("Period"), "Period");
 			fm.fnWebList(driver, nf_TaxType, template.getProperty("TaxType"), "TaxType");
