@@ -882,5 +882,88 @@ public class FunctionLibrary extends ExtentManager {
 		}
 		
 	}
+	
+	public static void fnLockingworkflow(WebDriver driver) throws InterruptedException {
+		childTest = test.createNode(
+				"Description: Lock workflow " + "<br>" + "<< Screen Name: Folder Workflow >></br>");
+		Actions action = new Actions(driver);
+		action.moveToElement(driver.findElement(By.xpath("//td[@id='mnuFolderWorkflows_15']"))).click().build().perform();
+		Thread.sleep(2000);
+		driver.switchTo().alert().accept();
+		WebElement locked = driver.findElement(By.xpath("//td[@id='FolderWorkflowGrid_cell_0_0']/div/img"));
+		if(locked.isDisplayed()) {
+			childTest.pass("The selected workflow is locked successfully");
+		}
+		else {
+			childTest.fail("The selected workflow locking is failed");
+		}
+	}
+
+	public static void fnUnLockingworkflow(WebDriver driver) throws InterruptedException {
+		childTest = test.createNode(
+				"Description: UnLock workflow " + "<br>" + "<< Screen Name: Folder Workflow >></br>");
+		WebElement locked = driver.findElement(By.xpath("//td[@id='FolderWorkflowGrid_cell_0_0']/div/img"));
+		if(locked.isDisplayed()) {
+			Actions action_ul = new Actions(driver);
+			action_ul.moveToElement(driver.findElement(By.xpath("//td[@id='FolderWorkflowGrid_cell_0_3']"))).contextClick().build().perform();
+			Thread.sleep(2000);
+		}
+		Actions action = new Actions(driver);
+		action.moveToElement(driver.findElement(By.xpath("//td[@id='mnuFolderWorkflows_16']"))).click().build().perform();
+		Thread.sleep(2000);
+		driver.switchTo().alert().accept();
+	}
+
+	public static void fnsavepreferences(WebDriver driver) throws InterruptedException {
+		childTest = test.createNode(
+				"Description: saving changes of the workflow " + "<br>" + "<< Screen Name: Folder Workflow >></br>");
+		Actions action = new Actions(driver);
+		action.moveToElement(driver.findElement(By.xpath("//td[@id='mnuFolderWorkflows_21']"))).click().build().perform();
+		Thread.sleep(2000);
+		driver.switchTo().alert().accept();
+		childTest.info("All the changes have been saved");
+		
+	}
+
+	public static void fnNavtoaddnewEntity(WebDriver driver) {
+		childTest = test.createNode(
+				"Description:Navigate to add new entity funvtion on entity manager " + "<br>" + "<< Screen Name: ONESOURCE >></br>");
+		driver.switchTo().frame("maincontent");
+		driver.switchTo().frame("app_iFrame");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.switchTo().frame("gridFrame");
+		Actions action = new Actions(driver);
+		action.moveToElement(driver.findElement(By.xpath("//div[@id='dvAction']"))).doubleClick().build().perform();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		action.moveToElement(driver.findElement(By.xpath("//td[@id='mnuEntityBrowser_0']"))).click().build().perform();
+		String winHandleBefore = driver.getWindowHandle();
+
+		for(String winHandle : driver.getWindowHandles()){
+		    driver.switchTo().window(winHandle);
+		}
+		driver.manage().window().maximize();
+		
+	}
+
+	public static void fnAddnewEntity(WebDriver driver) {
+		childTest = test.createNode(
+				"Description:Add new entity to entity manager " + "<br>" + "<< Screen Name: Entity Information >></br>");
+		driver.switchTo().frame("addeditFrame1");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.findElement(By.xpath("//input[@id='name']")).sendKeys("xyz41");
+		driver.findElement(By.xpath("//input[@id='id']")).sendKeys("xyz41");
+		Select entitytype = new Select(driver.findElement(By.id("entitytype")));
+		entitytype.selectByIndex(4);
+		driver.findElement(By.xpath("//input[@id='country_Input']")).sendKeys("India");
+		driver.findElement(By.xpath("//input[@id='state_Input']")).sendKeys("Assam");
+		driver.findElement(By.xpath("//input[@id='countryincorporated_Input']")).sendKeys("India");
+		driver.findElement(By.xpath("//input[@id='stateincorporated_Input']")).sendKeys("Assam");
+		driver.findElement(By.xpath("//input[@id='entitygroupid_Input']")).sendKeys("Hello");
+		
+		
+		
+	}
+
+	
 
 }
