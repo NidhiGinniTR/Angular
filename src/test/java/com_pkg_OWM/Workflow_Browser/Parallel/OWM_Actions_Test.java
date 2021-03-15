@@ -30,7 +30,7 @@ public class OWM_Actions_Test extends BrowserInvoke {
 		driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
 	}
 	@Test(dependsOnMethods = "Initialize")
-	public void NewFolderCreation() throws InterruptedException {
+	public void WorkFlowManager_Actions() throws InterruptedException {
 		loginPage lp = new loginPage(driver,propEnv,propSerialData);
 		OWM owm = new com_obj_ObjectRepository.OWM.OWM(driver,propSerialData);
 		FrameWork fm= new FrameWork();
