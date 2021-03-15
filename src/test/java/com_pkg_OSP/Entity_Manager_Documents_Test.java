@@ -1,9 +1,16 @@
 package com_pkg_OSP;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -29,9 +36,11 @@ public class Entity_Manager_Documents_Test extends BrowserInvoke {
 	}
 
 	@Test(dependsOnMethods = "Initialize")
-	public void EUB_Documents() throws InterruptedException {
+	public void EUB_Documents() throws InterruptedException, AWTException {
 		// Step-1:-----Login---------------------------------------------//
 		LS1 lp = new LS1(driver, propEnv, propSerialData);
+		WebDriverWait wait = new WebDriverWait(driver, 60);
+		//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame1"));
 		lp.fnLogin();
 
 		// Step-2:-----Launch Entity Manager---------------------------//
@@ -59,8 +68,25 @@ public class Entity_Manager_Documents_Test extends BrowserInvoke {
 		fm.fnWebButton(driver, By.xpath("//img[@id='Img3']"), "Actions");
 		Eub.fnActionsMenuEnabled();
 		Eub.fnActionsMenuDisabled();
-
+		
+		//---------------------------------------------------------------------
+		Eub.fnEM_SearchDocument();
+		List<WebElement> rows = driver
+				.findElements(By.xpath("//DIV[@id='gridDocuments_grdEntityManager_dom']/TABLE[1]/TBODY[1]/TR"));
+		if (rows.size() >= 2) {
+			fm.fnWebTable(driver, driver.findElement(By.xpath("//tr[@id='gridDocuments_grdEntityManager_row_0']")),
+					"Click");
+			Thread.sleep(1500);
+			fm.fnWebButton(driver, By.xpath("//img[@id='Img3']"), "Actions");
+			Eub.fnOWMActionsMenu("Delete Document(s)", "");
+			Thread.sleep(1000);
+			Eub.fnDeleteDocument();
+			//Thread.sleep(1000);
+		}
+		Thread.sleep(1000);
+		
 		// Step-6:---------------------Click Actions and Add Document------------------------------------//
+		fm.fnWebButton(driver, By.xpath("//img[@id='Img3']"), "Actions");
 		Eub.fnOWMActionsMenu("Add Document", "");
 
 		//Step-7----------------------Add Document-----------------------------------------
@@ -71,9 +97,12 @@ public class Entity_Manager_Documents_Test extends BrowserInvoke {
 		//Step-8--------------------Search Document---------------------------------------
 		lp.fnSwitchtoWindow(1, "Onesource");
 		driver.switchTo().defaultContent();
-		driver.switchTo().frame("maincontent");
-		driver.switchTo().frame("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad");
-		driver.switchTo().frame("gridFrame");
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("maincontent"));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad"));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame"));
+		//driver.switchTo().frame("maincontent");
+		//driver.switchTo().frame("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad");
+		//driver.switchTo().frame("gridFrame");
 		Eub.fnEM_SearchDocument();
 		fm.fnWebTable(driver, driver.findElement(By.xpath("//tr[@id='gridDocuments_grdEntityManager_row_0']")),
 				"Click");
@@ -89,9 +118,9 @@ public class Entity_Manager_Documents_Test extends BrowserInvoke {
 		//Step-11----------------------------Switch Frame--------------------------------------
 		lp.fnSwitchtoWindow(1, "Onesource");
 		driver.switchTo().defaultContent();
-		driver.switchTo().frame("maincontent");
-		driver.switchTo().frame("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad");
-		driver.switchTo().frame("gridFrame");
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("maincontent"));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad"));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame"));
 		fm.fnWebTable(driver, driver.findElement(By.xpath("//tr[@id='gridDocuments_grdEntityManager_row_0']")),
 				"Click");
 
@@ -102,14 +131,14 @@ public class Entity_Manager_Documents_Test extends BrowserInvoke {
 		Thread.sleep(1500);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		Eub.fnChangeStatus();
-		Thread.sleep(1500);
+		Thread.sleep(2500);
 
 		//Step-13:-----------------------Switch Frame-----------------------------------//
 		lp.fnSwitchtoWindow(1, "Onesource");
-		driver.switchTo().defaultContent();
-		driver.switchTo().frame("maincontent");
-		driver.switchTo().frame("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad");
-		driver.switchTo().frame("gridFrame");
+		//driver.switchTo().defaultContent();
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("maincontent"));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad"));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame"));
 
 		//Step-14:----------------Customize View-----------------------------------//
 		fm.fnWebButton(driver, By.xpath("//img[@id='Img3']"), "Actions");
@@ -140,9 +169,9 @@ public class Entity_Manager_Documents_Test extends BrowserInvoke {
 		//Step-17------------------------Switch Frame------------------------------------
 		lp.fnSwitchtoWindow(1, "Onesource");
 		driver.switchTo().defaultContent();
-		driver.switchTo().frame("maincontent");
-		driver.switchTo().frame("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad");
-		driver.switchTo().frame("gridFrame");
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("maincontent"));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad"));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame"));
 		fm.fnWebTable(driver, driver.findElement(By.xpath("//tr[@id='gridDocuments_grdEntityManager_row_0']")),
 				"Click");
 

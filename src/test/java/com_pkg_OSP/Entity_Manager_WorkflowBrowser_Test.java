@@ -1,9 +1,11 @@
 package com_pkg_OSP;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -57,7 +59,25 @@ public class Entity_Manager_WorkflowBrowser_Test extends BrowserInvoke {
 		Eub.fnActionsMenuEnabled();
 		Eub.fnActionsMenuDisabled();
 		
+		//-----------------------------------------------------------------------
+		Eub.fnEM_SearchWorkflow();
+		List<WebElement> rows = driver
+				.findElements(By.xpath("//DIV[@id='gridWorkflowFolders_grdEntityManager_dom']/TABLE[1]/TBODY[1]/TR"));
+		if (rows.size() >= 2) {
+			fm.fnWebTable(driver, driver.findElement(By.xpath("//tr[@id='gridWorkflowFolders_grdEntityManager_row_0']")), "Click");
+			fm.fnWebButton(driver, By.xpath("//img[@id='Img3']"), "Actions");
+			Eub.fnOWMActionsMenu("Delete WorkFlow(s)", "");
+			Eub.fnDeleteWorkflow();
+			lp.fnSwitchtoWindow(1, "Onesource");
+			driver.switchTo().defaultContent();
+			driver.switchTo().frame("maincontent");
+			driver.switchTo().frame("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad");
+			driver.switchTo().frame("gridFrame");
+		}
+		Thread.sleep(1000);
+		
 		//Step-6:---------------------New Folder------------------------------------//
+		fm.fnWebButton(driver, By.xpath("//img[@id='Img3']"), "Actions");
 		Eub.fnOWMActionsMenu("New Folder", "");
 		
 		//Step-7--------------------------New Folder-------------------------------
