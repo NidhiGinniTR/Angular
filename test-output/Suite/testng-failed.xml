@@ -6,15 +6,15 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com_pkg_OSP.Entity_Manager_WorkflowBrowser_Test">
+      <class name="com_pkg_OSP.Entity_Manager_Banking_Test">
         <methods>
-          <include name="EUB_WorkflowBrowser"/>
-          <include name="Initialize"/>
+          <include name="beforeStart"/>
           <include name="aftersuite"/>
           <include name="closeBrowser"/>
-          <include name="beforeStart"/>
+          <include name="Initialize"/>
+          <include name="EUB_Banking"/>
         </methods>
-      </class> <!-- com_pkg_OSP.Entity_Manager_WorkflowBrowser_Test -->
+      </class> <!-- com_pkg_OSP.Entity_Manager_Banking_Test -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
