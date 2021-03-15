@@ -6,9 +6,7 @@
 	</listeners>
 	<test thread-count="5" name="Test">
 		<classes>
-			<class name="com_pkg_OWM.Workflow_Browser.Parallel.OWM_Actions_Test" />
-			
-			
-	</classes>
+			<class name="com_pkg_OWM.Workflow_Browser.Parallel.FWF_Tasks_Test" />
+		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

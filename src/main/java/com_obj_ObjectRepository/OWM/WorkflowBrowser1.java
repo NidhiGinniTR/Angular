@@ -82,6 +82,7 @@ public class WorkflowBrowser1 extends ExtentManager {
 						childTest.log(Status.PASS, array[i] + " is checked.");
 					}
 				}
+				Thread.sleep(1000);
 				fm.fnWebButton(driver, CustView_Save, "Save");
 			} else {
 				childTest.log(Status.FAIL, "Customize view window failed to Open/Not in focus mode");
