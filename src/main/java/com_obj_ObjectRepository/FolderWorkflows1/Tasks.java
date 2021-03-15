@@ -111,6 +111,7 @@ public class Tasks extends ExtentManager {
 
 	public void fnFWFAddDocument() throws InterruptedException, AWTException {
 		childTest = test.createNode("Description: Add Document " + "<br>" + "<< Screen Name: Folder WorkFlows >></br>");
+		Thread.sleep(1000);
 		if (driver.getTitle().equalsIgnoreCase("Add document")) {
 			fm.fnWebButton(driver, fwf_Task_AD_Clear, "Clear");
 			fm.fnWebButton(driver, fwf_Task_AD_Save, "Save");
