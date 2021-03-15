@@ -216,6 +216,7 @@ public class EntityUnitBrowser extends ExtentManager {
 	By EM_Owners_Save = By.xpath("//input[@id='btnSave']");
 	By EM_Owners_Close = By.xpath("//input[@id='btnClose']");
 	By EM_Owners_errMessage = By.xpath("//span[@id='spaErrorMessage']");
+	By EM_Owners_totoalPercentage = By.xpath("//div[@id='divRunningTotal']");
 
 	/***************************************************************************************
 	 * These element locators belongs to Business/Tax Info Tab of the Entity Manager
@@ -426,6 +427,113 @@ public class EntityUnitBrowser extends ExtentManager {
 	By EM_Date = By.xpath("//input[@id='trandate_00001']");
 	By EM_Stream = By.xpath("//Select[@id='streamid_00001']");
 	By EM_Amount = By.xpath("//input[@id='payment_00001']");
+	
+	/***************************************************************************************
+	 * These element locators belongs to Add Founding Shareholder of
+	 * Ownership-OrgReorg tab
+	 ***************************************************************************************/
+	By EM_OrgReorg_AFS_Save = By.xpath("//img[@id='btnSave']");
+	By EM_OrgReorg_AFS_Close = By.xpath("//img[@id='btnClose']");
+	By EM_OrgReorg_AFS_ErrMessage = By.xpath("//span[@id='spaErrorMessage']");
+	By EM_OrgReorg_AFS_OrgDate = By.xpath("//input[@id='date']");
+	By EM_OrgReorg_AFS_Name = By.xpath("//input[@id='tranname']");
+	By EM_OrgReorg_AFS_Address = By.xpath("//input[@id='tranaddress']");
+	By EM_OrgReorg_AFS_City = By.xpath("//input[@id='trancity']");
+	By EM_OrgReorg_AFS_Country = By.xpath("//input[@id='trancountry_Input']");
+	By EM_OrgReorg_AFS_StateProvince = By.xpath("//input[@id='transtate_Input']");
+	By EM_OrgReorg_AFS_ZipPostalCode = By.xpath("//input[@id='tranzip']");
+	By EM_OrgReorg_AFS_IdentifyingNumber = By.xpath("//input[@id='tranidentifyingnumber']");
+	By EM_OrgReorg_AFS_DateOfInitializationCapitalization = By.xpath("//input[@id='intialcapdate']");
+	By EM_OrgReorg_AFS_DescriptionofInitialCapitalization = By.xpath("//textarea[@id='description']");//Common to Add New Reorg
+	By EM_OrgReorg_AFS_TaxCodeSectionReference = By.xpath("//input[@id='taxcode']");
+	By EM_OrgReorg_AFS_TransferorBasis = By.xpath("//input[@id='transferorsbasis']");
+	By EM_OrgReorg_AFS_DescriptionofStockSecurityAssests = By.xpath("//textarea[@id='securitydescription']");
+	By EM_OrgReorg_AFS_Notes = By.xpath("//textarea[@id='notes']");
+	/***************************************************************************************
+	 * These element locators belongs to Add New Reorg of
+	 * Ownership-OrgReorg tab
+	 ***************************************************************************************/
+	By EM_OrgReorg_ANR_ValueofShareTransferred = By.xpath("//input[@id='sharevalue']");
+	By EM_OrgReorg_ANR_ReceivingName = By.xpath("//input[@id='recname']");
+	By EM_OrgReorg_ANR_ReAddress = By.xpath("//input[@id='recaddress']");
+	By EM_OrgReorg_ANR_ReCity = By.xpath("//input[@id='reccity']");
+	By EM_OrgReorg_ANR_ReCountry = By.xpath("//input[@id='reccountry_Input']");
+	By EM_OrgReorg_ANR_ReState = By.xpath("//input[@id='recstate_Input']");
+	By EM_OrgReorg_ANR_ReZip = By.xpath("//input[@id='reczip']");
+	By EM_OrgReorg_ANR_ReIdentifyingNumber = By.xpath("//input[@id='recidentifyingnumber']");
+	/***************************************************************************************
+	 * These element locators belongs to Add New menu item of Stock Of the Company Tab
+	 ***************************************************************************************/
+	By EM_SC_AN_RelatedShareHolder = By.xpath("//select[@id='related']");
+	By EM_SC_AN_UnRelatedShareHolder = By.xpath("//input[@id='unrelated']");
+	By EM_SC_AN_StockClass = By.xpath("//select[@id='class']");
+	By EM_SC_AN_BeginningOfTaxYear = By.xpath("//input[@id='startyear']");
+	By EM_SC_AN_EndOfTaxYear = By.xpath("//input[@id='endyear']");
+	By EM_SC_AN_Notes = By.xpath("//textarea[@id='notes']");
+	By EM_SC_AN_Save = By.xpath("//img[@id='btnSave']");
+	By EM_SC_AN_Close = By.xpath("//img[@id='btnClose']");
+	By EM_SC_AN_ErrMessage = By.xpath("//span[@id='spaErrorMessage']");
+	
+	/***************************************************************************************
+	 * These element locators belongs to AcqDispofShares on Ownership tab
+	 ***************************************************************************************/
+	By EM_ADS_ANA_Date = By.xpath("//input[@id='date']");
+	By EM_ADS_ANA_Name = By.xpath("//input[@id='name']");
+	By EM_ADS_ANA_Address = By.xpath("//input[@id='address']");
+	By EM_ADS_ANA_City = By.xpath("//input[@id='city']");
+	By EM_ADS_ANA_County = By.xpath("//input[@id='county']");
+	By EM_ADS_ANA_Country = By.xpath("//input[@id='country_Input']");
+	By EM_ADS_ANA_State = By.xpath("//input[@id='state_Input']");
+	By EM_ADS_ANA_ZipPostalCode = By.xpath("//input[@id='zip']");
+	By EM_ADS_ANA_NameofRelatedShareHolder = By.xpath("//select[@id='related']");
+	By EM_ADS_ANA_UnrelatedShareHolder = By.xpath("//input[@id='unrelated']");
+	By EM_ADS_ANA_TaxCodesectionReference = By.xpath("//input[@id='taxcode']");
+	By EM_ADS_ANA_Methodof = By.xpath("//input[@id='method']");
+	By EM_ADS_ANA_NumberofShares = By.xpath("//input[@id='numberofshares']");
+	By EM_ADS_ANA_ClassofShares = By.xpath("//select[@id='classofshares']");
+	By EM_ADS_ANA_PricevalueofShares = By.xpath("//input[@id='priceofshares']");
+	By EM_ADS_ANA_BasisofShares = By.xpath("//input[@id='basisofshares']");
+	By EM_ADS_ANA_Notes = By.xpath("//textarea[@id='notes']");
+	
+	/***************************************************************************************
+	 * These element locators belongs to Place of Business Tab
+	 ***************************************************************************************/
+	By EM_IndividualAgents_FirstName = By.xpath("//input[@id='firstname']");
+	By EM_IndividualAgents_MiddleInitial = By.xpath("//input[@id='middleinitial']");
+	By EM_IndividualAgents_LastName = By.xpath("//input[@id='lastname']");
+	By EM_IndividualAgents_Organization = By.xpath("//input[@id='organization']");
+	By EM_IndividualAgents_Title = By.xpath("//input[@id='title']");
+	By EM_IndividualAgents_Address1 = By.xpath("//input[@id='address1']");
+	By EM_IndividualAgents_Honorific = By.xpath("//input[@id='honorific']");
+	By EM_IndividualAgents_Address2 = By.xpath("//input[@id='address2']");
+	By EM_IndividualAgents_Country = By.xpath("//input[@id='country_Input']");
+	By EM_IndividualAgents_County = By.xpath("//input[@id='county']");
+	By EM_IndividualAgents_City = By.xpath("//input[@id='city']");
+	By EM_IndividualAgents_Zip =By.xpath("//input[@id='zip']");
+	By EM_IndividualAgents_State = By.xpath("//input[@id='state_Input']");
+	By EM_IndividualAgents_CountryofCitizenShip = By.xpath("//input[@id='citizenship_Input']");
+	By EM_IndividualAgents_MainTelephone = By.xpath("//input[@id='mainphone']");
+	By EM_IndividualAgents_AlternateTelephone= By.xpath("//input[@id='alternatephone']");
+	By EM_IndividualAgents_CountryofResidency = By.xpath("//input[@id='residency_Input']");
+	By EM_IndividualAgents_Fax = By.xpath("//input[@id='fax']");
+	By EM_IndividualAgents_Email = By.xpath("//input[@id='email']");
+	By EM_IndividualAgents_Notes = By.xpath("//textarea[@id='notes']");
+	By EM_IndividualAgents_Splitter = By.xpath("//img[@id='imgSplitter']");
+	By EM_IndividualAgents_AddNewRole = By.xpath("//img[@id='btnAddRole']");
+	By EM_IndividualAgents_Save = By.xpath("//img[@id='btnSave']");
+	By EM_IndividualAgents_Close = By.xpath("//img[@id='btnClose']");
+	By EM_IndividualAgents_Role1 = By.xpath("//select[@id='role_0']");
+	By EM_IndividualAgents_Position1 = By.xpath("//select[@id='position_0']");
+	By EM_IndividualAgents_DateBegin1 = By.xpath("//input[@id='datebegin_0']");
+	By EM_IndividualAgents_DateEnd1 = By.xpath("//input[@id='dateend_0']");
+	By EM_IndividualAgents_Order1 = By.xpath("//select[@id='order_0']");
+	By EM_IndividualAgents_RoleCompare = By.xpath("//select[@id='role_30']");
+	By EM_IndividualAgents_PositionCompare = By.xpath("//select[@id='position_30']");
+	By EM_IndividualAgents_DateBeginCompare = By.xpath("//input[@id='datebegin_30']");
+	By EM_IndividualAgents_DateEndCompare = By.xpath("//input[@id='dateend_30']");
+	By EM_IndividualAgents_OrderCompare = By.xpath("//select[@id='order_30']");
+
+
 	
 	public EntityUnitBrowser(WebDriver driver, Properties data2, Properties data) {
 		this.driver = driver;
@@ -2546,4 +2654,488 @@ public class EntityUnitBrowser extends ExtentManager {
 		}
 	}
 
+	public void fnEMOrgReorgAddFoundingShareholder() {
+		childTest = test.createNode("Description: Add Founding ShareHolder~ Ownership" + "<br>"
+				+ "<< Screen Name : Entity Manager->Ownership->OrgReorg >></br>");
+		try {
+			if (driver.getTitle().equalsIgnoreCase("Entity Manager")) {
+				driver.switchTo().frame("Iframe1");
+				fm.fnWebButton(driver, EM_OrgReorg_AFS_Save, "Save");
+				new WebDriverWait(driver, 50)
+						.until(ExpectedConditions.visibilityOfElementLocated(EM_OrgReorg_AFS_ErrMessage));
+				String orgErrtext = driver.findElement(EM_Owners_errMessage).getText();
+				if (orgErrtext.contains("required")) {
+					childTest.log(Status.PASS,
+							"Verification: Click on Save without entering any details, click on Save '" + orgErrtext
+									+ "' alert/Message exists");
+				} else {
+					childTest.log(Status.ERROR,
+							"Verification:Click on Save without entering any details, click on Save alert/Message does not exists");
+				}
+				fm.fnWebEdit(driver, EM_OrgReorg_AFS_OrgDate, data.getProperty("OrgReorg_OrgDate"), "Org date");
+				fm.fnWebEdit(driver, EM_OrgReorg_AFS_Name, data.getProperty("OrgReorg_Name"), "Name");
+				fm.fnWebEdit(driver, EM_OrgReorg_AFS_Address, data.getProperty("OrgReorg_Address"), "Address");
+				fm.fnWebEdit(driver, EM_OrgReorg_AFS_City, data.getProperty("OrgReorg_City"), "City");
+				fm.fnWebEdit(driver, EM_OrgReorg_AFS_Country, data.getProperty("OrgReorg_Country"), "Country");
+				fm.fnWebEdit(driver, EM_OrgReorg_AFS_StateProvince, data.getProperty("OrgReorg_StateProvince"),
+						"State/Province");
+				fm.fnWebEdit(driver, EM_OrgReorg_AFS_ZipPostalCode, data.getProperty("OrgReorg_Zip/PostalCode"),
+						"Zip/PostalCode");
+				fm.fnWebEdit(driver, EM_OrgReorg_AFS_IdentifyingNumber, data.getProperty("OrgReorg_IdentifyingNumber"),
+						"IdentifyingNumber");
+				fm.fnWebEdit(driver, EM_OrgReorg_AFS_DateOfInitializationCapitalization,
+						data.getProperty("OrgReorg_DateOfInitializationCapitalization"),
+						"Date of Initialization Capitalization");
+				fm.fnWebEdit(driver, EM_OrgReorg_AFS_DescriptionofInitialCapitalization,
+						data.getProperty("OrgReorg_DescriptionOfInitializationCapitalization"),
+						"Description of Initialization Capitalization");
+				fm.fnWebEdit(driver, EM_OrgReorg_AFS_TaxCodeSectionReference,
+						data.getProperty("OrgReorg_TaxCodeSectionReference"), "Tax Code Section Reference");
+				fm.fnWebEdit(driver, EM_OrgReorg_AFS_TransferorBasis, data.getProperty("OrgReorg_TransferorBasis"),
+						"Transferor Basis");
+				fm.fnWebEdit(driver, EM_OrgReorg_AFS_DescriptionofStockSecurityAssests,
+						data.getProperty("OrgReorg_DescriptionOfStock"), "DescriptionofStockSecurityAssests");
+				fm.fnWebEdit(driver, EM_OrgReorg_AFS_Notes, data.getProperty("OrgReorg_Notes"), "Notes");
+				fm.fnWebButton(driver, EM_OrgReorg_AFS_Save, "Save");
+				Thread.sleep(3000);
+				new WebDriverWait(driver, 50)
+						.until(ExpectedConditions.visibilityOfElementLocated(EM_OrgReorg_AFS_ErrMessage));
+				String orgErrtext1 = driver.findElement(EM_Owners_errMessage).getText();
+				if (orgErrtext1.contains("successfully")) {
+					childTest.log(Status.PASS,
+							"Verification: Click on Save after entering details'" + orgErrtext1
+									+ "' alert/Message exists");
+				} else {
+					childTest.log(Status.ERROR,
+							"Verification:Click on Save after entering any details, click on Save alert/Message does not exists");
+				}
+				fm.fnWebButton(driver, EM_OrgReorg_AFS_Close, "Close");
+			}
+		} catch (Exception e) {
+			childTest.fail(e);
+		}
+	}
+	
+	public void fnEMOrgReorgAddNewReorg() {
+		childTest = test.createNode("Description: Add New Reorg~ Ownership" + "<br>"
+				+ "<< Screen Name : Entity Manager->Ownership->OrgReorg >></br>");
+		try {
+			if (driver.getTitle().equalsIgnoreCase("Entity Manager")) {
+				driver.switchTo().frame("Iframe1");
+				fm.fnWebButton(driver, EM_OrgReorg_AFS_Save, "Save");
+				new WebDriverWait(driver, 50)
+						.until(ExpectedConditions.visibilityOfElementLocated(EM_OrgReorg_AFS_ErrMessage));
+				String reorgErrtext = driver.findElement(EM_Owners_errMessage).getText();
+				if (reorgErrtext.contains("required")) {
+					childTest.log(Status.PASS,
+							"Verification: Click on Save without entering any details, click on Save '" + reorgErrtext
+									+ "' alert/Message exists");
+				} else {
+					childTest.log(Status.ERROR,
+							"Verification:Click on Save without entering any details, click on Save alert/Message does not exists");
+				}
+				fm.fnWebEdit(driver, EM_OrgReorg_AFS_OrgDate, data.getProperty("OrgReorg_OrgDate"), "Org date");
+				fm.fnWebEdit(driver, EM_OrgReorg_AFS_Name, data.getProperty("OrgReorg_Name"), "Name");
+				fm.fnWebEdit(driver, EM_OrgReorg_AFS_Address, data.getProperty("OrgReorg_Address"), "Address");
+				fm.fnWebEdit(driver, EM_OrgReorg_AFS_City, data.getProperty("OrgReorg_City"), "City");
+				fm.fnWebEdit(driver, EM_OrgReorg_AFS_Country, data.getProperty("OrgReorg_Country"), "Country");
+				fm.fnWebEdit(driver, EM_OrgReorg_AFS_StateProvince, data.getProperty("OrgReorg_StateProvince"),"State/Province");
+				fm.fnWebEdit(driver, EM_OrgReorg_AFS_ZipPostalCode, data.getProperty("OrgReorg_Zip/PostalCode"),"Zip/PostalCode");
+				fm.fnWebEdit(driver, EM_OrgReorg_AFS_IdentifyingNumber, data.getProperty("OrgReorg_IdentifyingNumber"),"IdentifyingNumber");
+				fm.fnWebEdit(driver, EM_OrgReorg_AFS_DescriptionofInitialCapitalization,data.getProperty("OrgReorg_DescriptionOfInitializationCapitalization"),"Description of Initialization Capitalization");
+				fm.fnWebEdit(driver, EM_OrgReorg_ANR_ValueofShareTransferred, data.getProperty("OrgReorg_ValueofShareTransferred"),"Value of Share Transferred");
+				fm.fnWebEdit(driver, EM_OrgReorg_AFS_TaxCodeSectionReference,data.getProperty("OrgReorg_TaxCodeSectionReference"), "Tax Code Section Reference");
+				fm.fnWebEdit(driver, EM_OrgReorg_AFS_DescriptionofStockSecurityAssests,data.getProperty("OrgReorg_DescriptionOfStock"), "DescriptionofStockSecurityAssests");
+				fm.fnWebEdit(driver, EM_OrgReorg_AFS_Notes, data.getProperty("OrgReorg_Notes"), "Notes");
+				fm.fnWebEdit(driver, EM_OrgReorg_ANR_ReceivingName, data.getProperty("OrgReorg_ReceivingName"), "Receiving Name");
+				fm.fnWebEdit(driver, EM_OrgReorg_ANR_ReAddress, data.getProperty("OrgReorg_ReAddress"), "Receiving Address");
+				fm.fnWebEdit(driver, EM_OrgReorg_ANR_ReCity, data.getProperty("OrgReorg_ReCity"), "Receiving City");
+				fm.fnWebEdit(driver, EM_OrgReorg_ANR_ReCountry, data.getProperty("OrgReorg_ReCountry"), "Receiving Country");
+				fm.fnWebEdit(driver, EM_OrgReorg_ANR_ReState, data.getProperty("OrgReorg_ReState"), "Receiving State");
+				fm.fnWebEdit(driver, EM_OrgReorg_ANR_ReZip, data.getProperty("OrgReorg_ReZip"), "Receivers Zip/Postal Code");
+				fm.fnWebEdit(driver, EM_OrgReorg_ANR_ReIdentifyingNumber, data.getProperty("OrgReorg_ReIdentifyingNumber"), "Receivers Identifying Number");
+				fm.fnWebButton(driver, EM_OrgReorg_AFS_Save, "Save");
+				Thread.sleep(3000);
+				new WebDriverWait(driver, 50)
+						.until(ExpectedConditions.visibilityOfElementLocated(EM_OrgReorg_AFS_ErrMessage));
+				String reorgErrtext1 = driver.findElement(EM_Owners_errMessage).getText();
+				if (reorgErrtext1.contains("successfully")) {
+					childTest.log(Status.PASS,
+							"Verification: Click on Save after entering details'" + reorgErrtext1
+									+ "' alert/Message exists");
+				} else {
+					childTest.log(Status.ERROR,
+							"Verification:Click on Save after entering any details, click on Save alert/Message does not exists");
+				}
+				fm.fnWebButton(driver, EM_OrgReorg_AFS_Close, "Close");
+			}
+		}catch(Exception e) {
+			childTest.fail(e);
+		}
+	}
+	
+	public void fnEMOrgReorgEdit(int i) {
+		childTest = test.createNode("Description: Edit/View Details- OrgReorg~ Ownership" + "<br>"
+				+ "<< Screen Name : Entity Manager->Ownership->OrgReorg >></br>");
+		try {
+			if (driver.getTitle().equalsIgnoreCase("Entity Manager")) {
+				driver.switchTo().frame("Iframe1");
+				if(i==2) {
+					fm.fnWebEditCompare(driver, EM_OrgReorg_AFS_OrgDate, data.getProperty("OrgReorg_OrgDate"), "Org date");
+					fm.fnWebEditCompare(driver, EM_OrgReorg_AFS_Name, data.getProperty("OrgReorg_Name"), "Name");
+					fm.fnWebEditCompare(driver, EM_OrgReorg_AFS_Address, data.getProperty("OrgReorg_Address"), "Address");
+					fm.fnWebEditCompare(driver, EM_OrgReorg_AFS_City, data.getProperty("OrgReorg_City"), "City");
+					fm.fnWebEditCompare(driver, EM_OrgReorg_AFS_Country, data.getProperty("OrgReorg_Country"), "Country");
+					fm.fnWebEditCompare(driver, EM_OrgReorg_AFS_StateProvince, data.getProperty("OrgReorg_StateProvince"),
+							"State/Province");
+					fm.fnWebEditCompare(driver, EM_OrgReorg_AFS_ZipPostalCode, data.getProperty("OrgReorg_Zip/PostalCode"),
+							"Zip/PostalCode");
+					fm.fnWebEditCompare(driver, EM_OrgReorg_AFS_IdentifyingNumber, data.getProperty("OrgReorg_IdentifyingNumber"),
+							"IdentifyingNumber");
+					fm.fnWebEditCompare(driver, EM_OrgReorg_AFS_DateOfInitializationCapitalization,
+							data.getProperty("OrgReorg_DateOfInitializationCapitalization"),
+							"Date of Initialization Capitalization");
+					fm.fnWebEditCompare(driver, EM_OrgReorg_AFS_DescriptionofInitialCapitalization,
+							data.getProperty("OrgReorg_DescriptionOfInitializationCapitalization"),
+							"Description of Initialization Capitalization");
+					fm.fnWebEditCompare(driver, EM_OrgReorg_AFS_TaxCodeSectionReference,
+							data.getProperty("OrgReorg_TaxCodeSectionReference"), "Tax Code Section Reference");
+					fm.fnWebEditCompare(driver, EM_OrgReorg_AFS_DescriptionofStockSecurityAssests,
+							data.getProperty("OrgReorg_DescriptionOfStock"), "DescriptionofStockSecurityAssests");
+					fm.fnWebEditCompare(driver, EM_OrgReorg_AFS_Notes, data.getProperty("OrgReorg_Notes"), "Notes");
+				}else {
+					fm.fnWebEditCompare(driver, EM_OrgReorg_AFS_OrgDate, data.getProperty("OrgReorg_OrgDate"), "Org date");
+					fm.fnWebEditCompare(driver, EM_OrgReorg_AFS_Name, data.getProperty("OrgReorg_Name"), "Name");
+					fm.fnWebEditCompare(driver, EM_OrgReorg_AFS_Address, data.getProperty("OrgReorg_Address"), "Address");
+					fm.fnWebEditCompare(driver, EM_OrgReorg_AFS_City, data.getProperty("OrgReorg_City"), "City");
+					fm.fnWebEditCompare(driver, EM_OrgReorg_AFS_Country, data.getProperty("OrgReorg_Country"), "Country");
+					fm.fnWebEditCompare(driver, EM_OrgReorg_AFS_StateProvince, data.getProperty("OrgReorg_StateProvince"),"State/Province");
+					fm.fnWebEditCompare(driver, EM_OrgReorg_AFS_ZipPostalCode, data.getProperty("OrgReorg_Zip/PostalCode"),"Zip/PostalCode");
+					fm.fnWebEditCompare(driver, EM_OrgReorg_AFS_IdentifyingNumber, data.getProperty("OrgReorg_IdentifyingNumber"),"IdentifyingNumber");
+					fm.fnWebEditCompare(driver, EM_OrgReorg_AFS_DescriptionofInitialCapitalization,data.getProperty("OrgReorg_DescriptionOfInitializationCapitalization"),"Description of Initialization Capitalization");
+					fm.fnWebEditCompare(driver, EM_OrgReorg_ANR_ValueofShareTransferred, data.getProperty("OrgReorg_ValueofShareTransferred"),"Value of Share Transferred");
+					fm.fnWebEditCompare(driver, EM_OrgReorg_AFS_TaxCodeSectionReference,data.getProperty("OrgReorg_TaxCodeSectionReference"), "Tax Code Section Reference");
+					fm.fnWebEditCompare(driver, EM_OrgReorg_AFS_DescriptionofStockSecurityAssests,data.getProperty("OrgReorg_DescriptionOfStock"), "DescriptionofStockSecurityAssests");
+					fm.fnWebEditCompare(driver, EM_OrgReorg_AFS_Notes, data.getProperty("OrgReorg_Notes"), "Notes");
+					fm.fnWebEditCompare(driver, EM_OrgReorg_ANR_ReceivingName, data.getProperty("OrgReorg_ReceivingName"), "Receiving Name");
+					fm.fnWebEditCompare(driver, EM_OrgReorg_ANR_ReAddress, data.getProperty("OrgReorg_ReAddress"), "Receiving Address");
+					fm.fnWebEditCompare(driver, EM_OrgReorg_ANR_ReCity, data.getProperty("OrgReorg_ReCity"), "Receiving City");
+					fm.fnWebEditCompare(driver, EM_OrgReorg_ANR_ReCountry, data.getProperty("OrgReorg_ReCountry"), "Receiving Country");
+					fm.fnWebEditCompare(driver, EM_OrgReorg_ANR_ReState, data.getProperty("OrgReorg_ReState"), "Receiving State");
+					fm.fnWebEditCompare(driver, EM_OrgReorg_ANR_ReZip, data.getProperty("OrgReorg_ReZip"), "Receivers Zip/Postal Code");
+					fm.fnWebEditCompare(driver, EM_OrgReorg_ANR_ReIdentifyingNumber, data.getProperty("OrgReorg_ReIdentifyingNumber"), "Receivers Identifying Number");
+				}
+				fm.fnWebButton(driver, EM_OrgReorg_AFS_Close, "Close");
+			}
+		}catch(Exception e) {
+			childTest.fail(e);
+		}
+	}
+	
+	public void fnEMStockOfCompanyAddNew(String input) {
+		childTest = test.createNode("Description: Add New- Stock Of the Company~ Ownership" + "<br>"
+				+ "<< Screen Name : Entity Manager->Ownership->Stock Of the Company >></br>");
+		try {
+			if (driver.getTitle().equalsIgnoreCase("Entity Manager")) {
+				driver.switchTo().frame("Iframe1");
+				fm.fnWebList(driver,EM_SC_AN_RelatedShareHolder,data.getProperty("StockoftheCompany_RelatedShareHolder"), "Related Share Holder");
+				fm.fnWebEdit(driver,EM_SC_AN_UnRelatedShareHolder,data.getProperty("StockoftheCompany_UnRelatedShareHolder"), "UnRelated Share Holder");
+				fm.fnWebButton(driver, EM_SC_AN_Save, "Save");
+				Thread.sleep(2000);
+				new WebDriverWait(driver, 50)
+						.until(ExpectedConditions.visibilityOfElementLocated(EM_OrgReorg_AFS_ErrMessage));
+				String scErrtext = driver.findElement(EM_Owners_errMessage).getText();
+				if (scErrtext.contains("Only one name can be specified at a time. Please either select a related shareholder, or enter the name of an unrelated shareholder.")) {
+					childTest.log(Status.PASS,
+							"Verification: Click on Save before entering details'" +scErrtext
+									+ "' alert/Message exists");
+					driver.findElement(EM_SC_AN_UnRelatedShareHolder).clear();
+					Select temp = new Select(driver.findElement(EM_SC_AN_RelatedShareHolder));
+					temp.selectByValue("0");
+				} else {
+					childTest.log(Status.ERROR,
+							"Verification:Click on Save by entering Related & Unrelated Share holder details alert/Message does not exists");
+				}
+				if(input.equals("Related")) {
+					fm.fnWebList(driver,EM_SC_AN_RelatedShareHolder,data.getProperty("StockoftheCompany_RelatedShareHolder"), "Related Share Holder");
+				}else {
+					fm.fnWebEdit(driver,EM_SC_AN_UnRelatedShareHolder,data.getProperty("StockoftheCompany_UnRelatedShareHolder"), "UnRelated Share Holder");
+				}
+					
+				fm.fnWebList(driver,EM_SC_AN_StockClass,data.getProperty("StockoftheCompany_StockClass"), "Stock Class");
+				fm.fnWebEdit(driver,EM_SC_AN_BeginningOfTaxYear,data.getProperty("StockoftheCompany_BeginningOftaxYear"), "Beginning of Tax Year");
+				fm.fnWebEdit(driver,EM_SC_AN_EndOfTaxYear,data.getProperty("StockoftheCompany_EndOftaxYear"), "End of Tax Year");
+				fm.fnWebEdit(driver,EM_SC_AN_Notes,data.getProperty("StockoftheCompany_Notes"), "Notes");
+				fm.fnWebButton(driver, EM_SC_AN_Save, "Save");
+				Thread.sleep(3000);
+				new WebDriverWait(driver, 50)
+						.until(ExpectedConditions.visibilityOfElementLocated(EM_SC_AN_ErrMessage));
+				String scErrtext1 = driver.findElement(EM_SC_AN_ErrMessage).getText();
+				if (scErrtext1.contains("successfully")) {
+					childTest.log(Status.PASS,
+							"Verification: Click on Save after entering details'" +scErrtext1
+									+ "' alert/Message exists");
+				} else {
+					childTest.log(Status.ERROR,
+							"Verification:Click on Save after entering any details,alert/Message does not exists");
+				}
+				fm.fnWebButton(driver, EM_OrgReorg_AFS_Close, "Close");
+			}
+		}catch (Exception e) {
+			childTest.fail(e);
+		}
+	}
+	
+	public void fnEMStockOfCompanyEdit(int i) {
+		childTest = test.createNode("Description:Edit/View Details- Stock Of the Company~ Ownership" + "<br>"
+				+ "<< Screen Name : Entity Manager->Ownership->Stock Of the Company >></br>");
+		try {
+				Thread.sleep(2000);
+				driver.switchTo().frame("Iframe1");
+				if(i==2) {
+					fm.fnWebListCompare(driver,EM_SC_AN_RelatedShareHolder,data.getProperty("StockoftheCompany_RelatedShareHolder"), "Related Share Holder");
+				}else if(i==3){
+					fm.fnWebEditCompare(driver,EM_SC_AN_UnRelatedShareHolder,data.getProperty("StockoftheCompany_UnRelatedShareHolder"), "UnRelated Share Holder");
+				}
+				fm.fnWebListCompare(driver,EM_SC_AN_StockClass,data.getProperty("StockoftheCompany_StockClass"), "Stock Class");
+				fm.fnWebEditCompare(driver,EM_SC_AN_BeginningOfTaxYear,data.getProperty("StockoftheCompany_BeginningOftaxYear"), "Beginning of Tax Year");
+				fm.fnWebEditCompare(driver,EM_SC_AN_EndOfTaxYear,data.getProperty("StockoftheCompany_EndOftaxYear"), "End of Tax Year");
+				fm.fnWebEditCompare(driver,EM_SC_AN_Notes,data.getProperty("StockoftheCompany_Notes"), "Notes");
+				Thread.sleep(1000);
+				fm.fnWebButton(driver, EM_SC_AN_Close, "Close");
+			
+		}catch(Exception e) {
+			childTest.fail(e);
+		}
+	}
+	
+	public void fnEMAddNewAcquisitionDisposition() {
+		childTest = test.createNode("Description:Add New Acquisition/Add New Disposition- Acq-Disp of Shares~ Ownership" + "<br>"
+				+ "<< Screen Name : Entity Manager->Ownership->Acq-Disp of Shares >></br>");
+		try {
+			if(driver.getTitle().equalsIgnoreCase("Entity Manager")) {
+				driver.switchTo().frame("Iframe1");
+				fm.fnWebButton(driver, EM_SC_AN_Save, "Save");
+				new WebDriverWait(driver, 50)
+						.until(ExpectedConditions.visibilityOfElementLocated(EM_SC_AN_ErrMessage));
+				String scErrtext = driver.findElement(EM_SC_AN_ErrMessage).getText();
+				if (scErrtext.contains("is required")){
+					childTest.log(Status.PASS,"Verification: Click on Save before entering details'" +scErrtext
+									+ "' alert/Message exists");
+				} else {
+					childTest.log(Status.ERROR,
+							"Verification: Click on Save before entering details alert/Message does not exists");
+				}
+				fm.fnWebEdit(driver,EM_ADS_ANA_Date, data.getProperty("AcqDisp_Date"), "Date");
+				fm.fnWebEdit(driver,EM_ADS_ANA_Name, data.getProperty("AcqDisp_NameofSellerBuyer"), "Name of Seller/Buyer");
+				fm.fnWebEdit(driver,EM_ADS_ANA_Address, data.getProperty("AcqDisp_Address"), "Address");
+				fm.fnWebEdit(driver,EM_ADS_ANA_City, data.getProperty("AcqDisp_City"), "City");
+				fm.fnWebEdit(driver,EM_ADS_ANA_County, data.getProperty("AcqDisp_County"), "County");
+				fm.fnWebEdit(driver,EM_ADS_ANA_Country, data.getProperty("AcqDisp_Country"), "Country");
+				fm.fnWebEdit(driver,EM_ADS_ANA_State, data.getProperty("AcqDisp_State"),"State");
+				fm.fnWebEdit(driver,EM_ADS_ANA_ZipPostalCode, data.getProperty("AcqDisp_Zip"),"Zip");
+				fm.fnWebList(driver,EM_ADS_ANA_NameofRelatedShareHolder, data.getProperty("AcqDisp_NameofRelatedshareholder"),"Name of Related Share Holder");
+				fm.fnWebEdit(driver,EM_ADS_ANA_TaxCodesectionReference, data.getProperty("AcqDisp_TaxCode"),"Tax Code Section Reference");
+				fm.fnWebEdit(driver,EM_ADS_ANA_Methodof, data.getProperty("AcqDisp_MethodofAcquisitionDisposition"),"Method of Acquisition/Disposition");
+				fm.fnWebEdit(driver,EM_ADS_ANA_NumberofShares, data.getProperty("AcqDisp_NumberofShares"),"Number of Shares Acquired/Disposed");
+				fm.fnWebList(driver,EM_ADS_ANA_ClassofShares, data.getProperty("AcqDisp_ClassofShares"),"Class of Shares Acquired/Disposed");
+				fm.fnWebEdit(driver,EM_ADS_ANA_PricevalueofShares, data.getProperty("AcqDisp_PriceofShares"),"Price of Shares Acquired/Disposed");
+				fm.fnWebEdit(driver,EM_ADS_ANA_BasisofShares, data.getProperty("AcqDisp_BasisofShares"),"Basis of Shares Acquired/Disposed");
+				fm.fnWebEdit(driver,EM_ADS_ANA_Notes, data.getProperty("AcqDisp_Notes"),"Notes");
+				fm.fnWebButton(driver, EM_SC_AN_Save, "Save");
+				Thread.sleep(3000);
+				new WebDriverWait(driver, 50)
+						.until(ExpectedConditions.visibilityOfElementLocated(EM_SC_AN_ErrMessage));
+				String scErrtext1 = driver.findElement(EM_SC_AN_ErrMessage).getText();
+				if (scErrtext1.contains("successfully")) {
+					childTest.log(Status.PASS,
+							"Verification: Click on Save after entering details'" +scErrtext1
+									+ "' alert/Message exists");
+				} else {
+					childTest.log(Status.ERROR,
+							"Verification:Click on Save after entering any details,alert/Message does not exists");
+				}
+				fm.fnWebButton(driver, EM_OrgReorg_AFS_Close, "Close");
+			}
+		}catch(Exception e) {
+			childTest.fail(e);
+		}
+	}
+	
+	public void fnEMEditAcquisitionDisposition() {
+		childTest = test.createNode("Description:Edit/View Details- Acq-Disp of Shares~ Ownership" + "<br>"
+				+ "<< Screen Name : Entity Manager->Ownership->Acq-Disp of Shares >></br>");
+		try {
+			if(driver.getTitle().equalsIgnoreCase("Entity Manager")) {
+				driver.switchTo().frame("Iframe1");
+				Thread.sleep(1000);
+				fm.fnWebEditCompare(driver,EM_ADS_ANA_Date, data.getProperty("AcqDisp_Date"), "Date");
+				fm.fnWebEditCompare(driver,EM_ADS_ANA_Name, data.getProperty("AcqDisp_NameofSellerBuyer"), "Name of Seller/Buyer");
+				fm.fnWebEditCompare(driver,EM_ADS_ANA_Address, data.getProperty("AcqDisp_Address"), "Address");
+				fm.fnWebEditCompare(driver,EM_ADS_ANA_City, data.getProperty("AcqDisp_City"), "City");
+				fm.fnWebEditCompare(driver,EM_ADS_ANA_County, data.getProperty("AcqDisp_County"), "County");
+				fm.fnWebEditCompare(driver,EM_ADS_ANA_Country, data.getProperty("AcqDisp_Country"), "Country");
+				fm.fnWebEditCompare(driver,EM_ADS_ANA_State, data.getProperty("AcqDisp_State"),"State");
+				fm.fnWebEditCompare(driver,EM_ADS_ANA_ZipPostalCode, data.getProperty("AcqDisp_Zip"),"Zip");
+				fm.fnWebListCompare(driver,EM_ADS_ANA_NameofRelatedShareHolder, data.getProperty("AcqDisp_NameofRelatedshareholder"),"Name of Related Share Holder");
+				fm.fnWebEditCompare(driver,EM_ADS_ANA_TaxCodesectionReference, data.getProperty("AcqDisp_TaxCode"),"Tax Code Section Reference");
+				fm.fnWebEditCompare(driver,EM_ADS_ANA_Methodof, data.getProperty("AcqDisp_MethodofAcquisitionDisposition"),"Method of Acquisition/Disposition");
+				fm.fnWebEditCompare(driver,EM_ADS_ANA_NumberofShares, data.getProperty("AcqDisp_NumberofShares"),"Number of Shares Acquired/Disposed");
+				fm.fnWebListCompare(driver,EM_ADS_ANA_ClassofShares, data.getProperty("AcqDisp_ClassofShares"),"Class of Shares Acquired/Disposed");
+				fm.fnWebEditCompare(driver,EM_ADS_ANA_PricevalueofShares, data.getProperty("AcqDisp_PriceofShares"),"Price of Shares Acquired/Disposed");
+				fm.fnWebEditCompare(driver,EM_ADS_ANA_Notes, data.getProperty("AcqDisp_Notes"),"Notes");
+				fm.fnWebButton(driver, EM_OrgReorg_AFS_Close, "Close");
+			}
+		}catch(Exception e) {
+			childTest.fail(e);
+		}
+	}
+	
+	public void fnEMAddNewPerson_IndividualsAgents() {
+		childTest = test.createNode("Description:Add New Person-Individuals/Agents" + "<br>"
+				+ "<< Screen Name : Entity Manager->Individuals/Agents >></br>");
+		try {
+			if(driver.getTitle().equalsIgnoreCase("Entity Manager")) {
+				driver.switchTo().frame("Iframe1");
+				fm.fnWebButton(driver, EM_SC_AN_Save, "Save");
+				new WebDriverWait(driver, 50)
+						.until(ExpectedConditions.visibilityOfElementLocated(EM_SC_AN_ErrMessage));
+				String scErrtext = driver.findElement(EM_SC_AN_ErrMessage).getText();
+				if (scErrtext.contains("is required")){
+					childTest.log(Status.PASS,"Verification: Click on Save before entering details'" +scErrtext
+									+ "' alert/Message exists");
+				} else {
+					childTest.log(Status.ERROR,
+							"Verification: Click on Save before entering details alert/Message does not exists");
+				}
+				fm.fnWebEdit(driver,EM_IndividualAgents_FirstName, data.getProperty("IndividualsAgents_FirstName"), "First Name");
+				fm.fnWebEdit(driver,EM_IndividualAgents_LastName, data.getProperty("IndividualsAgents_LastName"), "Last Name");
+				fm.fnWebEdit(driver,EM_IndividualAgents_Organization, data.getProperty("IndividualsAgents_Organization"), "Organization");
+				fm.fnWebEdit(driver,EM_IndividualAgents_Title, data.getProperty("IndividualsAgents_Title"), "Title");
+				fm.fnWebEdit(driver,EM_IndividualAgents_Address1, data.getProperty("IndividualsAgents_Address1"), "Address1");
+				fm.fnWebEdit(driver,EM_IndividualAgents_Honorific, data.getProperty("IndividualsAgents_Honorific"), "Honorific");
+				fm.fnWebEdit(driver,EM_IndividualAgents_Address2, data.getProperty("IndividualsAgents_Address2"), "Address2");
+				fm.fnWebEdit(driver,EM_IndividualAgents_City, data.getProperty("IndividualsAgents_City"), "City");
+				fm.fnWebEdit(driver,EM_IndividualAgents_Country, data.getProperty("IndividualsAgents_Country"), "Country");
+				fm.fnWebEdit(driver,EM_IndividualAgents_Zip, data.getProperty("IndividualsAgents_Zip"), "Zip");
+				fm.fnWebEdit(driver,EM_IndividualAgents_State, data.getProperty("IndividualsAgents_State"), "State");
+				fm.fnWebEdit(driver,EM_IndividualAgents_County, data.getProperty("IndividualsAgents_County"), "County");
+				fm.fnWebEdit(driver,EM_IndividualAgents_CountryofCitizenShip, data.getProperty("IndividualsAgents_CountryofCitizenship"), "CountryofCitizenship");
+				fm.fnWebEdit(driver,EM_IndividualAgents_CountryofResidency, data.getProperty("IndividualsAgents_CountryofResidency"), "CountryofResidency");
+				fm.fnWebEdit(driver,EM_IndividualAgents_MainTelephone, data.getProperty("IndividualsAgents_MainTelephone"), "MainTelephone");
+				fm.fnWebEdit(driver,EM_IndividualAgents_AlternateTelephone, data.getProperty("IndividualsAgents_AlternateTelephone"), "AlternatingTelephone");
+				fm.fnWebEdit(driver,EM_IndividualAgents_Fax, data.getProperty("IndividualsAgents_Fax"), "Fax");
+				fm.fnWebEdit(driver,EM_IndividualAgents_Email, data.getProperty("IndividualsAgents_Email"), "Email");
+				fm.fnWebEdit(driver,EM_IndividualAgents_Notes, data.getProperty("IndividualsAgents_Notes"), "Notes");
+				Thread.sleep(2000);
+				fm.fnWebButton(driver, EM_IndividualAgents_Splitter, "Splitter");
+				Thread.sleep(2000);
+				fm.fnWebList(driver,EM_IndividualAgents_Role1, data.getProperty("IndividualsAgents_Role1"), "Role1");
+				fm.fnWebList(driver,EM_IndividualAgents_Position1, data.getProperty("IndividualsAgents_Position1"), "Position");
+				fm.fnWebEdit(driver,EM_IndividualAgents_DateBegin1, data.getProperty("IndividualsAgents_DateBegin1"), "Date Begin");
+				fm.fnWebEdit(driver,EM_IndividualAgents_DateEnd1, data.getProperty("IndividualsAgents_DateEnd1"), "Date End");
+				fm.fnWebList(driver,EM_IndividualAgents_Order1, data.getProperty("IndividualsAgents_Order1"), "Order");
+				fm.fnWebButton(driver, EM_SC_AN_Save, "Save");
+				Thread.sleep(3000);
+				new WebDriverWait(driver, 50)
+						.until(ExpectedConditions.visibilityOfElementLocated(EM_SC_AN_ErrMessage));
+				String scErrtext1 = driver.findElement(EM_SC_AN_ErrMessage).getText();
+				if (scErrtext1.contains("successfully")) {
+					childTest.log(Status.PASS,
+							"Verification: Click on Save after entering details'" +scErrtext1
+									+ "' alert/Message exists");
+				} else {
+					childTest.log(Status.ERROR,
+							"Verification:Click on Save after entering any details,alert/Message does not exists");
+				}
+				fm.fnWebButton(driver, EM_OrgReorg_AFS_Close, "Close");
+			}
+		}catch(Exception e) {
+			childTest.fail(e);
+		}
+	}
+	
+	public void fnEMAssignGlobalPerson_IndividualsAgents() {
+		childTest = test.createNode("Description:Assign Global Person-Individuals/Agents" + "<br>"
+				+ "<< Screen Name : Entity Manager->Individuals/Agents >></br>");
+		try {
+			if(driver.getTitle().equalsIgnoreCase("Entity Manager")) {
+				driver.switchTo().frame("Iframe1");
+				fm.fnWebButton(driver, EM_SC_AN_Save, "Save");
+				new WebDriverWait(driver, 50)
+						.until(ExpectedConditions.visibilityOfElementLocated(EM_SC_AN_ErrMessage));
+				String scErrtext = driver.findElement(EM_SC_AN_ErrMessage).getText();
+				if (scErrtext.contains("Please enter full name")){
+					childTest.log(Status.PASS,"Verification: Click on Save before entering details'" +scErrtext
+									+ "' alert/Message exists");
+				} else {
+					childTest.log(Status.ERROR,
+							"Verification: Click on Save before entering details alert/Message does not exists");
+				}
+				fm.fnWebEdit(driver,EM_ADS_ANA_Name, data.getProperty("IndividualsAgents_Person"), "Person");
+				fm.fnWebList(driver,EM_IndividualAgents_Role1, data.getProperty("IndividualsAgents_RoleGlobal"), "Role1");
+				fm.fnWebList(driver,EM_IndividualAgents_Position1, data.getProperty("IndividualsAgents_PositionGlobal"), "Position");
+				fm.fnWebEdit(driver,EM_IndividualAgents_DateBegin1, data.getProperty("IndividualsAgents_DateBeginGlobal"), "Date Begin");
+				fm.fnWebEdit(driver,EM_IndividualAgents_DateEnd1, data.getProperty("IndividualsAgents_DateEndGlobal"), "Date End");
+				fm.fnWebList(driver,EM_IndividualAgents_Order1, data.getProperty("IndividualsAgents_OrderGlobal"), "Order");
+				fm.fnWebButton(driver, EM_SC_AN_Save, "Save");
+				Thread.sleep(3000);
+				new WebDriverWait(driver, 50)
+						.until(ExpectedConditions.visibilityOfElementLocated(EM_SC_AN_ErrMessage));
+				String scErrtext1 = driver.findElement(EM_SC_AN_ErrMessage).getText();
+				if (scErrtext1.contains("successfully")) {
+					childTest.log(Status.PASS,
+							"Verification: Click on Save after entering details'" +scErrtext1
+									+ "' alert/Message exists");
+				} else {
+					childTest.log(Status.ERROR,
+							"Verification:Click on Save after entering any details,alert/Message does not exists");
+				}
+				fm.fnWebButton(driver, EM_OrgReorg_AFS_Close, "Close");
+	
+			}
+		}catch(Exception e) {
+			childTest.fail(e);
+		}
+	}
+	
+	public void fnEMEditViewIndividuals_Agents() {
+		childTest = test.createNode("Description:Edit/View Details-Individuals/Agents" + "<br>"
+				+ "<< Screen Name : Entity Manager->Individuals/Agents >></br>");
+		try {
+			if(driver.getTitle().equalsIgnoreCase("Entity Manager")) {
+				driver.switchTo().frame("Iframe1");
+				fm.fnWebEditCompare(driver,EM_IndividualAgents_FirstName, data.getProperty("IndividualsAgents_FirstName"), "First Name");
+				fm.fnWebEditCompare(driver,EM_IndividualAgents_LastName, data.getProperty("IndividualsAgents_LastName"), "Last Name");
+				fm.fnWebEditCompare(driver,EM_IndividualAgents_Organization, data.getProperty("IndividualsAgents_Organization"), "Organization");
+				fm.fnWebEditCompare(driver,EM_IndividualAgents_Title, data.getProperty("IndividualsAgents_Title"), "Title");
+				fm.fnWebEditCompare(driver,EM_IndividualAgents_Address1, data.getProperty("IndividualsAgents_Address1"), "Address1");
+				fm.fnWebEditCompare(driver,EM_IndividualAgents_Honorific, data.getProperty("IndividualsAgents_Honorific"), "Honorific");
+				fm.fnWebEditCompare(driver,EM_IndividualAgents_Address2, data.getProperty("IndividualsAgents_Address2"), "Address2");
+				fm.fnWebEditCompare(driver,EM_IndividualAgents_City, data.getProperty("IndividualsAgents_City"), "City");
+				fm.fnWebEditCompare(driver,EM_IndividualAgents_Country, data.getProperty("IndividualsAgents_Country"), "Country");
+				fm.fnWebEditCompare(driver,EM_IndividualAgents_Zip, data.getProperty("IndividualsAgents_Zip"), "Zip");
+				fm.fnWebEditCompare(driver,EM_IndividualAgents_State, data.getProperty("IndividualsAgents_State"), "State");
+				fm.fnWebEditCompare(driver,EM_IndividualAgents_County, data.getProperty("IndividualsAgents_County"), "County");
+				fm.fnWebEditCompare(driver,EM_IndividualAgents_CountryofCitizenShip, data.getProperty("IndividualsAgents_CountryofCitizenship"), "CountryofCitizenship");
+				fm.fnWebEditCompare(driver,EM_IndividualAgents_CountryofResidency, data.getProperty("IndividualsAgents_CountryofResidency"), "CountryofResidency");
+				fm.fnWebEditCompare(driver,EM_IndividualAgents_MainTelephone, data.getProperty("IndividualsAgents_MainTelephone"), "MainTelephone");
+				fm.fnWebEditCompare(driver,EM_IndividualAgents_AlternateTelephone, data.getProperty("IndividualsAgents_AlternateTelephone"), "AlternatingTelephone");
+				fm.fnWebEditCompare(driver,EM_IndividualAgents_Fax, data.getProperty("IndividualsAgents_Fax"), "Fax");
+				fm.fnWebEditCompare(driver,EM_IndividualAgents_Email, data.getProperty("IndividualsAgents_Email"), "Email");
+				fm.fnWebEditCompare(driver,EM_IndividualAgents_Notes, data.getProperty("IndividualsAgents_Notes"), "Notes");
+				/*fm.fnWebButton(driver, EM_IndividualAgents_Splitter, "Splitter");
+				Thread.sleep(2000);
+				fm.fnWebListCompare(driver,EM_IndividualAgents_RoleCompare, data.getProperty("IndividualsAgents_Role1"), "Role");
+				fm.fnWebListCompare(driver,EM_IndividualAgents_PositionCompare, data.getProperty("IndividualsAgents_Position1"), "Position");
+				fm.fnWebEditCompare(driver,EM_IndividualAgents_DateBeginCompare, data.getProperty("IndividualsAgents_DateBegin1"), "Date Begin");
+				fm.fnWebEditCompare(driver,EM_IndividualAgents_DateEndCompare, data.getProperty("IndividualsAgents_DateEnd1"), "Date End");
+				fm.fnWebListCompare(driver,EM_IndividualAgents_OrderCompare, data.getProperty("IndividualsAgents_Order1"), "Order");*/
+				fm.fnWebButton(driver, EM_OrgReorg_AFS_Close, "Close");
+			}
+		}catch(Exception e) {
+			childTest.fail(e);
+		}
+
+	}
 }
