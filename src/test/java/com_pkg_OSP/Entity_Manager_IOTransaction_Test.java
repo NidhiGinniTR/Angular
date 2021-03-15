@@ -9,6 +9,8 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -66,7 +68,9 @@ public class Entity_Manager_IOTransaction_Test extends BrowserInvoke {
 		driver.findElement(By.xpath("//table[@id='TabStrip1_5']")).click();
 
 		Thread.sleep(1000);
-		driver.switchTo().frame("fraContent5");
+		WebDriverWait wait = new WebDriverWait(driver, 60);
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("fraContent5"));
+		//driver.switchTo().frame("fraContent5");
 		List<WebElement> rows = driver
 				.findElements(By.xpath("//DIV[@id='gridICTransactions_grdEntityManager_dom']/TABLE[1]/TBODY[1]/TR"));
 		// System.out.println(rows);
@@ -88,7 +92,7 @@ public class Entity_Manager_IOTransaction_Test extends BrowserInvoke {
 			fm.fnWebButton(driver, By.xpath("//*[@id='btnPurge']"), "OK");
 			lp.fnSwitchtoWindow(2, "Entity Information");
 			Thread.sleep(1000);
-			driver.switchTo().frame("fraContent5");
+			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("fraContent5"));
 		}
 
 		// Step-7---------Add New-------------------------------//
@@ -108,7 +112,7 @@ public class Entity_Manager_IOTransaction_Test extends BrowserInvoke {
 		Thread.sleep(2500);
 		driver.findElement(By.xpath("//table[@id='TabStrip1_5']")).click();
 		Thread.sleep(1000);
-		driver.switchTo().frame("fraContent5");
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("fraContent5"));
 		Thread.sleep(1500);
 		fm.fnWebTable(driver, driver.findElement(By.xpath("//tr[@id='gridICTransactions_grdEntityManager_row_0']")),
 				"Click");
@@ -120,7 +124,8 @@ public class Entity_Manager_IOTransaction_Test extends BrowserInvoke {
 		lp.fnSwitchtoWindow(3, "Entity Manager");
 		Thread.sleep(2000);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		driver.switchTo().frame("Iframe1");
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("Iframe1"));
+		//driver.switchTo().frame("Iframe1");
 		Eub.fnEM_EditIOTransaction();
 
 		// Step-10:-------------------Customize View---------------------------------------------
@@ -128,7 +133,7 @@ public class Entity_Manager_IOTransaction_Test extends BrowserInvoke {
 		lp.fnSwitchtoWindow(2, "Entity Information");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		Thread.sleep(1000);
-		driver.switchTo().frame("fraContent5");
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("fraContent5"));
 		Thread.sleep(1500);
 
 		fm.fnWebButton(driver, By.xpath("//img[@id='btnActionsMenu']"), "Actions");
@@ -140,7 +145,7 @@ public class Entity_Manager_IOTransaction_Test extends BrowserInvoke {
 		// Step-11:----------------Save Preferences-----------------------------------//
 		lp.fnSwitchtoWindow(2, "Entity Information");
 		Thread.sleep(1000);
-		driver.switchTo().frame("fraContent5");
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("fraContent5"));
 		Thread.sleep(1500);
 
 		fm.fnWebButton(driver, By.xpath("//img[@id='btnActionsMenu']"), "Actions");

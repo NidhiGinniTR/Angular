@@ -6,15 +6,15 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com_pkg_OSP.Entity_Manager_Banking_Test">
+      <class name="com_pkg_OSP.Entity_Manager_IOTransaction_Test">
         <methods>
           <include name="beforeStart"/>
-          <include name="aftersuite"/>
-          <include name="closeBrowser"/>
           <include name="Initialize"/>
-          <include name="EUB_Banking"/>
+          <include name="closeBrowser"/>
+          <include name="EUB_IOTransaction"/>
+          <include name="aftersuite"/>
         </methods>
-      </class> <!-- com_pkg_OSP.Entity_Manager_Banking_Test -->
+      </class> <!-- com_pkg_OSP.Entity_Manager_IOTransaction_Test -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

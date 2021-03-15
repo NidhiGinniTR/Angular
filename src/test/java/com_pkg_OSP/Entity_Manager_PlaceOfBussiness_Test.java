@@ -9,6 +9,8 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -64,7 +66,9 @@ public class Entity_Manager_PlaceOfBussiness_Test extends BrowserInvoke {
 		// Step-6--------------------------------------------------------------------------------------------
 		fm.fnWebButton(driver, By.xpath("//table[@id='TabStrip1_3']//nobr"), "Places of Business");
 		Thread.sleep(1000);
-		driver.switchTo().frame("fraContent4");
+		WebDriverWait wait = new WebDriverWait(driver, 60);
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("fraContent4"));
+		//driver.switchTo().frame("fraContent4");
 		List<WebElement> rows = driver
 				.findElements(By.xpath("//DIV[@id='gridPOB_grdEntityManager_dom']/TABLE[1]/TBODY[1]/TR"));
 		if (rows.size() >= 2) {
@@ -103,7 +107,7 @@ public class Entity_Manager_PlaceOfBussiness_Test extends BrowserInvoke {
 		Thread.sleep(2500);
 		fm.fnWebButton(driver, By.xpath("//table[@id='TabStrip1_3']//nobr"), "Places of Business");
 		Thread.sleep(1000);
-		driver.switchTo().frame("fraContent4");
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("fraContent4"));
 		Thread.sleep(1500);
 		fm.fnWebTable(driver, driver.findElement(By.xpath("//tr[@id='gridPOB_grdEntityManager_row_0']")), "Click");
 
@@ -119,7 +123,7 @@ public class Entity_Manager_PlaceOfBussiness_Test extends BrowserInvoke {
 		lp.fnSwitchtoWindow(2, "Entity Information");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		Thread.sleep(1000);
-		driver.switchTo().frame("fraContent4");
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("fraContent4"));
 		Thread.sleep(1500);
 
 		fm.fnWebButton(driver, By.xpath("//img[@id='btnActionsMenu']"), "Actions");
@@ -132,7 +136,7 @@ public class Entity_Manager_PlaceOfBussiness_Test extends BrowserInvoke {
 		// Step-11:----------------Save Preferences-----------------------------------//
 		lp.fnSwitchtoWindow(2, "Entity Information");
 		Thread.sleep(1000);
-		driver.switchTo().frame("fraContent4");
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("fraContent4"));
 		Thread.sleep(1500);
 
 		fm.fnWebButton(driver, By.xpath("//img[@id='btnActionsMenu']"), "Actions");
