@@ -152,6 +152,11 @@ public class Entity_Manager_Documents_Test extends BrowserInvoke {
 		Eub.fnOWMActionsMenu("Delete Document(s)", "");
 		Thread.sleep(1000);
 		Eub.fnDeleteDocument();
+		Thread.sleep(1000);
+		lp.fnSwitchtoWindow(1, "Onesource");
+		
+		// Step--------LogOFF-------------------------------//
+		Eub.fnLogOff();
 	}
 	
 	@AfterClass

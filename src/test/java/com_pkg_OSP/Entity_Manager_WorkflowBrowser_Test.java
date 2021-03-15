@@ -167,6 +167,11 @@ public class Entity_Manager_WorkflowBrowser_Test extends BrowserInvoke {
 		fm.fnWebButton(driver, By.xpath("//img[@id='Img3']"), "Actions");
 		Eub.fnOWMActionsMenu("Delete WorkFlow(s)", "");
 		Eub.fnDeleteWorkflow();
+		Thread.sleep(1000);
+		lp.fnSwitchtoWindow(1, "Onesource");
+		
+		// Step--------LogOFF-------------------------------//
+		Eub.fnLogOff();
 	}
 	
 	@AfterClass
