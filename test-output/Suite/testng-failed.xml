@@ -15,6 +15,15 @@
           <include name="aftersuite"/>
         </methods>
       </class> <!-- com_pkg_OSP.Entity_Manager_IOTransaction_Test -->
+      <class name="com_pkg_OSP.Entity_Manager_PlaceOfBussiness_Test">
+        <methods>
+          <include name="EUB_PlaceOfBussiness"/>
+          <include name="closeBrowser"/>
+          <include name="Initialize"/>
+          <include name="aftersuite"/>
+          <include name="beforeStart"/>
+        </methods>
+      </class> <!-- com_pkg_OSP.Entity_Manager_PlaceOfBussiness_Test -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
