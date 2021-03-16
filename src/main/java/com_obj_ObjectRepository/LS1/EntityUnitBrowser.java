@@ -546,11 +546,8 @@ public class EntityUnitBrowser extends ExtentManager {
 		this.data = data2;
 	}
 	
-	FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
-			.withTimeout(Duration.ofSeconds(50))
-			.pollingEvery(Duration.ofSeconds(5))
-			.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
-			.ignoring(NoSuchFrameException.class);
+	
+	
 
 	/***************************************************************************************
 	 * This function is usedto check the Search Fields
@@ -706,6 +703,11 @@ public class EntityUnitBrowser extends ExtentManager {
 		childTest = test.createNode("Description: Description: Entering all the fields to the create new entity"
 				+ "<br>" + "<< Screen Name : Entity Information >></br>");
 		try {
+			FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
+					.withTimeout(Duration.ofSeconds(50))
+					.pollingEvery(Duration.ofSeconds(5))
+					.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+					.ignoring(NoSuchFrameException.class);
 					waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("addeditFrame1"));
 			Boolean temp = fnVisibilityTest(entity_name);
 			if (temp.TRUE) {
@@ -776,6 +778,11 @@ public class EntityUnitBrowser extends ExtentManager {
 		try {
 			Thread.sleep(2000);
 			if (driver.getTitle().equalsIgnoreCase("Entity Information")) {
+				FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
+						.withTimeout(Duration.ofSeconds(50))
+						.pollingEvery(Duration.ofSeconds(5))
+						.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+						.ignoring(NoSuchFrameException.class);
 				waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("addeditFrame1"));
 				Boolean temp = fnVisibilityTest(entity_name);
 				if (temp.TRUE) {
@@ -876,6 +883,11 @@ public class EntityUnitBrowser extends ExtentManager {
 		childTest = test.createNode(
 				"Description: Description: copy to new entity" + "<br>" + "<< Screen Name : Copy Entity >></br>");
 		try {
+			FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
+					.withTimeout(Duration.ofSeconds(50))
+					.pollingEvery(Duration.ofSeconds(5))
+					.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+					.ignoring(NoSuchFrameException.class);
 			Boolean temp = fnVisibilityTest(entity_name);
 			if (temp.TRUE) {
 				LS1 Lp = new LS1(driver, data, template);
@@ -1023,7 +1035,11 @@ public class EntityUnitBrowser extends ExtentManager {
 		childTest = test
 				.createNode("Description: DBA : Add New" + "<br>" + "<< Screen Name: Entity Unit Browser>></br>");
 		try {
-			
+			FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
+					.withTimeout(Duration.ofSeconds(50))
+					.pollingEvery(Duration.ofSeconds(5))
+					.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+					.ignoring(NoSuchFrameException.class);
 			waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("Iframe1"));
 			Boolean temp = fnVisibilityTest(EM_DBA_AN_DoingBusinessAs);
 			if (temp.TRUE) {
@@ -1118,6 +1134,11 @@ public class EntityUnitBrowser extends ExtentManager {
 		childTest = test.createNode(
 				"Description: Entity Group-Add/Edit/Delete" + "<br>" + "<< Screen Name: Basic Info >></br>");
 		if (driver.getTitle().equalsIgnoreCase("Entity Information")) {
+			FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
+					.withTimeout(Duration.ofSeconds(50))
+					.pollingEvery(Duration.ofSeconds(5))
+					.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+					.ignoring(NoSuchFrameException.class);
 			waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("addeditFrame1"));
 			// fm.fnWebEdit(driver,EM_EntityGroup ,"***","Entity Group");
 			driver.findElement(By.xpath("//INPUT[@id='clientname']")).sendKeys("BDO");
@@ -1270,6 +1291,11 @@ public class EntityUnitBrowser extends ExtentManager {
 				"Description: DBA :Edit/View Details" + "<br>" + "<< Screen Name: Entity Unit Browser--DBA>></br>");
 		try {
 			if (driver.getTitle().equalsIgnoreCase("Entity Manager")) {
+				FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
+						.withTimeout(Duration.ofSeconds(50))
+						.pollingEvery(Duration.ofSeconds(5))
+						.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+						.ignoring(NoSuchFrameException.class);
 				waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("Iframe1"));
 				WebDriver wait = new WebDriverWait(driver, 60)
 						.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("Iframe1"));
@@ -1315,6 +1341,11 @@ public class EntityUnitBrowser extends ExtentManager {
 		childTest = test.createNode("Description: Entering all the fields to create new Tax Id's/Registration" + "<br>"
 				+ "<< Screen Name: Entity Manager >></br>");
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
+				.withTimeout(Duration.ofSeconds(50))
+				.pollingEvery(Duration.ofSeconds(5))
+				.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+				.ignoring(NoSuchFrameException.class);
 		if (driver.getTitle().contains("Entity Manager")) {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			Thread.sleep(1500);
@@ -1429,6 +1460,11 @@ public class EntityUnitBrowser extends ExtentManager {
 		childTest = test.createNode("Description: Edit/View Details in Tax Id's/Registration" + "<br>"
 				+ "<< Screen Name: Entity Manager >></br>");
 		try {
+			FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
+					.withTimeout(Duration.ofSeconds(50))
+					.pollingEvery(Duration.ofSeconds(5))
+					.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+					.ignoring(NoSuchFrameException.class);
 			if (driver.getTitle().equalsIgnoreCase("Entity Manager")) {
 				waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("Iframe1"));
 				Thread.sleep(1500);
@@ -1507,6 +1543,11 @@ public class EntityUnitBrowser extends ExtentManager {
 				+ "<< Screen Name: Entity information >></br>");
 
 		// driver.switchTo().defaultContent();
+		FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
+				.withTimeout(Duration.ofSeconds(50))
+				.pollingEvery(Duration.ofSeconds(5))
+				.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+				.ignoring(NoSuchFrameException.class);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.findElement(By.xpath("//td[@id='tdBusiness']")).click(); // Navigate to business tab
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -1545,6 +1586,11 @@ public class EntityUnitBrowser extends ExtentManager {
 
 		try {
 			// driver.switchTo().defaultContent();
+			FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
+					.withTimeout(Duration.ofSeconds(50))
+					.pollingEvery(Duration.ofSeconds(5))
+					.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+					.ignoring(NoSuchFrameException.class);
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			driver.findElement(By.xpath("//td[@id='tdBusiness']")).click(); // Navigate to business tab
 					waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("addeditFrame1"));
@@ -1581,7 +1627,11 @@ public class EntityUnitBrowser extends ExtentManager {
 	public void responsibility_info() throws InterruptedException {
 		childTest = test.createNode(
 				"Description: Responsibility Information" + "<br>" + "<< Screen Name: Entity information >></br>");
-
+		FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
+				.withTimeout(Duration.ofSeconds(50))
+				.pollingEvery(Duration.ofSeconds(5))
+				.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+				.ignoring(NoSuchFrameException.class);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.findElement(By.xpath("//td[@id='tdResponsibility']")).click(); // Navigate to business tab
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -1626,6 +1676,11 @@ public class EntityUnitBrowser extends ExtentManager {
 				"Description: View Responsiblity Info Tab" + "<br>" + "<< Screen Name: Entity Information >></br>");
 		try {
 			// driver.switchTo().defaultContent();
+			FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
+					.withTimeout(Duration.ofSeconds(50))
+					.pollingEvery(Duration.ofSeconds(5))
+					.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+					.ignoring(NoSuchFrameException.class);
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			driver.findElement(By.xpath("//td[@id='tdResponsibility']")).click(); // Navigate to business tab
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -1684,6 +1739,11 @@ public class EntityUnitBrowser extends ExtentManager {
 		childTest = test
 				.createNode("Description: Key Contacts" + "<br>" + "<< Screen Name: Entity information >></br>");
 		// driver.switchTo().defaultContent();
+		FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
+				.withTimeout(Duration.ofSeconds(50))
+				.pollingEvery(Duration.ofSeconds(5))
+				.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+				.ignoring(NoSuchFrameException.class);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.findElement(By.xpath("//td[@id='tdKeyContacts']")).click(); // Navigate to Key Contacts tab
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -1741,6 +1801,11 @@ public class EntityUnitBrowser extends ExtentManager {
 		try {
 			// driver.switchTo().defaultContent();
 			Thread.sleep(1000);
+			FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
+					.withTimeout(Duration.ofSeconds(50))
+					.pollingEvery(Duration.ofSeconds(5))
+					.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+					.ignoring(NoSuchFrameException.class);
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			driver.findElement(By.xpath("//td[@id='tdKeyContacts']")).click(); // Navigate to business tab
 			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -1799,6 +1864,11 @@ public class EntityUnitBrowser extends ExtentManager {
 
 	public void page_Links() throws InterruptedException {
 		childTest = test.createNode("Description: Page Links" + "<br>" + "<< Screen Name: Entity information >></br>");
+		FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
+				.withTimeout(Duration.ofSeconds(50))
+				.pollingEvery(Duration.ofSeconds(5))
+				.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+				.ignoring(NoSuchFrameException.class);
 		driver.switchTo().defaultContent();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.findElement(By.xpath("//td[@id='tdPageLinks']")).click(); // Navigate to Page Links
@@ -1854,7 +1924,11 @@ public class EntityUnitBrowser extends ExtentManager {
 	 ***************************************************************************************/
 	public void doubleclickEntity() throws InterruptedException {
 		childTest = test.createNode("Description: Double click Entity" + "<br>" + "<< Screen Name: ONESOURCE >></br>");
-
+		FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
+				.withTimeout(Duration.ofSeconds(50))
+				.pollingEvery(Duration.ofSeconds(5))
+				.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+				.ignoring(NoSuchFrameException.class);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.switchTo().frame("maincontent");
 		waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("app_iFrame"));
@@ -1874,6 +1948,11 @@ public class EntityUnitBrowser extends ExtentManager {
 	public void searchEntity() throws InterruptedException {
 		childTest = test.createNode("Description: Search for Entity" + "<br>" + "<<Screen Name: ONESOURCE >></br>");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
+				.withTimeout(Duration.ofSeconds(50))
+				.pollingEvery(Duration.ofSeconds(5))
+				.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+				.ignoring(NoSuchFrameException.class);
 		driver.switchTo().frame("maincontent");
 		waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("app_iFrame"));
 		waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame"));
@@ -1917,7 +1996,11 @@ public class EntityUnitBrowser extends ExtentManager {
 			childTest.log(Status.FAIL, "Total percentage before adding owner is not 0%.");
 		}
 		try {
-
+			FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
+					.withTimeout(Duration.ofSeconds(50))
+					.pollingEvery(Duration.ofSeconds(5))
+					.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+					.ignoring(NoSuchFrameException.class);
 			waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("Iframe1"));
 			fm.fnWebButton(driver, EM_Owners_Save, "Save");
 			/*
@@ -1982,6 +2065,11 @@ public class EntityUnitBrowser extends ExtentManager {
 		childTest = test.createNode("Description: Edit/View Details~ Owners" + "<br>"
 				+ "<< Screen Name : Entity Manager->Ownership->Owners >></br>");
 		try {
+			FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
+					.withTimeout(Duration.ofSeconds(50))
+					.pollingEvery(Duration.ofSeconds(5))
+					.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+					.ignoring(NoSuchFrameException.class);
 			waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("Iframe1"));
 			System.out.println("this is in Edit");
 			if (i == 2) {
@@ -2045,7 +2133,11 @@ public class EntityUnitBrowser extends ExtentManager {
 		try {
 			Thread.sleep(1000);
 			//if(driver.getTitle().contains("Add document")) {
-				System.out.println(driver.getTitle());
+			FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
+					.withTimeout(Duration.ofSeconds(50))
+					.pollingEvery(Duration.ofSeconds(5))
+					.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+					.ignoring(NoSuchFrameException.class);
 				waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("frame1"));
 				fm.fnWebButton(driver, EM_Doc_Save, "Save");
 				String errormsg = driver.findElement(By.xpath("//span[@id='spaErrorMessage']")).getText();
@@ -2390,6 +2482,11 @@ public class EntityUnitBrowser extends ExtentManager {
 		childTest = test.createNode(
 				"Description: Add Bussiness in Entity Manager " + "<br>" + "<< Screen Name: Add Bussiness >></br>");
 		try {
+			FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
+					.withTimeout(Duration.ofSeconds(50))
+					.pollingEvery(Duration.ofSeconds(5))
+					.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+					.ignoring(NoSuchFrameException.class);
 			waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("Iframe1"));
 			fm.fnWebButton(driver, EM_Wf_Save, "Save");
 			String errormsg = driver.findElement(By.xpath("//span[@id='spaErrorMessage']")).getText();
@@ -2444,6 +2541,11 @@ public class EntityUnitBrowser extends ExtentManager {
 		childTest = test.createNode(
 				"Description: Edit/View Details page in Entity Manager " + "<br>" + "<< Screen Name: Edit/View Details >></br>");
 		try {
+			FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
+					.withTimeout(Duration.ofSeconds(50))
+					.pollingEvery(Duration.ofSeconds(5))
+					.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+					.ignoring(NoSuchFrameException.class);
 			waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("Iframe1"));
 			fm.fnWebEditCompare(driver, EM_BS_BussinessName, template.getProperty("BussinessName"), "Bussiness Name");
 			fm.fnWebEditCompare(driver, EM_BS_BussinessId, template.getProperty("BussinessId"), "Bussiness ID");
@@ -2657,6 +2759,11 @@ public class EntityUnitBrowser extends ExtentManager {
 	public void fnEMOrgReorgAddFoundingShareholder() {
 		childTest = test.createNode("Description: Add Founding ShareHolder~ Ownership" + "<br>"
 				+ "<< Screen Name : Entity Manager->Ownership->OrgReorg >></br>");
+		FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
+				.withTimeout(Duration.ofSeconds(50))
+				.pollingEvery(Duration.ofSeconds(5))
+				.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+				.ignoring(NoSuchFrameException.class);
 		try {
 			if (driver.getTitle().equalsIgnoreCase("Entity Manager")) {
 				waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("Iframe1"));
@@ -2719,6 +2826,11 @@ public class EntityUnitBrowser extends ExtentManager {
 		childTest = test.createNode("Description: Add New Reorg~ Ownership" + "<br>"
 				+ "<< Screen Name : Entity Manager->Ownership->OrgReorg >></br>");
 		try {
+			FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
+					.withTimeout(Duration.ofSeconds(50))
+					.pollingEvery(Duration.ofSeconds(5))
+					.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+					.ignoring(NoSuchFrameException.class);
 			if (driver.getTitle().equalsIgnoreCase("Entity Manager")) {
 				waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("Iframe1"));
 				fm.fnWebButton(driver, EM_OrgReorg_AFS_Save, "Save");
@@ -2775,6 +2887,11 @@ public class EntityUnitBrowser extends ExtentManager {
 		childTest = test.createNode("Description: Edit/View Details- OrgReorg~ Ownership" + "<br>"
 				+ "<< Screen Name : Entity Manager->Ownership->OrgReorg >></br>");
 		try {
+			FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
+					.withTimeout(Duration.ofSeconds(50))
+					.pollingEvery(Duration.ofSeconds(5))
+					.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+					.ignoring(NoSuchFrameException.class);
 			if (driver.getTitle().equalsIgnoreCase("Entity Manager")) {
 				waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("Iframe1"));
 				if(i==2) {
@@ -2833,6 +2950,11 @@ public class EntityUnitBrowser extends ExtentManager {
 		childTest = test.createNode("Description: Add New- Stock Of the Company~ Ownership" + "<br>"
 				+ "<< Screen Name : Entity Manager->Ownership->Stock Of the Company >></br>");
 		try {
+			FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
+					.withTimeout(Duration.ofSeconds(50))
+					.pollingEvery(Duration.ofSeconds(5))
+					.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+					.ignoring(NoSuchFrameException.class);
 			if (driver.getTitle().equalsIgnoreCase("Entity Manager")) {
 				waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("Iframe1"));
 				fm.fnWebList(driver,EM_SC_AN_RelatedShareHolder,data.getProperty("StockoftheCompany_RelatedShareHolder"), "Related Share Holder");
@@ -2886,6 +3008,11 @@ public class EntityUnitBrowser extends ExtentManager {
 				+ "<< Screen Name : Entity Manager->Ownership->Stock Of the Company >></br>");
 		try {
 				Thread.sleep(2000);
+				FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
+						.withTimeout(Duration.ofSeconds(50))
+						.pollingEvery(Duration.ofSeconds(5))
+						.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+						.ignoring(NoSuchFrameException.class);
 				waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("Iframe1"));
 				if(i==2) {
 					fm.fnWebListCompare(driver,EM_SC_AN_RelatedShareHolder,data.getProperty("StockoftheCompany_RelatedShareHolder"), "Related Share Holder");
@@ -2908,6 +3035,11 @@ public class EntityUnitBrowser extends ExtentManager {
 		childTest = test.createNode("Description:Add New Acquisition/Add New Disposition- Acq-Disp of Shares~ Ownership" + "<br>"
 				+ "<< Screen Name : Entity Manager->Ownership->Acq-Disp of Shares >></br>");
 		try {
+			FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
+					.withTimeout(Duration.ofSeconds(50))
+					.pollingEvery(Duration.ofSeconds(5))
+					.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+					.ignoring(NoSuchFrameException.class);
 			if(driver.getTitle().equalsIgnoreCase("Entity Manager")) {
 				waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("Iframe1"));
 				fm.fnWebButton(driver, EM_SC_AN_Save, "Save");
@@ -2959,6 +3091,11 @@ public class EntityUnitBrowser extends ExtentManager {
 		childTest = test.createNode("Description:Edit/View Details- Acq-Disp of Shares~ Ownership" + "<br>"
 				+ "<< Screen Name : Entity Manager->Ownership->Acq-Disp of Shares >></br>");
 		try {
+			FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
+					.withTimeout(Duration.ofSeconds(50))
+					.pollingEvery(Duration.ofSeconds(5))
+					.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+					.ignoring(NoSuchFrameException.class);
 			if(driver.getTitle().equalsIgnoreCase("Entity Manager")) {
 				waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("Iframe1"));
 				Thread.sleep(1000);
@@ -2988,6 +3125,11 @@ public class EntityUnitBrowser extends ExtentManager {
 		childTest = test.createNode("Description:Add New Person-Individuals/Agents" + "<br>"
 				+ "<< Screen Name : Entity Manager->Individuals/Agents >></br>");
 		try {
+			FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
+					.withTimeout(Duration.ofSeconds(50))
+					.pollingEvery(Duration.ofSeconds(5))
+					.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+					.ignoring(NoSuchFrameException.class);
 			if(driver.getTitle().equalsIgnoreCase("Entity Manager")) {
 				waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("Iframe1"));
 				fm.fnWebButton(driver, EM_SC_AN_Save, "Save");
@@ -3050,6 +3192,11 @@ public class EntityUnitBrowser extends ExtentManager {
 		childTest = test.createNode("Description:Assign Global Person-Individuals/Agents" + "<br>"
 				+ "<< Screen Name : Entity Manager->Individuals/Agents >></br>");
 		try {
+			FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
+					.withTimeout(Duration.ofSeconds(50))
+					.pollingEvery(Duration.ofSeconds(5))
+					.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+					.ignoring(NoSuchFrameException.class);
 			if(driver.getTitle().equalsIgnoreCase("Entity Manager")) {
 				waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("Iframe1"));
 				fm.fnWebButton(driver, EM_SC_AN_Save, "Save");
@@ -3094,6 +3241,11 @@ public class EntityUnitBrowser extends ExtentManager {
 		childTest = test.createNode("Description:Edit/View Details-Individuals/Agents" + "<br>"
 				+ "<< Screen Name : Entity Manager->Individuals/Agents >></br>");
 		try {
+			FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
+					.withTimeout(Duration.ofSeconds(50))
+					.pollingEvery(Duration.ofSeconds(5))
+					.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+					.ignoring(NoSuchFrameException.class);
 			if(driver.getTitle().equalsIgnoreCase("Entity Manager")) {
 				waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("Iframe1"));
 				fm.fnWebEditCompare(driver,EM_IndividualAgents_FirstName, data.getProperty("IndividualsAgents_FirstName"), "First Name");
