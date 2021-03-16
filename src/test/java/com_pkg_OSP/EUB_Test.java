@@ -5,6 +5,8 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -37,15 +39,16 @@ public class EUB_Test extends BrowserInvoke {
 		// Step-1:-----Login---------------------------------------------//
 		LS1 lp = new LS1(driver, propEnv, propSerialData);
 		lp.fnLogin();
+		WebDriverWait wait = new WebDriverWait(driver, 60);
 
 		// Step-2:-----Launch Entity Unit Browser---------------------------//
 		lp.LaunchApplication("Entity Manager");
 
 		// Step-3:-----Verify Search Fields---------------------------//
 		driver.switchTo().defaultContent();
-		driver.switchTo().frame("maincontent");
-		driver.switchTo().frame("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad");
-		driver.switchTo().frame("gridFrame");
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("maincontent"));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad"));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame"));
 		EntityUnitBrowser Eub = new EntityUnitBrowser(driver, propEnv, propSerialData);
 		String[] array = new String[] { "Entity Name", "Entity ID", "Entity Type","Status","Locations", "Group Code","Entity Group","Archive","PPOB State/Province","PPOB Country/Region" };
 		Eub.fnVerifySearchElements(array);
@@ -66,9 +69,9 @@ public class EUB_Test extends BrowserInvoke {
 		// Step-7:--------------------Search created Entity--------------------------------//
 		lp.fnSwitchtoWindow(1, "Onesource");
 		driver.switchTo().defaultContent();
-		driver.switchTo().frame("maincontent");
-		driver.switchTo().frame("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad");
-		driver.switchTo().frame("gridFrame");
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("maincontent"));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad"));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame"));
 
 		Eub.fnSearchEntity();
 
@@ -86,9 +89,9 @@ public class EUB_Test extends BrowserInvoke {
 		lp.fnSwitchtoWindow(1, "Onesource");
 
 		driver.switchTo().defaultContent();
-		driver.switchTo().frame("maincontent");
-		driver.switchTo().frame("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad");
-		driver.switchTo().frame("gridFrame");
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("maincontent"));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad"));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame"));
 
 		Eub.fnSearchEntity();
 		fm.fnWebTable(driver, driver.findElement(By.xpath("//tr[@id='gridEntityBrowser_grdEntityManager_row_0']")),"Click");
@@ -106,9 +109,9 @@ public class EUB_Test extends BrowserInvoke {
 		lp.fnSwitchtoWindow(1, "Onesource");
 
 		driver.switchTo().defaultContent();
-		driver.switchTo().frame("maincontent");
-		driver.switchTo().frame("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad");
-		driver.switchTo().frame("gridFrame");
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("maincontent"));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad"));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame"));
 
 		// Step-14:----------------Customize View-----------------------------------//
 		Eub.fnClickActions();
@@ -122,9 +125,9 @@ public class EUB_Test extends BrowserInvoke {
 
 		lp.fnSwitchtoWindow(1, "Onesource");
 		driver.switchTo().defaultContent();
-		driver.switchTo().frame("maincontent");
-		driver.switchTo().frame("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad");
-		driver.switchTo().frame("gridFrame");
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("maincontent"));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad"));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame"));
 		Eub.fnClickActions();
 		Eub.fnOWMActionsMenu("Save Preferences", "");
 		Eub.fnSavePreferences("Save Preferences");
