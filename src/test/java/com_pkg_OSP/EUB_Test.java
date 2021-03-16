@@ -1,9 +1,11 @@
 package com_pkg_OSP;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -38,6 +40,7 @@ public class EUB_Test extends BrowserInvoke {
 	public void EntityUnitBrowser() throws InterruptedException {
 		// Step-1:-----Login---------------------------------------------//
 		LS1 lp = new LS1(driver, propEnv, propSerialData);
+		FrameWork fm = new FrameWork();
 		lp.fnLogin();
 		WebDriverWait wait = new WebDriverWait(driver, 60);
 
@@ -57,7 +60,19 @@ public class EUB_Test extends BrowserInvoke {
 		Eub.fnClickActions();
 		Eub.fnActionsMenuEnabled();
 		Eub.fnActionsMenuDisabled();
-
+		
+		//------------------------------------------------------------------------------
+		Eub.fnSearchEntity();
+		List<WebElement> rows = driver
+				.findElements(By.xpath("//DIV[@id='gridEntityBrowser_grdEntityManager_dom']/TABLE[1]/TBODY[1]/TR"));
+		if (rows.size() >= 2) {
+			fm.fnWebTable(driver, driver.findElement(By.xpath("//tr[@id='gridEntityBrowser_grdEntityManager_row_0']")),"Click");
+			Eub.fnClickActions();
+			Eub.fnOWMActionsMenu("Delete", "");
+			//fm.fnWebTable(driver, driver.findElement(By.xpath("//tr[@id='gridEntityBrowser_grdEntityManager_row_0']")),"Click");
+			fm.fnWebButton(driver, By.xpath("//input[@id='btnPurge']"), "Delete");
+		}
+		
 		// Step-5----------------------CLick Actions & Add New Entity---------------------------------------//
 		Eub.fnOWMActionsMenu("Add New", "");
 
@@ -76,7 +91,7 @@ public class EUB_Test extends BrowserInvoke {
 		Eub.fnSearchEntity();
 
 		// Step-8:---------------------Click Actions--Edit/View Details-------------------------------//
-		FrameWork fm = new FrameWork();
+		
 		fm.fnWebTable(driver, driver.findElement(By.xpath("//tr[@id='gridEntityBrowser_grdEntityManager_row_0']")),"Click");
 		Eub.fnClickActions();
 		Eub.fnOWMActionsMenu("Edit/View Details", "");
