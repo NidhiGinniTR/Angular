@@ -48,7 +48,7 @@ public class EntityUnitBrowser_Ownership_AcqDispofShares_Test extends BrowserInv
 	public void Ownership_AcqDispofShares() throws InterruptedException, AWTException {
 		// Step--------------Initializations----------------//
 		loginPage lp = new loginPage(driver, propEnv, propSerialData);
-		OWM owm = new com_obj_ObjectRepository.OWM.OWM(driver, propSerialData);
+		//OWM owm = new com_obj_ObjectRepository.OWM.OWM(driver, propSerialData);
 		EntityUnitBrowser em = new EntityUnitBrowser(driver, propSerialData,propSerialData);
 		FrameWork fm = new FrameWork();
 		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver)
