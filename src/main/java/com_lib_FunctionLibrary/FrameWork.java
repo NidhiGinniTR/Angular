@@ -54,7 +54,7 @@ public class FrameWork extends ExtentManager {
 		}
 
 		public void fnWebButton(WebDriver driver,By element, String label) throws InterruptedException {
-			WebElement wait = new WebDriverWait(driver, 60).until(ExpectedConditions.visibilityOfElementLocated(element));
+			WebElement wait = new WebDriverWait(driver, 80).until(ExpectedConditions.visibilityOfElementLocated(element));
 			if (wait.isDisplayed()) {
 				driver.findElement(element).click();
 				Thread.sleep(500);

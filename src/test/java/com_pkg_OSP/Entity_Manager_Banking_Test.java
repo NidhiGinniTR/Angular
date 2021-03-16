@@ -63,16 +63,18 @@ public class Entity_Manager_Banking_Test extends BrowserInvoke {
 		lp.fnSwitchtoWindow(2, "Entity Information");
 		System.out.println(driver.getTitle());
 		Thread.sleep(2500);
-
+		WebDriverWait wait = new WebDriverWait(driver, 60);
+		
 		// Step-6:------------------------------Delete Existing Banking---------------------------------------
-		driver.findElement(By.xpath("//table[@id='TabStrip1_6']")).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[@id='TabStrip1_6']//nobr")));
+		fm.fnWebButton(driver, By.xpath("//table[@id='TabStrip1_6']//nobr"), "Banking");
 		// fm.fnWebButton(driver, By.xpath("//table[@id='TabStrip1_3']//nobr"), "Places
 		// of Business");
 		// fm.fnWebButton(driver, By.xpath("//table[@id='TabStrip1_6']//nobr"),
 		// "Banking");
 
 		Thread.sleep(1000);
-		WebDriverWait wait = new WebDriverWait(driver, 60);
+		
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("fraContent6"));
 		//driver.switchTo().frame("fraContent6");
 		List<WebElement> rows = driver

@@ -62,11 +62,13 @@ public class Entity_Manager_PlaceOfBussiness_Test extends BrowserInvoke {
 		Eub.fnOWMActionsMenu("Edit/View Details", "");
 		lp.fnSwitchtoWindow(2, "Entity Information");
 		Thread.sleep(2500);
-
+		WebDriverWait wait = new WebDriverWait(driver, 60);
+		
 		// Step-6--------------------------------------------------------------------------------------------
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[@id='TabStrip1_3']//nobr")));
 		fm.fnWebButton(driver, By.xpath("//table[@id='TabStrip1_3']//nobr"), "Places of Business");
 		Thread.sleep(1000);
-		WebDriverWait wait = new WebDriverWait(driver, 60);
+		//WebDriverWait wait = new WebDriverWait(driver, 60);
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("fraContent4"));
 		//driver.switchTo().frame("fraContent4");
 		List<WebElement> rows = driver

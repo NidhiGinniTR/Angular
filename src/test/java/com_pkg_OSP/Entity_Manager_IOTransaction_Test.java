@@ -62,13 +62,14 @@ public class Entity_Manager_IOTransaction_Test extends BrowserInvoke {
 		Eub.fnOWMActionsMenu("Edit/View Details", "");
 		lp.fnSwitchtoWindow(2, "Entity Information");
 		System.out.println(driver.getTitle());
-		Thread.sleep(2500);
+		Thread.sleep(3500);
+		WebDriverWait wait = new WebDriverWait(driver, 60);
 
 		//Step-6:-----------------Switch to I/O Transaction Tab----------------------------------
-		driver.findElement(By.xpath("//table[@id='TabStrip1_5']")).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[@id='TabStrip1_5']//nobr")));
+		fm.fnWebButton(driver, By.xpath("//table[@id='TabStrip1_5']//nobr"), "I/C Transaction");
 
 		Thread.sleep(1000);
-		WebDriverWait wait = new WebDriverWait(driver, 60);
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("fraContent5"));
 		//driver.switchTo().frame("fraContent5");
 		List<WebElement> rows = driver
@@ -102,7 +103,7 @@ public class Entity_Manager_IOTransaction_Test extends BrowserInvoke {
 		lp.fnSwitchtoWindow(3, "Entity Manager");
 		Thread.sleep(2000);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		driver.switchTo().frame("Iframe1");
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("Iframe1"));
 		Eub.fnEM_IOTransaction();
 
 		// Step-8:------------------Switch to I/O Transaction Tab-------------------------
@@ -110,7 +111,8 @@ public class Entity_Manager_IOTransaction_Test extends BrowserInvoke {
 		Thread.sleep(2500);
 		fm.fnWebButton(driver, By.xpath("//table[@id='TabStrip1_4']//nobr"), "Charting");
 		Thread.sleep(2500);
-		driver.findElement(By.xpath("//table[@id='TabStrip1_5']")).click();
+		fm.fnWebButton(driver, By.xpath("//table[@id='TabStrip1_5']//nobr"), "I/C Transaction");
+		//driver.findElement(By.xpath("//table[@id='TabStrip1_5']")).click();
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("fraContent5"));
 		Thread.sleep(1500);

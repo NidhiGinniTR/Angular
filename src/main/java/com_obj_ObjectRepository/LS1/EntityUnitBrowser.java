@@ -952,13 +952,15 @@ public class EntityUnitBrowser extends ExtentManager {
 	 ***************************************************************************************/
 	public void fnSavePreferences(String menuitem) throws InterruptedException {
 		childTest = test.createNode("Description: Save Preferences/For All" + "<br>" + "<< Screen Name: LS1 >></br>");
-
+		WebDriverWait wait = new WebDriverWait(driver, 60);
 		if (menuitem.equals("Save Preferences for All")) {
 			Thread.sleep(1500);
 			// System.out.println(driver.findElement(By.xpath("//*[@id='dialog-label-container']")).getText());
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='dialog-label-container']")));
 			if (driver.findElement(By.xpath("//*[@id='dialog-label-container']")).getText()
 					.contains("You are about to change preferences for all users. Please Confirm.")) {
 				Thread.sleep(1000);
+				wait.until(ExpectedConditions.visibilityOfElementLocated(SavePreforAll_save));
 				fm.fnWebButton(driver, SavePreforAll_save, "Yes");
 				childTest.log(Status.PASS, "Clicked on OK in the Alert Popup");
 				if (driver.findElement(By.xpath("//*[@id='dialog-label-container']")).getText()
@@ -973,11 +975,13 @@ public class EntityUnitBrowser extends ExtentManager {
 			}
 		} else if (menuitem.equals("Save Preferences")) {
 			// System.out.println(driver.findElement(By.xpath("//*[@id='dialog-label-container']")).getText());
+			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='dialog-label-container']")));
 			if (driver.findElement(By.xpath("//*[@id='dialog-label-container']")).getText()
 					.contains("Saved successfully.")) {
-				System.out.println(driver.findElement(By.xpath("//*[@id='dialog-label-container']")).getText());
+				//System.out.println(driver.findElement(By.xpath("//*[@id='dialog-label-container']")).getText());
 				Thread.sleep(1500);
 				driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+				wait.until(ExpectedConditions.visibilityOfElementLocated(SavePre_save));
 				fm.fnWebButton(driver, SavePre_save, "Save");
 				childTest.log(Status.PASS, "Clicked on OK in the Alert Popup");
 			} else {
