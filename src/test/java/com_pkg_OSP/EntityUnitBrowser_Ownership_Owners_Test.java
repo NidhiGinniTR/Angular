@@ -92,8 +92,6 @@ public class EntityUnitBrowser_Ownership_Owners_Test extends BrowserInvoke {
 		fm.fnWebButton(driver, By.xpath("//div[@class='btn-group']//*[@class='btn btn-primary dropdown-toggle']"),
 				"Actions");
 		lp.fnOWMActionsMenu("Add Owner", "");
-		Thread.sleep(2000);
-		System.out.println(driver.getTitle());
 		lp.fnSwitchtoWindow(3, "Entity Manager");
 		em.fnEntityManagerOwnersAddNew(temptext);
 

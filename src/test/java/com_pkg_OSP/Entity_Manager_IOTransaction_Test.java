@@ -4,12 +4,18 @@ import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchFrameException;
+import org.openqa.selenium.NoSuchWindowException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
@@ -39,6 +45,11 @@ public class Entity_Manager_IOTransaction_Test extends BrowserInvoke {
 	public void EUB_IOTransaction() throws InterruptedException, AWTException {
 		// Step-1:-----Login---------------------------------------------//
 		LS1 lp = new LS1(driver, propEnv, propSerialData);
+		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+				.withTimeout(Duration.ofSeconds(50))
+				.pollingEvery(Duration.ofSeconds(5))
+				.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+				.ignoring(NoSuchFrameException.class);
 		lp.fnLogin();
 
 		// Step-2:-----Launch Entity Manager---------------------------//
@@ -60,10 +71,8 @@ public class Entity_Manager_IOTransaction_Test extends BrowserInvoke {
 		// Step-5:-----------------Switch Window------------------------------------//
 		Eub.fnClickActions();
 		Eub.fnOWMActionsMenu("Edit/View Details", "");
+		wait.until(ExpectedConditions.numberOfWindowsToBe(2));
 		lp.fnSwitchtoWindow(2, "Entity Information");
-		System.out.println(driver.getTitle());
-		Thread.sleep(3500);
-		WebDriverWait wait = new WebDriverWait(driver, 60);
 
 		//Step-6:-----------------Switch to I/O Transaction Tab----------------------------------
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[@id='TabStrip1_5']//nobr")));
@@ -91,6 +100,7 @@ public class Entity_Manager_IOTransaction_Test extends BrowserInvoke {
 			lp.fnSwitchtoWindow(3, "Delete Entity");
 			Thread.sleep(1000);
 			fm.fnWebButton(driver, By.xpath("//*[@id='btnPurge']"), "OK");
+			wait.until(ExpectedConditions.numberOfWindowsToBe(2));
 			lp.fnSwitchtoWindow(2, "Entity Information");
 			Thread.sleep(1000);
 			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("fraContent5"));
@@ -100,6 +110,7 @@ public class Entity_Manager_IOTransaction_Test extends BrowserInvoke {
 		fm.fnWebButton(driver, By.xpath("//img[@id='btnActionsMenu']"), "Actions");
 		Eub.fnOWMActionsMenu("Add New", "");
 		Thread.sleep(2000);
+		wait.until(ExpectedConditions.numberOfWindowsToBe(3));
 		lp.fnSwitchtoWindow(3, "Entity Manager");
 		Thread.sleep(2000);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -107,6 +118,7 @@ public class Entity_Manager_IOTransaction_Test extends BrowserInvoke {
 		Eub.fnEM_IOTransaction();
 
 		// Step-8:------------------Switch to I/O Transaction Tab-------------------------
+		wait.until(ExpectedConditions.numberOfWindowsToBe(2));
 		lp.fnSwitchtoWindow(2, "Entity Information");
 		Thread.sleep(2500);
 		fm.fnWebButton(driver, By.xpath("//table[@id='TabStrip1_4']//nobr"), "Charting");
@@ -123,6 +135,7 @@ public class Entity_Manager_IOTransaction_Test extends BrowserInvoke {
 		fm.fnWebButton(driver, By.xpath("//img[@id='btnActionsMenu']"), "Actions");
 		Eub.fnOWMActionsMenu("Edit/View Details", "");
 		Thread.sleep(2000);
+		wait.until(ExpectedConditions.numberOfWindowsToBe(3));
 		lp.fnSwitchtoWindow(3, "Entity Manager");
 		Thread.sleep(2000);
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -132,6 +145,7 @@ public class Entity_Manager_IOTransaction_Test extends BrowserInvoke {
 
 		// Step-10:-------------------Customize View---------------------------------------------
 		Thread.sleep(1000);
+		wait.until(ExpectedConditions.numberOfWindowsToBe(2));
 		lp.fnSwitchtoWindow(2, "Entity Information");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		Thread.sleep(1000);
@@ -140,16 +154,17 @@ public class Entity_Manager_IOTransaction_Test extends BrowserInvoke {
 
 		fm.fnWebButton(driver, By.xpath("//img[@id='btnActionsMenu']"), "Actions");
 		Eub.fnOWMActionsMenu("Customize View", "");
+		wait.until(ExpectedConditions.numberOfWindowsToBe(3));
 		lp.fnSwitchtoWindow(3, "Customize View");
 		String[] array = new String[] { "From Entity Name", "From Entity ID" };
 		Eub.fnCustomizeView(array);
 
 		// Step-11:----------------Save Preferences-----------------------------------//
+		wait.until(ExpectedConditions.numberOfWindowsToBe(2));
 		lp.fnSwitchtoWindow(2, "Entity Information");
 		Thread.sleep(1000);
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("fraContent5"));
 		Thread.sleep(1500);
-
 		fm.fnWebButton(driver, By.xpath("//img[@id='btnActionsMenu']"), "Actions");
 		Eub.fnOWMActionsMenu("Save Preferences", "");
 		Eub.fnSavePreferences("Save Preferences");
@@ -167,6 +182,7 @@ public class Entity_Manager_IOTransaction_Test extends BrowserInvoke {
 		fm.fnWebButton(driver, By.xpath("//img[@id='btnActionsMenu']"), "Actions");
 		Eub.fnOWMActionsMenu("Purge", "");
 		Thread.sleep(1000);
+		wait.until(ExpectedConditions.numberOfWindowsToBe(3));
 		lp.fnSwitchtoWindow(3, "Delete Entity");
 		Thread.sleep(1000);
 		fm.fnWebButton(driver, By.xpath("//*[@id='btnPurge']"), "OK");
