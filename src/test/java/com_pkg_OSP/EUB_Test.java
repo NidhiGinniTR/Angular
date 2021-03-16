@@ -13,7 +13,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -44,13 +43,14 @@ public class EUB_Test extends BrowserInvoke {
 		// Step-1:-----Login---------------------------------------------//
 		LS1 lp = new LS1(driver, propEnv, propSerialData);
 		FrameWork fm = new FrameWork();
-		lp.fnLogin();
+		EntityUnitBrowser Eub = new EntityUnitBrowser(driver, propEnv, propSerialData);
 		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver)
 				.withTimeout(Duration.ofSeconds(50))
 				.pollingEvery(Duration.ofSeconds(5))
 				.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
 				.ignoring(NoSuchFrameException.class);
-
+		lp.fnLogin();
+		
 		// Step-2:-----Launch Entity Unit Browser---------------------------//
 		lp.LaunchApplication("Entity Manager");
 
@@ -60,7 +60,6 @@ public class EUB_Test extends BrowserInvoke {
 		wait.until(
 				ExpectedConditions.frameToBeAvailableAndSwitchToIt("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad"));
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame"));
-		EntityUnitBrowser Eub = new EntityUnitBrowser(driver, propEnv, propSerialData);
 		String[] array = new String[] { "Entity Name", "Entity ID", "Entity Type", "Status", "Locations", "Group Code",
 				"Entity Group", "Archive", "PPOB State/Province", "PPOB Country/Region" };
 		Eub.fnVerifySearchElements(array);
@@ -81,7 +80,16 @@ public class EUB_Test extends BrowserInvoke {
 			Eub.fnOWMActionsMenu("Delete", "");
 			// fm.fnWebTable(driver,
 			// driver.findElement(By.xpath("//tr[@id='gridEntityBrowser_grdEntityManager_row_0']")),"Click");
+			lp.fnSwitchtoWindow(2, "Delete Entity");
 			fm.fnWebButton(driver, By.xpath("//input[@id='btnPurge']"), "Delete");
+			lp.fnSwitchtoWindow(1, "Onesource");
+			driver.switchTo().defaultContent();
+			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("maincontent"));
+			wait.until(
+					ExpectedConditions.frameToBeAvailableAndSwitchToIt("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad"));
+			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame"));
+			Thread.sleep(2000);
+			
 		}
 
 		// Step-5----------------------CLick Actions & Add New Entity---------------------------------------//
