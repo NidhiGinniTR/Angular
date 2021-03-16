@@ -6,6 +6,8 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -34,6 +36,8 @@ public class Entity_Manager_WorkflowBrowser_Test extends BrowserInvoke {
 		LS1 lp = new LS1(driver, propEnv, propSerialData);
 		EntityUnitBrowser Eub = new EntityUnitBrowser(driver, propEnv, propSerialData);
 		FrameWork fm = new FrameWork();
+		WebDriverWait wait = new WebDriverWait(driver, 60);
+		
 		// Step-1:-----Login---------------------------------------------//
 		lp.fnLogin();
 
@@ -42,13 +46,13 @@ public class Entity_Manager_WorkflowBrowser_Test extends BrowserInvoke {
 
 		// Step-3:----------Workflow Browser---------------------------//
 		driver.switchTo().defaultContent();
-		driver.switchTo().frame("maincontent");
-		driver.switchTo().frame("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad");
-		
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("maincontent"));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad"));
 		Eub.fnEM_SwitchTabs("Workflow Browser");
 		
 		// Step-4:---------Verify Search Fields---------------------------//
-		driver.switchTo().frame("gridFrame");
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame"));
+		//driver.switchTo().frame("gridFrame");
 		Thread.sleep(500);
 		//String[] array = new String[] { "W/F Template:","Period:","Year:","Jurisdiction:", "Entity Name:", "Entity ID:", "Tax Type:",
 				//"WorkFlow Association:","WorkFlow Type:" };
@@ -70,9 +74,9 @@ public class Entity_Manager_WorkflowBrowser_Test extends BrowserInvoke {
 			Eub.fnDeleteWorkflow();
 			lp.fnSwitchtoWindow(1, "Onesource");
 			driver.switchTo().defaultContent();
-			driver.switchTo().frame("maincontent");
-			driver.switchTo().frame("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad");
-			driver.switchTo().frame("gridFrame");
+			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("maincontent"));
+			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad"));
+			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame"));
 		}
 		Thread.sleep(1000);
 		
@@ -88,9 +92,9 @@ public class Entity_Manager_WorkflowBrowser_Test extends BrowserInvoke {
 		//Step-8---------------------Search Workflow---------------------------
 		lp.fnSwitchtoWindow(1, "Onesource");
 		driver.switchTo().defaultContent();
-		driver.switchTo().frame("maincontent");
-		driver.switchTo().frame("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad");
-		driver.switchTo().frame("gridFrame");
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("maincontent"));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad"));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame"));
 		Eub.fnEM_SearchWorkflow();
 		fm.fnWebTable(driver, driver.findElement(By.xpath("//tr[@id='gridWorkflowFolders_grdEntityManager_row_0']")), "Click");
 	
@@ -106,9 +110,9 @@ public class Entity_Manager_WorkflowBrowser_Test extends BrowserInvoke {
 		//Step-11---------------------------Search Workflow---------------------------
 		lp.fnSwitchtoWindow(1, "Onesource");
 		driver.switchTo().defaultContent();
-		driver.switchTo().frame("maincontent");
-		driver.switchTo().frame("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad");
-		driver.switchTo().frame("gridFrame");
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("maincontent"));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad"));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame"));
 		Eub.fnEM_SearchWorkflow();
 		fm.fnWebTable(driver, driver.findElement(By.xpath("//tr[@id='gridWorkflowFolders_grdEntityManager_row_0']")), "Click");
 		
@@ -120,9 +124,9 @@ public class Entity_Manager_WorkflowBrowser_Test extends BrowserInvoke {
 		//Step-13------------------Search Workflow---------------------------
 		lp.fnSwitchtoWindow(1, "Onesource");
 		driver.switchTo().defaultContent();
-		driver.switchTo().frame("maincontent");
-		driver.switchTo().frame("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad");
-		driver.switchTo().frame("gridFrame");
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("maincontent"));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad"));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame"));
 		Eub.fnEM_SearchWorkflow();
 		fm.fnWebTable(driver, driver.findElement(By.xpath("//tr[@id='gridWorkflowFolders_grdEntityManager_row_0']")), "Click");
 	
@@ -137,9 +141,9 @@ public class Entity_Manager_WorkflowBrowser_Test extends BrowserInvoke {
 		//Step-16------------------------Switch Frame--------------------------------
 		lp.fnSwitchtoWindow(1, "Onesource");
 		driver.switchTo().defaultContent();
-		driver.switchTo().frame("maincontent");
-		driver.switchTo().frame("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad");
-		driver.switchTo().frame("gridFrame");
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("maincontent"));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad"));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame"));
 		//Eub.fnEM_SearchDocument();
 		fm.fnWebTable(driver, driver.findElement(By.xpath("//tr[@id='gridWorkflowFolders_grdEntityManager_row_0']")), "Click");
 		
@@ -177,9 +181,9 @@ public class Entity_Manager_WorkflowBrowser_Test extends BrowserInvoke {
 		//Step-21------------------------Search Workflow--------------------------------------
 		lp.fnSwitchtoWindow(1, "Onesource");
 		driver.switchTo().defaultContent();
-		driver.switchTo().frame("maincontent");
-		driver.switchTo().frame("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad");
-		driver.switchTo().frame("gridFrame");
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("maincontent"));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad"));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame"));
 		Eub.fnEM_SearchWorkflow();
 		fm.fnWebTable(driver, driver.findElement(By.xpath("//tr[@id='gridWorkflowFolders_grdEntityManager_row_0']")), "Click");
 		

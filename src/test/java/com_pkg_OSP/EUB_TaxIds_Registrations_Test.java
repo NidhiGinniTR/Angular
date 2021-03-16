@@ -5,6 +5,8 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -36,6 +38,7 @@ public class EUB_TaxIds_Registrations_Test extends BrowserInvoke {
 	public void EUB_TaxIds() throws InterruptedException {
 		// Step-1:-----Login---------------------------------------------//
 		LS1 lp = new LS1(driver, propEnv, propSerialData);
+		WebDriverWait wait = new WebDriverWait(driver, 60);
 		lp.fnLogin();
 
 		// Step-2:-----Launch Entity Unit Browser---------------------------//
@@ -43,9 +46,10 @@ public class EUB_TaxIds_Registrations_Test extends BrowserInvoke {
 
 		// Step-3:-----Search Entity---------------------------//
 		driver.switchTo().defaultContent();
-		driver.switchTo().frame("maincontent");
-		driver.switchTo().frame("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad");
-		driver.switchTo().frame("gridFrame");
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("maincontent"));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad"));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame"));
+		
 		EntityUnitBrowser Eub = new EntityUnitBrowser(driver, propEnv, propSerialData);
 		Eub.fnSearchEntity();
 		Thread.sleep(1000);
@@ -61,7 +65,8 @@ public class EUB_TaxIds_Registrations_Test extends BrowserInvoke {
 		lp.fnSwitchtoWindow(2, "Entity Information");
 		Eub.fnClickTaxIds();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.switchTo().frame("gridFrame1");
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame1"));
+		//driver.switchTo().frame("gridFrame1");
 
 		//Step-6----------------------------------------Verify Search Fields-------------------------------------------------------------//
 		String[] array2 = new String[] { "Jurisdiction", "Authority Name", "DBA", "Form Tax Type", "Tax ID",
@@ -78,7 +83,7 @@ public class EUB_TaxIds_Registrations_Test extends BrowserInvoke {
 		//Step-8------------------------------------------Search TaxId-----------------------------------------//
 		lp.fnSwitchtoWindow(2, "Entity Information");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.switchTo().frame("gridFrame1");
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame1"));
 		Eub.fnSearchTaxIds1();
 		Thread.sleep(1000);
 		fm.fnWebTable(driver, driver.findElement(By.xpath("//tr[@id='gridTaxIds_grdEntityManager_row_0']")), "Click");
@@ -100,7 +105,7 @@ public class EUB_TaxIds_Registrations_Test extends BrowserInvoke {
 		Thread.sleep(1000);
 		lp.fnSwitchtoWindow(2, "Entity Information");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.switchTo().frame("gridFrame1");
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame1"));
 		
 		Eub.fnClickActionsTaxID();
 		Eub.fnOWMActionsMenu("Customize View", "");
@@ -113,7 +118,7 @@ public class EUB_TaxIds_Registrations_Test extends BrowserInvoke {
 		//Step-12:----------------Save Preferences-----------------------------------//
 		lp.fnSwitchtoWindow(2, "Entity Information");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.switchTo().frame("gridFrame1");
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame1"));
 
 		Eub.fnClickActionsTaxID();
 		Eub.fnOWMActionsMenu("Save Preferences", "");
