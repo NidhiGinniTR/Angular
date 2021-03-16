@@ -10,6 +10,8 @@
 			<class name="com_pkg_OSP.Entity_Manager_Banking_Test" />
 			<class name="com_pkg_OSP.Entity_Manager_IOTransaction_Test" />
 			<class name="com_pkg_OSP.Entity_Manager_PlaceOfBussiness_Test" />
+			<class name="com_pkg_OSP.Entity_Manager_WorkflowBrowser_Test" />
+			<class name="com_pkg_OSP.Entity_Manager_Documents_Test" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

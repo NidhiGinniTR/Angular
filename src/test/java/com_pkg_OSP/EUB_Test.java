@@ -74,18 +74,16 @@ public class EUB_Test extends BrowserInvoke {
 			fm.fnWebButton(driver, By.xpath("//input[@id='btnPurge']"), "Delete");
 		}
 
-		// Step-5----------------------CLick Actions & Add New
-		// Entity---------------------------------------//
+		// Step-5----------------------CLick Actions & Add New Entity---------------------------------------//
+		Eub.fnClickActions();
 		Eub.fnOWMActionsMenu("Add New", "");
 
-		// Step-6------------------------Create a New
-		// Entity-------------------------------------//
+		// Step-6------------------------Create a New Entity-------------------------------------//
 		Thread.sleep(3000);
 		lp.fnSwitchtoWindow(2, "Entity Information");
 		Eub.fnCreateEntity();
 
-		// Step-7:--------------------Search created
-		// Entity--------------------------------//
+		// Step-7:--------------------Search created Entity--------------------------------//
 		lp.fnSwitchtoWindow(1, "Onesource");
 		driver.switchTo().defaultContent();
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("maincontent"));
@@ -95,16 +93,14 @@ public class EUB_Test extends BrowserInvoke {
 
 		Eub.fnSearchEntity();
 
-		// Step-8:---------------------Click Actions--Edit/View
-		// Details-------------------------------//
+		// Step-8:---------------------Click Actions--Edit/View Details-------------------------------//
 
 		fm.fnWebTable(driver, driver.findElement(By.xpath("//tr[@id='gridEntityBrowser_grdEntityManager_row_0']")),
 				"Click");
 		Eub.fnClickActions();
 		Eub.fnOWMActionsMenu("Edit/View Details", "");
 
-		// Step-9:--------------------Verify Edit/View
-		// Details--------------------------------//
+		// Step-9:--------------------Verify Edit/View Details--------------------------------//
 		lp.fnSwitchtoWindow(2, "Entity Information");
 		Eub.fnEditDeatils_Entity();
 
@@ -173,10 +169,8 @@ public class EUB_Test extends BrowserInvoke {
 
 	@AfterClass
 	void closeBrowser() throws InterruptedException {
-		// EntityUnitBrowser Eub = new EntityUnitBrowser(driver, propEnv,
-		// propSerialData);
 		// Eub.fnLogOff();
-		driver.quit();
+		//driver.quit();
 	}
 
 	@AfterSuite
