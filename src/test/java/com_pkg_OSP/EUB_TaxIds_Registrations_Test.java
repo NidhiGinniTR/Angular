@@ -77,7 +77,6 @@ public class EUB_TaxIds_Registrations_Test extends BrowserInvoke {
 		lp.fnSwitchtoWindow(2, "Entity Information");
 		Eub.fnClickTaxIds();
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame1"));
-		//driver.switchTo().frame("gridFrame1");
 
 		//Step-6----------------------------------------Verify Search Fields-------------------------------------------------------------//
 		String[] array2 = new String[] { "Jurisdiction", "Authority Name", "DBA", "Form Tax Type", "Tax ID",

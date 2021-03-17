@@ -1297,8 +1297,6 @@ public class EntityUnitBrowser extends ExtentManager {
 						.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
 						.ignoring(NoSuchFrameException.class);
 				waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("Iframe1"));
-				WebDriver wait = new WebDriverWait(driver, 60)
-						.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("Iframe1"));
 				fm.fnWebEditCompare(driver, EM_DBA_AN_DoingBusinessAs, data.getProperty("DBA_DoingBusinessAs"),
 						"Doing Business As");
 				fm.fnWebEditCompare(driver, EM_DBA_AN_BusinessID, data.getProperty("DBA_BusinessId"), "Business ID");
@@ -1347,10 +1345,10 @@ public class EntityUnitBrowser extends ExtentManager {
 				.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
 				.ignoring(NoSuchFrameException.class);
 		if (driver.getTitle().contains("Entity Manager")) {
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			Thread.sleep(1500);
 			waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("Iframe1"));
 			fm.fnWebButton(driver, click_save, "Save");
+			waitf.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//span[@id='spaErrorMessage']")));
 			String errormsg = driver.findElement(By.xpath("//span[@id='spaErrorMessage']")).getText();
 			if (errormsg.equalsIgnoreCase("Tax ID is required")) {
 				childTest.info("Required feilds to be filled before saving");
@@ -1548,10 +1546,8 @@ public class EntityUnitBrowser extends ExtentManager {
 				.pollingEvery(Duration.ofSeconds(5))
 				.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
 				.ignoring(NoSuchFrameException.class);
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.findElement(By.xpath("//td[@id='tdBusiness']")).click(); // Navigate to business tab
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-				waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("addeditFrame1"));
+		waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("addeditFrame1"));
 		fm.fnWebEdit(driver, entityManager_bt_country, template.getProperty("BT_Country"), "BT_Country");
 		fm.fnWebEdit(driver, entityManager_bt_state, template.getProperty("BT_State"), "BT_State");
 		fm.fnWebEdit(driver, entityManager_bt_pbacode, template.getProperty("BT_PBAcode"), "BT_PBAcode");
@@ -1591,9 +1587,8 @@ public class EntityUnitBrowser extends ExtentManager {
 					.pollingEvery(Duration.ofSeconds(5))
 					.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
 					.ignoring(NoSuchFrameException.class);
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			driver.findElement(By.xpath("//td[@id='tdBusiness']")).click(); // Navigate to business tab
-					waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("addeditFrame1"));
+			waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("addeditFrame1"));
 			fm.fnWebEditCompare(driver, entityManager_bt_country, template.getProperty("BT_Country"), "BT_Country");
 			fm.fnWebEditCompare(driver, entityManager_bt_state, template.getProperty("BT_State"), "BT_State");
 			fm.fnWebEditCompare(driver, entityManager_bt_pbacode, template.getProperty("BT_PBAcode"), "BT_PBAcode");
@@ -1744,9 +1739,7 @@ public class EntityUnitBrowser extends ExtentManager {
 				.pollingEvery(Duration.ofSeconds(5))
 				.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
 				.ignoring(NoSuchFrameException.class);
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.findElement(By.xpath("//td[@id='tdKeyContacts']")).click(); // Navigate to Key Contacts tab
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		fm.fnWebButton(driver,By.xpath("//td[@id='tdKeyContacts']"),"Key Contacts");
 		waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("addeditFrame1"));
 		fm.fnWebEdit(driver, entityManager_kc_mname, template.getProperty("Main_PersonName"), "Main_PersonName");
 		fm.fnWebEdit(driver, entityManager_kc_mtitle, template.getProperty("Main_Title"), "Main_Title");
@@ -1754,7 +1747,6 @@ public class EntityUnitBrowser extends ExtentManager {
 		fm.fnWebEdit(driver, entityManager_kc_mwphone, template.getProperty("Main_WorkPhNumber"), "Main_WorkPhNumber");
 		fm.fnWebEdit(driver, entityManager_kc_mmphone, template.getProperty("Main_MobileNumber"), "Main_MobileNumber");
 		fm.fnWebEdit(driver, entityManager_kc_mhphone, template.getProperty("Main_HomeNumber"), "Main_HomeNumber");
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		fm.fnWebEdit(driver, entityManager_kc_aname, template.getProperty("FirstAdditional_PersonName"),
 				"FirstAdditional_PersonName");
 		fm.fnWebEdit(driver, entityManager_kc_atitle, template.getProperty("FirstAdditional_Title"),
@@ -1797,7 +1789,7 @@ public class EntityUnitBrowser extends ExtentManager {
 
 	public void viewKeyContacts() throws InterruptedException {
 		childTest = test.createNode(
-				"Description: View Kay Contacts Tab" + "<br>" + "<< Screen Name: Entity Information >></br>");
+				"Description: View Key Contacts Tab" + "<br>" + "<< Screen Name: Entity Information >></br>");
 		try {
 			// driver.switchTo().defaultContent();
 			Thread.sleep(1000);
@@ -1806,11 +1798,8 @@ public class EntityUnitBrowser extends ExtentManager {
 					.pollingEvery(Duration.ofSeconds(5))
 					.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
 					.ignoring(NoSuchFrameException.class);
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			driver.findElement(By.xpath("//td[@id='tdKeyContacts']")).click(); // Navigate to business tab
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			fm.fnWebButton(driver,By.xpath("//td[@id='tdKeyContacts']"),"Key Contacts");// Navigate to business tab
 			waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("addeditFrame1"));
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			fm.fnWebEditCompare(driver, entityManager_kc_mname, template.getProperty("Main_PersonName"),
 					"Main_PersonName");
 			fm.fnWebEditCompare(driver, entityManager_kc_mtitle, template.getProperty("Main_Title"), "Main_Title");
@@ -1821,7 +1810,6 @@ public class EntityUnitBrowser extends ExtentManager {
 					"Main_MobileNumber");
 			fm.fnWebEditCompare(driver, entityManager_kc_mhphone, template.getProperty("Main_HomeNumber"),
 					"Main_HomeNumber");
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			fm.fnWebEditCompare(driver, entityManager_kc_aname, template.getProperty("FirstAdditional_PersonName"),
 					"FirstAdditional_PersonName");
 			fm.fnWebEditCompare(driver, entityManager_kc_atitle, template.getProperty("FirstAdditional_Title"),
@@ -1847,8 +1835,6 @@ public class EntityUnitBrowser extends ExtentManager {
 					"SecondAdditional_MobileNumber");
 			fm.fnWebEditCompare(driver, entityManager_kc_chphone, template.getProperty("SecondAdditional_HomeNumber"),
 					"SecondAdditional_HomeNumber");
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 		} catch (Exception e) {
 			childTest.fail(e);
@@ -1870,14 +1856,11 @@ public class EntityUnitBrowser extends ExtentManager {
 				.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
 				.ignoring(NoSuchFrameException.class);
 		driver.switchTo().defaultContent();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.findElement(By.xpath("//td[@id='tdPageLinks']")).click(); // Navigate to Page Links
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		fm.fnWebButton(driver, By.xpath("//td[@id='tdPageLinks']"),"Page Links");
 		waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame1"));
 		fm.fnWebEdit(driver, entityManager_pl_addtitle, template.getProperty("Add_LinkTitle"), "Add_LinkTitle");
 		fm.fnWebEdit(driver, entityManager_pl_addlink, template.getProperty("Add_WrongURL"), "Add_WrongURL");
 		fm.fnWebButton(driver, entityManager_pl_addbutton, "Add");
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		String errormsgs = driver.findElement(By.xpath("//label[@id='dialog-label']")).getText();
 		if (errormsgs.contains("https")) {
 			childTest.info(errormsgs);
@@ -1890,7 +1873,6 @@ public class EntityUnitBrowser extends ExtentManager {
 		WebElement edit = driver.findElement(By.xpath("//td[@id='grdPageLinks_grdEntityManager_cell_0_7']/div/a[1]"));
 
 		if (edit.isDisplayed()) {
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			edit.click();
 			fm.fnWebEdit(driver, entityManager_pl_addtitle, template.getProperty("Add_LinkTitleupdate"),
 					"Add_LinkTitleupdate");
@@ -1929,10 +1911,8 @@ public class EntityUnitBrowser extends ExtentManager {
 				.pollingEvery(Duration.ofSeconds(5))
 				.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
 				.ignoring(NoSuchFrameException.class);
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.switchTo().frame("maincontent");
+		waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("maincontent"));
 		waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("app_iFrame"));
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame"));
 		Actions action = new Actions(driver);
 		action.moveToElement(driver.findElement(By.xpath("//tr[@id='gridEntityBrowser_grdEntityManager_row_0']")))

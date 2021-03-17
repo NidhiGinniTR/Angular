@@ -4,14 +4,19 @@ import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchFrameException;
+import org.openqa.selenium.NoSuchWindowException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
@@ -45,29 +50,31 @@ public class EntityUnitBrowser_DBA_Test extends BrowserInvoke {
 		OWM owm = new com_obj_ObjectRepository.OWM.OWM(driver, propSerialData);
 		EntityUnitBrowser em = new EntityUnitBrowser(driver, propSerialData,propSerialData);
 		FrameWork fm = new FrameWork();
-		// OWM owm = new OWM(driver,propSerialData);
+		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+				.withTimeout(Duration.ofSeconds(50))
+				.pollingEvery(Duration.ofSeconds(5))
+				.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+				.ignoring(NoSuchFrameException.class);
 		// Step-1:-----Login---------------------------------------------//
 			lp.fnLogin();
 			
 		//Step-2:-----Launch Entity Manager---------------------------//
 			lp.LaunchApplication("Entity Manager");
-			Thread.sleep(5000);
 			driver.switchTo().defaultContent();
-			driver.switchTo().frame("maincontent");
-			driver.switchTo().frame("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad");
-			driver.switchTo().frame("gridFrame");
+			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("maincontent"));
+			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad"));
+			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame"));
 			em.fnSearchEntity();
 		// Double click on required workflow
 			fm.fnWebTable(driver, driver.findElement(By.xpath("//tr[@id='gridEntityBrowser_grdEntityManager_row_0']")),
 				"DoubleClick");
 			driver.switchTo().defaultContent();
-			Thread.sleep(2000);
+			wait.until(ExpectedConditions.numberOfWindowsToBe(2));
 			lp.fnSwitchtoWindow(2, "Entity Information");
 	
 		//Step----------NavigatetoDBA--------------------------//
 			fm.fnWebButton(driver, By.xpath("//label[@id='lblDBA']"),"DBA");
 			Thread.sleep(1000);
-			WebDriverWait wait = new WebDriverWait(driver, 60);
 			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame1"));
 			List<WebElement> rows = driver.findElements(By.xpath("//DIV[@id='gridDBA_grdEntityManager_dom']/TABLE[1]/TBODY[1]/TR"));
 			Actions action = new Actions(driver);
@@ -89,17 +96,16 @@ public class EntityUnitBrowser_DBA_Test extends BrowserInvoke {
 			fm.fnWebButton(driver, By.xpath("//div[@class='btn-group']//*[@class='btn btn-primary dropdown-toggle']"),
 					"Actions");
 			lp.fnOWMActionsMenu("Add New", "");
-			Thread.sleep(2000);
-			System.out.println(driver.getTitle());
+			wait.until(ExpectedConditions.numberOfWindowsToBe(3));
 			lp.fnSwitchtoWindow(3, "Entity Manager");
 			em.fnDBAAddNew();
 			
 		//Step-----------Edit/View Details-------------------//
+			wait.until(ExpectedConditions.numberOfWindowsToBe(2));
 			lp.fnSwitchtoWindow(2, "Entity Information");
 			fm.fnWebButton(driver, By.xpath("//label[@id='lblKeyContacts']"),"Key Contacts");
-			Thread.sleep(1000);
 			fm.fnWebButton(driver, By.xpath("//label[@id='lblDBA']"),"DBA");
-			Thread.sleep(1000);
+			Thread.sleep(2000);
 			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame1"));
 			fm.fnWebTable(driver,
 					driver.findElement(By.xpath("//DIV[@id='gridDBA_grdEntityManager_dom']/TABLE[1]/TBODY[1]/TR[2]")),
@@ -107,21 +113,19 @@ public class EntityUnitBrowser_DBA_Test extends BrowserInvoke {
 			fm.fnWebButton(driver, By.xpath("//div[@class='btn-group']//*[@class='btn btn-primary dropdown-toggle']"),
 					"Actions");
 			lp.fnOWMActionsMenu("Edit/View Details", "");
-			Thread.sleep(1500);
+			Thread.sleep(1000);
+			wait.until(ExpectedConditions.numberOfWindowsToBe(3));
 			lp.fnSwitchtoWindow(3, "Entity Manager");
 			em.fnEntityManagerDBAEdit();
 			
 		//Step----------Customize View--------------------------//
+			wait.until(ExpectedConditions.numberOfWindowsToBe(2));
 			lp.fnSwitchtoWindow(2, "Entity Information");
-			fm.fnWebButton(driver, By.xpath("//label[@id='lblKeyContacts']"),"Key Contacts");
-			Thread.sleep(1500);
-			fm.fnWebButton(driver, By.xpath("//label[@id='lblDBA']"),"DBA");
-			Thread.sleep(1000);
 			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame1"));
 			fm.fnWebButton(driver, By.xpath("//div[@class='btn-group']//*[@class='btn btn-primary dropdown-toggle']"),
 					"Actions");
 			lp.fnOWMActionsMenu("Customize View", "");
-			Thread.sleep(1000);
+			wait.until(ExpectedConditions.numberOfWindowsToBe(2));
 			lp.fnSwitchtoWindow(3, "Customize View");
 			Thread.sleep(1000);
 			String[] array = new String[] { "DBA Name", "Description", "From Date", "Status", "County",
@@ -129,11 +133,8 @@ public class EntityUnitBrowser_DBA_Test extends BrowserInvoke {
 			em.fnCustomizeView(array);
 			
 		//Step----------Save Preferences------------------------//
+			wait.until(ExpectedConditions.numberOfWindowsToBe(2));
 			lp.fnSwitchtoWindow(2, "Entity Information");
-			fm.fnWebButton(driver, By.xpath("//label[@id='lblKeyContacts']"),"Key Contacts");
-			Thread.sleep(1500);
-			fm.fnWebButton(driver, By.xpath("//label[@id='lblDBA']"),"DBA");
-			Thread.sleep(1000);
 			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame1"));
 			fm.fnWebButton(driver, By.xpath("//div[@class='btn-group']//*[@class='btn btn-primary dropdown-toggle']"),
 					"Actions");
@@ -158,10 +159,10 @@ public class EntityUnitBrowser_DBA_Test extends BrowserInvoke {
 			Thread.sleep(1000);
 			fm.fnWebButton(driver, By.xpath("//*[@id='dialog-button-action']"), "OK");
 			driver.close();
-			driver.quit();
+			lp.fnSwitchtoWindow(1, "Onesource");
 		
 			//Step--------LogOFF-------------------------------//
-			//em.fnLogOff();
+			em.fnLogOff();
 	}
 
 	@AfterClass
