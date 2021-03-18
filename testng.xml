@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-	<listeners>
+<listeners>
 		<listener class-name="com_helper_Reporting.ListenersClass"></listener>
 	</listeners>
-	<test thread-count="5" name="Test">
-		<classes>
-			<class name="com_pkg_OSP.EUB_Test" />
-			<class name="com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test" />
-			<class name="com_pkg_OSP.Entity_Manager_ResponsibilityInfo_Test" />
-			<class name="com_pkg_OSP.Entity_Manager_KeyContacts_Test" />
-			<class name="com_pkg_OSP.Entity_Manager_ResponsibilityInfo_Test" />
-			<class name="com_pkg_OSP.EntityUnitBrowser_DBA_Test" />
-			<class name="com_pkg_OSP.EUB_TaxIds_Registrations_Test" />
-			<class name="com_pkg_OSP.Entity_Manager_PageLinks_Test" />
-
-		</classes>
-	</test> <!-- Test -->
+  <test thread-count="5" name="Test">
+    <classes>
+      			<class name="com_pkg_OSP.Entity_Manager_ResponsibilityInfo_Test" />
+    </classes>
+  </test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -1546,7 +1546,7 @@ public class EntityUnitBrowser extends ExtentManager {
 				.pollingEvery(Duration.ofSeconds(5))
 				.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
 				.ignoring(NoSuchFrameException.class);
-		driver.findElement(By.xpath("//td[@id='tdBusiness']")).click(); // Navigate to business tab
+		fm.fnWebButton(driver, By.xpath("//td[@id='tdBusiness']"),"Business Tax");
 		waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("addeditFrame1"));
 		fm.fnWebEdit(driver, entityManager_bt_country, template.getProperty("BT_Country"), "BT_Country");
 		fm.fnWebEdit(driver, entityManager_bt_state, template.getProperty("BT_State"), "BT_State");
@@ -1582,12 +1582,14 @@ public class EntityUnitBrowser extends ExtentManager {
 
 		try {
 			// driver.switchTo().defaultContent();
+			Thread.sleep(2500);
 			FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
 					.withTimeout(Duration.ofSeconds(50))
 					.pollingEvery(Duration.ofSeconds(5))
 					.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
 					.ignoring(NoSuchFrameException.class);
-			driver.findElement(By.xpath("//td[@id='tdBusiness']")).click(); // Navigate to business tab
+			waitf.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[@id='lblBusiness']")));
+			fm.fnWebButton(driver, By.xpath("//label[@id='lblBusiness']"), "Business Tax");
 			waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("addeditFrame1"));
 			fm.fnWebEditCompare(driver, entityManager_bt_country, template.getProperty("BT_Country"), "BT_Country");
 			fm.fnWebEditCompare(driver, entityManager_bt_state, template.getProperty("BT_State"), "BT_State");
@@ -1627,9 +1629,8 @@ public class EntityUnitBrowser extends ExtentManager {
 				.pollingEvery(Duration.ofSeconds(5))
 				.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
 				.ignoring(NoSuchFrameException.class);
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.findElement(By.xpath("//td[@id='tdResponsibility']")).click(); // Navigate to business tab
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		waitf.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[@id='lblResponsibility']")));
+		fm.fnWebButton(driver, By.xpath("//label[@id='lblResponsibility']"), "Responsibility Tax Info");
 		waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("addeditFrame1"));
 		fm.fnWebEdit(driver, entityManager_ri_person_name, template.getProperty("Person_Name"), "Person_Name");
 		fm.fnWebEdit(driver, entityManager_ri_person_address, template.getProperty("Person_Addr"), "Person_Addr");
@@ -1676,11 +1677,9 @@ public class EntityUnitBrowser extends ExtentManager {
 					.pollingEvery(Duration.ofSeconds(5))
 					.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
 					.ignoring(NoSuchFrameException.class);
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-			driver.findElement(By.xpath("//td[@id='tdResponsibility']")).click(); // Navigate to business tab
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+			waitf.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[@id='lblResponsibility']")));
+			fm.fnWebButton(driver, By.xpath("//label[@id='lblResponsibility']"), "Responsibility Tax Info");		
 			waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("addeditFrame1"));
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			fm.fnWebEditCompare(driver, entityManager_ri_person_name, template.getProperty("Person_Name"),
 					"Person_Name");
 			fm.fnWebEditCompare(driver, entityManager_ri_person_address, template.getProperty("Person_Addr"),
@@ -1694,7 +1693,6 @@ public class EntityUnitBrowser extends ExtentManager {
 			fm.fnWebEditCompare(driver, entityManager_ri_person_zip, template.getProperty("Person_Zip"), "Person_Zip");
 			fm.fnWebEditCompare(driver, entityManager_ri_person_phone, template.getProperty("Person_Phone"),
 					"Person_Phone");
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			fm.fnWebEditCompare(driver, entityManager_ri_corp_name, template.getProperty("Corp_Name"), "Corp_Name");
 			fm.fnWebEditCompare(driver, entityManager_ri_corp_address, template.getProperty("Corp_Addr"), "Corp_Addr");
 			fm.fnWebEditCompare(driver, entityManager_ri_corp_city, template.getProperty("Corp_City"), "Corp_City");
@@ -1703,7 +1701,6 @@ public class EntityUnitBrowser extends ExtentManager {
 			fm.fnWebEditCompare(driver, entityManager_ri_corp_state, template.getProperty("Corp_State"), "Corp_State");
 			fm.fnWebEditCompare(driver, entityManager_ri_corp_zip, template.getProperty("Corp_Zip"), "Corp_Zip");
 			fm.fnWebEditCompare(driver, entityManager_ri_corp_phone, template.getProperty("Corp_Phone"), "Corp_Phone");
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			fm.fnWebEditCompare(driver, entityManager_ri_brabch_name, template.getProperty("Branch_Name"),
 					"Branch_Name");
 			fm.fnWebEditCompare(driver, entityManager_ri_brabch_address, template.getProperty("Branch_Addr"),
@@ -1717,7 +1714,6 @@ public class EntityUnitBrowser extends ExtentManager {
 			fm.fnWebEditCompare(driver, entityManager_ri_brabch_zip, template.getProperty("Branch_Zip"), "Branch_Zip");
 			fm.fnWebEditCompare(driver, entityManager_ri_brabch_phone, template.getProperty("Branch_Phone"),
 					"Branch_Phone");
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 		} catch (Exception e) {
 			childTest.fail(e);
@@ -1739,7 +1735,8 @@ public class EntityUnitBrowser extends ExtentManager {
 				.pollingEvery(Duration.ofSeconds(5))
 				.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
 				.ignoring(NoSuchFrameException.class);
-		fm.fnWebButton(driver,By.xpath("//td[@id='tdKeyContacts']"),"Key Contacts");
+		waitf.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[@id='lblKeyContacts']")));
+		fm.fnWebButton(driver,By.xpath("//label[@id='lblKeyContacts']"),"Key Contacts");
 		waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("addeditFrame1"));
 		fm.fnWebEdit(driver, entityManager_kc_mname, template.getProperty("Main_PersonName"), "Main_PersonName");
 		fm.fnWebEdit(driver, entityManager_kc_mtitle, template.getProperty("Main_Title"), "Main_Title");
@@ -1798,7 +1795,8 @@ public class EntityUnitBrowser extends ExtentManager {
 					.pollingEvery(Duration.ofSeconds(5))
 					.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
 					.ignoring(NoSuchFrameException.class);
-			fm.fnWebButton(driver,By.xpath("//td[@id='tdKeyContacts']"),"Key Contacts");// Navigate to business tab
+			waitf.until(ExpectedConditions.elementToBeClickable(By.xpath("//label[@id='lblKeyContacts']")));
+			fm.fnWebButton(driver,By.xpath("//label[@id='lblKeyContacts']"),"Key Contacts");
 			waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("addeditFrame1"));
 			fm.fnWebEditCompare(driver, entityManager_kc_mname, template.getProperty("Main_PersonName"),
 					"Main_PersonName");
