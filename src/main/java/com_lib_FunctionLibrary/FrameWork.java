@@ -1,10 +1,16 @@
 package com_lib_FunctionLibrary;
 
+import java.time.Duration;
+import java.util.NoSuchElementException;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchFrameException;
+import org.openqa.selenium.NoSuchWindowException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 //import org.testng.Assert;
@@ -17,8 +23,9 @@ public class FrameWork extends ExtentManager {
 		Object flag = null;
 		WebDriver driver;
 		
+		
 		public void fnWebEdit(WebDriver driver,By element, String text, String label) throws InterruptedException {
-			WebElement wait = new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(element));
+			WebElement wait= new WebDriverWait(driver,60).until(ExpectedConditions.visibilityOfElementLocated(element));
 			if (wait.isDisplayed()) {
 				driver.findElement(element).clear();
 				Thread.sleep(100);
@@ -36,7 +43,7 @@ public class FrameWork extends ExtentManager {
 		}
 
 		public void fnWebList(WebDriver driver,By element, String text, String label) throws InterruptedException {
-			WebElement wait = new WebDriverWait(driver, 60).until(ExpectedConditions.visibilityOfElementLocated(element));
+			WebElement wait= new WebDriverWait(driver,60).until(ExpectedConditions.visibilityOfElementLocated(element));
 			if (wait.isDisplayed()) {
 				Select listelement = new Select(driver.findElement(element));
 				listelement.selectByVisibleText(text);
@@ -54,8 +61,13 @@ public class FrameWork extends ExtentManager {
 		}
 
 		public void fnWebButton(WebDriver driver,By element, String label) throws InterruptedException {
-			WebElement wait = new WebDriverWait(driver, 80).until(ExpectedConditions.visibilityOfElementLocated(element));
-			if (wait.isDisplayed()) {
+			FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+					.withTimeout(Duration.ofSeconds(50))
+					.pollingEvery(Duration.ofSeconds(5))
+					.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+					.ignoring(NoSuchFrameException.class);
+			WebElement waitf = wait.until(ExpectedConditions.elementToBeClickable(element));
+			if (waitf.isDisplayed()) {
 				driver.findElement(element).click();
 				Thread.sleep(500);
 				childTest.log(Status.PASS, "Clicked on " + label + ".");
@@ -63,7 +75,7 @@ public class FrameWork extends ExtentManager {
 		}
 
 		public void fnWebCheckBox(WebDriver driver,By element, String label) throws InterruptedException {
-			WebElement wait = new WebDriverWait(driver, 60).until(ExpectedConditions.visibilityOfElementLocated(element));
+			WebElement wait= new WebDriverWait(driver,60).until(ExpectedConditions.visibilityOfElementLocated(element));
 			if (wait.isDisplayed()) {
 				driver.findElement(element).click();
 				Thread.sleep(500);
@@ -93,7 +105,7 @@ public class FrameWork extends ExtentManager {
 		
 
 	public void fnWebEditCompare(WebDriver driver,By element,String text,String label) {
-		WebElement wait = new WebDriverWait(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(element));
+		WebElement wait= new WebDriverWait(driver,60).until(ExpectedConditions.visibilityOfElementLocated(element));
 		if (wait.isDisplayed()) {
 			String enteredText = driver.findElement(element).getAttribute("value");
 			if (enteredText.equalsIgnoreCase(text)) {
@@ -109,7 +121,7 @@ public class FrameWork extends ExtentManager {
 	}
 	
 	public void fnWebListCompare(WebDriver driver, By element, String text, String label) throws InterruptedException {
-		WebElement wait = new WebDriverWait(driver, 50).until(ExpectedConditions.visibilityOfElementLocated(element));
+		WebElement wait= new WebDriverWait(driver,60).until(ExpectedConditions.visibilityOfElementLocated(element));
 		if (wait.isDisplayed()) {
 			Select listelement = new Select(driver.findElement(element));
 			String enteredText = listelement.getFirstSelectedOption().getText();
