@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -93,7 +93,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">2 methods, 1 failed,   1 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com_pkg_OSP.EntityUnitBrowser_Ownership_OrgReorg_Test" class="method navigator-link" hash-for-method="Ownership_OrgReorg">Ownership_OrgReorg</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,12 +118,7 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com_pkg_OSP.EntityUnitBrowser_Ownership_Owners_Test" class="method navigator-link" hash-for-method="Initialize">Initialize</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com_pkg_OSP.EntityUnitBrowser_Ownership_Owners_Test" class="method navigator-link" hash-for-method="Ownership_Owners">Ownership_Owners</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com_pkg_OSP.EntityUnitBrowser_Ownership_OrgReorg_Test" class="method navigator-link" hash-for-method="Initialize">Initialize</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -124,10 +133,38 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
+          <div class="suite-Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com_pkg_OSP.EntityUnitBrowser_Ownership_OrgReorg_Test</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="Ownership_OrgReorg">
+                  </a> <!-- Ownership_OrgReorg -->
+                  <span class="method-name">Ownership_OrgReorg</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for number of open windows to be 2 (tried for 50 second(s) with 500 milliseconds interval)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;USE2DEVP0289&apos;, ip: &apos;10.178.161.24&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;14.0.2&apos;
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:10391/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 9ba2c3aa-6dc9-4d95-829a-b8193b2fc68b
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at com_lib_FunctionLibrary.loginPage.fnSwitchtoWindow(loginPage.java:81)
+	at com_pkg_OSP.EntityUnitBrowser_Ownership_OrgReorg_Test.Ownership_OrgReorg(EntityUnitBrowser_Ownership_OrgReorg_Test.java:111)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com_pkg_OSP.EntityUnitBrowser_Ownership_Owners_Test</span>
+              <span class="class-name">com_pkg_OSP.EntityUnitBrowser_Ownership_OrgReorg_Test</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -135,13 +172,6 @@
                   <a name="Initialize">
                   </a> <!-- Initialize -->
                   <span class="method-name">Initialize</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="Ownership_Owners">
-                  </a> <!-- Ownership_Owners -->
-                  <span class="method-name">Ownership_Owners</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -161,7 +191,7 @@
   &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com_pkg_OSP.EntityUnitBrowser_Ownership_Owners_Test&quot;/&gt;
+      &lt;class name=&quot;com_pkg_OSP.EntityUnitBrowser_Ownership_OrgReorg_Test&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -203,18 +233,18 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'Ownership_Owners')
-data.setCell(0, 2, 'com_pkg_OSP.EntityUnitBrowser_Ownership_Owners_Test')
-data.setCell(0, 3, 465356);
+data.setCell(0, 1, 'Ownership_OrgReorg')
+data.setCell(0, 2, 'com_pkg_OSP.EntityUnitBrowser_Ownership_OrgReorg_Test')
+data.setCell(0, 3, 267617);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'Initialize')
-data.setCell(1, 2, 'com_pkg_OSP.EntityUnitBrowser_Ownership_Owners_Test')
-data.setCell(1, 3, 5965);
+data.setCell(1, 2, 'com_pkg_OSP.EntityUnitBrowser_Ownership_OrgReorg_Test')
+data.setCell(1, 3, 4855);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 7 minutes</span>
+              <span class="suite-total-time">Total running time: 4 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -240,26 +270,28 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com_pkg_OSP.EntityUnitBrowser_Ownership_Owners_Test</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com_pkg_OSP.EntityUnitBrowser_Ownership_OrgReorg_Test</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">beforeStart</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="test-method">
                 <span class="method-name">Initialize</span>
-                <span class="method-start">338 ms</span>
+                <span class="method-start">296 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">Ownership_Owners</span>
-                <span class="method-start">6318 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">Ownership_OrgReorg</span>
+                <span class="method-start">5168 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">471677 ms</span>
+                <span class="method-start">272790 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-suite after">
                 <span class="method-name">aftersuite</span>
-                <span class="method-start">471889 ms</span>
+                <span class="method-start">274161 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

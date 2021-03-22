@@ -9,11 +9,22 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Suite</th></tr>
-<tr><td><a href="#t0">Test</a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">471,367</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">273,817</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">com_pkg_OSP.EntityUnitBrowser_Ownership_Owners_Test</td><td><a href="#m0">Initialize</a></td><td rowspan="1">1616413488770</td><td rowspan="1">5965</td></tr><tr class="passedeven"><td><a href="#m1">Ownership_Owners</a></td><td rowspan="1">1616413494750</td><td rowspan="1">465356</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com_pkg_OSP.EntityUnitBrowser_Ownership_OrgReorg_Test</td><td><a href="#m0">Ownership_OrgReorg</a></td><td rowspan="1">1616423148810</td><td rowspan="1">267617</td></tr><tr><th colspan="4">Test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com_pkg_OSP.EntityUnitBrowser_Ownership_OrgReorg_Test</td><td><a href="#m1">Initialize</a></td><td rowspan="1">1616423143938</td><td rowspan="1">4855</td></tr></tbody>
 </table>
-<h2>Test</h2><h3 id="m0">com_pkg_OSP.EntityUnitBrowser_Ownership_Owners_Test#Initialize</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com_pkg_OSP.EntityUnitBrowser_Ownership_Owners_Test#Ownership_Owners</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Test</h2><h3 id="m0">com_pkg_OSP.EntityUnitBrowser_Ownership_OrgReorg_Test#Ownership_OrgReorg</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for number of open windows to be 2 (tried for 50 second(s) with 500 milliseconds interval)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;USE2DEVP0289&apos;, ip: &apos;10.178.161.24&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;14.0.2&apos;
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:10391/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 9ba2c3aa-6dc9-4d95-829a-b8193b2fc68b
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at com_lib_FunctionLibrary.loginPage.fnSwitchtoWindow(loginPage.java:81)
+	at com_pkg_OSP.EntityUnitBrowser_Ownership_OrgReorg_Test.Ownership_OrgReorg(EntityUnitBrowser_Ownership_OrgReorg_Test.java:111)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com_pkg_OSP.EntityUnitBrowser_Ownership_OrgReorg_Test#Initialize</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

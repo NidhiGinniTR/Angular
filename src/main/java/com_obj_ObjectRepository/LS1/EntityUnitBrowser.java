@@ -2891,6 +2891,7 @@ public class EntityUnitBrowser extends ExtentManager {
 							data.getProperty("OrgReorg_DescriptionOfStock"), "DescriptionofStockSecurityAssests");
 					fm.fnWebEditCompare(driver, EM_OrgReorg_AFS_Notes, data.getProperty("OrgReorg_Notes"), "Notes");
 				}else {
+					Thread.sleep(2500);
 					fm.fnWebEditCompare(driver, EM_OrgReorg_AFS_OrgDate, data.getProperty("OrgReorg_OrgDate"), "Org date");
 					fm.fnWebEditCompare(driver, EM_OrgReorg_AFS_Name, data.getProperty("OrgReorg_Name"), "Name");
 					fm.fnWebEditCompare(driver, EM_OrgReorg_AFS_Address, data.getProperty("OrgReorg_Address"), "Address");
