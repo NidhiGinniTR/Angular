@@ -42,7 +42,7 @@ public class EUB_TaxIds_Registrations_Test extends BrowserInvoke {
 
 	@Test(dependsOnMethods = "Initialize")
 	public void EUB_TaxIds() throws InterruptedException {
-		// Step-1:-----Login---------------------------------------------//
+		
 		LS1 lp = new LS1(driver, propEnv, propSerialData);
 		FrameWork fm = new FrameWork();
 		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver)
@@ -50,6 +50,7 @@ public class EUB_TaxIds_Registrations_Test extends BrowserInvoke {
 				.pollingEvery(Duration.ofSeconds(5))
 				.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
 				.ignoring(NoSuchFrameException.class);
+		// Step-1:-----Login---------------------------------------------//
 		lp.fnLogin();
 
 		// Step-2:-----Launch Entity Unit Browser---------------------------//

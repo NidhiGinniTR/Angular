@@ -1092,6 +1092,7 @@ public class EntityUnitBrowser extends ExtentManager {
 			 * ); }
 			 */
 			driver.close();
+			fnSwitchtoWindow(2, "Entity Information");
 			}
 		} catch (Exception e) {
 			childTest.fail(e);
@@ -1324,6 +1325,7 @@ public class EntityUnitBrowser extends ExtentManager {
 				Thread.sleep(1000);
 				fm.fnWebButton(driver, SavePre_save, "OK");
 				driver.close();
+				fnSwitchtoWindow(2, "Entity Information");
 			}
 
 		} catch (Exception e) {
@@ -1338,14 +1340,12 @@ public class EntityUnitBrowser extends ExtentManager {
 	public void fnAddNewTaxId() throws InterruptedException {
 		childTest = test.createNode("Description: Entering all the fields to create new Tax Id's/Registration" + "<br>"
 				+ "<< Screen Name: Entity Manager >></br>");
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
 				.withTimeout(Duration.ofSeconds(50))
 				.pollingEvery(Duration.ofSeconds(5))
 				.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
 				.ignoring(NoSuchFrameException.class);
 		if (driver.getTitle().contains("Entity Manager")) {
-			Thread.sleep(1500);
 			waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("Iframe1"));
 			fm.fnWebButton(driver, click_save, "Save");
 			waitf.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//span[@id='spaErrorMessage']")));
@@ -1361,7 +1361,6 @@ public class EntityUnitBrowser extends ExtentManager {
 			waitf.until(ExpectedConditions.numberOfWindowsToBe(4));
 			lp.fnSwitchtoWindow(4, "Jurisdiction Lookup");
 			Thread.sleep(2500);
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			fm.fnWebEdit(driver, JurisdictionName, template.getProperty("TaxId_Jurisdiction"), "Jurisdiction Name");
 			fm.fnWebButton(driver, Jurisdiction_Search, "Search");
 			fm.fnWebTable(driver, driver.findElement(By.xpath("//tr[@id='gridLookup_grdEntityManager_row_0']")),
@@ -1370,18 +1369,14 @@ public class EntityUnitBrowser extends ExtentManager {
 			waitf.until(ExpectedConditions.numberOfWindowsToBe(3));
 			lp.fnSwitchtoWindow(3, "Entity Manager");
 			waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("Iframe1"));
-			Thread.sleep(2500);
 			fm.fnWebButton(driver, AuthorityName_LookUp, "Authority Name Lookup");
-			Thread.sleep(5500);
 			waitf.until(ExpectedConditions.numberOfWindowsToBe(4));
 			lp.fnSwitchtoWindow(4, "Authority Name Lookup");
-			// fm.fnWebEdit(driver, AuthorityName_2,
-			// template.getProperty("TaxId_AuthorityName"), "Authority Name");
-			// fm.fnWebButton(driver, Search, "Search");
+			 //fm.fnWebEdit(driver, AuthorityName_2,template.getProperty("TaxId_AuthorityName"), "Authority Name");
+			 //fm.fnWebButton(driver, Search, "Search");
 			fm.fnWebTable(driver, driver.findElement(By.xpath("//tr[@id='gridLookup_grdEntityManager_row_2']")),
 					"Click");
 			fm.fnWebButton(driver, CN_Ok, "Ok");
-
 			// fm.fnWebEdit(driver, Authority_Name,
 			// template.getProperty("TaxId_AuthorityName"), "Authority Name");
 			// fm.fnWebEdit(driver, Authority_Name2,
@@ -1400,7 +1395,6 @@ public class EntityUnitBrowser extends ExtentManager {
 			fm.fnWebEdit(driver, Notes, template.getProperty("TaxId_Notes"), "Notes");
 			fm.fnWebCheckBox(driver, Primary_TaxId, "Primary TaxId");
 		}
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		fm.fnWebButton(driver, click_save, "Save");
 		// String SaveMsg =
 		// driver.findElement(By.xpath("//span[@id='spaErrorMessage']")).getText();

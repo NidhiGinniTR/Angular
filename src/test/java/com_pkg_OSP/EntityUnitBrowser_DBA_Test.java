@@ -17,7 +17,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -74,7 +73,6 @@ public class EntityUnitBrowser_DBA_Test extends BrowserInvoke {
 	
 		//Step----------NavigatetoDBA--------------------------//
 			fm.fnWebButton(driver, By.xpath("//label[@id='lblDBA']"),"DBA");
-			Thread.sleep(1000);
 			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame1"));
 			List<WebElement> rows = driver.findElements(By.xpath("//DIV[@id='gridDBA_grdEntityManager_dom']/TABLE[1]/TBODY[1]/TR"));
 			Actions action = new Actions(driver);
@@ -102,7 +100,7 @@ public class EntityUnitBrowser_DBA_Test extends BrowserInvoke {
 			
 		//Step-----------Edit/View Details-------------------//
 			wait.until(ExpectedConditions.numberOfWindowsToBe(2));
-			lp.fnSwitchtoWindow(2, "Entity Information");
+			//lp.fnSwitchtoWindow(2, "Entity Information");
 			fm.fnWebButton(driver, By.xpath("//label[@id='lblKeyContacts']"),"Key Contacts");
 			fm.fnWebButton(driver, By.xpath("//label[@id='lblDBA']"),"DBA");
 			Thread.sleep(2000);
@@ -120,12 +118,12 @@ public class EntityUnitBrowser_DBA_Test extends BrowserInvoke {
 			
 		//Step----------Customize View--------------------------//
 			wait.until(ExpectedConditions.numberOfWindowsToBe(2));
-			lp.fnSwitchtoWindow(2, "Entity Information");
+			//lp.fnSwitchtoWindow(2, "Entity Information");
 			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame1"));
 			fm.fnWebButton(driver, By.xpath("//div[@class='btn-group']//*[@class='btn btn-primary dropdown-toggle']"),
 					"Actions");
 			lp.fnOWMActionsMenu("Customize View", "");
-			wait.until(ExpectedConditions.numberOfWindowsToBe(2));
+			wait.until(ExpectedConditions.numberOfWindowsToBe(3));
 			lp.fnSwitchtoWindow(3, "Customize View");
 			Thread.sleep(1000);
 			String[] array = new String[] { "DBA Name", "Description", "From Date", "Status", "County",
