@@ -140,6 +140,11 @@ public class EUB_TaxIds_Registrations_Test extends BrowserInvoke {
 		Eub.fnClickActionsTaxID();
 		Eub.fnOWMActionsMenu("Save Preferences for All", "");
 		Eub.fnSavePreferences("Save Preferences for All");
+		driver.close();
+		lp.fnSwitchtoWindow(1, "Onesource");
+		
+		//Step--------LogOFF-------------------------------//
+		Eub.fnLogOff();
 
 	}
 

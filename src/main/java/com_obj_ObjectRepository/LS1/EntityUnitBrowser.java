@@ -1372,11 +1372,13 @@ public class EntityUnitBrowser extends ExtentManager {
 			fm.fnWebButton(driver, AuthorityName_LookUp, "Authority Name Lookup");
 			waitf.until(ExpectedConditions.numberOfWindowsToBe(4));
 			lp.fnSwitchtoWindow(4, "Authority Name Lookup");
+			Thread.sleep(2500);
 			 //fm.fnWebEdit(driver, AuthorityName_2,template.getProperty("TaxId_AuthorityName"), "Authority Name");
 			 //fm.fnWebButton(driver, Search, "Search");
 			fm.fnWebTable(driver, driver.findElement(By.xpath("//tr[@id='gridLookup_grdEntityManager_row_2']")),
 					"Click");
 			fm.fnWebButton(driver, CN_Ok, "Ok");
+			Thread.sleep(2000);
 			// fm.fnWebEdit(driver, Authority_Name,
 			// template.getProperty("TaxId_AuthorityName"), "Authority Name");
 			// fm.fnWebEdit(driver, Authority_Name2,
@@ -1962,12 +1964,13 @@ public class EntityUnitBrowser extends ExtentManager {
 	public void fnEntityManagerOwnersAddNew(String textData) {
 		childTest = test.createNode("Description: Add New ~ Owners" + "<br>"
 				+ "<< Screen Name : Entity Manager->Ownership->Owners >></br>");
-		if (textData.contains("0%")) {
-			childTest.log(Status.PASS, "Total percentage before adding owner is 0%.");
-		} else {
-			childTest.log(Status.FAIL, "Total percentage before adding owner is not 0%.");
-		}
+		
 		try {
+			if (textData.contains("0%")) {
+				childTest.log(Status.PASS, "Total percentage before adding owner is 0%.");
+			} else {
+				childTest.log(Status.FAIL, "Total percentage before adding owner is not 0%.");
+			}
 			FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
 					.withTimeout(Duration.ofSeconds(50))
 					.pollingEvery(Duration.ofSeconds(5))
@@ -2043,15 +2046,13 @@ public class EntityUnitBrowser extends ExtentManager {
 					.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
 					.ignoring(NoSuchFrameException.class);
 			waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("Iframe1"));
-			System.out.println("this is in Edit");
+			waitf.until(ExpectedConditions.visibilityOfElementLocated(EM_Owners_Close));
 			if (i == 2) {
-				System.out.println("in row 2");
 				fm.fnWebEditCompare(driver, EM_Owners_OwnerName, data.getProperty("Owners_OwnerName2"), "Owner Name");
 				fm.fnWebEditCompare(driver, EM_Owners_PercentageOwned, data.getProperty("Owners_PercentageOwned2"),
 						"Percentage Owned");
 				fm.fnWebEditCompare(driver, EM_Owners_AsofDate, data.getProperty("Owners_AsOfDate2"), "As Of Date");
 			} else {
-				System.out.println("in row 3");
 				fm.fnWebEditCompare(driver, EM_Owners_OwnerName, data.getProperty("Owners_OwnerName1"), "Owner Name");
 				fm.fnWebEditCompare(driver, EM_Owners_PercentageOwned, data.getProperty("Owners_PercentageOwned1"),
 						"Percentage Owned");
