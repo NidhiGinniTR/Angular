@@ -2042,7 +2042,7 @@ public class EntityUnitBrowser extends ExtentManager {
 		try {
 			FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
 					.withTimeout(Duration.ofSeconds(50))
-					.pollingEvery(Duration.ofSeconds(5))
+					.pollingEvery(Duration.ofSeconds(3))
 					.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
 					.ignoring(NoSuchFrameException.class);
 			waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("Iframe1"));
