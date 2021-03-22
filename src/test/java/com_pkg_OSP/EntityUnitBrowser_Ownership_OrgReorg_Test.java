@@ -4,12 +4,19 @@ import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchFrameException;
+import org.openqa.selenium.NoSuchWindowException;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -44,6 +51,11 @@ public class EntityUnitBrowser_Ownership_OrgReorg_Test extends BrowserInvoke {
 		EntityUnitBrowser em = new EntityUnitBrowser(driver, propSerialData,propSerialData);
 		FrameWork fm = new FrameWork();
 		// OWM owm = new OWM(driver,propSerialData);
+		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+				.withTimeout(Duration.ofSeconds(50))
+				.pollingEvery(Duration.ofSeconds(5))
+				.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+				.ignoring(NoSuchFrameException.class);
 		// Step-1:-----Login---------------------------------------------//
 		lp.fnLogin();
 
@@ -51,22 +63,23 @@ public class EntityUnitBrowser_Ownership_OrgReorg_Test extends BrowserInvoke {
 		lp.LaunchApplication("Entity Manager");
 		Thread.sleep(5000);
 		driver.switchTo().defaultContent();
-		driver.switchTo().frame("maincontent");
-		driver.switchTo().frame("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad");
-		driver.switchTo().frame("gridFrame");
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("maincontent"));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad"));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame"));
 		em.fnSearchEntity();
 		// Double click on required workflow
 		fm.fnWebTable(driver, driver.findElement(By.xpath("//tr[@id='gridEntityBrowser_grdEntityManager_row_0']")),
 				"DoubleClick");
 		driver.switchTo().defaultContent();
 		Thread.sleep(2000);
+		wait.until(ExpectedConditions.numberOfWindowsToBe(2));
 		lp.fnSwitchtoWindow(2, "Entity Information");
 
 		// Step----------Navigateto Ownership tab to OrgReorgtab--------------------------//
 		fm.fnWebButton(driver, By.xpath("//table[@id='TabStrip1_1']//nobr"), "Ownership");
 		Thread.sleep(1000);
 		fm.fnWebButton(driver, By.xpath("//label[@id='lblOrg']"), "Org-Reorg");
-		driver.switchTo().frame("fraContent2");
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("fraContent2"));
 		List<WebElement> rows = driver
 				.findElements(By.xpath("//DIV[@id='gridOrgReorg_grdEntityManager_dom']/TABLE[1]/TBODY[1]/TR"));
 		if (rows.size() >= 2) {
@@ -90,6 +103,7 @@ public class EntityUnitBrowser_Ownership_OrgReorg_Test extends BrowserInvoke {
 		fm.fnWebButton(driver, By.xpath("//img[@id='btnActionsMenu']"),"Actions");
 		lp.fnOWMActionsMenu("Add Founding Shareholder", "");
 		Thread.sleep(2000);
+		wait.until(ExpectedConditions.numberOfWindowsToBe(3));
 		lp.fnSwitchtoWindow(3, "Entity Manager");
 		em.fnEMOrgReorgAddFoundingShareholder();
 		
@@ -98,10 +112,11 @@ public class EntityUnitBrowser_Ownership_OrgReorg_Test extends BrowserInvoke {
 		fm.fnWebButton(driver, By.xpath("//label[@id='lblOwner']"), "Owners");
 		fm.fnWebButton(driver, By.xpath("//label[@id='lblOrg']"), "Org-Reorg");
 		Thread.sleep(2500);
-		driver.switchTo().frame("fraContent2");
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("fraContent2"));
 		fm.fnWebButton(driver, By.xpath("//img[@id='btnActionsMenu']"),"Actions");
 		lp.fnOWMActionsMenu("Add New Reorg", "");
 		Thread.sleep(2500);
+		wait.until(ExpectedConditions.numberOfWindowsToBe(3));
 		lp.fnSwitchtoWindow(3, "Entity Manager");
 		em.fnEMOrgReorgAddNewReorg();
 
@@ -110,10 +125,9 @@ public class EntityUnitBrowser_Ownership_OrgReorg_Test extends BrowserInvoke {
 		fm.fnWebButton(driver, By.xpath("//label[@id='lblOwner']"), "Owners");
 		fm.fnWebButton(driver, By.xpath("//label[@id='lblOrg']"), "Org-Reorg");
 		Thread.sleep(2500);
-		driver.switchTo().frame("fraContent2");
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("fraContent2"));
 		List<WebElement> rowsafter = driver
 				.findElements(By.xpath("//DIV[@id='gridOrgReorg_grdEntityManager_dom']/TABLE[1]/TBODY[1]/TR"));
-		System.out.println(rowsafter.size());
 		if (rowsafter.size() >= 2) {
 			for (int i = 2; i <= rowsafter.size(); i++) {
 				fm.fnWebTable(driver,
@@ -123,10 +137,13 @@ public class EntityUnitBrowser_Ownership_OrgReorg_Test extends BrowserInvoke {
 				fm.fnWebButton(driver, By.xpath("//img[@id='btnActionsMenu']"),"Actions");
 				lp.fnOWMActionsMenu("Edit/View Details", "");
 				Thread.sleep(3000);
+				wait.until(ExpectedConditions.numberOfWindowsToBe(3));
 				lp.fnSwitchtoWindow(3, "Entity Manager");
+				Thread.sleep(2000);
 				em.fnEMOrgReorgEdit(i);
+				wait.until(ExpectedConditions.numberOfWindowsToBe(2));
 				lp.fnSwitchtoWindow(2, "Entity Information");
-				driver.switchTo().frame("fraContent2");
+				wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("fraContent2"));
 				
 			}
 		}
@@ -138,15 +155,17 @@ public class EntityUnitBrowser_Ownership_OrgReorg_Test extends BrowserInvoke {
 		Thread.sleep(1000);
 		fm.fnWebButton(driver, By.xpath("//label[@id='lblOrg']"), "Org-Reorg");
 		Thread.sleep(1500);
-		driver.switchTo().frame("fraContent2");
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("fraContent2"));
 		fm.fnWebButton(driver, By.xpath("//img[@id='btnActionsMenu']"),"Actions");
 		lp.fnOWMActionsMenu("Customize View", "");
 		Thread.sleep(1500);
+		wait.until(ExpectedConditions.numberOfWindowsToBe(3));
 		lp.fnSwitchtoWindow(3, "Customize View");
 		String[] array = new String[] { "Type", "Data", "Transferor Name", "Receiver Name","Code Section","Transfer Basis","Transfer Value" };
 		em.fnCustomizeView(array);
 
 		// Step----------Save Preferences------------------------//
+		wait.until(ExpectedConditions.numberOfWindowsToBe(2));
 		lp.fnSwitchtoWindow(2, "Entity Information");
 		driver.switchTo().frame("fraContent2");
 		fm.fnWebButton(driver, By.xpath("//img[@id='btnActionsMenu']"),"Actions");
@@ -178,6 +197,7 @@ public class EntityUnitBrowser_Ownership_OrgReorg_Test extends BrowserInvoke {
 
 		}
 		driver.close();
+		wait.until(ExpectedConditions.numberOfWindowsToBe(1));
 		lp.fnSwitchtoWindow(1, "Onesource");
 
 		// Step--------LogOFF-------------------------------//

@@ -6,15 +6,15 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com_pkg_OSP.EUB_TaxIds_Registrations_Test">
+      <class name="com_pkg_OSP.EntityUnitBrowser_Ownership_OrgReorg_Test">
         <methods>
           <include name="closeBrowser"/>
           <include name="beforeStart"/>
-          <include name="aftersuite"/>
-          <include name="EUB_TaxIds"/>
+          <include name="Ownership_OrgReorg"/>
           <include name="Initialize"/>
+          <include name="aftersuite"/>
         </methods>
-      </class> <!-- com_pkg_OSP.EUB_TaxIds_Registrations_Test -->
+      </class> <!-- com_pkg_OSP.EntityUnitBrowser_Ownership_OrgReorg_Test -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
