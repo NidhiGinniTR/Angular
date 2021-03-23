@@ -80,7 +80,7 @@ public class FWF_Events_Test extends BrowserInvoke {
 
 			// Step-8:----Scheduled New Event-------------------------------------//
 			WorkflowBrowser1 Wb = new WorkflowBrowser1(driver, propEnv, propSerialData);
-			Wb.fnOWMActionsMenu(driver, "Schedule New Event(s)", "");
+			owm.fnOWMActionsMenu("Schedule New Event(s)", "");
 			wait.until(ExpectedConditions.numberOfWindowsToBe(4));
 			lp.fnSwitchtoWindow(4, "Schedule New Event(s)");
 			Ev.fnFWFScheduleNewEvent();
@@ -92,7 +92,7 @@ public class FWF_Events_Test extends BrowserInvoke {
 
 			// Step-10:----Change Status-----------------------------------//
 			Ev.fnFWFClickActions();
-			Wb.fnOWMActionsMenu(driver, "Change Status", "On Hold");
+			owm.fnOWMActionsMenu("Change Status", "On Hold");
 
 			// Step-11:-----Select Event--------------------------------------//
 			wait.until(ExpectedConditions.numberOfWindowsToBe(3));
@@ -101,7 +101,7 @@ public class FWF_Events_Test extends BrowserInvoke {
 
 			// Step-12:----Extend Event-----------------------------------//
 			Ev.fnFWFClickActions();
-			Wb.fnOWMActionsMenu(driver, "Extend Event(s)", "");
+			owm.fnOWMActionsMenu("Extend Event(s)", "");
 			Thread.sleep(500);
 			wait.until(ExpectedConditions.numberOfWindowsToBe(4));
 			lp.fnSwitchtoWindow(4, "Extension");
@@ -120,7 +120,7 @@ public class FWF_Events_Test extends BrowserInvoke {
 
 			// Step-14:----------------Re-Calculate-----------------------------------//
 			Ev.fnFWFClickActions();
-			Wb.fnOWMActionsMenu(driver, "Re-calculate", "");
+			owm.fnOWMActionsMenu("Re-calculate", "");
 			// lp.fnSwitchtoWindow(4,"Folder WorkFlows");
 			wait.until(ExpectedConditions.alertIsPresent());
 			if (driver.switchTo().alert().getText().equalsIgnoreCase("0 out of 1 record(s) processed.")) {
@@ -138,7 +138,7 @@ public class FWF_Events_Test extends BrowserInvoke {
 			// Step-16:----------------Edit Scheduled Event(s)-----------------------------------//
 			// Step-17:----------------Mark Done-----------------------------------//
 			Ev.fnFWFClickActions();
-			Wb.fnOWMActionsMenu(driver, "Edit Scheduled Event(s)", "");
+			owm.fnOWMActionsMenu("Edit Scheduled Event(s)", "");
 			wait.until(ExpectedConditions.numberOfWindowsToBe(4));
 			lp.fnSwitchtoWindow(4, "Scheduled Event Profile");
 			Ev.fnFWFESEMarkDone("Work Status");
@@ -150,7 +150,7 @@ public class FWF_Events_Test extends BrowserInvoke {
 
 			// Step-19:----------------Re-Calculate-----------------------------------//
 			Ev.fnFWFClickActions();
-			Wb.fnOWMActionsMenu(driver, "Edit Scheduled Event(s)", "");
+			owm.fnOWMActionsMenu("Edit Scheduled Event(s)", "");
 			wait.until(ExpectedConditions.numberOfWindowsToBe(4));
 			lp.fnSwitchtoWindow(4, "Scheduled Event Profile");
 			Ev.fnFWFESEReCalculate();
@@ -162,7 +162,7 @@ public class FWF_Events_Test extends BrowserInvoke {
 
 			// Step-21:----------------Customize View-----------------------------------//
 			Ev.fnFWFClickActions();
-			Wb.fnOWMActionsMenu(driver, "Customize View", "");
+			owm.fnOWMActionsMenu("Customize View", "");
 			wait.until(ExpectedConditions.numberOfWindowsToBe(4));
 			lp.fnSwitchtoWindow(4, "Grid Columns");
 			String[] array = new String[] { "Event", "Status", "Date Completed", "Assigned To", "Extended", "Authority","Due Date" };
@@ -172,7 +172,7 @@ public class FWF_Events_Test extends BrowserInvoke {
 			wait.until(ExpectedConditions.numberOfWindowsToBe(3));
 			lp.fnSwitchtoWindow(3, "Folder WorkFlows");
 			Ev.fnFWFClickActions();
-			Wb.fnOWMActionsMenu(driver, "Save Preferences", "");
+			owm.fnOWMActionsMenu("Save Preferences", "");
 			owm.fnOWMSavePreferences("Save Preferences");
 
 			// Step-23:----------------Save Preferences for All-----------------------------------//
