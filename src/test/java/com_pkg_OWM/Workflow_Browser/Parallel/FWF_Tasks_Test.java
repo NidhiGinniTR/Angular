@@ -118,6 +118,8 @@ public class FWF_Tasks_Test extends BrowserInvoke {
 		wait.until(ExpectedConditions.numberOfWindowsToBe(4));
 		lp.fnSwitchtoWindow(4, "Add document");
 		Thread.sleep(1000);
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("frame1"));
+
 		Tasks Tk = new Tasks(driver,propSerialData);
 		Tk.fnFWFAddDocument();
 
