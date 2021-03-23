@@ -1,9 +1,16 @@
 package com_pkg_OSP;
 
 import java.io.IOException;
+import java.time.Duration;
+import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchFrameException;
+import org.openqa.selenium.NoSuchWindowException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -33,43 +40,45 @@ public class Entity_Manager_KeyContacts_Test extends BrowserInvoke {
 		public void KeyContacts() throws InterruptedException {
 			loginPage lp = new loginPage(driver,propEnv,propSerialData);
 			EntityUnitBrowser Eub = new EntityUnitBrowser(driver, propEnv, propSerialData);
-			//OWM owm = new OWM(driver,propSerialData);
-			
+			FrameWork fm = new FrameWork();
+			FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+					.withTimeout(Duration.ofSeconds(50))
+					.pollingEvery(Duration.ofSeconds(5))
+					.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+					.ignoring(NoSuchFrameException.class);
 			// Step-1:-----Login---------------------------------------------//
-			
 			lp.fnLogin();
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			
 			//Step-2:-----Launch WorkFlow Manager---------------------------//
-			
 			lp.LaunchApplication("Entity Manager");
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 			driver.switchTo().defaultContent();
-			driver.switchTo().frame("maincontent");
-			driver.switchTo().frame("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad");
-			driver.switchTo().frame("gridFrame");
-
-
+			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("maincontent"));
+			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad"));
+			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame"));
+	
 			// Step---3: Search and Navigate to Entity-------------//
-		
-			//Eub.searchEntity();
 			Eub.fnSearchEntity();
-			FrameWork fm = new FrameWork();
 			fm.fnWebTable(driver, driver.findElement(By.xpath("//tr[@id='gridEntityBrowser_grdEntityManager_row_0']")),"Click");
 			Eub.navtoEditview();
 						
 			//Step-4: -------Navigate and edit Key Contacts info----------------//
-						
+				wait.until(ExpectedConditions.numberOfWindowsToBe(2));
 				lp.fnSwitchtoWindow(2, "Entity Information");
 				Eub.key_contacts();
 						
 			//Step-5:---------View Responsibility Info Tab------------//
-						
+				wait.until(ExpectedConditions.numberOfWindowsToBe(1));
 				lp.fnSwitchtoWindow(1, "Onesource");
 				driver.switchTo().defaultContent();
 				Eub.doubleclickEntity();
+				wait.until(ExpectedConditions.numberOfWindowsToBe(2));
 				lp.fnSwitchtoWindow(2, "Entity Information");
 				Eub.viewKeyContacts();
+				wait.until(ExpectedConditions.numberOfWindowsToBe(1));
+				lp.fnSwitchtoWindow(1, "Onesource");
+
+			//Step--------LogOFF-------------------------------//
+				Eub.fnLogOff();
 		}
 		
 		@AfterClass

@@ -1,16 +1,23 @@
 package com_obj_ObjectRepository.FolderWorkflows1;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchFrameException;
+import org.openqa.selenium.NoSuchWindowException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+
+import com.aventstack.extentreports.Status;
 
 import com_helper_Reporting.ExtentManager;
 import com_lib_FunctionLibrary.FrameWork;
-import com_obj_ObjectRepository.FolderWorkFlows.NavigationTabs;
 
 
 
@@ -87,7 +94,9 @@ public class Events extends ExtentManager {
 	/***************************************************************************************
 	 * These element locators belongs to Edit Schedule Event
 	 ***************************************************************************************/
-	By fwf_Events_ESE_Actions = By.className("actionsMiddle"); //Locator for Actions in Edit Schedule Event
+	
+	By fwf_Events_ESE_Actions = By.xpath("//td[@class='actionsMiddle']"); //Locator for Actions in Edit Schedule Event
+	//By fwf_Events_ESE_Actions = By.className("actionsMiddle"); //Locator for Actions in Edit Schedule Event
 	By fwf_Events_ESE_Status = By.xpath("//SELECT[@id='ddlStatusWS']"); //Locator for Status in Edit Schedule Event
 	By fwf_Events_ESE_Priority = By.xpath("//SELECT[@id='ddlPriorityWS']"); //Locator for Priority in Edit Schedule Event
 	By fwf_Events_ESE_OWM_W_F_Template = By.xpath("//INPUT[@id='txtRelatedToWF']"); //Locator for W/F template in Edit Schedule Event
@@ -120,7 +129,15 @@ public class Events extends ExtentManager {
 	 **********************************************************************************/
 	
 	public void fnFWFExtendEvent() throws InterruptedException{
-		if(driver.getTitle().equalsIgnoreCase("Extension")) {
+		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+				.withTimeout(Duration.ofSeconds(70))
+				.pollingEvery(Duration.ofSeconds(5))
+				.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+				.ignoring(NoSuchFrameException.class);
+		Thread.sleep(1500);
+		System.out.println(driver.getTitle());
+		if(driver.getTitle().contains("Extension")) {
+			wait.until(ExpectedConditions.visibilityOfElementLocated(fwf_Events_ScheduleExtension));
 			fm.fnWebButton(driver, fwf_Events_ScheduleExtension, "Extend Event(s)");
 		}
 	}
@@ -140,7 +157,8 @@ public class Events extends ExtentManager {
 	 **********************************************************************************/
 	
 	public void fnFWFSwitchingTab(String text) throws InterruptedException{
-		if(driver.getTitle().equalsIgnoreCase("Folder WorkFlows")) {
+		Thread.sleep(1500);
+		if(driver.getTitle().contains("Folder WorkFlows")) {
 			By tabItem = By.xpath("//*[@id='TabStrip1']//*[contains(text(),'"+text+"')]");
 			fm.fnWebButton(driver, tabItem, text);
 		}
@@ -154,7 +172,15 @@ public class Events extends ExtentManager {
 	public void fnFWFScheduleNewEvent() throws InterruptedException {
 		childTest = test.createNode(
 				"Description: Creating a New Schedule Event." + "<br>" + "<< Screen Name: Folder Workflows >></br>");
+		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+				.withTimeout(Duration.ofSeconds(100))
+				.pollingEvery(Duration.ofSeconds(5))
+				.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+				.ignoring(NoSuchFrameException.class);
+		Thread.sleep(3500);
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(fwf_Events_SNE_Clear));
 		if (driver.getTitle().equalsIgnoreCase("Schedule New Event(s)")) {
+			wait.until(ExpectedConditions.visibilityOfElementLocated(fwf_Events_SNE_EventTemplateName));
 			fm.fnWebButton(driver, fwf_Events_SNE_Clear, "Cancel");
 			fm.fnWebEdit(driver, fwf_Events_SNE_EventTemplateName, template.getProperty("Event_Template_Name"), "Event Template Name");
 			fm.fnWebList(driver, fwf_Events_SNE_TaxType, template.getProperty("E_TaxType"), "Tax Type");
@@ -180,7 +206,11 @@ public class Events extends ExtentManager {
 			}
 			fm.fnWebButton(driver, fwf_Events_SNE_Finish, "Finish");
 			Thread.sleep(1500);
+			wait.until(ExpectedConditions.alertIsPresent());
 			driver.switchTo().alert().accept();
+			childTest.log(Status.PASS, "Successfully a Event is created");
+		}else {
+			childTest.log(Status.FAIL, "Schedule New Event Page is not Focused/Opened");
 		}
 
 	}
@@ -192,21 +222,35 @@ public class Events extends ExtentManager {
 	public void fnFWFESEMarkDone(String text) throws InterruptedException {
 		childTest = test.createNode("Description: Mark Done" + "<br>" + "<< Screen Name: Folder Workflows >></br>");
 		// FunctionLibrary.fnSwitchtoWindow(driver, 4, "Folder WorkFlows");
+		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+				.withTimeout(Duration.ofSeconds(100))
+				.pollingEvery(Duration.ofSeconds(5))
+				.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+				.ignoring(NoSuchFrameException.class);
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(fwf_Events_ESE_Actions));
+		Thread.sleep(1500);
 		if (driver.getTitle().equalsIgnoreCase("Scheduled Event Profile")) {
+			wait.until(ExpectedConditions.visibilityOfElementLocated(fwf_Events_ESE_Actions));
 			fm.fnWebButton(driver, fwf_Events_ESE_Actions, "Action");
 			fm.fnWebButton(driver, fwf_Events_ESE_MarkDone, "Mark Done");
 			By tabItem = By.xpath("//*[@id='TabStripStepProperties']//*[contains(text(),'" + text + "')]");
 			fm.fnWebButton(driver, tabItem, text);
 			fm.fnWebButton(driver, fwf_Events_Save, "Save");
-			System.out.println(driver.switchTo().alert().getText());
+			//System.out.println(driver.switchTo().alert().getText());
+			wait.until(ExpectedConditions.alertIsPresent());
 			if (driver.switchTo().alert().getText()
 					.equalsIgnoreCase("The selected Scheduled Event(s) have been updated.")) {
 				Thread.sleep(2500);
 				driver.switchTo().alert().accept();
+				childTest.log(Status.PASS, "Selected event has been upated");
 			} else {
+				childTest.log(Status.FAIL, "Selected event is not updated");
 				driver.close();
 			}
 
+		}else {
+			driver.close();
+			childTest.log(Status.FAIL, "Scheduled Event Profile page is not recoginzed");
 		}
 	}
 
@@ -216,21 +260,34 @@ public class Events extends ExtentManager {
 	
 	public void fnFWFESEReCalculate() throws InterruptedException {
 		childTest = test.createNode("Description: Re-Calculate." + "<br>" + "<< Screen Name: Folder Workflows >></br>");
+		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+				.withTimeout(Duration.ofSeconds(70))
+				.pollingEvery(Duration.ofSeconds(5))
+				.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+				.ignoring(NoSuchFrameException.class);
+		Thread.sleep(1500);
 		if (driver.getTitle().equalsIgnoreCase("Scheduled Event Profile")) {
+			wait.until(ExpectedConditions.visibilityOfElementLocated(fwf_Events_ESE_Actions));
+			fm.fnWebButton(driver, fwf_Events_ESE_Actions, "Action");
 			fm.fnWebButton(driver, fwf_Events_ESE_Recalculate, "Re-Calculate");
-			if (driver.switchTo().alert().getText().equalsIgnoreCase("1 out of 1 record(s) processed.")) {
+			wait.until(ExpectedConditions.alertIsPresent());
+			if (driver.switchTo().alert().getText().equalsIgnoreCase("0 out of 1 record(s) processed.")) {
 				Thread.sleep(2500);
 				driver.switchTo().alert().accept();
 			} else {
 				driver.close();
 			}
+			Thread.sleep(1000);
 			fm.fnWebButton(driver, fwf_Events_Save, "Save");
+			wait.until(ExpectedConditions.alertIsPresent());
 			if (driver.switchTo().alert().getText()
 					.equalsIgnoreCase("The selected Scheduled Event(s) have been updated.")) {
 				Thread.sleep(2500);
 				driver.switchTo().alert().accept();
+				childTest.log(Status.PASS, "Selected scheduled event is updated");
 			} else {
 				driver.close();
+				childTest.log(Status.FAIL, "Selected scheduled event is not updated");
 			}
 		}
 	}
@@ -241,12 +298,17 @@ public class Events extends ExtentManager {
 	
 	public void fnFWFSelectEvent() throws InterruptedException {
 		//FunctionLibrary.fnSwitchtoWindow(driver,3, "Folder WorkFlows");
-	
-        driver.switchTo().frame("tabIFrame");
-       // driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+				.withTimeout(Duration.ofSeconds(70))
+				.pollingEvery(Duration.ofSeconds(5))
+				.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+				.ignoring(NoSuchFrameException.class);
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("tabIFrame"));
+		
          ArrayList<WebElement> cells = (ArrayList<WebElement>) driver.findElements(By.xpath("//DIV[@id='grdEvents_dom']/table/tbody/tr/td"));
          for (WebElement cell : cells) {
              if(cell.getText().equals(template.getProperty("Event_Template_Name"))) {
+            	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//DIV[@id='grdEvents_dom']/table/tbody/tr/td")));
              	fm.fnWebTable(driver, cell, "Click");
             	break;
  	        }

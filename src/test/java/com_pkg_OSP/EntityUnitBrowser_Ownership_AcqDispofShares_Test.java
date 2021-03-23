@@ -14,10 +14,8 @@ import org.openqa.selenium.NoSuchFrameException;
 import org.openqa.selenium.NoSuchWindowException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -48,7 +46,7 @@ public class EntityUnitBrowser_Ownership_AcqDispofShares_Test extends BrowserInv
 	public void Ownership_AcqDispofShares() throws InterruptedException, AWTException {
 		// Step--------------Initializations----------------//
 		loginPage lp = new loginPage(driver, propEnv, propSerialData);
-		OWM owm = new com_obj_ObjectRepository.OWM.OWM(driver, propSerialData);
+		//OWM owm = new com_obj_ObjectRepository.OWM.OWM(driver, propSerialData);
 		EntityUnitBrowser em = new EntityUnitBrowser(driver, propSerialData,propSerialData);
 		FrameWork fm = new FrameWork();
 		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver)
@@ -65,9 +63,9 @@ public class EntityUnitBrowser_Ownership_AcqDispofShares_Test extends BrowserInv
 		lp.LaunchApplication("Entity Manager");
 		Thread.sleep(5000);
 		driver.switchTo().defaultContent();
-		driver.switchTo().frame("maincontent");
-		driver.switchTo().frame("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad");
-		driver.switchTo().frame("gridFrame");
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("maincontent"));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad"));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame"));
 		em.fnSearchEntity();
 		// Double click on required workflow
 		fm.fnWebTable(driver, driver.findElement(By.xpath("//tr[@id='gridEntityBrowser_grdEntityManager_row_0']")),

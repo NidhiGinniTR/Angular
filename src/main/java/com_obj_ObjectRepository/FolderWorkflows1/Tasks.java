@@ -5,14 +5,19 @@ import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
+import java.time.Duration;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchFrameException;
+import org.openqa.selenium.NoSuchWindowException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.aventstack.extentreports.Status;
@@ -112,7 +117,12 @@ public class Tasks extends ExtentManager {
 	public void fnFWFAddDocument() throws InterruptedException, AWTException {
 		childTest = test.createNode("Description: Add Document " + "<br>" + "<< Screen Name: Folder WorkFlows >></br>");
 		Thread.sleep(1000);
+		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(120)).pollingEvery(Duration.ofSeconds(5))
+				.ignoring(NoSuchElementException.class,NoSuchWindowException.class).ignoring(NoSuchFrameException.class);
+		Thread.sleep(1000);
+		System.out.println(driver.getTitle());
 		if (driver.getTitle().equalsIgnoreCase("Add document")) {
+			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("frame1"));
 			fm.fnWebButton(driver, fwf_Task_AD_Clear, "Clear");
 			fm.fnWebButton(driver, fwf_Task_AD_Save, "Save");
 			WebDriverWait w = new WebDriverWait(driver, 15);
@@ -139,10 +149,11 @@ public class Tasks extends ExtentManager {
 			robot.keyPress(KeyEvent.VK_ENTER);
 			robot.keyRelease(KeyEvent.VK_ENTER);
 			Thread.sleep(1000);
+			wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(fwf_Task_AD_Save));
 			fm.fnWebButton(driver, fwf_Task_AD_Save, "Save");
 			Thread.sleep(2000);
-			WebDriverWait w1 = new WebDriverWait(driver, 20);
-			w1.until(ExpectedConditions.alertIsPresent());
+			//WebDriverWait w1 = new WebDriverWait(driver, 20);
+			wait.until(ExpectedConditions.alertIsPresent());
 			String text1 = driver.switchTo().alert().getText();
 			if (text1.contains("is required.")) {
 				Thread.sleep(500);
@@ -162,8 +173,11 @@ public class Tasks extends ExtentManager {
 			fm.fnWebEdit(driver, fwf_Task_AD_DueDate, template.getProperty("doc_DueDate"), "Due Date");
 			fm.fnWebCheckBox(driver, fwf_Task_AD_Notify, "Notify");
 			//fm.fnWebButton(driver, fwf_Task_AD_NotifyUsersList, "Users List");
+			wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(fwf_Task_AD_Save));
 			fm.fnWebButton(driver, fwf_Task_AD_Save, "Save");
 			Thread.sleep(1500);
+		}else {
+			childTest.log(Status.FAIL, "Add Document Page is not in Focus/Add Document Page is not opened");
 		}
 	}
 
@@ -174,6 +188,9 @@ public class Tasks extends ExtentManager {
 	public void fnFWFViewDocuments() throws InterruptedException {
 		childTest = test
 				.createNode("Description: View Documents " + "<br>" + "<< Screen Name: Folder WorkFlows >></br>");
+		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(100)).pollingEvery(Duration.ofSeconds(5))
+				.ignoring(NoSuchElementException.class,NoSuchWindowException.class).ignoring(NoSuchFrameException.class);
+		
 		if (driver.getTitle().equalsIgnoreCase("Task Properties")) {
 			WebElement Table = driver.findElement(By.xpath("//DIV[@id=\"grdTaskDocumentHitList_dom\"]/TABLE[1]"));
 			List<WebElement> rows = Table.findElements(By.tagName("tr"));
@@ -192,6 +209,7 @@ public class Tasks extends ExtentManager {
 				break;
 			}
 			Thread.sleep(1000);
+			wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(fwf_Task_Save));
 			fm.fnWebButton(driver, fwf_Task_Save, "Save");
 		}
 
