@@ -63,9 +63,9 @@ public class EntityUnitBrowser_Ownership_AcqDispofShares_Test extends BrowserInv
 		lp.LaunchApplication("Entity Manager");
 		Thread.sleep(5000);
 		driver.switchTo().defaultContent();
-		driver.switchTo().frame("maincontent");
-		driver.switchTo().frame("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad");
-		driver.switchTo().frame("gridFrame");
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("maincontent"));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad"));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame"));
 		em.fnSearchEntity();
 		// Double click on required workflow
 		fm.fnWebTable(driver, driver.findElement(By.xpath("//tr[@id='gridEntityBrowser_grdEntityManager_row_0']")),

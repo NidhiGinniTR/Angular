@@ -6,15 +6,15 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com_pkg_OSP.EntityUnitBrowser_Ownership_OrgReorg_Test">
+      <class name="com_pkg_OSP.EntityUnitBrowser_Ownership_StockOfTheCompany_Test">
         <methods>
+          <include name="Ownership_StockOfTheCompany"/>
           <include name="closeBrowser"/>
           <include name="beforeStart"/>
-          <include name="Ownership_OrgReorg"/>
-          <include name="Initialize"/>
           <include name="aftersuite"/>
+          <include name="Initialize"/>
         </methods>
-      </class> <!-- com_pkg_OSP.EntityUnitBrowser_Ownership_OrgReorg_Test -->
+      </class> <!-- com_pkg_OSP.EntityUnitBrowser_Ownership_StockOfTheCompany_Test -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
