@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -51,11 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Suite" class="navigator-link ">
-<<<<<<< HEAD
-                    <span>C:\Users\X017406\git\Angular\EntityManager.xml</span>
-=======
-                    <span>C:\Users\X017401\git\Angular\testng.xml</span>
->>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
+                    <span>C:\Users\X017401\git\Angular\EntityManager.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -97,7 +93,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">14 methods, 1 failed,   13 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com_pkg_OSP.EUB_TaxIds_Registrations_Test" class="method navigator-link" hash-for-method="EUB_TaxIds">EUB_TaxIds</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -108,12 +118,67 @@
                     <div class="method-list-content passed suite-Suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com_pkg_OSP.Entity_Manager_PlaceOfBusiness_Test" class="method navigator-link" hash-for-method="EUB_PlaceOfBussiness">EUB_PlaceOfBussiness</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test" class="method navigator-link" hash-for-method="BusinessTaxInfo">BusinessTaxInfo</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com_pkg_OSP.Entity_Manager_PlaceOfBusiness_Test" class="method navigator-link" hash-for-method="Initialize">Initialize</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com_pkg_OSP.EUB_Test" class="method navigator-link" hash-for-method="EntityUnitBrowser">EntityUnitBrowser</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com_pkg_OSP.EntityUnitBrowser_DBA_Test" class="method navigator-link" hash-for-method="EntityUnitBrowserDBA">EntityUnitBrowserDBA</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com_pkg_OSP.EUB_Test" class="method navigator-link" hash-for-method="Initialize">Initialize</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test" class="method navigator-link" hash-for-method="Initialize">Initialize</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com_pkg_OSP.EUB_TaxIds_Registrations_Test" class="method navigator-link" hash-for-method="Initialize">Initialize</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com_pkg_OSP.EntityUnitBrowser_DBA_Test" class="method navigator-link" hash-for-method="Initialize">Initialize</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com_pkg_OSP.Entity_Manager_ResponsibilityInfo_Test" class="method navigator-link" hash-for-method="Initialize">Initialize</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com_pkg_OSP.Entity_Manager_PageLinks_Test" class="method navigator-link" hash-for-method="Initialize">Initialize</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com_pkg_OSP.Entity_Manager_KeyContacts_Test" class="method navigator-link" hash-for-method="Initialize">Initialize</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com_pkg_OSP.Entity_Manager_KeyContacts_Test" class="method navigator-link" hash-for-method="KeyContacts">KeyContacts</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com_pkg_OSP.Entity_Manager_PageLinks_Test" class="method navigator-link" hash-for-method="PageLinks">PageLinks</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com_pkg_OSP.Entity_Manager_ResponsibilityInfo_Test" class="method navigator-link" hash-for-method="ResponsbilityInfo">ResponsbilityInfo</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -128,40 +193,188 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-passed">
+          <div class="suite-Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com_pkg_OSP.Entity_Manager_PlaceOfBusiness_Test</span>
+              <img src="failed.png"/>
+              <span class="class-name">com_pkg_OSP.EUB_TaxIds_Registrations_Test</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="EUB_PlaceOfBussiness">
-                  </a> <!-- EUB_PlaceOfBussiness -->
-                  <span class="method-name">EUB_PlaceOfBussiness</span>
-<<<<<<< HEAD
-=======
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for number of open windows to be 2 (tried for 50 second(s) with 5000 milliseconds interval)
+                  <a name="EUB_TaxIds">
+                  </a> <!-- EUB_TaxIds -->
+                  <span class="method-name">EUB_TaxIds</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Unable to find element with xpath == //label[@id=&apos;lblTaxID&apos;]
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-<<<<<<< HEAD
-System info: host: &apos;USE2DEVP00127&apos;, ip: &apos;10.178.168.120&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;15.0.1&apos;
-Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:8957/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: de0548af-06c9-4735-892d-94ba988c5c5e
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-=======
 System info: host: &apos;USE2DEVP0289&apos;, ip: &apos;10.178.161.24&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;14.0.2&apos;
-Driver info: driver.version: unknown
-	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:304)
->>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at com_pkg_OSP.Entity_Manager_PlaceOfBusiness_Test.EUB_PlaceOfBussiness(Entity_Manager_PlaceOfBusiness_Test.java:138)
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:19678/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 81d3627c-2d54-4202-904d-b6e6f30ceab8
+*** Element info: {Using=xpath, value=//label[@id=&apos;lblTaxID&apos;]}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	at com_lib_FunctionLibrary.FrameWork.fnWebButton(FrameWork.java:69)
+	at com_obj_ObjectRepository.LS1.EntityUnitBrowser.fnClickTaxIds(EntityUnitBrowser.java:1020)
+	at com_pkg_OSP.EUB_TaxIds_Registrations_Test.EUB_TaxIds(EUB_TaxIds_Registrations_Test.java:79)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 27 stack frames
+... Removed 32 stack frames
 </div> <!-- stack-trace -->
->>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
                 </div> <!-- method-content -->
               </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com_pkg_OSP.EUB_Test</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="EntityUnitBrowser">
+                  </a> <!-- EntityUnitBrowser -->
+                  <span class="method-name">EntityUnitBrowser</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Initialize">
+                  </a> <!-- Initialize -->
+                  <span class="method-name">Initialize</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="BusinessTaxInfo">
+                  </a> <!-- BusinessTaxInfo -->
+                  <span class="method-name">BusinessTaxInfo</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Initialize">
+                  </a> <!-- Initialize -->
+                  <span class="method-name">Initialize</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com_pkg_OSP.EntityUnitBrowser_DBA_Test</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="EntityUnitBrowserDBA">
+                  </a> <!-- EntityUnitBrowserDBA -->
+                  <span class="method-name">EntityUnitBrowserDBA</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="Initialize">
+                  </a> <!-- Initialize -->
+                  <span class="method-name">Initialize</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com_pkg_OSP.Entity_Manager_ResponsibilityInfo_Test</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="Initialize">
+                  </a> <!-- Initialize -->
+                  <span class="method-name">Initialize</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="ResponsbilityInfo">
+                  </a> <!-- ResponsbilityInfo -->
+                  <span class="method-name">ResponsbilityInfo</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com_pkg_OSP.Entity_Manager_KeyContacts_Test</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="Initialize">
+                  </a> <!-- Initialize -->
+                  <span class="method-name">Initialize</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="KeyContacts">
+                  </a> <!-- KeyContacts -->
+                  <span class="method-name">KeyContacts</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com_pkg_OSP.Entity_Manager_PageLinks_Test</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="Initialize">
+                  </a> <!-- Initialize -->
+                  <span class="method-name">Initialize</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="PageLinks">
+                  </a> <!-- PageLinks -->
+                  <span class="method-name">PageLinks</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com_pkg_OSP.EUB_TaxIds_Registrations_Test</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
                   <a name="Initialize">
@@ -174,11 +387,7 @@ Driver info: driver.version: unknown
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-<<<<<<< HEAD
-            <span class="header-content">C:\Users\X017406\git\Angular\EntityManager.xml</span>
-=======
-            <span class="header-content">C:\Users\X017401\git\Angular\testng.xml</span>
->>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
+            <span class="header-content">C:\Users\X017401\git\Angular\EntityManager.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -190,7 +399,14 @@ Driver info: driver.version: unknown
   &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com_pkg_OSP.Entity_Manager_PlaceOfBusiness_Test&quot;/&gt;
+      &lt;class name=&quot;com_pkg_OSP.EUB_Test&quot;/&gt;
+      &lt;class name=&quot;com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test&quot;/&gt;
+      &lt;class name=&quot;com_pkg_OSP.Entity_Manager_ResponsibilityInfo_Test&quot;/&gt;
+      &lt;class name=&quot;com_pkg_OSP.Entity_Manager_KeyContacts_Test&quot;/&gt;
+      &lt;class name=&quot;com_pkg_OSP.Entity_Manager_ResponsibilityInfo_Test&quot;/&gt;
+      &lt;class name=&quot;com_pkg_OSP.EntityUnitBrowser_DBA_Test&quot;/&gt;
+      &lt;class name=&quot;com_pkg_OSP.EUB_TaxIds_Registrations_Test&quot;/&gt;
+      &lt;class name=&quot;com_pkg_OSP.Entity_Manager_PageLinks_Test&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -204,7 +420,7 @@ Driver info: driver.version: unknown
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Test (1 class)</span>
+                <span class="test-name">Test (8 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -230,43 +446,68 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(14);
 data.setCell(0, 0, 0)
-<<<<<<< HEAD
-data.setCell(0, 1, 'Tasks')
-data.setCell(0, 2, 'com_pkg_OWM.Workflow_Browser.Parallel.FWF_Tasks_Test')
-data.setCell(0, 3, 564977);
-=======
-data.setCell(0, 1, 'EUB_PlaceOfBussiness')
-data.setCell(0, 2, 'com_pkg_OSP.Entity_Manager_PlaceOfBusiness_Test')
-<<<<<<< HEAD
-data.setCell(0, 3, 462607);
-=======
-data.setCell(0, 3, 422493);
->>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
->>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
+data.setCell(0, 1, 'EntityUnitBrowser')
+data.setCell(0, 2, 'com_pkg_OSP.EUB_Test')
+data.setCell(0, 3, 752552);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'Initialize')
-<<<<<<< HEAD
-data.setCell(1, 2, 'com_pkg_OWM.Workflow_Browser.Parallel.FWF_Tasks_Test')
-data.setCell(1, 3, 8657);
-=======
-data.setCell(1, 2, 'com_pkg_OSP.Entity_Manager_PlaceOfBusiness_Test')
-<<<<<<< HEAD
-data.setCell(1, 3, 9034);
-=======
-data.setCell(1, 3, 6477);
->>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
->>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
+data.setCell(1, 1, 'EntityUnitBrowserDBA')
+data.setCell(1, 2, 'com_pkg_OSP.EntityUnitBrowser_DBA_Test')
+data.setCell(1, 3, 469547);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'BusinessTaxInfo')
+data.setCell(2, 2, 'com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test')
+data.setCell(2, 3, 316981);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'ResponsbilityInfo')
+data.setCell(3, 2, 'com_pkg_OSP.Entity_Manager_ResponsibilityInfo_Test')
+data.setCell(3, 3, 248183);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'KeyContacts')
+data.setCell(4, 2, 'com_pkg_OSP.Entity_Manager_KeyContacts_Test')
+data.setCell(4, 3, 242122);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'EUB_TaxIds')
+data.setCell(5, 2, 'com_pkg_OSP.EUB_TaxIds_Registrations_Test')
+data.setCell(5, 3, 159353);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'PageLinks')
+data.setCell(6, 2, 'com_pkg_OSP.Entity_Manager_PageLinks_Test')
+data.setCell(6, 3, 104953);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'Initialize')
+data.setCell(7, 2, 'com_pkg_OSP.Entity_Manager_KeyContacts_Test')
+data.setCell(7, 3, 10682);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'Initialize')
+data.setCell(8, 2, 'com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test')
+data.setCell(8, 3, 5515);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'Initialize')
+data.setCell(9, 2, 'com_pkg_OSP.EUB_TaxIds_Registrations_Test')
+data.setCell(9, 3, 5360);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'Initialize')
+data.setCell(10, 2, 'com_pkg_OSP.Entity_Manager_ResponsibilityInfo_Test')
+data.setCell(10, 3, 5279);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'Initialize')
+data.setCell(11, 2, 'com_pkg_OSP.EntityUnitBrowser_DBA_Test')
+data.setCell(11, 3, 4903);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'Initialize')
+data.setCell(12, 2, 'com_pkg_OSP.EUB_Test')
+data.setCell(12, 3, 4188);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'Initialize')
+data.setCell(13, 2, 'com_pkg_OSP.Entity_Manager_PageLinks_Test')
+data.setCell(13, 3, 3778);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-<<<<<<< HEAD
-              <span class="suite-total-time">Total running time: 9 minutes</span>
-=======
-              <span class="suite-total-time">Total running time: 7 minutes</span>
->>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
+              <span class="suite-total-time">Total running time: 38 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -292,64 +533,208 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com_pkg_OSP.Entity_Manager_PlaceOfBusiness_Test</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com_pkg_OSP.EUB_TaxIds_Registrations_Test</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">beforeStart</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com_pkg_OSP.EUB_Test</div> <!-- chronological-class-name -->
+              <div class="configuration-suite before">
+                <span class="method-name">beforeStart</span>
+                <span class="method-start">318 ms</span>
+              </div> <!-- configuration-suite before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com_pkg_OSP.EntityUnitBrowser_DBA_Test</div> <!-- chronological-class-name -->
+              <div class="configuration-suite before">
+                <span class="method-name">beforeStart</span>
+                <span class="method-start">321 ms</span>
+              </div> <!-- configuration-suite before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test</div> <!-- chronological-class-name -->
+              <div class="configuration-suite before">
+                <span class="method-name">beforeStart</span>
+                <span class="method-start">324 ms</span>
+              </div> <!-- configuration-suite before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com_pkg_OSP.Entity_Manager_KeyContacts_Test</div> <!-- chronological-class-name -->
+              <div class="configuration-suite before">
+                <span class="method-name">beforeStart</span>
+                <span class="method-start">326 ms</span>
+              </div> <!-- configuration-suite before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com_pkg_OSP.Entity_Manager_PageLinks_Test</div> <!-- chronological-class-name -->
+              <div class="configuration-suite before">
+                <span class="method-name">beforeStart</span>
+                <span class="method-start">328 ms</span>
+              </div> <!-- configuration-suite before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com_pkg_OSP.Entity_Manager_ResponsibilityInfo_Test</div> <!-- chronological-class-name -->
+              <div class="configuration-suite before">
+                <span class="method-name">beforeStart</span>
+                <span class="method-start">329 ms</span>
+              </div> <!-- configuration-suite before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com_pkg_OSP.EUB_Test</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">Initialize</span>
-<<<<<<< HEAD
-                <span class="method-start">318 ms</span>
-=======
-<<<<<<< HEAD
-                <span class="method-start">542 ms</span>
-=======
-                <span class="method-start">595 ms</span>
->>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
->>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
+                <span class="method-start">380 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-<<<<<<< HEAD
-=======
-                <img src="failed.png">
-                </img>
-<<<<<<< HEAD
-                <span class="method-name">Tasks</span>
-                <span class="method-start">9222 ms</span>
-=======
->>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
-                <span class="method-name">EUB_PlaceOfBussiness</span>
-<<<<<<< HEAD
-                <span class="method-start">9369 ms</span>
-=======
-                <span class="method-start">7088 ms</span>
->>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
->>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
+                <span class="method-name">EntityUnitBrowser</span>
+                <span class="method-start">4586 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">closeBrowser</span>
-<<<<<<< HEAD
-                <span class="method-start">471979 ms</span>
-=======
-<<<<<<< HEAD
-                <span class="method-start">574204 ms</span>
-=======
-                <span class="method-start">429587 ms</span>
->>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
->>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
+                <span class="method-start">757141 ms</span>
               </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">Initialize</span>
+                <span class="method-start">757142 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">BusinessTaxInfo</span>
+                <span class="method-start">762660 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">1079644 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com_pkg_OSP.Entity_Manager_ResponsibilityInfo_Test</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">Initialize</span>
+                <span class="method-start">1079645 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">ResponsbilityInfo</span>
+                <span class="method-start">1084926 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">1333111 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com_pkg_OSP.Entity_Manager_KeyContacts_Test</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">Initialize</span>
+                <span class="method-start">1333112 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">KeyContacts</span>
+                <span class="method-start">1343795 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">1585921 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com_pkg_OSP.EntityUnitBrowser_DBA_Test</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">Initialize</span>
+                <span class="method-start">1585923 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">EntityUnitBrowserDBA</span>
+                <span class="method-start">1590828 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">2060376 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com_pkg_OSP.EUB_TaxIds_Registrations_Test</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">Initialize</span>
+                <span class="method-start">2060376 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">EUB_TaxIds</span>
+                <span class="method-start">2065738 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">2225098 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com_pkg_OSP.Entity_Manager_PageLinks_Test</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">Initialize</span>
+                <span class="method-start">2225842 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">PageLinks</span>
+                <span class="method-start">2229624 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">2334579 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com_pkg_OSP.EUB_TaxIds_Registrations_Test</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">aftersuite</span>
-<<<<<<< HEAD
-                <span class="method-start">472039 ms</span>
-=======
-<<<<<<< HEAD
-                <span class="method-start">574325 ms</span>
-=======
-                <span class="method-start">431056 ms</span>
->>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
->>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
+                <span class="method-start">2334649 ms</span>
+              </div> <!-- configuration-suite after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com_pkg_OSP.EUB_Test</div> <!-- chronological-class-name -->
+              <div class="configuration-suite after">
+                <span class="method-name">aftersuite</span>
+                <span class="method-start">2335232 ms</span>
+              </div> <!-- configuration-suite after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com_pkg_OSP.EntityUnitBrowser_DBA_Test</div> <!-- chronological-class-name -->
+              <div class="configuration-suite after">
+                <span class="method-name">aftersuite</span>
+                <span class="method-start">2335481 ms</span>
+              </div> <!-- configuration-suite after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test</div> <!-- chronological-class-name -->
+              <div class="configuration-suite after">
+                <span class="method-name">aftersuite</span>
+                <span class="method-start">2335657 ms</span>
+              </div> <!-- configuration-suite after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com_pkg_OSP.Entity_Manager_KeyContacts_Test</div> <!-- chronological-class-name -->
+              <div class="configuration-suite after">
+                <span class="method-name">aftersuite</span>
+                <span class="method-start">2335821 ms</span>
+              </div> <!-- configuration-suite after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com_pkg_OSP.Entity_Manager_PageLinks_Test</div> <!-- chronological-class-name -->
+              <div class="configuration-suite after">
+                <span class="method-name">aftersuite</span>
+                <span class="method-start">2335961 ms</span>
+              </div> <!-- configuration-suite after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com_pkg_OSP.Entity_Manager_ResponsibilityInfo_Test</div> <!-- chronological-class-name -->
+              <div class="configuration-suite after">
+                <span class="method-name">aftersuite</span>
+                <span class="method-start">2336120 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

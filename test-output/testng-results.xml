@@ -1,88 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="14" passed="13" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-<<<<<<< HEAD
-  <suite started-at="2021-03-23T15:19:19 IST" name="Suite" finished-at="2021-03-23T15:27:11 IST" duration-ms="471692">
-=======
-<<<<<<< HEAD
-  <suite started-at="2021-03-15T18:14:20 IST" name="Suite" finished-at="2021-03-15T18:23:53 IST" duration-ms="573702">
-=======
-  <suite started-at="2021-03-23T14:13:19 IST" name="Suite" finished-at="2021-03-23T14:20:29 IST" duration-ms="430400">
->>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
->>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
+  <suite started-at="2021-03-23T16:09:30 IST" name="Suite" finished-at="2021-03-23T16:48:24 IST" duration-ms="2334237">
     <groups>
     </groups>
-<<<<<<< HEAD
-    <test started-at="2021-03-23T15:19:19 IST" name="Test" finished-at="2021-03-23T15:27:11 IST" duration-ms="471692">
-=======
-<<<<<<< HEAD
-    <test started-at="2021-03-15T18:14:20 IST" name="Test" finished-at="2021-03-15T18:23:53 IST" duration-ms="573702">
-      <class name="com_pkg_OWM.Workflow_Browser.Parallel.FWF_Tasks_Test">
-        <test-method is-config="true" signature="beforeStart()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Parallel.FWF_Tasks_Test@78aab498]" started-at="2021-03-15T18:14:19 IST" name="beforeStart" finished-at="2021-03-15T18:14:20 IST" duration-ms="502" status="PASS">
-=======
-    <test started-at="2021-03-23T14:13:19 IST" name="Test" finished-at="2021-03-23T14:20:29 IST" duration-ms="430400">
->>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
-      <class name="com_pkg_OSP.Entity_Manager_PlaceOfBusiness_Test">
-<<<<<<< HEAD
-        <test-method is-config="true" signature="beforeStart()[pri:0, instance:com_pkg_OSP.Entity_Manager_PlaceOfBusiness_Test@6bf0219d]" started-at="2021-03-23T15:19:19 IST" name="beforeStart" finished-at="2021-03-23T15:19:19 IST" duration-ms="288" status="PASS">
-=======
-        <test-method is-config="true" signature="beforeStart()[pri:0, instance:com_pkg_OSP.Entity_Manager_PlaceOfBusiness_Test@6bf0219d]" started-at="2021-03-23T14:13:18 IST" name="beforeStart" finished-at="2021-03-23T14:13:19 IST" duration-ms="556" status="PASS">
->>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
->>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
+    <test started-at="2021-03-23T16:09:30 IST" name="Test" finished-at="2021-03-23T16:48:24 IST" duration-ms="2334237">
+      <class name="com_pkg_OSP.EUB_TaxIds_Registrations_Test">
+        <test-method is-config="true" signature="beforeStart()[pri:0, instance:com_pkg_OSP.EUB_TaxIds_Registrations_Test@5f683daf]" started-at="2021-03-23T16:09:29 IST" name="beforeStart" finished-at="2021-03-23T16:09:30 IST" duration-ms="318" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeStart -->
-<<<<<<< HEAD
-        <test-method signature="Initialize()[pri:0, instance:com_pkg_OSP.Entity_Manager_PlaceOfBusiness_Test@6bf0219d]" started-at="2021-03-23T15:19:19 IST" name="Initialize" finished-at="2021-03-23T15:19:28 IST" duration-ms="9034" status="PASS">
-=======
-<<<<<<< HEAD
-        <test-method signature="Initialize()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Parallel.FWF_Tasks_Test@78aab498]" started-at="2021-03-15T18:14:20 IST" name="Initialize" finished-at="2021-03-15T18:14:28 IST" duration-ms="8657" status="PASS">
-=======
-        <test-method signature="Initialize()[pri:0, instance:com_pkg_OSP.Entity_Manager_PlaceOfBusiness_Test@6bf0219d]" started-at="2021-03-23T14:13:19 IST" name="Initialize" finished-at="2021-03-23T14:13:25 IST" duration-ms="6477" status="PASS">
->>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
->>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
+        <test-method signature="Initialize()[pri:0, instance:com_pkg_OSP.EUB_TaxIds_Registrations_Test@5f683daf]" started-at="2021-03-23T16:43:50 IST" name="Initialize" finished-at="2021-03-23T16:43:55 IST" duration-ms="5360" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Initialize -->
-<<<<<<< HEAD
-        <test-method signature="EUB_PlaceOfBussiness()[pri:0, instance:com_pkg_OSP.Entity_Manager_PlaceOfBusiness_Test@6bf0219d]" started-at="2021-03-23T15:19:28 IST" name="EUB_PlaceOfBussiness" finished-at="2021-03-23T15:27:11 IST" depends-on-methods="com_pkg_OSP.Entity_Manager_PlaceOfBusiness_Test.Initialize" duration-ms="462607" status="PASS">
-=======
-<<<<<<< HEAD
-        <test-method signature="Tasks()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Parallel.FWF_Tasks_Test@78aab498]" started-at="2021-03-15T18:14:28 IST" name="Tasks" finished-at="2021-03-15T18:23:53 IST" depends-on-methods="com_pkg_OWM.Workflow_Browser.Parallel.FWF_Tasks_Test.Initialize" duration-ms="564977" status="FAIL">
-=======
-        <test-method signature="EUB_PlaceOfBussiness()[pri:0, instance:com_pkg_OSP.Entity_Manager_PlaceOfBusiness_Test@6bf0219d]" started-at="2021-03-23T14:13:25 IST" name="EUB_PlaceOfBussiness" finished-at="2021-03-23T14:20:28 IST" depends-on-methods="com_pkg_OSP.Entity_Manager_PlaceOfBusiness_Test.Initialize" duration-ms="422493" status="FAIL">
->>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
-          <exception class="org.openqa.selenium.TimeoutException">
+        <test-method signature="EUB_TaxIds()[pri:0, instance:com_pkg_OSP.EUB_TaxIds_Registrations_Test@5f683daf]" started-at="2021-03-23T16:43:55 IST" name="EUB_TaxIds" finished-at="2021-03-23T16:46:35 IST" depends-on-methods="com_pkg_OSP.EUB_TaxIds_Registrations_Test.Initialize" duration-ms="159353" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[Expected condition failed: waiting for number of open windows to be 2 (tried for 50 second(s) with 5000 milliseconds interval)
+              <![CDATA[Unable to find element with xpath == //label[@id='lblTaxID']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-<<<<<<< HEAD
-System info: host: 'USE2DEVP00127', ip: '10.178.168.120', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'
-Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:8957/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: de0548af-06c9-4735-892d-94ba988c5c5e]]>
-=======
 System info: host: 'USE2DEVP0289', ip: '10.178.161.24', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
-Driver info: driver.version: unknown]]>
->>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:19678/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 81d3627c-2d54-4202-904d-b6e6f30ceab8
+*** Element info: {Using=xpath, value=//label[@id='lblTaxID']}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for number of open windows to be 2 (tried for 50 second(s) with 5000 milliseconds interval)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to find element with xpath == //label[@id='lblTaxID']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-<<<<<<< HEAD
-System info: host: 'USE2DEVP00127', ip: '10.178.168.120', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '15.0.1'
-Driver info: org.openqa.selenium.ie.InternetExplorerDriver
-Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:8957/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: de0548af-06c9-4735-892d-94ba988c5c5e
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-=======
 System info: host: 'USE2DEVP0289', ip: '10.178.161.24', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '14.0.2'
-Driver info: driver.version: unknown
-at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:304)
->>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-at com_pkg_OSP.Entity_Manager_PlaceOfBusiness_Test.EUB_PlaceOfBussiness(Entity_Manager_PlaceOfBusiness_Test.java:138)
+Driver info: org.openqa.selenium.ie.InternetExplorerDriver
+Capabilities {acceptInsecureCerts: false, browserName: internet explorer, browserVersion: 11, javascriptEnabled: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:ieOptions: {browserAttachTimeout: 0, elementScrollBehavior: 0, enablePersistentHover: true, ie.browserCommandLineSwitches: , ie.edgechromium: false, ie.edgepath: , ie.ensureCleanSession: false, ie.fileUploadDialogTimeout: 3000, ie.forceCreateProcessApi: false, ignoreProtectedModeSettings: false, ignoreZoomSetting: false, initialBrowserUrl: http://localhost:19678/, nativeEvents: true, requireWindowFocus: false}, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 81d3627c-2d54-4202-904d-b6e6f30ceab8
+*** Element info: {Using=xpath, value=//label[@id='lblTaxID']}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
+at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
+at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
+at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+at com_lib_FunctionLibrary.FrameWork.fnWebButton(FrameWork.java:69)
+at com_obj_ObjectRepository.LS1.EntityUnitBrowser.fnClickTaxIds(EntityUnitBrowser.java:1020)
+at com_pkg_OSP.EUB_TaxIds_Registrations_Test.EUB_TaxIds(EUB_TaxIds_Registrations_Test.java:79)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -113,37 +89,151 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
->>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-<<<<<<< HEAD
-        </test-method> <!-- Tasks -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Parallel.FWF_Tasks_Test@78aab498]" started-at="2021-03-15T18:23:53 IST" name="closeBrowser" finished-at="2021-03-15T18:23:53 IST" duration-ms="1" status="PASS">
-=======
-        </test-method> <!-- EUB_PlaceOfBussiness -->
-<<<<<<< HEAD
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com_pkg_OSP.Entity_Manager_PlaceOfBusiness_Test@6bf0219d]" started-at="2021-03-23T15:27:11 IST" name="closeBrowser" finished-at="2021-03-23T15:27:11 IST" duration-ms="1" status="PASS">
-=======
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com_pkg_OSP.Entity_Manager_PlaceOfBusiness_Test@6bf0219d]" started-at="2021-03-23T14:20:28 IST" name="closeBrowser" finished-at="2021-03-23T14:20:29 IST" duration-ms="1369" status="PASS">
->>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
->>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
+        </test-method> <!-- EUB_TaxIds -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com_pkg_OSP.EUB_TaxIds_Registrations_Test@5f683daf]" started-at="2021-03-23T16:46:35 IST" name="closeBrowser" finished-at="2021-03-23T16:46:35 IST" duration-ms="743" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-<<<<<<< HEAD
-        <test-method is-config="true" signature="aftersuite()[pri:0, instance:com_pkg_OSP.Entity_Manager_PlaceOfBusiness_Test@6bf0219d]" started-at="2021-03-23T15:27:11 IST" name="aftersuite" finished-at="2021-03-23T15:27:11 IST" duration-ms="453" status="PASS">
-=======
-<<<<<<< HEAD
-        <test-method is-config="true" signature="aftersuite()[pri:0, instance:com_pkg_OWM.Workflow_Browser.Parallel.FWF_Tasks_Test@78aab498]" started-at="2021-03-15T18:23:53 IST" name="aftersuite" finished-at="2021-03-15T18:23:54 IST" duration-ms="643" status="PASS">
-=======
-        <test-method is-config="true" signature="aftersuite()[pri:0, instance:com_pkg_OSP.Entity_Manager_PlaceOfBusiness_Test@6bf0219d]" started-at="2021-03-23T14:20:29 IST" name="aftersuite" finished-at="2021-03-23T14:20:30 IST" duration-ms="792" status="PASS">
->>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
->>>>>>> branch 'master' of https://github.com/NidhiGinniTR/Angular.git
+        <test-method is-config="true" signature="aftersuite()[pri:0, instance:com_pkg_OSP.EUB_TaxIds_Registrations_Test@5f683daf]" started-at="2021-03-23T16:48:24 IST" name="aftersuite" finished-at="2021-03-23T16:48:25 IST" duration-ms="583" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- aftersuite -->
-      </class> <!-- com_pkg_OSP.Entity_Manager_PlaceOfBusiness_Test -->
+      </class> <!-- com_pkg_OSP.EUB_TaxIds_Registrations_Test -->
+      <class name="com_pkg_OSP.Entity_Manager_KeyContacts_Test">
+        <test-method is-config="true" signature="beforeStart()[pri:0, instance:com_pkg_OSP.Entity_Manager_KeyContacts_Test@4f67eb2a]" started-at="2021-03-23T16:09:30 IST" name="beforeStart" finished-at="2021-03-23T16:09:30 IST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeStart -->
+        <test-method signature="Initialize()[pri:0, instance:com_pkg_OSP.Entity_Manager_KeyContacts_Test@4f67eb2a]" started-at="2021-03-23T16:31:43 IST" name="Initialize" finished-at="2021-03-23T16:31:53 IST" duration-ms="10682" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Initialize -->
+        <test-method signature="KeyContacts()[pri:0, instance:com_pkg_OSP.Entity_Manager_KeyContacts_Test@4f67eb2a]" started-at="2021-03-23T16:31:53 IST" name="KeyContacts" finished-at="2021-03-23T16:35:55 IST" depends-on-methods="com_pkg_OSP.Entity_Manager_KeyContacts_Test.Initialize" duration-ms="242122" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- KeyContacts -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com_pkg_OSP.Entity_Manager_KeyContacts_Test@4f67eb2a]" started-at="2021-03-23T16:35:55 IST" name="closeBrowser" finished-at="2021-03-23T16:35:55 IST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="aftersuite()[pri:0, instance:com_pkg_OSP.Entity_Manager_KeyContacts_Test@4f67eb2a]" started-at="2021-03-23T16:48:25 IST" name="aftersuite" finished-at="2021-03-23T16:48:25 IST" duration-ms="140" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aftersuite -->
+      </class> <!-- com_pkg_OSP.Entity_Manager_KeyContacts_Test -->
+      <class name="com_pkg_OSP.Entity_Manager_ResponsibilityInfo_Test">
+        <test-method is-config="true" signature="beforeStart()[pri:0, instance:com_pkg_OSP.Entity_Manager_ResponsibilityInfo_Test@1fb700ee]" started-at="2021-03-23T16:09:30 IST" name="beforeStart" finished-at="2021-03-23T16:09:30 IST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeStart -->
+        <test-method signature="Initialize()[pri:0, instance:com_pkg_OSP.Entity_Manager_ResponsibilityInfo_Test@1fb700ee]" started-at="2021-03-23T16:27:29 IST" name="Initialize" finished-at="2021-03-23T16:27:34 IST" duration-ms="5279" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Initialize -->
+        <test-method signature="ResponsbilityInfo()[pri:0, instance:com_pkg_OSP.Entity_Manager_ResponsibilityInfo_Test@1fb700ee]" started-at="2021-03-23T16:27:34 IST" name="ResponsbilityInfo" finished-at="2021-03-23T16:31:43 IST" depends-on-methods="com_pkg_OSP.Entity_Manager_ResponsibilityInfo_Test.Initialize" duration-ms="248183" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ResponsbilityInfo -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com_pkg_OSP.Entity_Manager_ResponsibilityInfo_Test@1fb700ee]" started-at="2021-03-23T16:31:43 IST" name="closeBrowser" finished-at="2021-03-23T16:31:43 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="aftersuite()[pri:0, instance:com_pkg_OSP.Entity_Manager_ResponsibilityInfo_Test@1fb700ee]" started-at="2021-03-23T16:48:26 IST" name="aftersuite" finished-at="2021-03-23T16:48:26 IST" duration-ms="117" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aftersuite -->
+      </class> <!-- com_pkg_OSP.Entity_Manager_ResponsibilityInfo_Test -->
+      <class name="com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test">
+        <test-method is-config="true" signature="beforeStart()[pri:0, instance:com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test@46fa7c39]" started-at="2021-03-23T16:09:30 IST" name="beforeStart" finished-at="2021-03-23T16:09:30 IST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeStart -->
+        <test-method signature="Initialize()[pri:0, instance:com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test@46fa7c39]" started-at="2021-03-23T16:22:07 IST" name="Initialize" finished-at="2021-03-23T16:22:12 IST" duration-ms="5515" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Initialize -->
+        <test-method signature="BusinessTaxInfo()[pri:0, instance:com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test@46fa7c39]" started-at="2021-03-23T16:22:12 IST" name="BusinessTaxInfo" finished-at="2021-03-23T16:27:29 IST" depends-on-methods="com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test.Initialize" duration-ms="316981" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BusinessTaxInfo -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test@46fa7c39]" started-at="2021-03-23T16:27:29 IST" name="closeBrowser" finished-at="2021-03-23T16:27:29 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="aftersuite()[pri:0, instance:com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test@46fa7c39]" started-at="2021-03-23T16:48:25 IST" name="aftersuite" finished-at="2021-03-23T16:48:25 IST" duration-ms="164" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aftersuite -->
+      </class> <!-- com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test -->
+      <class name="com_pkg_OSP.Entity_Manager_PageLinks_Test">
+        <test-method is-config="true" signature="beforeStart()[pri:0, instance:com_pkg_OSP.Entity_Manager_PageLinks_Test@78ffe6dc]" started-at="2021-03-23T16:09:30 IST" name="beforeStart" finished-at="2021-03-23T16:09:30 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeStart -->
+        <test-method signature="Initialize()[pri:0, instance:com_pkg_OSP.Entity_Manager_PageLinks_Test@78ffe6dc]" started-at="2021-03-23T16:46:35 IST" name="Initialize" finished-at="2021-03-23T16:46:39 IST" duration-ms="3778" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Initialize -->
+        <test-method signature="PageLinks()[pri:0, instance:com_pkg_OSP.Entity_Manager_PageLinks_Test@78ffe6dc]" started-at="2021-03-23T16:46:39 IST" name="PageLinks" finished-at="2021-03-23T16:48:24 IST" depends-on-methods="com_pkg_OSP.Entity_Manager_PageLinks_Test.Initialize" duration-ms="104953" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- PageLinks -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com_pkg_OSP.Entity_Manager_PageLinks_Test@78ffe6dc]" started-at="2021-03-23T16:48:24 IST" name="closeBrowser" finished-at="2021-03-23T16:48:24 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="aftersuite()[pri:0, instance:com_pkg_OSP.Entity_Manager_PageLinks_Test@78ffe6dc]" started-at="2021-03-23T16:48:25 IST" name="aftersuite" finished-at="2021-03-23T16:48:26 IST" duration-ms="159" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aftersuite -->
+      </class> <!-- com_pkg_OSP.Entity_Manager_PageLinks_Test -->
+      <class name="com_pkg_OSP.EUB_Test">
+        <test-method is-config="true" signature="beforeStart()[pri:0, instance:com_pkg_OSP.EUB_Test@53aad5d5]" started-at="2021-03-23T16:09:30 IST" name="beforeStart" finished-at="2021-03-23T16:09:30 IST" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeStart -->
+        <test-method signature="Initialize()[pri:0, instance:com_pkg_OSP.EUB_Test@53aad5d5]" started-at="2021-03-23T16:09:30 IST" name="Initialize" finished-at="2021-03-23T16:09:34 IST" duration-ms="4188" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Initialize -->
+        <test-method signature="EntityUnitBrowser()[pri:0, instance:com_pkg_OSP.EUB_Test@53aad5d5]" started-at="2021-03-23T16:09:34 IST" name="EntityUnitBrowser" finished-at="2021-03-23T16:22:07 IST" depends-on-methods="com_pkg_OSP.EUB_Test.Initialize" duration-ms="752552" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EntityUnitBrowser -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com_pkg_OSP.EUB_Test@53aad5d5]" started-at="2021-03-23T16:22:07 IST" name="closeBrowser" finished-at="2021-03-23T16:22:07 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="aftersuite()[pri:0, instance:com_pkg_OSP.EUB_Test@53aad5d5]" started-at="2021-03-23T16:48:25 IST" name="aftersuite" finished-at="2021-03-23T16:48:25 IST" duration-ms="249" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aftersuite -->
+      </class> <!-- com_pkg_OSP.EUB_Test -->
+      <class name="com_pkg_OSP.EntityUnitBrowser_DBA_Test">
+        <test-method is-config="true" signature="beforeStart()[pri:0, instance:com_pkg_OSP.EntityUnitBrowser_DBA_Test@4a668b6e]" started-at="2021-03-23T16:09:30 IST" name="beforeStart" finished-at="2021-03-23T16:09:30 IST" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeStart -->
+        <test-method signature="Initialize()[pri:0, instance:com_pkg_OSP.EntityUnitBrowser_DBA_Test@4a668b6e]" started-at="2021-03-23T16:35:55 IST" name="Initialize" finished-at="2021-03-23T16:36:00 IST" duration-ms="4903" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Initialize -->
+        <test-method signature="EntityUnitBrowserDBA()[pri:0, instance:com_pkg_OSP.EntityUnitBrowser_DBA_Test@4a668b6e]" started-at="2021-03-23T16:36:00 IST" name="EntityUnitBrowserDBA" finished-at="2021-03-23T16:43:50 IST" depends-on-methods="com_pkg_OSP.EntityUnitBrowser_DBA_Test.Initialize" duration-ms="469547" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EntityUnitBrowserDBA -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com_pkg_OSP.EntityUnitBrowser_DBA_Test@4a668b6e]" started-at="2021-03-23T16:43:50 IST" name="closeBrowser" finished-at="2021-03-23T16:43:50 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="aftersuite()[pri:0, instance:com_pkg_OSP.EntityUnitBrowser_DBA_Test@4a668b6e]" started-at="2021-03-23T16:48:25 IST" name="aftersuite" finished-at="2021-03-23T16:48:25 IST" duration-ms="176" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aftersuite -->
+      </class> <!-- com_pkg_OSP.EntityUnitBrowser_DBA_Test -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>
