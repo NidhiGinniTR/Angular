@@ -45,6 +45,7 @@ public class Entity_Manager_Documents_Test extends BrowserInvoke {
 	public void EUB_Documents() throws InterruptedException, AWTException {
 		// Step-1:-----Login---------------------------------------------//
 		LS1 lp = new LS1(driver, propEnv, propSerialData);
+		EntityUnitBrowser Eub = new EntityUnitBrowser(driver, propEnv, propSerialData);
 		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver)
 				.withTimeout(Duration.ofSeconds(50))
 				.pollingEvery(Duration.ofSeconds(5))
@@ -58,9 +59,8 @@ public class Entity_Manager_Documents_Test extends BrowserInvoke {
 
 		// Step-3:-----Click Documents Tab---------------------------//
 		driver.switchTo().defaultContent();
-		driver.switchTo().frame("maincontent");
-		driver.switchTo().frame("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad");
-		EntityUnitBrowser Eub = new EntityUnitBrowser(driver, propEnv, propSerialData);
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("maincontent"));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad"));
 		Eub.fnEM_SwitchTabs("Documents");
 
 		// Step-4:-----Verify Search Fields---------------------------//
@@ -99,7 +99,6 @@ public class Entity_Manager_Documents_Test extends BrowserInvoke {
 		Eub.fnOWMActionsMenu("Add Document", "");
 
 		//Step-7----------------------Add Document-----------------------------------------
-		Thread.sleep(1000);
 		wait.until(ExpectedConditions.numberOfWindowsToBe(2));
 		lp.fnSwitchtoWindow(2, "Add document");
 		Eub.fnEM_AddDocument();

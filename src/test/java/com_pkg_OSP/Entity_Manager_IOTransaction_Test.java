@@ -45,6 +45,8 @@ public class Entity_Manager_IOTransaction_Test extends BrowserInvoke {
 	public void EUB_IOTransaction() throws InterruptedException, AWTException {
 		// Step-1:-----Login---------------------------------------------//
 		LS1 lp = new LS1(driver, propEnv, propSerialData);
+		EntityUnitBrowser Eub = new EntityUnitBrowser(driver, propEnv, propSerialData);
+		FrameWork fm = new FrameWork();
 		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver)
 				.withTimeout(Duration.ofSeconds(50))
 				.pollingEvery(Duration.ofSeconds(5))
@@ -57,14 +59,12 @@ public class Entity_Manager_IOTransaction_Test extends BrowserInvoke {
 
 		// Step-3:-----Search Entity---------------------------//
 		driver.switchTo().defaultContent();
-		driver.switchTo().frame("maincontent");
-		driver.switchTo().frame("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad");
-		driver.switchTo().frame("gridFrame");
-		EntityUnitBrowser Eub = new EntityUnitBrowser(driver, propEnv, propSerialData);
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("maincontent"));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("app_frame_a01b96d5-d9c7-455c-98a9-b084156123ad"));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("gridFrame"));
 		Eub.fnSearchEntity();
 
 		// Step-4:--------------Double Click Entity--------------------------------------//
-		FrameWork fm = new FrameWork();
 		fm.fnWebTable(driver, driver.findElement(By.xpath("//tr[@id='gridEntityBrowser_grdEntityManager_row_0']")),
 				"DoubleClick");
 

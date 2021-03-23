@@ -7,19 +7,13 @@
 	<test thread-count="5" name="Test">
 		<classes>
 			<class name="com_pkg_OSP.EUB_Test" />
-			<class name="com_pkg_OSP.Entity_Manager_Banking_Test" />
-			<class name="com_pkg_OSP.Entity_Manager_IOTransaction_Test" />
-			<class name="com_pkg_OSP.Entity_Manager_PlaceOfBussiness_Test" />
-			<class name="com_pkg_OSP.Entity_Manager_WorkflowBrowser_Test" />
-			<class name="com_pkg_OSP.Entity_Manager_Documents_Test" />
-			<class name="com_pkg_OSP.Transaction_Browser_Add_Transaction" />
-			<class name="com_pkg_OSP.EntityUnitBrowser_Ownership_AcqDispofShares_Test" />
-			<class name="com_pkg_OSP.EntityUnitBrowser_Ownership_Owners_Test" />
-			<class name="com_pkg_OSP.EntityManager_IndividualsAgents_Test" />
-			<class name="com_pkg_OSP.EntityUnitBrowser_Ownership_StockOfTheCompany_Test" />
+			<class name="com_pkg_OSP.Entity_Manager_BusinessTaxInfo_Test" />
+			<class name="com_pkg_OSP.Entity_Manager_ResponsibilityInfo_Test" />
+			<class name="com_pkg_OSP.Entity_Manager_KeyContacts_Test" />
+			<class name="com_pkg_OSP.Entity_Manager_ResponsibilityInfo_Test" />
 			<class name="com_pkg_OSP.EntityUnitBrowser_DBA_Test" />
-			<class name="com_pkg_OSP.EntityUnitBrowser_Ownership_OrgReorg_Test" />
-			<class name="com_pkg_OSP.Entity_Manager_PlaceOfBussiness_Test" />
+			<class name="com_pkg_OSP.EUB_TaxIds_Registrations_Test" />
+			<class name="com_pkg_OSP.Entity_Manager_PageLinks_Test" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
