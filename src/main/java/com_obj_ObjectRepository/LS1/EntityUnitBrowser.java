@@ -670,7 +670,7 @@ public class EntityUnitBrowser extends ExtentManager {
 			EntityName.sendKeys(template.getProperty("EnitytName"));
 			EntityName.sendKeys(Keys.ARROW_DOWN);
 			EntityName.sendKeys(Keys.ENTER);
-			childTest.log(Status.PASS, "Entered Entity Name successfully.");
+			childTest.log(Status.PASS, "Entered Entity Name= "+template.getProperty("EnitytName")+".");
 			fm.fnWebButton(driver, EUB_Search, "Search");
 			Thread.sleep(4500);
 			fm.fnWebButton(driver, Splitter, "Splitter");
