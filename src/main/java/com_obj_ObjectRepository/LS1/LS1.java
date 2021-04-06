@@ -142,4 +142,33 @@ public class LS1 extends ExtentManager {
 			}
 		}
 	}
+	
+	public void fnEntitiesTabNavigation(String ptab, String ctab) {
+		try {
+			if (!ptab.isEmpty()) {
+				By parenttab = By.xpath(
+						"//div[@id='TabStrip1']//table[@id='GTabStrip1_-1']//*[contains(text(),'" + ptab + "')]");
+				fm.fnWebButton(driver, parenttab, ptab);
+			}
+			if (!ctab.isEmpty()) {
+				By childTab = By
+						.xpath("//table[@id='MultiPage1']/tbody/tr/td/table//*[contains(text(),'" + ctab + "')]");
+				fm.fnWebButton(driver, childTab, ctab);
+			}
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public void fnEntityManagerTabNavigation(String tab) {
+		try {
+			if (!tab.isEmpty()) {
+				By maintab = By.xpath("//table[@id='GTabStrip1_-1']/tbody/tr//*[contains(text(),'" + tab + "')]");
+				fm.fnWebButton(driver, maintab, tab);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }
