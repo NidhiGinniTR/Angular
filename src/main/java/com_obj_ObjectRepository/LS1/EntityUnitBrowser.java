@@ -556,19 +556,18 @@ public class EntityUnitBrowser extends ExtentManager {
 	public void fnVerifySearchElements(String[] array) throws InterruptedException {
 		childTest = test
 				.createNode("Description: Verifying Search Fields" + "<br>" + "<< Screen Name : LS1 Page >></br>");
-		if (driver.getTitle().equalsIgnoreCase("ONESOURCE")
+		if (driver.getTitle().equalsIgnoreCase("Entity Manager")
 				|| driver.getTitle().equalsIgnoreCase("Entity Information")) {
 			fm.fnWebButton(driver, Splitter, "Splitter");
 			for (int i = 0; i < array.length; i++) {
-				List<WebElement> rows = driver.findElements(By.xpath("//DIV[@id=\"divContent\"]/TABLE[1]"));
-				for (WebElement row : rows) {
-					if (row.getText().contains(array[i])) {
-						childTest.log(Status.PASS, array[i] + " is Displayed.");
-					} else {
-						childTest.log(Status.PASS, array[i] + " is Displayed.");
-					}
-				}
-			}
+                WebElement row = driver.findElement(By.xpath("//DIV[@id='divContent']/TABLE[1]/tbody"));
+                List<WebElement> labels = driver.findElements(By.tagName("label"));
+                for (WebElement label : labels) {
+                    if (label.getText().contains(array[i])) {
+                        childTest.log(Status.PASS, array[i] + " is Displayed.");
+                    }
+                }
+            }
 			Thread.sleep(1000);
 			fm.fnWebButton(driver, Splitter, "Splitter");
 		}
@@ -622,7 +621,7 @@ public class EntityUnitBrowser extends ExtentManager {
 	public void fnActionsMenuEnabled() throws InterruptedException {
 		childTest = test
 				.createNode("Description: Action menu items Enabled" + "<br>" + "<< Screen Name : LS1 Page >></br>");
-		if (driver.getTitle().equalsIgnoreCase("ONESOURCE")) {
+		if (driver.getTitle().equalsIgnoreCase("ONESOURCE") || driver.getTitle().equalsIgnoreCase("Entity Manager")) {
 			java.util.List<WebElement> menuitems = driver.findElements(By.className("MenuItem"));
 			for (int i = 0; i < menuitems.size(); i++) {
 				String items = menuitems.get(i).getText();
@@ -638,7 +637,7 @@ public class EntityUnitBrowser extends ExtentManager {
 	public void fnActionsMenuDisabled() throws InterruptedException {
 		childTest = test
 				.createNode("Description: Action menu items Disabled" + "<br>" + "<< Screen Name : LS1 Page >></br>");
-		if (driver.getTitle().equalsIgnoreCase("ONESOURCE")) {
+		if (driver.getTitle().equalsIgnoreCase("ONESOURCE") || driver.getTitle().equalsIgnoreCase("Entity Manager")) {
 			java.util.List<WebElement> Disablemenuitems = driver.findElements(By.className("DisabledMenuItem"));
 			for (int i = 0; i < Disablemenuitems.size(); i++) {
 				String Disableitems = Disablemenuitems.get(i).getText();
@@ -702,15 +701,15 @@ public class EntityUnitBrowser extends ExtentManager {
 	public void fnCreateEntity() throws InterruptedException {
 		childTest = test.createNode("Description: Description: Entering all the fields to the create new entity"
 				+ "<br>" + "<< Screen Name : Entity Information >></br>");
+		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(50)).pollingEvery(Duration.ofSeconds(5))
+				.ignoring(NoSuchElementException.class,NoSuchWindowException.class).ignoring(NoSuchFrameException.class);
+		
 		try {
-			FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
-					.withTimeout(Duration.ofSeconds(50))
-					.pollingEvery(Duration.ofSeconds(5))
-					.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
-					.ignoring(NoSuchFrameException.class);
-					waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("addeditFrame1"));
+			
+			wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("addeditFrame1"));
 			Boolean temp = fnVisibilityTest(entity_name);
 			if (temp.TRUE) {
+				System.out.println(driver.getTitle());
 				fm.fnWebButton(driver, click_save, "Save");
 				String errormsg = driver.findElement(By.xpath("//span[@id='spaErrorMessage']")).getText();
 				if (errormsg.equalsIgnoreCase("Entity Name is required")) {
@@ -736,6 +735,7 @@ public class EntityUnitBrowser extends ExtentManager {
 				 * driver.switchTo().frame("addeditFrame1");
 				 */
 
+
 				fm.fnWebEdit(driver, entity_name, template.getProperty("EnitytName"), "Entity Name");
 				fm.fnWebEdit(driver, entity_id, template.getProperty("EntityID"), "Entity ID");
 				fm.fnWebEdit(driver, country, template.getProperty("Country"), "Country");
@@ -753,14 +753,14 @@ public class EntityUnitBrowser extends ExtentManager {
 				// "Group_codes");
 				// fm.fnWebButton(driver, add_gcodes, "Add");
 				driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-				Thread.sleep(1000);
+				Thread.sleep(3000);
 				fm.fnWebButton(driver, click_save, "Save");
 				String SaveMsg = driver.findElement(By.xpath("//span[@id='spaErrorMessage']")).getText();
 				// System.out.println(driver.findElement(By.xpath("//span[@id='spaErrorMessage']")).getText());
 				if (SaveMsg.equalsIgnoreCase("Your data was successfully saved")) {
 					childTest.info("Successfully data is saved in Add New Entity Page");
 				}
-				Thread.sleep(1000);
+				Thread.sleep(2500);
 				fm.fnWebButton(driver, Close, "Close");
 			}
 		} catch (Exception e) {
@@ -775,15 +775,12 @@ public class EntityUnitBrowser extends ExtentManager {
 	public void fnEditDeatils_Entity() {
 		childTest = test.createNode(
 				"Description: Description: Edit/View Details" + "<br>" + "<< Screen Name : Entity Information >></br>");
+		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(50)).pollingEvery(Duration.ofSeconds(5))
+				.ignoring(NoSuchElementException.class,NoSuchWindowException.class).ignoring(NoSuchFrameException.class);
 		try {
 			Thread.sleep(2000);
 			if (driver.getTitle().equalsIgnoreCase("Entity Information")) {
-				FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
-						.withTimeout(Duration.ofSeconds(50))
-						.pollingEvery(Duration.ofSeconds(5))
-						.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
-						.ignoring(NoSuchFrameException.class);
-				waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("addeditFrame1"));
+				wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("addeditFrame1"));
 				Boolean temp = fnVisibilityTest(entity_name);
 				if (temp.TRUE) {
 					// fm.fnWebEditCompare(driver, Client_name, template.getProperty("ClientName"),
@@ -933,6 +930,8 @@ public class EntityUnitBrowser extends ExtentManager {
 	public void fnCustomizeView(String[] array) throws InterruptedException {
 		childTest = test.createNode("Description: Customize View" + "<br>" + "<< Screen Name: LS1 >></br>");
 		Thread.sleep(1000);
+		FluentWait<WebDriver> wait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(50)).pollingEvery(Duration.ofSeconds(5))
+				.ignoring(NoSuchElementException.class,NoSuchWindowException.class).ignoring(NoSuchFrameException.class);
 		if (driver.getTitle().equalsIgnoreCase("Customize View")) {
 			Boolean temp = fnVisibilityTest(click_save);
 			if (temp.TRUE) {
@@ -964,7 +963,9 @@ public class EntityUnitBrowser extends ExtentManager {
 		} else {
 			childTest.log(Status.FAIL, "Customize view window failed to Open/Not in focus mode");
 		}
-		Thread.sleep(1000);
+		Thread.sleep(1500);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(click_save));
+		
 		fm.fnWebButton(driver, click_save, "Save");
 	}
 
