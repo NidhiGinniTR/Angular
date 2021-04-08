@@ -2084,7 +2084,6 @@ public class EntityUnitBrowser extends ExtentManager {
 				fm.fnWebButton(driver, By.xpath("//*[@id='btnLogOff']"), "LS1 Logout");
 			}
 		}
-		driver.quit();
 	}
 
 	public Boolean fnVisibilityTest(By element) {
