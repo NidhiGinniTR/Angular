@@ -189,7 +189,7 @@ public class Entity_Manager_IOTransaction_Test extends BrowserInvoke {
 	@AfterClass
 	void closeBrowser() throws InterruptedException {
 		// FunctionLibrary.fnLogOff(driver);
-		//driver.quit();
+		driver.quit();
 	}
 
 	@AfterSuite
