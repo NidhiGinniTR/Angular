@@ -26,7 +26,7 @@ public class loginPage extends ExtentManager {
 	By Applications;
 	Properties loginData;
 	Properties template;
-	FrameWork2 fm = new FrameWork2();
+	FrameWork2 fm = new FrameWork2(driver);
 
 	public loginPage(WebDriver driver, Properties env, Properties data2) {
 		this.driver = driver;

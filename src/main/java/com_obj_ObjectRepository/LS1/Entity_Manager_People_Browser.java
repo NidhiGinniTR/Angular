@@ -26,7 +26,7 @@ public class Entity_Manager_People_Browser extends ExtentManager{
 	Properties template;
 
 	
-	FrameWork2 fm = new FrameWork2();
+	FrameWork2 fm = new FrameWork2(driver);
 	public Entity_Manager_People_Browser(WebDriver driver, Properties data2, Properties propSerialData) {
 		this.driver = driver;
 		this.template = data2;

@@ -18,6 +18,9 @@ public class FrameWork2 extends ExtentManager {
 	Object flag = null;
 	WebDriver driver;
 	
+	public FrameWork2(WebDriver driver) {
+		this.driver=driver;
+	}
 	public void fnWebEdit(WebDriver driver,By element, String text, String label) throws InterruptedException {
 		WebElement wait = new WebDriverWait(driver, 30).until(ExpectedConditions.visibilityOfElementLocated(element));
 		if (wait.isDisplayed()) {

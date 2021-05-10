@@ -54,7 +54,7 @@ public class OWM extends ExtentManager {
 	By WFP_NWF_RIRouteToGroup;By WFP_NWF_RIRouteToPerson;By WFP_NWF_RIDueDate;By WFP_NWF_RI_CC_Email;By WFP_NWF_Save;
 	//*****Customize View****************
 	By CustView_Save;By CustView_Cancel;
-	FrameWork2 fm = new FrameWork2();
+	FrameWork2 fm = new FrameWork2(driver);
 
 	public OWM(WebDriver driver, Properties data2) {
 		this.driver = driver;

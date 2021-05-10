@@ -27,7 +27,7 @@ public class OWM extends ExtentManager{
 
 	WebDriver driver;
 	Properties template;
-	FrameWork2 fm = new FrameWork2();
+	FrameWork2 fm = new FrameWork2(driver);
 
 	
 	// ---------------New Folder Page-----------------------------------------------------------------------------
