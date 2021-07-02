@@ -66,6 +66,8 @@ public class Holidays extends ExtentManager {
 			}else {
 				childTest.log(Status.ERROR,"Selected date '"+data.getProperty("Holiday_SelectedDate")+"' has not been added");
 			}
+			fm.fnWebButton(driver, CalSetup_Holidays_AdddNew_Save, "Save");
+			Thread.sleep(1500);
 			String popuptext1 = driver.switchTo().alert().getText();
 			if (popuptext1.contains("The Holiday has been successfully saved.") || popuptext.isEmpty()) {
 				driver.switchTo().alert().accept();
