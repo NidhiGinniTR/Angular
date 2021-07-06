@@ -62,9 +62,35 @@ public class Authorities extends ExtentManager {
 	
 	By CalSetup_Authorities_Cancel = By.xpath("//input[@id='btnCancel']");
 	
+	// For authority search
+	
+	
+	By CalSetup_AuthorityCri_Name = By.xpath("//input[@id='tcau_authority_name1']");
+	
+	By CalSetup_AuthorityCri_Name2 = By.xpath("//input[@id='tcau_authority_name2']");
+	
+	By CalSetup_AuthorityCri_Taxtype = By.xpath("//select[@id='tcau_tax_type_id']");
+	
+	By CalSetup_AuthorityCri_Country = By.xpath("//select[@id='tcj_country_id']");
+	
+	By CalSetup_AuthorityCri_State = By.xpath("//select[@id='tcj_state_province_id']");
+	
+	By CalSetup_AuthorityCri_Catagory = By.xpath("//select[@id='tcj_category_id']");
+	
+	By CalSetup_AuthorityCri_Juriscode = By.xpath("//input[@id='tcj_code']");
+	
+	By CalSetup_AuthorityCri_Availiable = By.xpath("//select[@id='tcau_visible']");
+	
+	By CalSetup_AuthorityCri_Search = By.xpath("//input[@id='btnSearch']");
+	
+	By CalSetup_AuthoritiesCri_Cancel = By.xpath("//input[@id='btnCancel']");
+	
+	
+	
+	
 	
 	public void add__newJurisdiction() throws InterruptedException {
-		childTest = test.createNode("Description: Adding new Jurisdiction " + "<br>"
+		childTest = test.createNode("Description: Adding new Authority " + "<br>"
 				+ "<< Screen Name: Entity information >></br>");
 
 		// driver.switchTo().defaultContent();
@@ -82,6 +108,8 @@ public class Authorities extends ExtentManager {
 		}
 		
 		//waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("addeditFrame1"));
+		fm.fnWebList(driver, CalSetup_Authorities_TaskType, template.getProperty("Task_Type"), "Task_Type");
+		fm.fnWebButton(driver, CalSetup_Authorities_PlusSymbol, "Add Symbol");
 		fm.fnWebEdit(driver, CalSetup_Authorities_AuthorityName, template.getProperty("Authority_Name"), "Authority_Name");
 		fm.fnWebEdit(driver, CalSetup_Authorities_AuthorityName2, template.getProperty("Authority_Name2"), "Authority_Name");
 		fm.fnWebEdit(driver, CalSetup_Authorities_PayableTo, template.getProperty("Payble_To"), "Payble_To");
@@ -99,12 +127,106 @@ public class Authorities extends ExtentManager {
 		fm.fnWebButton(driver, CalSetup_Authorities_Save, "Save");
 		if(alerttext.equalsIgnoreCase("The Authority has been successfully saved.")) {
 			alert.accept();
-			childTest.pass("The Jurisdiction has been successfully saved.");
+			childTest.pass("The Authority has been successfully saved.");
 		}
 		
 		
 	}
+	
+	
+	/***************************************************************************************
+	 * This function is used to perform in Search operation in Jurisdiction
+	 
+	 ***************************************************************************************/
 
+	public void fnSearchTaxIds() throws InterruptedException {
+		childTest = test.createNode(
+				"Description: Search Authority" + "<br>" + "<<Screen Name: Workflow Manager >></br>");
+		try {
+			if (driver.getTitle().equalsIgnoreCase("Workflow Manager")) {
+				
+				fm.fnWebList(driver, CalSetup_AuthorityCri_Name, template.getProperty("AuthorityCri_name"),
+						"Jurisdiction_code");
+				fm.fnWebList(driver, CalSetup_AuthorityCri_Taxtype, template.getProperty("Authority_Taxtype"),
+						"Jurisdiction_name");
+				fm.fnWebButton(driver, CalSetup_AuthorityCri_Search, "Search");
+				
+			}
+		} catch (Exception e) {
+			childTest.fail(e);
+		}
+	}
+
+
+	/***************************************************************************************
+	 * This function used to copy the jurisdiction to new values
+	 
+	 ***************************************************************************************/
+	
+	public void copy_Authority() throws InterruptedException {
+		childTest = test.createNode("Description: Copy Authority" + "<br>"
+				+ "<< Screen Name: Workflow Manager>></br>");
+
+		// driver.switchTo().defaultContent();(
+		FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
+				.withTimeout(Duration.ofSeconds(50))
+				.pollingEvery(Duration.ofSeconds(5))
+				.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+				.ignoring(NoSuchFrameException.class);
+		fm.fnWebButton(driver, CalSetup_Authorities_Save, "Save");
+		Alert alert = driver.switchTo().alert();
+		String alerttext = alert.getText();
+		if(alerttext.equalsIgnoreCase("Please enter all required fields.")) {
+			alert.accept();
+			childTest.info("Required values need to be entered");
+		}
+		fm.fnWebEdit(driver, CalSetup_Authorities_AuthorityName, template.getProperty("Auth_Name_Copy"),
+				"Auth_Name_Copy");
+		
+		fm.fnWebButton(driver, CalSetup_Authorities_Save, "Save");
+		if(alerttext.equalsIgnoreCase("The Authority has been successfully saved.")) {
+			alert.accept();
+			childTest.pass("The Authority has been successfully saved.");
+		}
+		
+		
+	}
+	
+	public void edit_Authority() throws InterruptedException {
+		childTest = test.createNode("Description: Edit Authority " + "<br>"
+				+ "<< Screen Name: Entity information >></br>");
+
+		// driver.switchTo().defaultContent();
+		FluentWait<WebDriver> waitf = new FluentWait<WebDriver>(driver)
+				.withTimeout(Duration.ofSeconds(50))
+				.pollingEvery(Duration.ofSeconds(5))
+				.ignoring(NoSuchElementException.class,NoSuchWindowException.class)
+				.ignoring(NoSuchFrameException.class);
+		fm.fnWebButton(driver, CalSetup_Authorities_Save, "Save");
+		Alert alert = driver.switchTo().alert();
+		String alerttext = alert.getText();
+		if(alerttext.equalsIgnoreCase("Please enter all required fields.")) {
+			alert.accept();
+			childTest.info("All required must be entered before saving");
+		}
+		
+		//waitf.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("addeditFrame1"));
+	
+		fm.fnWebEdit(driver, CalSetup_Authorities_Fax, template.getProperty("Authority_FaxEdit"), "Authority_FaxEdit");
+		fm.fnWebEdit(driver, CalSetup_Authorities_Email, template.getProperty("Authority_EmailEdit"), "Authority_EmailEdit");
+		fm.fnWebEdit(driver, CalSetup_Authorities_Website, template.getProperty("Authority_WebsiteEdit"), "Authority_WebsiteEdit");
+		fm.fnWebList(driver, CalSetup_Authorities_Vendor, template.getProperty("Authority_VendorEdit"), "Authority_VendorEdit");
+		
+		
+		fm.fnWebButton(driver, CalSetup_Authorities_Save, "Save");
+		if(alerttext.equalsIgnoreCase("The Authority has been successfully saved.")) {
+			alert.accept();
+			childTest.pass("The Authority has been successfully saved.");
+		}
+		
+		
+	}
+	
 
 
 }
